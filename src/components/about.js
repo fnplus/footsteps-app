@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
-import Login from "../components/login"
+
 export default () => (
   <Layout>
-    <h1>Authenticate!</h1>
-    <Login />
+    <h1>About Footsteps</h1>
+    <p>let's you make your learning path and inspire others to follow them</p>
   </Layout>
 )
