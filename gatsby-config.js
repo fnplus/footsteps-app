@@ -6,4 +6,17 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "Footsteps",
+  },
+  plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+  ],
 }

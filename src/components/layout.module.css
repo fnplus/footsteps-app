@@ -1,4 +1,12 @@
 .layout {
-  margin: 3rem auto;
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 100vh;
+  text-align: center;
+}
+main {
+  flex: 1;
+  padding: 10px;
+  flex: 1 1 auto;
 }

@@ -6,7 +6,7 @@ import Footer from "./footer"
 export default ({ children }) => (
   <div className={layoutStyles.layout}>
     <Header />
-    {children}
+    <main>{children}</main>
     <Footer />
   </div>
 )
