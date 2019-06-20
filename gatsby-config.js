@@ -10,6 +10,8 @@ module.exports = {
     title: "Footsteps",
   },
   plugins: [
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -18,5 +20,18 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Footsteps: Your Personal Learning Path`,
+        short_name: `Footsteps`,
+        start_url: `/`,
+        icon: `src/images/icon.png`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }

@@ -30,7 +30,7 @@ export default () => {
   }
   useEffect(() => {
     fetchData()
-  })
+  }, [])
   return (
     <ul>
       {data.map(footstep => (

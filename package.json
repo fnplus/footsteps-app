@@ -15,11 +15,16 @@
   "dependencies": {
     "gatsby": "^2.9.6",
     "gatsby-image": "^2.1.4",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-netlify": "^2.0.17",
+    "gatsby-plugin-offline": "^2.1.3",
+    "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.1.9",
     "gatsby-plugin-typography": "^2.2.13",
     "gatsby-transformer-sharp": "^2.1.21",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
     "typography-theme-funston": "^0.16.19"
