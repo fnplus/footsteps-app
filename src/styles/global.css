@@ -1,0 +1,16 @@
+html,
+body,
+#___gatsby,
+#___gatsby > div {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.absolute-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}

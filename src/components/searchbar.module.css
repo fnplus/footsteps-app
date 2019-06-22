@@ -1,0 +1,5 @@
+input[type="search"] {
+  min-width: 60%;
+  border: 2px solid #000;
+  text-align: center;
+}
