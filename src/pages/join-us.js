@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Login from "../components/login"
 export default () => (
   <Layout>
-    <h1>Authenticate!</h1>
+    <h1>Join Us!</h1>
     <Login />
   </Layout>
 )
