@@ -17,3 +17,11 @@ a {
   height: 50px;
   margin: 0;
 }
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+}
+ul > li {
+  display: inline;
+  padding: 16px;
+}

@@ -19,21 +19,10 @@ const Footstep = ({
     <p>Tags: {tags.join(", ")}</p>
   </li>
 )
-export default () => {
-  const [data, setData] = useState([])
-  const fetchData = async () => {
-    const result = await fetch(
-      "https://www.mocky.io/v2/5d0b464a2f00006c00e3ef3a"
-    )
-    const resultObject = await result.json()
-    setData(resultObject)
-  }
-  useEffect(() => {
-    fetchData()
-  }, [])
+export default ({ footsteps }) => {
   return (
     <ul>
-      {data.map(footstep => (
+      {footsteps.map(footstep => (
         <Footstep key={footstep.title} {...footstep} />
       ))}
     </ul>

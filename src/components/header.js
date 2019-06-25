@@ -6,10 +6,25 @@ export default () => (
   <header>
     <nav>
       <img className={headerStyles.logo} src={brandLogo} />
-      <Link to={"/"}>Home</Link>
-      <Link to={"/about/"}>About</Link>
-      <Link to={"/profile/"}>Profile</Link>
-      <Link to={"/join-us/"}>Join Us</Link>
+      <ul className={headerStyles.navLinks}>
+        <li>
+          <Link to={"/"}>Home</Link>
+        </li>
+        <li>
+          <Link to={"/about/"}>About</Link>
+        </li>
+        <li>
+          <Link to={"/profile/"}>Profile</Link>
+        </li>
+        <li>
+          <Link to={"/join-us/"}>Join Us</Link>
+        </li>
+        <li>
+          <Link className="button" to={"/"}>
+            Get Started
+          </Link>
+        </li>
+      </ul>
     </nav>
   </header>
 )

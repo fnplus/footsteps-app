@@ -14,3 +14,16 @@ body,
   width: 100%;
   min-height: 100vh;
 }
+
+.button {
+  appearance: button;
+  border: 1px solid #000;
+  padding: 8px;
+  color: white;
+  transition: all 0.2s;
+  background-color: black;
+}
+.button:hover {
+  background-color: #2f2f2f;
+  color: white;
+}
