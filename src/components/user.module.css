@@ -1,0 +1,17 @@
+.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}

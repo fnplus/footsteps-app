@@ -1,4 +1,6 @@
 .layout {
+  margin-left: 5%;
+  margin-right: 5%;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
