@@ -28,3 +28,8 @@ body,
   background-color: #2f2f2f;
   color: white;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

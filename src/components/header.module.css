@@ -1,7 +1,7 @@
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -20,8 +20,27 @@ a {
 .nav-links {
   list-style-type: none;
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 1 auto;
 }
-ul > li {
-  display: inline;
-  padding: 16px;
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-links {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1 1 auto;
+  }
 }

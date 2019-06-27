@@ -24,7 +24,7 @@ export default ({ data }) => {
               <li>{tag}</li>
             ))}
           </ul>
-          <h5>{data.about}</h5>
+          <h3>{data.about}</h3>
           <table>
             <tr>
               <td>Followers</td>
