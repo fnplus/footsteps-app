@@ -1,6 +1,8 @@
 input[type="search"] {
   border: none;
   text-align: center;
+  flex: 1 1 auto;
+  margin: 0 20px;
 }
 select {
   border: none;
@@ -8,12 +10,15 @@ select {
   margin: 10px;
   padding: 5px;
   border: 2px solid #000;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
 }
 .container {
-  max-width: 60%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border: 2px solid #000;
-  margin: 0 auto;
+  width: 100%;
+  border-radius: 25px;
 }

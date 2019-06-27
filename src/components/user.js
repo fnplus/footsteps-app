@@ -4,10 +4,10 @@ import userStyles from "./user.module.css"
 
 export default ({ data }) => {
   return (
-    <>
+    <div className={userStyles.flexColumn}>
       <h1>My Profile</h1>
       <section className={userStyles.flexRow}>
-        <section className={userStyles.flexColumn}>
+        <div className={userStyles.flexColumn}>
           <img
             className={userStyles.avatar}
             src={data.profilePic}
@@ -16,16 +16,23 @@ export default ({ data }) => {
           <span>
             <strong>{data.username}</strong>
           </span>
-        </section>
-        <section className={userStyles.flexColumn}>
+          <ul className={userStyles.flexRow}>
+            {Object.entries(data.social).map(([key, value]) => (
+              <li>
+                <a href={value}>{key}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={userStyles.flexColumn}>
           <h3>{`${data.firstName} ${data.lastName}`}</h3>
-          <ul>
+          <ul className={userStyles.flexRow}>
             {data.tags.map(tag => (
               <li>{tag}</li>
             ))}
           </ul>
           <h3>{data.about}</h3>
-          <table>
+          <table align="center" border="0">
             <tr>
               <td>Followers</td>
               <td>Following</td>
@@ -35,18 +42,11 @@ export default ({ data }) => {
               <td>{data.following}</td>
             </tr>
           </table>
-        </section>
-        <ul className={userStyles.flexColumn}>
-          {Object.entries(data.social).map(([key, value]) => (
-            <li>
-              <a href={value}>{key}</a>
-            </li>
-          ))}
-        </ul>
+        </div>
       </section>
       <section>
         <h3>My Core Skills:</h3>
-        <ul>
+        <ul className={userStyles.flexRow}>
           {data.coreSkills.map(skill => (
             <li>{skill}</li>
           ))}
@@ -58,6 +58,6 @@ export default ({ data }) => {
       <section>
         <Footsteps footsteps={data.footsteps} />
       </section>
-    </>
+    </div>
   )
 }
