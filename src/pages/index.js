@@ -1,10 +1,9 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Searchbar from "../components/searchbar"
+import Landing from "../components/landing"
 export default () => (
   <Layout>
-    <h1>FootSteps</h1>
-    <p>Learning Resource Aggregator</p>
-    <Searchbar />
+    <Landing />
   </Layout>
 )

@@ -1,15 +1,21 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
-import Avatar from "../components/avatar"
-import Footsteps from "../components/footsteps"
-export default () => (
-  <Layout>
-    <h1>My Profile</h1>
-    <Avatar
-      imageURL="https://i.pinimg.com/originals/f8/81/ad/f881ad3599045e1cfe66804f719b5c4d.jpg"
-      username="Yen"
-    />
-    <p>Your footsteps will be shown here</p>
-    <Footsteps />
-  </Layout>
-)
+import User from "../components/user"
+//http://www.mocky.io/v2/5d122c093100002ec508d1b4
+export default () => {
+  const [data, setData] = useState(null)
+  const fetchData = async () => {
+    const result = await fetch(
+      "http://www.mocky.io/v2/5d122efc3100001ec508d1c4"
+    )
+    const resultObject = await result.json()
+    console.log(resultObject)
+    setData(resultObject)
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+  return (
+    <Layout>{data == null ? <h1>Loading...</h1> : <User data={data} />}</Layout>
+  )
+}

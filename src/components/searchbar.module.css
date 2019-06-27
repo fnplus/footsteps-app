@@ -1,5 +1,24 @@
 input[type="search"] {
-  min-width: 60%;
-  border: 2px solid #000;
+  border: none;
   text-align: center;
+  flex: 1 1 auto;
+  margin: 0 20px;
+}
+select {
+  border: none;
+  color: black;
+  margin: 10px;
+  padding: 5px;
+  border: 2px solid #000;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid #000;
+  width: 100%;
+  border-radius: 25px;
 }

@@ -6,6 +6,11 @@ body,
   padding: 0;
   margin: 0;
 }
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
 .absolute-center {
   display: flex;
   flex-direction: row;
@@ -13,4 +18,34 @@ body,
   align-items: center;
   width: 100%;
   min-height: 100vh;
+}
+
+.button {
+  appearance: button;
+  border: 1px solid #000;
+  padding: 8px 32px;
+  color: white;
+  transition: all 0.2s;
+  background-color: black;
+  width: max-content;
+  border-radius: 25px;
+}
+.button:hover {
+  background-color: #2f2f2f;
+  color: white;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
 }

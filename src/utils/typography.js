@@ -1,4 +1,4 @@
 import Typography from "typography"
-import funstonTheme from "typography-theme-funston"
-const typography = new Typography(funstonTheme)
+import grandViewTheme from "typography-theme-grand-view"
+const typography = new Typography(grandViewTheme)
 export default typography
