@@ -1,11 +1,13 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import layoutStyles from "./layout.module.css"
+import "antd/dist/antd.css"
+
 import Header from "./header"
 import Footer from "./footer"
 
 export default ({ children }) => (
-  <div className={layoutStyles.layout}>
+  <div>
     <Helmet>
       <meta
         name="Description"

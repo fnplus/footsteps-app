@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Arvo&display=swap");
+
+.menuItems {
+  font-size: 18px;
+  margin: 0 40px;
+  font-family: "Arvo", serif;
+}
+
+.menuItems:hover {
+  border-bottom: 2px solid black !important;
+}
+
+.menuItems a:hover {
+  color: black !important;
+}
+
+.menuBtn {
+  background-color: black;
+}
+
+.menuBtn:hover {
+  background-color: black !important;
+  border-bottom: 2px solid black !important;
+}
+
+.menuBtn a:hover {
+  color: white !important;
+}
+
+.menuBtn a {
+  color: white !important;
+}

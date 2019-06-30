@@ -1,30 +1,58 @@
-import React from "react"
-import { Link } from "gatsby"
-import headerStyles from "./header.module.css"
-import brandLogo from "../images/brand-logo.png"
-export default () => (
-  <header>
-    <nav>
-      <img className={headerStyles.logo} src={brandLogo} />
-      <ul className={headerStyles.navLinks}>
-        <li>
-          <Link to={"/"}>Home</Link>
-        </li>
-        <li>
-          <Link to={"/about/"}>About</Link>
-        </li>
-        <li>
-          <Link to={"/profile/"}>Profile</Link>
-        </li>
-        <li>
-          <Link to={"/join-us/"}>Join Us</Link>
-        </li>
-        <li>
-          <Link className="button" to={"/"}>
-            Get Started
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  </header>
-)
+import React, { Component } from "react"
+import { Drawer, Button, Row, Col } from "antd"
+import styles from "./header.module.css"
+
+import NavMenu from "./menu"
+export class header extends Component {
+  state = {
+    visible: false,
+  }
+
+  showDrawer = () => {
+    this.setState({
+      visible: !this.state.visible,
+    })
+  }
+
+  onClose = () => {
+    this.setState({
+      visible: false,
+    })
+  }
+
+  render() {
+    return (
+      <nav className={styles.navContainer}>
+        <Row>
+          <Col span={2} className={styles.logo}>
+            <img src={require("../images/brand-logo.png")} alt="" />
+          </Col>
+          <Col span={22}>
+            <div className={styles.menuContainer}>
+              <NavMenu mode="horizontal" />
+
+              <Button
+                className={styles.mobileToggle}
+                type="primary"
+                onClick={this.showDrawer}
+              >
+                <span className="barsBtn"></span>
+              </Button>
+
+              <Drawer
+                placement="right"
+                closable={false}
+                onClose={this.onClose}
+                visible={this.state.visible}
+              >
+                <NavMenu mode="vertical" />
+              </Drawer>
+            </div>
+          </Col>
+        </Row>
+      </nav>
+    )
+  }
+}
+
+export default header
