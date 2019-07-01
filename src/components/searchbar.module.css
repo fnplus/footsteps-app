@@ -3,17 +3,29 @@ input[type="search"] {
   text-align: center;
   flex: 1 1 auto;
   margin: 0 20px;
+  font-size: 22px;
 }
+
+input[type="search"]:focus {
+  outline: none;
+}
+
 select {
   border: none;
   color: black;
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
   border: 2px solid #000;
   background-color: black;
   color: white;
   border-radius: 25px;
+  width: 140px;
 }
+
+select:focus {
+  outline: none;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -21,4 +33,18 @@ select {
   border: 2px solid #000;
   width: 100%;
   border-radius: 25px;
+  font-family: "Arvo", serif;
+}
+
+@media only screen and (max-width: 768px) {
+  input[type="search"] {
+    font-size: 15px;
+    margin: 0 0 0 20px;
+  }
+
+  select {
+    margin: 5px 5px 5px 0px;
+    font-size: 12px;
+    width: 110px;
+  }
 }

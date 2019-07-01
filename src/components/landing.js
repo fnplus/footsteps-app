@@ -1,18 +1,27 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Row, Col, Button } from "antd"
+
 import Searchbar from "./searchbar"
-import roadSign from "../images/road-sign.svg"
-import landingStyles from "./landing.module.css"
+import styles from "./landing.module.css"
+
 export default () => (
-  <div className="container row">
-    <section className="container column">
-      <h1>FootSteps</h1>
-      <p>Learning Resource Aggregator</p>
-      <Searchbar />
-      <Link className="button" to={"/"}>
-        Search
-      </Link>
-    </section>
-    <img src={roadSign} width="300px" height="300px" />
+  <div className={styles.container}>
+    <Row>
+      <Col sm={24} lg={14}>
+        <h1 className={styles.heading}>Footsteps</h1>
+        <p className={styles.subHeading}>Learning Resource Aggregator</p>
+        <img
+          src={require("../images/road-sign.svg")}
+          alt=""
+          className={styles.mobileImage}
+        />
+        <Searchbar />
+
+        <Button className={styles.searchBtn}>Search</Button>
+      </Col>
+      <Col sm={24} lg={10} className={styles.imageContainer}>
+        <img src={require("../images/road-sign.svg")} alt="" />
+      </Col>
+    </Row>
   </div>
 )
