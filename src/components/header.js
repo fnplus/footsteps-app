@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Drawer, Button, Row, Col, Icon } from "antd"
-import styles from "./header.module.css"
+import styles from "../styles/header.module.css"
 
 import NavMenu from "./menu"
 export class header extends Component {

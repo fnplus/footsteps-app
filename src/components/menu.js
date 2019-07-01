@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Menu } from "antd"
 import { Link } from "gatsby"
 
-import styles from "./menu.module.css"
+import styles from "../styles/menu.module.css"
 
 const { Item } = Menu
 

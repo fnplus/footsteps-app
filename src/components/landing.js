@@ -2,7 +2,7 @@ import React from "react"
 import { Row, Col, Button } from "antd"
 
 import Searchbar from "./searchbar"
-import styles from "./landing.module.css"
+import styles from "../styles/landing.module.css"
 
 export default () => (
   <div className={styles.container}>

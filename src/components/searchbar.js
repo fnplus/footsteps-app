@@ -1,5 +1,5 @@
 import React from "react"
-import searchbarStyles from "./searchbar.module.css"
+import searchbarStyles from "../styles/searchbar.module.css"
 export default () => (
   <div className={searchbarStyles.container}>
     <input

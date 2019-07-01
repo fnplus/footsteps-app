@@ -1,5 +1,5 @@
 import React from "react"
-import loginStyles from "./login.module.css"
+import loginStyles from "../styles/login.module.css"
 export default () => (
   <form>
     <h1>Join Us!</h1>

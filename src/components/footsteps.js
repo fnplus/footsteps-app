@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import footstepStyles from "./footsteps.module.css"
+import footstepStyles from "../styles/footsteps.module.css"
 
 const Footstep = ({
   title,

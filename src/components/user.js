@@ -1,6 +1,6 @@
 import React from "react"
 import Footsteps from "./footsteps"
-import userStyles from "./user.module.css"
+import userStyles from "../styles/user.module.css"
 
 export default ({ data }) => {
   return (

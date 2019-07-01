@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import layoutStyles from "./layout.module.css"
+import layoutStyles from "../styles/layout.module.css"
 import "antd/dist/antd.css"
 
 import Header from "./header"
