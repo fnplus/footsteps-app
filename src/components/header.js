@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Drawer, Button, Row, Col } from "antd"
+import { Drawer, Button, Row, Col, Icon } from "antd"
 import styles from "./header.module.css"
 
 import NavMenu from "./menu"
@@ -24,19 +24,17 @@ export class header extends Component {
     return (
       <nav className={styles.navContainer}>
         <Row>
-          <Col span={2} className={styles.logo}>
+          <Col xs={6} md={2} className={styles.logo}>
             <img src={require("../images/brand-logo.png")} alt="" />
           </Col>
-          <Col span={22}>
+          <Col xs={18} md={22}>
             <div className={styles.menuContainer}>
-              <NavMenu mode="horizontal" />
+              <div className={styles.navDesktop}>
+                <NavMenu mode="horizontal" />
+              </div>
 
-              <Button
-                className={styles.mobileToggle}
-                type="primary"
-                onClick={this.showDrawer}
-              >
-                <span className="barsBtn"></span>
+              <Button className={styles.mobileToggle} onClick={this.showDrawer}>
+                <Icon type="menu" />
               </Button>
 
               <Drawer
@@ -44,8 +42,9 @@ export class header extends Component {
                 closable={false}
                 onClose={this.onClose}
                 visible={this.state.visible}
+                width={200}
               >
-                <NavMenu mode="vertical" />
+                <NavMenu mode="vertical" className={styles.navMobile} />
               </Drawer>
             </div>
           </Col>

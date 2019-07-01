@@ -16,6 +16,7 @@
 
 .menuBtn {
   background-color: black;
+  border-radius: 40px;
 }
 
 .menuBtn:hover {
@@ -29,4 +30,10 @@
 
 .menuBtn a {
   color: white !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .menuBtn {
+    padding-top: 30px;
+  }
 }

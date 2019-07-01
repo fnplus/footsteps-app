@@ -16,4 +16,19 @@
 
 .mobileToggle {
   display: none;
+  float: right;
+  border: none;
+  font-size: 25px;
+  margin-top: 3px;
+  padding-right: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navDesktop {
+    display: none;
+  }
+
+  .mobileToggle {
+    display: inline-block;
+  }
 }
