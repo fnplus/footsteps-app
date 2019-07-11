@@ -14,8 +14,6 @@ export class user extends Component {
   }
 
   changeView = title => {
-    let state = this.state
-
     if (title === "footsteps") {
       this.setState({
         footsteps: true,
@@ -56,15 +54,17 @@ export class user extends Component {
             <div className={styles.userInfo}>
               <Row>
                 <Col span={8}>
-                  <div className={styles.count}>{data.followers}</div>
+                  <div className={styles.count}>{data.followers.length}</div>
                   <div className={styles.text}>Followers</div>
                 </Col>
                 <Col span={8}>
-                  <div className={styles.count}>{data.following}</div>
+                  <div className={styles.count}>{data.following.length}</div>
                   <div className={styles.text}>Following</div>
                 </Col>
                 <Col span={8}>
-                  <div className={styles.count}>{data.footsteps.length}</div>
+                  <div className={styles.count}>
+                    {data.learningPaths.length}
+                  </div>
                   <div className={styles.text}>Footsteps</div>
                 </Col>
               </Row>
@@ -116,21 +116,33 @@ export class user extends Component {
                 <Col
                   onClick={() => this.changeView("footsteps")}
                   span={6}
-                  className={styles.menuItem}
+                  className={
+                    this.state.footsteps
+                      ? styles.menuItem + " " + styles.active
+                      : styles.menuItem
+                  }
                 >
                   Footsteps
                 </Col>
                 <Col
                   onClick={() => this.changeView("following")}
                   span={6}
-                  className={styles.menuItem}
+                  className={
+                    this.state.following
+                      ? styles.menuItem + " " + styles.active
+                      : styles.menuItem
+                  }
                 >
                   Following
                 </Col>
                 <Col
                   onClick={() => this.changeView("followers")}
                   span={6}
-                  className={styles.menuItem}
+                  className={
+                    this.state.followers
+                      ? styles.menuItem + " " + styles.active
+                      : styles.menuItem
+                  }
                 >
                   Followers
                 </Col>

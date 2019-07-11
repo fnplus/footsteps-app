@@ -114,10 +114,9 @@
 
 .menuItem:hover {
   transform: scale(1.1);
-  border-bottom: 2px #3f3f3f solid;
   cursor: pointer;
 }
 
-.menuItem .active {
+.active {
   border-bottom: 2px #3f3f3f solid;
 }
