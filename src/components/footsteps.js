@@ -1,32 +1,11 @@
-import React from "react"
+import React, { Component } from "react"
 
-// eslint-disable-next-line
-import footstepStyles from "../styles/footsteps.module.css"
+export class footsteps extends Component {
+  render() {
+    const data = this.props.footsteps
 
-const Footstep = ({
-  title,
-  description,
-  tags,
-  level,
-  resourceURL,
-  resourceType,
-}) => (
-  <li>
-    <a href={resourceURL}>
-      {title}
-      <span>[{level}]</span>
-      <span>[{resourceType}]</span>
-    </a>
-    <p>{description}</p>
-    <p>Tags: {tags.join(", ")}</p>
-  </li>
-)
-export default ({ footsteps }) => {
-  return (
-    <ul>
-      {footsteps.map(footstep => (
-        <Footstep key={footstep.title} {...footstep} />
-      ))}
-    </ul>
-  )
+    return <div>{data}</div>
+  }
 }
+
+export default footsteps
