@@ -1,6 +1,8 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import layoutStyles from "../styles/layout.module.css"
+
+// eslint-disable-next-line
+import styles from "../styles/layout.module.css"
 import "antd/dist/antd.css"
 
 import Header from "./header"
@@ -15,8 +17,10 @@ export default ({ children }) => (
       />
       <title>FootSteps</title>
     </Helmet>
-    <Header />
-    <main>{children}</main>
+    <div className={styles.content}>
+      <Header />
+      <main>{children}</main>
+    </div>
     <Footer />
   </div>
 )

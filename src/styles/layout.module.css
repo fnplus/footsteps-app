@@ -1,14 +1,5 @@
-.layout {
-  margin-left: 5%;
-  margin-right: 5%;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
+.content {
   min-height: 100vh;
-  text-align: center;
-}
-main {
-  flex: 1;
-  padding: 10px;
-  flex: 1 1 auto;
+  margin-bottom: -40px;
+  padding-bottom: 40px;
 }

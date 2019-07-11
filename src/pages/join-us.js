@@ -44,7 +44,12 @@ export default () => (
           </form>
         </Col>
         <Col xs={24} lg={12}>
-          <img src={voiceInterface} width="300px" height="300px" />
+          <img
+            src={voiceInterface}
+            alt="voiceInterface"
+            width="300px"
+            height="300px"
+          />
         </Col>
       </Row>
     </div>

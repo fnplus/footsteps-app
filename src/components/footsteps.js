@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+
+// eslint-disable-next-line
 import footstepStyles from "../styles/footsteps.module.css"
 
 const Footstep = ({
