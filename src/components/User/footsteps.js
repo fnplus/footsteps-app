@@ -4,7 +4,11 @@ export class footsteps extends Component {
   render() {
     const data = this.props.footsteps
 
-    return <div>{data}</div>
+    return (
+      <div>
+        <h1>Footsteps</h1>
+      </div>
+    )
   }
 }
 

@@ -96,3 +96,28 @@
   margin: 0 5px;
   font-size: 10pt;
 }
+
+.menu {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.menuItem {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  transition: transform 0.2s;
+  padding-bottom: 10px;
+  max-width: 160px;
+  margin-right: 30px;
+}
+
+.menuItem:hover {
+  transform: scale(1.1);
+  border-bottom: 2px #3f3f3f solid;
+  cursor: pointer;
+}
+
+.menuItem .active {
+  border-bottom: 2px #3f3f3f solid;
+}

@@ -2,9 +2,41 @@ import React, { Component } from "react"
 import { Row, Col, Icon } from "antd"
 
 import styles from "../styles/user.module.css"
-import Footsteps from "./footsteps"
+import Footsteps from "./User/footsteps"
+import Followers from "./User/followers"
+import Following from "./User/following"
 
 export class user extends Component {
+  state = {
+    footsteps: true,
+    followers: false,
+    following: false,
+  }
+
+  changeView = title => {
+    let state = this.state
+
+    if (title === "footsteps") {
+      this.setState({
+        footsteps: true,
+        followers: false,
+        following: false,
+      })
+    } else if (title === "following") {
+      this.setState({
+        footsteps: false,
+        followers: false,
+        following: true,
+      })
+    } else if (title === "followers") {
+      this.setState({
+        footsteps: false,
+        followers: true,
+        following: false,
+      })
+    }
+  }
+
   render() {
     const data = this.props.data
 
@@ -77,10 +109,40 @@ export class user extends Component {
               </Row>
             </div>
           </Col>
-          <Col
-            lg={16}
-            style={{ backgroundColor: "blue", height: "100vh" }}
-          ></Col>
+
+          <Col lg={16}>
+            <div className={styles.menu}>
+              <Row>
+                <Col
+                  onClick={() => this.changeView("footsteps")}
+                  span={6}
+                  className={styles.menuItem}
+                >
+                  Footsteps
+                </Col>
+                <Col
+                  onClick={() => this.changeView("following")}
+                  span={6}
+                  className={styles.menuItem}
+                >
+                  Following
+                </Col>
+                <Col
+                  onClick={() => this.changeView("followers")}
+                  span={6}
+                  className={styles.menuItem}
+                >
+                  Followers
+                </Col>
+              </Row>
+            </div>
+
+            <div className={styles.content}>
+              {this.state.footsteps ? <Footsteps /> : ""}
+              {this.state.followers ? <Followers /> : ""}
+              {this.state.following ? <Following /> : ""}
+            </div>
+          </Col>
         </Row>
       </div>
     )
