@@ -73,3 +73,26 @@
 .icon:hover {
   transform: scale(1.4);
 }
+
+.skills {
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 15pt;
+  font-weight: 600;
+  color: #3f3f3f;
+  margin-bottom: 20px;
+}
+
+.skill {
+  display: inline-block;
+  padding: 0 10px;
+  border: 1px black solid;
+  border-radius: 20px;
+  color: black;
+  margin: 0 5px;
+  font-size: 10pt;
+}

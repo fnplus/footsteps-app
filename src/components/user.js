@@ -38,7 +38,18 @@ export class user extends Component {
               </Row>
             </div>
 
-            <div className={styles.bio}>{data.bio.slice(0, 200)}</div>
+            <div className={styles.bio}>{data.bio}</div>
+
+            <div className={styles.skills}>
+              <h2>Skills</h2>
+              {data.coreSkills.map((skill, i) => {
+                return (
+                  <div key={i} className={styles.skill}>
+                    {skill}
+                  </div>
+                )
+              })}
+            </div>
 
             <div className={styles.social}>
               <Row>
