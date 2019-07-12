@@ -13,7 +13,6 @@ export class footstepsCard extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.footstep)
     if (this.props.footstep.resourceType === "Video") {
       this.setState({
         resourceTitle: "Video Tutorial",

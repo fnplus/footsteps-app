@@ -1,13 +1,19 @@
-.footstepsContainerHorizontal {
+.footstepsContainer {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding-top: 60px;
+  /* padding-top: 60px; */
   margin: 10px 50px;
+  height: auto;
 }
 
-.footstepsContainerHorizontal::-webkit-scrollbar {
+.footstepsContainer::-webkit-scrollbar {
   display: none;
+}
+
+.footstepsHide {
+  height: 0px;
+  transition: height 0.5s;
 }
 
 .cardContainer {
@@ -17,7 +23,7 @@
 .cardContainer {
   width: 250px;
   height: 380px;
-  margin: 10px 20px;
+  margin: 60px 20px 10px 20px;
   border-radius: 40px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
@@ -100,8 +106,34 @@
   text-align: right;
 }
 
+.learningPathsContainer {
+  margin-top: 50px;
+}
+
+.learningPathCard {
+  width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pathIcon {
+  margin-bottom: 0;
+  width: 150px;
+}
+
+.pathExpand {
+  text-align: center;
+  font-size: 30px;
+  line-height: 150px;
+}
+
+.pathHeading {
+  padding: 10px;
+}
+
 @media only screen and (max-width: 768px) {
-  .footstepsContainerHorizontal {
+  .footstepsContainer {
     margin: 10px 0;
   }
 }
