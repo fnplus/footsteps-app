@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col } from "antd"
+import { Row, Col, Icon } from "antd"
 
 import styles from "../../styles/footsteps.module.css"
 
@@ -68,6 +68,27 @@ export class footstepsCard extends Component {
           </Col>
           <Col className={styles.typeTitle} span={20}>
             {this.state.resourceTitle}
+          </Col>
+        </Row>
+
+        <Row className={styles.levelContainer}>
+          <Col className={styles.levelTitle} span={8}>
+            Level:{" "}
+          </Col>
+          <Col className={styles.levelType} span={16}>
+            {data.level}
+          </Col>
+        </Row>
+
+        <Row
+          className={styles.resourceLink}
+          onClick={() => window.open(data.resourceURL)}
+        >
+          <Col span={16}>
+            <h4 className={styles.linkTitle}>{this.state.resourceLink}</h4>
+          </Col>
+          <Col span={8} className={styles.linkArrow}>
+            <Icon type="right" />
           </Col>
         </Row>
       </div>

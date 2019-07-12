@@ -90,6 +90,7 @@ export class user extends Component {
                     onClick={() => window.open(data.social.facebook)}
                     className={styles.icon}
                     type="facebook"
+                    theme="filled"
                   />
                 </Col>
                 <Col span={8}>
@@ -97,6 +98,7 @@ export class user extends Component {
                     onClick={() => window.open(data.social.github)}
                     className={styles.icon}
                     type="github"
+                    theme="filled"
                   />
                 </Col>
                 <Col span={8}>
@@ -104,6 +106,7 @@ export class user extends Component {
                     onClick={() => window.open(data.social.linkedin)}
                     className={styles.icon}
                     type="linkedin"
+                    theme="filled"
                   />
                 </Col>
               </Row>

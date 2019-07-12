@@ -27,30 +27,6 @@ export class footsteps extends Component {
               {path.footsteps.map(footstep => (
                 <FootstepCard footstep={footstep} />
               ))}
-              {/* <div className={styles.cardContainer}>
-                <h2>Card</h2>
-              </div>
-              <div className={styles.cardContainer}>
-                <h2>Card</h2>
-              </div>
-              <div className={styles.cardContainer}>
-                <h2>Card</h2>
-              </div>
-              <div className={styles.cardContainer}>
-                <h2>Card</h2>
-              </div>
-              <div className={styles.cardContainer}>
-                <h2>Card</h2>
-              </div>
-              <div className={styles.cardContainer}>
-                <h2>Card</h2>
-              </div>
-              <div className={styles.cardContainer}>
-                <h2>Card</h2>
-              </div>
-              <div className={styles.cardContainer}>
-                <h2>Card</h2>
-              </div> */}
             </div>
           </div>
         ))}
