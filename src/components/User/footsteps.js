@@ -30,7 +30,7 @@ export class footsteps extends Component {
                 <Col span={17} className={styles.pathHeading}>
                   <h1>{path.title}</h1>
                   <h5>{path.description}</h5>
-                  <Progress percent={50} />
+                  <Progress percent={path.percent} />
                 </Col>
                 <Col
                   span={2}

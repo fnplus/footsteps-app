@@ -149,4 +149,8 @@
   .footstepsContainer {
     margin: 10px 0;
   }
+
+  .pathIcon {
+    margin-top: 40px;
+  }
 }
