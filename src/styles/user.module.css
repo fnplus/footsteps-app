@@ -5,6 +5,16 @@
   margin-right: auto;
 }
 
+.profile {
+  padding: 40px;
+}
+
+.profileContainer {
+  border-radius: 40px;
+  padding: 30px 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
 .avatar {
   border-radius: 50%;
   width: 200px;
@@ -13,7 +23,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
   margin-bottom: 20px;
 }
 
@@ -95,6 +104,7 @@
   color: black;
   margin: 0 5px;
   font-size: 10pt;
+  margin-bottom: 6px;
 }
 
 .menu {
@@ -119,4 +129,16 @@
 
 .active {
   border-bottom: 2px #3f3f3f solid;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile {
+    padding: 0px;
+  }
+
+  .menuItem {
+    font-size: 14px;
+    margin-right: 20px;
+    width: auto;
+  }
 }
