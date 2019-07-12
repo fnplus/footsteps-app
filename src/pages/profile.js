@@ -7,7 +7,7 @@ export default () => {
   const [data, setData] = useState(null)
   const fetchData = async () => {
     const result = await fetch(
-      "http://www.mocky.io/v2/5d287b3d2c0000cf2f3eda8a"
+      "https://www.mocky.io/v2/5d28c3582c00005d693edc0e"
     )
     const resultObject = await result.json()
     console.log(resultObject)

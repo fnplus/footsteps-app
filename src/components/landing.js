@@ -1,5 +1,5 @@
 import React from "react"
-import { Row, Col, Button } from "antd"
+import { Row, Col } from "antd"
 
 import Searchbar from "./searchbar"
 import styles from "../styles/landing.module.css"
