@@ -1,12 +1,59 @@
 import React, { Component } from "react"
+import { Row, Col } from "antd"
+
+import styles from "../../styles/footsteps.module.css"
+// import "../../styles/footsteps.module.css"
+import FootstepCard from "./footstepsCard"
 
 export class footsteps extends Component {
   render() {
-    const data = this.props.footsteps
+    const data = this.props.learningPaths
 
     return (
       <div>
-        <h1>Footsteps</h1>
+        {data.map(path => (
+          <div>
+            <div className={styles.pathHeading}>
+              <h1>{path.title}</h1>
+              <h5>{path.description}</h5>
+            </div>
+            <div
+              className={
+                styles.footstepsContainerHorizontal +
+                " " +
+                styles.footstepsContainer
+              }
+            >
+              {path.footsteps.map(footstep => (
+                <FootstepCard footstep={footstep} />
+              ))}
+              {/* <div className={styles.cardContainer}>
+                <h2>Card</h2>
+              </div>
+              <div className={styles.cardContainer}>
+                <h2>Card</h2>
+              </div>
+              <div className={styles.cardContainer}>
+                <h2>Card</h2>
+              </div>
+              <div className={styles.cardContainer}>
+                <h2>Card</h2>
+              </div>
+              <div className={styles.cardContainer}>
+                <h2>Card</h2>
+              </div>
+              <div className={styles.cardContainer}>
+                <h2>Card</h2>
+              </div>
+              <div className={styles.cardContainer}>
+                <h2>Card</h2>
+              </div>
+              <div className={styles.cardContainer}>
+                <h2>Card</h2>
+              </div> */}
+            </div>
+          </div>
+        ))}
       </div>
     )
   }

@@ -1,0 +1,35 @@
+div {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.footstepsContainerHorizontal {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-top: 100px;
+}
+
+.cardContainer {
+  flex: 0 0 auto;
+}
+
+.cardContainer {
+  width: 250px;
+  height: 400px;
+  margin: 10px 20px;
+  background: #abc;
+  border-radius: 40px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+}

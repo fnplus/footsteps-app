@@ -150,7 +150,11 @@ export class user extends Component {
             </div>
 
             <div className={styles.content}>
-              {this.state.footsteps ? <Footsteps /> : ""}
+              {this.state.footsteps ? (
+                <Footsteps learningPaths={data.learningPaths} />
+              ) : (
+                ""
+              )}
               {this.state.followers ? <Followers /> : ""}
               {this.state.following ? <Following /> : ""}
             </div>
