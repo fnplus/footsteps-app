@@ -14,18 +14,13 @@ class NavMenu extends Component {
           <Item className={styles.menuItems}>
             <Link to="/">Home</Link>
           </Item>
-          <Item className={styles.menuItems}>
-            <Link to="/about/">About</Link>
-          </Item>
+
           <Item className={styles.menuItems}>
             <Link to="/profile/">Profile</Link>
           </Item>
+
           <Item className={styles.menuItems}>
-            <Link to="/join-us/">Join Us</Link>
-          </Item>
-          <Item className={styles.menuSpace}></Item>
-          <Item className={styles.menuItems + " " + styles.menuBtn}>
-            <Link to="/">Get Started</Link>
+            <Link to="/about/">About</Link>
           </Item>
         </Menu>
       </div>

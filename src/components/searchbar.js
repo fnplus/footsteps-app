@@ -16,12 +16,7 @@ export default () => (
         placeholder="Search Footsteps"
         aria-label="Search"
       />
-      <select>
-        <option>All</option>
-        <option>Beginner</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-      </select>
+      <div className={searchbarStyles.searchBtn}>Search</div>
     </div>
   </div>
 )

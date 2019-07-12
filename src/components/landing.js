@@ -16,8 +16,6 @@ export default () => (
           className={styles.mobileImage}
         />
         <Searchbar />
-
-        <Button className={styles.searchBtn}>Search</Button>
       </Col>
       <Col sm={24} lg={10} className={styles.imageContainer}>
         <img src={require("../images/road-sign.svg")} alt="" />
