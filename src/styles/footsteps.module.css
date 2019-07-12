@@ -2,12 +2,11 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  /* padding-top: 60px; */
   margin: 10px 50px;
-  /* height: auto; */
   opacity: 1;
   box-sizing: border-box;
   transition: height 200ms 0ms, opacity 200ms 200ms;
+  height: 500px;
 }
 
 .footstepsContainer::-webkit-scrollbar {
@@ -143,6 +142,26 @@
 
 .pathHeading {
   padding: 10px;
+}
+
+.timelineDot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #029843;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.timelineBox {
+  width: 260px;
+  background: #029843;
+  height: 5px;
+  position: relative;
+  top: -7.5px;
+  left: 140px;
 }
 
 @media only screen and (max-width: 768px) {

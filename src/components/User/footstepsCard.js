@@ -90,6 +90,17 @@ export class footstepsCard extends Component {
             <Icon type="right" />
           </Col>
         </Row>
+        <div style={{ display: "inlineBlock" }}>
+          <div className={styles.timelineDot}></div>
+          <div
+            style={
+              this.props.position + 1 === this.props.size
+                ? { display: "none" }
+                : {}
+            }
+            className={styles.timelineBox}
+          ></div>
+        </div>
       </div>
     )
   }

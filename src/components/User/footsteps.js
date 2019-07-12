@@ -51,8 +51,12 @@ export class footsteps extends Component {
                   : styles.footstepsContainer + " " + styles.footstepsHide
               }
             >
-              {path.footsteps.map(footstep => (
-                <FootstepCard footstep={footstep} />
+              {path.footsteps.map((footstep, index) => (
+                <FootstepCard
+                  footstep={footstep}
+                  size={path.footsteps.length}
+                  position={index}
+                />
               ))}
             </div>
           </div>
