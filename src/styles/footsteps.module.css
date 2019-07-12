@@ -10,7 +10,8 @@ div {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding-top: 100px;
+  padding-top: 60px;
+  margin: 10px 50px;
 }
 
 .cardContainer {
@@ -21,15 +22,61 @@ div {
   width: 250px;
   height: 400px;
   margin: 10px 20px;
-  background: #abc;
   border-radius: 40px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .icon {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -50px;
+  margin-top: -40px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.detailsContainer {
+  padding: 0 10px;
+  font-family: "Montserrat", sans-serif;
+  height: 180px;
+  /* background: red; */
+}
+
+.description {
+  padding: 20px 10px 10px 10px;
+  text-align: justify;
+  font-size: 15px;
+}
+
+.typeContainer {
+  height: 30px;
+  padding: 0 30px;
+}
+
+.typeImage {
+  width: 30px;
+  height: 30px;
+}
+
+.typeTitle {
+  line-height: 30px;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+  .footstepsContainerHorizontal {
+    margin: 10px 0;
+  }
 }
