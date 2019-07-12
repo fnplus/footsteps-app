@@ -3,8 +3,7 @@ import { Row, Col, Icon } from "antd"
 
 import styles from "../styles/user.module.css"
 import Footsteps from "./User/footsteps"
-import Followers from "./User/followers"
-import Following from "./User/following"
+import Follow from "./User/follow"
 
 export class user extends Component {
   state = {
@@ -163,8 +162,8 @@ export class user extends Component {
               ) : (
                 ""
               )}
-              {this.state.followers ? <Followers /> : ""}
-              {this.state.following ? <Following /> : ""}
+              {this.state.followers ? <Follow users={data.followers} /> : ""}
+              {this.state.following ? <Follow users={data.following} /> : ""}
             </div>
           </Col>
         </Row>

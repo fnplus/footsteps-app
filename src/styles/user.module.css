@@ -17,8 +17,8 @@
 
 .avatar {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   display: block;
   margin-left: auto;
@@ -129,6 +129,28 @@
 
 .active {
   border-bottom: 2px #3f3f3f solid;
+}
+
+.followContainer {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.userContainer {
+  padding: 20px;
+  height: 250px;
+}
+
+.userImg {
+  border-radius: 50%;
+}
+
+.userName {
+  text-align: center;
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 768px) {

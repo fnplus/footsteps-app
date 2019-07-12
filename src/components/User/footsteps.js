@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import { Row, Col } from "antd"
 
 import styles from "../../styles/footsteps.module.css"
-// import "../../styles/footsteps.module.css"
+
 import FootstepCard from "./footstepsCard"
 
 export class footsteps extends Component {
