@@ -4,7 +4,10 @@
   overflow-x: auto;
   /* padding-top: 60px; */
   margin: 10px 50px;
-  height: auto;
+  /* height: auto; */
+  opacity: 1;
+  box-sizing: border-box;
+  transition: height 200ms 0ms, opacity 200ms 200ms;
 }
 
 .footstepsContainer::-webkit-scrollbar {
@@ -12,8 +15,9 @@
 }
 
 .footstepsHide {
+  transition: height 200ms 200ms, opacity 200ms 0ms;
+  opacity: 0;
   height: 0px;
-  transition: height 0.5s;
 }
 
 .cardContainer {
@@ -126,6 +130,15 @@
   text-align: center;
   font-size: 30px;
   line-height: 150px;
+  -moz-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.expandRotate {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .pathHeading {

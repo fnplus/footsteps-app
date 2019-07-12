@@ -32,7 +32,14 @@ export class footsteps extends Component {
                   <h5>{path.description}</h5>
                   <Progress percent={50} />
                 </Col>
-                <Col span={2} className={styles.pathExpand}>
+                <Col
+                  span={2}
+                  className={
+                    this.state.expand
+                      ? styles.pathExpand + " " + styles.expandRotate
+                      : styles.pathExpand
+                  }
+                >
                   <Icon type="down" onClick={() => this.expand()} />
                 </Col>
               </Row>
