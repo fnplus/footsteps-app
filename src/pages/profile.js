@@ -8,7 +8,7 @@ export default () => {
   return (
     <Query
       query={USERS_QUERY_APOLLO}
-      variables={{ id: process.env.MOCK_USER_ID }}
+      variables={{ id: process.env.GATSBY_MOCK_USER_ID }}
     >
       {({ data, loading, error }) => {
         if (loading)

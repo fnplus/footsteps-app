@@ -106,6 +106,5 @@ export class footstepsCard extends Component {
     )
   }
 }
-const levels = ["Beginner", "Intermediate", "Expert"]
 
 export default footstepsCard
