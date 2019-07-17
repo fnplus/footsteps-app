@@ -1,4 +1,3 @@
-import "./src/styles/global.css"
 import React from "react"
 import { ApolloProvider } from "react-apollo"
 import { client } from "./src/apollo/client"

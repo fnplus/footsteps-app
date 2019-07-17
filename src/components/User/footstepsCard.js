@@ -3,6 +3,7 @@ import { Row, Col, Icon } from "antd"
 
 import styles from "../../styles/footsteps.module.css"
 
+const levelsText = ["Beginner", "Intermediate", "Expert"]
 export class footstepsCard extends Component {
   state = {
     resourceTitle: "",
@@ -13,15 +14,15 @@ export class footstepsCard extends Component {
   }
 
   componentDidMount() {
-    if (this.props.footstep.resourceType === "Video") {
+    if (this.props.footstep.resource_type === "Video") {
       this.setState({
         resourceTitle: "Video Tutorial",
         resourceLink: "Watch Video",
         video: true,
       })
     } else if (
-      this.props.footstep.resourceType === "Website" ||
-      this.props.footstep.resourceType === "Documentation"
+      this.props.footstep.resource_type === "Website" ||
+      this.props.footstep.resource_type === "Documentation"
     ) {
       this.setState({
         resourceTitle: "Documentation",
@@ -36,7 +37,7 @@ export class footstepsCard extends Component {
 
     return (
       <div className={styles.cardContainer}>
-        <img className={styles.icon} src={data.resourceIcon} alt="" />
+        <img className={styles.icon} src={data.resource_icon} alt="" />
 
         <div className={styles.detailsContainer}>
           <div className={styles.title}>{data.title}</div>
@@ -75,7 +76,7 @@ export class footstepsCard extends Component {
             Level:{" "}
           </Col>
           <Col className={styles.levelType} span={16}>
-            {data.level}
+            {levelsText[data.level]}
           </Col>
         </Row>
 
@@ -105,5 +106,6 @@ export class footstepsCard extends Component {
     )
   }
 }
+const levels = ["Beginner", "Intermediate", "Expert"]
 
 export default footstepsCard

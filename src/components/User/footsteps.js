@@ -16,7 +16,7 @@ export class footsteps extends Component {
   }
 
   render() {
-    const data = this.props.learningPaths
+    const data = this.props.learning_paths
 
     return (
       <div className={styles.learningPathsContainer}>

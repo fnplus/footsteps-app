@@ -42,10 +42,10 @@ export class user extends Component {
         <Row>
           <Col lg={8} className={styles.profile}>
             <div className={styles.profileContainer}>
-              <img className={styles.avatar} src={data.profilePic} alt="" />
+              <img className={styles.avatar} src={data.profile_pic} alt="" />
               <div className={styles.userDetails}>
                 <h2>
-                  {data.firstName} {data.lastName}
+                  {data.first_name} {data.last_name}
                 </h2>
                 <h4>{data.username}</h4>
                 <h4>{data.about}</h4>
@@ -54,16 +54,20 @@ export class user extends Component {
               <div className={styles.userInfo}>
                 <Row>
                   <Col span={8}>
-                    <div className={styles.count}>{data.followers.length}</div>
+                    <div className={styles.count}>
+                      {data.followers_aggregate.aggregate.count}
+                    </div>
                     <div className={styles.text}>Followers</div>
                   </Col>
                   <Col span={8}>
-                    <div className={styles.count}>{data.following.length}</div>
+                    <div className={styles.count}>
+                      {data.following_aggregate.aggregate.count}
+                    </div>
                     <div className={styles.text}>Following</div>
                   </Col>
                   <Col span={8}>
                     <div className={styles.count}>
-                      {data.learningPaths.length}
+                      {data.learning_paths_aggregate.aggregate.count}
                     </div>
                     <div className={styles.text}>Footsteps</div>
                   </Col>
@@ -74,7 +78,7 @@ export class user extends Component {
 
               <div className={styles.skills}>
                 <h2>Skills</h2>
-                {data.coreSkills.map((skill, i) => {
+                {data.skills.split(",").map((skill, i) => {
                   return (
                     <div key={i} className={styles.skill}>
                       {skill}
@@ -87,7 +91,7 @@ export class user extends Component {
                 <Row>
                   <Col span={8}>
                     <Icon
-                      onClick={() => window.open(data.social.facebook)}
+                      onClick={() => window.open(data.facebook)}
                       className={styles.icon}
                       type="facebook"
                       theme="filled"
@@ -95,7 +99,7 @@ export class user extends Component {
                   </Col>
                   <Col span={8}>
                     <Icon
-                      onClick={() => window.open(data.social.github)}
+                      onClick={() => window.open(data.github)}
                       className={styles.icon}
                       type="github"
                       theme="filled"
@@ -103,7 +107,7 @@ export class user extends Component {
                   </Col>
                   <Col span={8}>
                     <Icon
-                      onClick={() => window.open(data.social.linkedin)}
+                      onClick={() => window.open(data.linkedin)}
                       className={styles.icon}
                       type="linkedin"
                       theme="filled"
@@ -158,12 +162,20 @@ export class user extends Component {
 
             <div className={styles.content}>
               {this.state.footsteps ? (
-                <Footsteps learningPaths={data.learningPaths} />
+                <Footsteps learning_paths={data.learning_paths} />
               ) : (
                 ""
               )}
-              {this.state.followers ? <Follow users={data.followers} /> : ""}
-              {this.state.following ? <Follow users={data.following} /> : ""}
+              {this.state.followers ? (
+                <Follow users={data.followers} type={false} />
+              ) : (
+                ""
+              )}
+              {this.state.following ? (
+                <Follow users={data.following} type={true} />
+              ) : (
+                ""
+              )}
             </div>
           </Col>
         </Row>
