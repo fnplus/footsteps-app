@@ -1,11 +1,11 @@
-import React, { Component } from "react"
+import React from "react"
 import { Col } from "antd"
 
 import styles from "../../styles/user.module.css"
 
 export default ({ users, type }) => {
   console.log(users)
-  if (users.length == 0)
+  if (users.length === 0)
     return (
       <div className={styles.followContainer}>
         <h3>Nothing to show here</h3>

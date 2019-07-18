@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Row, Col, Icon } from "antd"
+import firebase from "firebase"
 
 import styles from "../styles/user.module.css"
 import Footsteps from "./User/footsteps"
@@ -156,6 +157,15 @@ export class user extends Component {
                   }
                 >
                   Followers
+                </Col>
+                <Col
+                  lg={6}
+                  onClick={() => {
+                    firebase.auth().signOut()
+                    window.location.href = "/"
+                  }}
+                >
+                  logout
                 </Col>
               </Row>
             </div>

@@ -1,22 +1,27 @@
-import React from "react"
-import loginStyles from "../styles/login.module.css"
-export default () => (
-  <form>
-    <h1>Join Us!</h1>
-    <input
-      type="text"
-      name="Username"
-      placeholder="Username"
-      aria-label="Username"
-      required
-    />
-    <input
-      type="password"
-      name="password"
-      placeholder="Password"
-      aria-label="Password"
-      required
-    />
-    <input type="Submit" value="Login" className="button" />
-  </form>
-)
+import React, { Component } from "react"
+import firebase from "firebase"
+
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+
+const uiConfig = {
+  signInFlow: "popup",
+  signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+  callbacks: {
+    signInSuccessWithAuthResult: () => true,
+  },
+}
+
+export class login extends Component {
+  render() {
+    return (
+      <div>
+        <StyledFirebaseAuth
+          uiConfig={uiConfig}
+          firebaseAuth={firebase.auth()}
+        />
+      </div>
+    )
+  }
+}
+
+export default login
