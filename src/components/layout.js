@@ -10,34 +10,18 @@ import Header from "./header"
 import Footer from "./footer"
 import Login from "./login"
 
-// export default ({ children }) => (
-//   <div>
-//     <Helmet>
-//       <meta
-//         name="Description"
-//         content="let's you make your learning path and inspire others to follow them."
-//       />
-//       <title>FootSteps</title>
-//     </Helmet>
-//     <div className={styles.content}>
-//       <Header />
-//       <main>{children}</main>
-//     </div>
-//     <Footer />
-//   </div>
-// )
-
 export class layout extends Component {
   state = {
-    isSignedIn: false, // Local signed-in state.
+    // isSignedIn: false, // Local signed-in state.
+    user: null,
   }
 
   componentDidMount() {
-    console.log(firebase.auth())
+    console.log(this.state.user)
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn: !!user })
+      this.setState({ user: user })
       console.log("logged in!")
-      console.log(firebase.auth())
+      console.log(user)
     })
   }
 
@@ -48,7 +32,9 @@ export class layout extends Component {
   render() {
     return (
       <div>
-        {this.state.isSignedIn ? (
+        {this.state.user === null ? (
+          <Login />
+        ) : (
           <div>
             <Helmet>
               <meta
@@ -63,8 +49,6 @@ export class layout extends Component {
             </div>
             <Footer />
           </div>
-        ) : (
-          <Login />
         )}
       </div>
     )
