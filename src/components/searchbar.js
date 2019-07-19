@@ -1,7 +1,36 @@
 import React, { Component } from "react"
 import searchbarStyles from "../styles/searchbar.module.css"
+import { navigate } from "gatsby"
 
 export class searchbar extends Component {
+  state = {
+    query: "",
+    error: false,
+  }
+
+  updateQuery = e => {
+    this.setState({
+      query: e.target.value,
+      error: false,
+    })
+  }
+
+  pressEnter = e => {
+    if (e.key === "Enter") {
+      this.performSearch()
+    }
+  }
+
+  performSearch() {
+    if (this.state.query.length === 0) {
+      this.setState({
+        error: true,
+      })
+    } else {
+      navigate(`/search?q=${this.state.query}`)
+    }
+  }
+
   render() {
     return (
       <div
@@ -18,9 +47,22 @@ export class searchbar extends Component {
             name="q"
             placeholder="Search Footsteps"
             aria-label="Search"
+            onChange={this.updateQuery}
+            onKeyDown={this.pressEnter}
           />
-          <div className={searchbarStyles.searchBtn}>Search</div>
+          <div
+            className={searchbarStyles.searchBtn}
+            onClick={this.performSearch.bind(this)}
+          >
+            Search
+          </div>
         </div>
+        <p
+          style={this.state.error ? { display: "block" } : { display: "none" }}
+          className={searchbarStyles.errorText}
+        >
+          Please Enter a Query
+        </p>
       </div>
     )
   }

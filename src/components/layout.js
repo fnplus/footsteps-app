@@ -1,9 +1,7 @@
 import React, { Component } from "react"
 import { Helmet } from "react-helmet"
 import firebase from "firebase"
-import { Loader } from "antd"
 
-// eslint-disable-next-line
 import styles from "../styles/layout.module.css"
 import "antd/dist/antd.css"
 
@@ -17,12 +15,6 @@ export class layout extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.user)
-    if (this.state.user === null) {
-      this.setState({
-        isSignedIn: false,
-      })
-    }
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.setState({ isSignedIn: true })

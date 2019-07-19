@@ -28,6 +28,10 @@ input[type="search"]:focus {
   outline: none;
 }
 
+.searchBtn:hover {
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -49,4 +53,12 @@ input[type="search"]:focus {
     font-size: 12px;
     width: 110px;
   }
+}
+
+.errorText {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
