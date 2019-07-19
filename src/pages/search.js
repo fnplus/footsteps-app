@@ -4,7 +4,7 @@ import { Query } from "react-apollo"
 import gql from "graphql-tag"
 
 import Layout from "../components/layout"
-import Footsteps from "../components/User/footsteps"
+import LearningPaths from "../components/User/learningPaths"
 import styles from "../styles/search.module.css"
 
 export class search extends Component {
@@ -37,7 +37,7 @@ export class search extends Component {
                   console.log(data)
                   return (
                     <div>
-                      <Footsteps learning_paths={data.Learning_Paths} />
+                      <LearningPaths learning_paths={data.Learning_Paths} />
                     </div>
                   )
                 }

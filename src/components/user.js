@@ -3,7 +3,7 @@ import { Row, Col, Icon } from "antd"
 import firebase from "firebase"
 
 import styles from "../styles/user.module.css"
-import Footsteps from "./User/footsteps"
+import LearningPaths from "./User/learningPaths"
 import Follow from "./User/follow"
 
 export class user extends Component {
@@ -172,7 +172,7 @@ export class user extends Component {
 
             <div className={styles.content}>
               {this.state.footsteps ? (
-                <Footsteps learning_paths={data.learning_paths} />
+                <LearningPaths learning_paths={data.learning_paths} />
               ) : (
                 ""
               )}

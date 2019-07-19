@@ -4,7 +4,7 @@ import { Row, Col, Icon, Progress } from "antd"
 import styles from "../../styles/footsteps.module.css"
 import FootstepCard from "./footstepsCard"
 
-export class footsteps extends Component {
+export class learningPaths extends Component {
   state = {
     expand: false,
   }
@@ -66,4 +66,4 @@ export class footsteps extends Component {
   }
 }
 
-export default footsteps
+export default learningPaths
