@@ -1,0 +1,61 @@
+.cardContainer {
+  height: 200px;
+}
+
+.iconContainer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.icon {
+  position: relative;
+  top: 40px;
+  left: 40px;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 9;
+}
+
+.contentContainer {
+  height: 100%;
+  padding: 20px 0px 20px 90px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pathExpand {
+  text-align: center;
+  font-size: 30px;
+  line-height: 150px;
+  -moz-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.expandRotate {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.footstepsContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: 10px 50px;
+  opacity: 1;
+  box-sizing: border-box;
+  transition: height 200ms 0ms, opacity 200ms 200ms;
+  height: 500px;
+}
+
+.footstepsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.footstepsHide {
+  transition: height 200ms 200ms, opacity 200ms 0ms;
+  opacity: 0;
+  height: 0px;
+}

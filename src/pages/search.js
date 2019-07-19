@@ -4,7 +4,7 @@ import { Query } from "react-apollo"
 import gql from "graphql-tag"
 
 import Layout from "../components/layout"
-import LearningPaths from "../components/User/learningPaths"
+import SearchResult from "../components/Search/searchResult"
 import styles from "../styles/search.module.css"
 
 export class search extends Component {
@@ -35,11 +35,11 @@ export class search extends Component {
 
                 if (data) {
                   console.log(data)
-                  return (
-                    <div>
-                      <LearningPaths learning_paths={data.Learning_Paths} />
-                    </div>
-                  )
+                  if (data.Learning_Paths.length !== 0) {
+                    return <SearchResult result={data.Learning_Paths} />
+                  } else {
+                    return <h1>No Results Found</h1>
+                  }
                 }
               }}
             </Query>
