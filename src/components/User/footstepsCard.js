@@ -4,6 +4,7 @@ import { Row, Col, Icon } from "antd"
 import styles from "../../styles/footsteps.module.css"
 
 const levelsText = ["Beginner", "Intermediate", "Expert"]
+
 export class footstepsCard extends Component {
   state = {
     resourceTitle: "",
@@ -82,7 +83,7 @@ export class footstepsCard extends Component {
 
         <Row
           className={styles.resourceLink}
-          onClick={() => window.open(data.resourceURL)}
+          onClick={() => window.open(data.resource_url)}
         >
           <Col span={16}>
             <h4 className={styles.linkTitle}>{this.state.resourceLink}</h4>

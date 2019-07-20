@@ -31,12 +31,20 @@ export class search extends Component {
             >
               {({ data, loading, error }) => {
                 if (loading) return <h1>Loading...</h1>
-                if (error) return <h1>Error Loading User</h1>
+                if (error) return <h1>Error Loading Results</h1>
 
                 if (data) {
                   console.log(data)
-                  if (data.Learning_Paths.length !== 0) {
-                    return <SearchResult result={data.Learning_Paths} />
+                  if (
+                    data.Learning_Paths.length !== 0 ||
+                    data.Footsteps.length !== 0
+                  ) {
+                    return (
+                      <SearchResult
+                        paths={data.Learning_Paths}
+                        footsteps={data.Footsteps}
+                      />
+                    )
                   } else {
                     return <h1>No Results Found</h1>
                   }
@@ -88,6 +96,17 @@ export const SEARCH_QUERY_APOLLO = gql`
           count(columns: id)
         }
       }
+    }
+    Footsteps(where: { title: { _similar: $query } }) {
+      description
+      id
+      learning_path
+      level
+      resource_icon
+      resource_type
+      resource_url
+      tags
+      title
     }
   }
 `

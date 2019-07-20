@@ -1,0 +1,85 @@
+.cardContainer {
+  width: 250px;
+  height: 380px;
+  margin: 60px 20px 10px 20px;
+  border-radius: 40px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -40px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.detailsContainer {
+  padding: 0 10px;
+  font-family: "Montserrat", sans-serif;
+  height: 180px;
+}
+
+.description {
+  padding: 20px 10px 10px 10px;
+  text-align: justify;
+  font-size: 15px;
+}
+
+.typeContainer {
+  height: 30px;
+  padding: 0 30px;
+}
+
+.typeImage {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0;
+}
+
+.typeTitle {
+  line-height: 30px;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.levelContainer {
+  margin-top: 20px;
+  padding: 0 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.levelTitle {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.levelType {
+  text-align: right;
+  font-size: 16px;
+}
+
+.resourceLink {
+  padding: 0 30px;
+  margin-top: 30px;
+}
+
+.resourceLink:hover {
+  cursor: pointer;
+}
+
+.linkArrow {
+  text-align: right;
+}
