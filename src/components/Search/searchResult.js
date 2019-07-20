@@ -1,14 +1,13 @@
 import React, { Component } from "react"
 
-import LearningPaths from "../User/learningPaths"
-import ResultCard from "./resultCard"
+import ResultPathCard from "./resultPathCard"
 
 export class SearchResult extends Component {
   render() {
     return (
       <div>
         {this.props.result.map(path => {
-          return <ResultCard data={path} />
+          return <ResultPathCard data={path} />
         })}
       </div>
     )

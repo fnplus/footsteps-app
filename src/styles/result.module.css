@@ -1,5 +1,6 @@
 .cardContainer {
   height: 200px;
+  margin-top: 50px;
 }
 
 .iconContainer {
@@ -58,4 +59,33 @@
   transition: height 200ms 200ms, opacity 200ms 0ms;
   opacity: 0;
   height: 0px;
+}
+
+.pathDescription {
+  position: relative;
+  height: 160px;
+}
+
+.pathInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0px;
+}
+
+.pathInfo p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.pathInfo p span {
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+  .cardContainer {
+    height: 800px;
+  }
 }

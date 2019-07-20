@@ -4,7 +4,7 @@ import { Row, Col, Icon } from "antd"
 import FootstepCard from "../User/footstepsCard"
 import styles from "../../styles/result.module.css"
 
-export class resultCard extends Component {
+export class resultPathCard extends Component {
   state = {
     expand: false,
   }
@@ -28,9 +28,21 @@ export class resultCard extends Component {
           </Col>
           <Col span={22} className={styles.contentContainer}>
             <Row>
-              <Col span={22}>
+              <Col span={22} className={styles.pathDescription}>
                 <h1>{data.title}</h1>
                 <h3>{data.description}</h3>
+
+                <div className={styles.pathInfo}>
+                  <p>
+                    <span>By:</span>{" "}
+                    {data.user.first_name + " " + data.user.last_name}
+                  </p>
+
+                  <p>
+                    {" "}
+                    <span>Votes:</span> {data.votes_aggregate.aggregate.count}
+                  </p>
+                </div>
               </Col>
               <Col
                 span={2}
@@ -65,4 +77,4 @@ export class resultCard extends Component {
   }
 }
 
-export default resultCard
+export default resultPathCard
