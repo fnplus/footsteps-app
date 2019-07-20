@@ -101,7 +101,7 @@
 }
 
 .resultFootsteps {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .resultFootsteps h1 {
@@ -153,6 +153,29 @@
 
 .filterCard h4 span {
   font-weight: 400;
+}
+
+.filterCardFootsteps {
+  height: 50px;
+  width: 310px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.filterCardFootsteps h4 {
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.filterCardFootsteps h4 span {
+  font-weight: 500;
+  margin-left: 10px;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,9 +1,11 @@
 import React, { Component } from "react"
-import { Row } from "antd"
+import { Row, Select } from "antd"
 
 import ResultPathCard from "./resultPathCard"
 import ResultFootstepCard from "./resultFootstepCard"
 import styles from "../../styles/result.module.css"
+
+const { Option } = Select
 
 export class SearchResult extends Component {
   state = {
@@ -46,6 +48,29 @@ export class SearchResult extends Component {
     })
   }
 
+  onSelectChange = value => {
+    if (value === "a") {
+      this.setState({
+        currFootsteps: this.props.footsteps,
+      })
+    } else if (value === "0") {
+      let tempArray = this.props.footsteps.filter(
+        footstep => footstep.level === 0
+      )
+      this.setState({ currFootsteps: tempArray })
+    } else if (value === "1") {
+      let tempArray = this.props.footsteps.filter(
+        footstep => footstep.level === 1
+      )
+      this.setState({ currFootsteps: tempArray })
+    } else if (value === "2") {
+      let tempArray = this.props.footsteps.filter(
+        footstep => footstep.level === 2
+      )
+      this.setState({ currFootsteps: tempArray })
+    }
+  }
+
   render() {
     return (
       <div>
@@ -86,11 +111,37 @@ export class SearchResult extends Component {
           <h1>Footsteps ({this.props.footsteps.length})</h1>
           <Row>
             {this.props.footsteps.length !== 0 ? (
-              this.state.currFootsteps.map((footstep, index) => {
-                return <ResultFootstepCard key={index} data={footstep} />
-              })
+              <div>
+                <div className={styles.filterCardFootsteps}>
+                  <h4>
+                    Filter By: <span>Level</span>
+                  </h4>
+                  <Select
+                    showSearch
+                    style={{ width: 150, fontFamily: "'Montserrat'" }}
+                    placeholder="Select a person"
+                    optionFilterProp="children"
+                    onChange={this.onSelectChange}
+                    defaultValue="a"
+                  >
+                    <Option value="a">All</Option>
+                    <Option value="0">Beginner</Option>
+                    <Option value="1">Intermediate</Option>
+                    <Option value="2">Expert</Option>
+                  </Select>
+                </div>
+                {this.state.currFootsteps.length !== 0 ? (
+                  <div>
+                    {this.state.currFootsteps.map((footstep, index) => {
+                      return <ResultFootstepCard key={index} data={footstep} />
+                    })}
+                  </div>
+                ) : (
+                  <div className={styles.noResults}>No Footsteps Found</div>
+                )}
+              </div>
             ) : (
-              <div className={styles.noResults}>No Paths Found</div>
+              <div className={styles.noResults}>No Footsteps Found</div>
             )}
           </Row>
         </div>

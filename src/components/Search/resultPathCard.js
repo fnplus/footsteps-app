@@ -103,6 +103,7 @@ export class resultPathCard extends Component {
               footstep={footstep}
               size={data.footsteps.length}
               position={index}
+              key={index}
             />
           ))}
         </div>
