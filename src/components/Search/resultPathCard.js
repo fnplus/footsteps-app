@@ -57,6 +57,40 @@ export class resultPathCard extends Component {
             </Row>
           </Col>
         </Row>
+        <div className={styles.mobCardContainer}>
+          <Row>
+            <Col
+              span={22}
+              style={{
+                paddingRight: "20px",
+              }}
+            >
+              <h1>{data.title}</h1>
+              <h3>{data.description}</h3>
+            </Col>
+            <Col
+              span={2}
+              className={
+                this.state.expand
+                  ? styles.pathExpand + " " + styles.expandRotate
+                  : styles.pathExpand
+              }
+            >
+              <Icon type="down" onClick={() => this.expand()} />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={12} className={styles.mobInfoBy}>
+              <p>
+                <span>By:</span>{" "}
+                {data.user.first_name + " " + data.user.last_name}
+              </p>
+            </Col>
+            <Col span={12} className={styles.mobInfoVotes}>
+              <span>Votes:</span> {data.votes_aggregate.aggregate.count}
+            </Col>
+          </Row>
+        </div>
         <div
           className={
             this.state.expand
