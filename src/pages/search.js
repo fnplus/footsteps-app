@@ -5,6 +5,7 @@ import gql from "graphql-tag"
 
 import Layout from "../components/layout"
 import SearchResult from "../components/Search/searchResult"
+import Loader from "../components/loader"
 import styles from "../styles/search.module.css"
 
 export class search extends Component {
@@ -30,7 +31,7 @@ export class search extends Component {
               variables={{ query: "%" + this.state.query + "%" }}
             >
               {({ data, loading, error }) => {
-                if (loading) return <h1>Loading...</h1>
+                if (loading) return <Loader />
                 if (error) return <h1>Error Loading Results</h1>
 
                 if (data) {

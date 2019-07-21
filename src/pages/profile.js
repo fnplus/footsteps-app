@@ -4,6 +4,8 @@ import User from "../components/user"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 
+import Loader from "../components/loader"
+
 export default () => {
   return (
     <Query
@@ -14,7 +16,7 @@ export default () => {
         if (loading)
           return (
             <Layout>
-              <h1>Loading...</h1>
+              <Loader />
             </Layout>
           )
         if (error)

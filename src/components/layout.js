@@ -8,6 +8,7 @@ import "antd/dist/antd.css"
 import Header from "./header"
 import Footer from "./footer"
 import Login from "./login"
+import Loader from "./loader"
 
 export class layout extends Component {
   state = {
@@ -30,7 +31,7 @@ export class layout extends Component {
 
   render() {
     if (this.state.isSignedIn === null) {
-      return <h1>Loading....</h1>
+      return <Loader />
     } else if (this.state.isSignedIn === false) {
       return <Login />
     } else if (this.state.isSignedIn === true) {
@@ -41,7 +42,7 @@ export class layout extends Component {
               name="Description"
               content="let's you make your learning path and inspire others to follow them."
             />
-            <title>FootSteps</title>
+            <title>FootSteps</title>firebase"
           </Helmet>
           <div className={styles.content}>
             <Header />
