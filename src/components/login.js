@@ -1,12 +1,18 @@
 import React, { Component } from "react"
+import { Row, Col, Form, Icon, Input, Button, Checkbox } from "antd"
 import firebase from "firebase/app"
 import "firebase/auth"
 
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
+import styles from "../styles/login.module.css"
+
 const uiConfig = {
   signInFlow: "popup",
-  signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.GithubAuthProvider.PROVIDER_ID,
+  ],
   callbacks: {
     signInSuccessWithAuthResult: () => true,
   },
@@ -16,10 +22,54 @@ export class login extends Component {
   render() {
     return (
       <div>
-        <StyledFirebaseAuth
-          uiConfig={uiConfig}
-          firebaseAuth={firebase.auth()}
-        />
+        <Row>
+          <Col xs={24} lg={12}></Col>
+          <Col xs={24} lg={12}>
+            <div className={styles.container}>
+              <Form className="login-form">
+                <Form.Item>
+                  <Input
+                    prefix={
+                      <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
+                    }
+                    placeholder="Email ID"
+                  />
+                </Form.Item>
+                <Form.Item>
+                  <Input
+                    prefix={
+                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
+                    }
+                    type="password"
+                    placeholder="Password"
+                  />
+                </Form.Item>
+                {/* <Form.Item>
+                  <a className="login-form-forgot" href="">
+                    Forgot password
+                  </a>
+                </Form.Item> */}
+                <Form.Item>
+                  <a className="login-form-forgot" href="">
+                    Forgot password
+                  </a>
+                  <Button
+                    type="primary"
+                    style={{ float: "right" }}
+                    htmlType="submit"
+                    className="login-form-button"
+                  >
+                    Log in
+                  </Button>
+                </Form.Item>
+              </Form>
+              <StyledFirebaseAuth
+                uiConfig={uiConfig}
+                firebaseAuth={firebase.auth()}
+              />
+            </div>
+          </Col>
+        </Row>
       </div>
     )
   }

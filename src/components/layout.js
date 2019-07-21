@@ -34,7 +34,15 @@ export class layout extends Component {
     if (this.state.isSignedIn === null) {
       return <Loader />
     } else if (this.state.isSignedIn === false) {
-      return <Login />
+      return (
+        <div>
+          <div className={styles.content}>
+            <Header />
+            <Login />
+          </div>
+          <Footer />
+        </div>
+      )
     } else if (this.state.isSignedIn === true) {
       return (
         <div>
