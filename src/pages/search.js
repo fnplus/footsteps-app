@@ -27,7 +27,7 @@ export class search extends Component {
           <div className={styles.resultContainer}>
             <Query
               query={SEARCH_QUERY_APOLLO}
-              variables={{ query: this.state.query }}
+              variables={{ query: "%" + this.state.query + "%" }}
             >
               {({ data, loading, error }) => {
                 if (loading) return <h1>Loading...</h1>
@@ -39,6 +39,7 @@ export class search extends Component {
                     data.Learning_Paths.length !== 0 ||
                     data.Footsteps.length !== 0
                   ) {
+                    console.log(data)
                     return (
                       <SearchResult
                         paths={data.Learning_Paths}
@@ -62,7 +63,7 @@ export default search
 
 export const SEARCH_QUERY_APOLLO = gql`
   query searchPaths($query: String!) {
-    Learning_Paths(where: { title: { _similar: $query } }) {
+    Learning_Paths(where: { title: { _ilike: $query } }) {
       title
       author
       description
@@ -97,7 +98,11 @@ export const SEARCH_QUERY_APOLLO = gql`
         }
       }
     }
-    Footsteps(where: { title: { _similar: $query } }) {
+    Footsteps(
+      where: {
+        _or: [{ title: { _ilike: $query } }, { tags: { _ilike: $query } }]
+      }
+    ) {
       description
       id
       learning_path
