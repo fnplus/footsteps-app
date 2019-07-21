@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Row, Col, Icon } from "antd"
-import firebase from "firebase"
+import firebase from "firebase/app"
+import "firebase/auth"
 
 import styles from "../styles/user.module.css"
 import LearningPaths from "./User/learningPaths"

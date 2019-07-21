@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Helmet } from "react-helmet"
-import firebase from "firebase"
+import firebase from "firebase/app"
+import "firebase/auth"
 
 import styles from "../styles/layout.module.css"
 import "antd/dist/antd.css"

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import firebase from "firebase"
+import firebase from "firebase/app"
+import "firebase/auth"
 
 import Layout from "../components/layout"
 import Landing from "../components/landing"
