@@ -20,9 +20,13 @@
 1.  **Deploy Hasura graphql**
 
     [Deploy Hasura to Heroku](https://docs.hasura.io/1.0/graphql/manual/getting-started/heroku-simple.html)
+    
     [Secure GraphQL endpoint](https://docs.hasura.io/1.0/graphql/manual/deployment/heroku/securing-graphql-endpoint.html#add-the-hasura-graphql-admin-secret-env-var)
+    
     [Install Hasura CLI](https://docs.hasura.io/1.0/graphql/manual/hasura-cli/install-hasura-cli.html)
+    
     [Download api migrations](https://github.com/fnplus/footsteps-app/raw/master/rle-api.zip)
+    
     [Apply migrations to your instance](https://docs.hasura.io/1.0/graphql/manual/migrations/existing-database.html#step-6-apply-the-migrations-on-another-instance-of-graphql-engine)
 
 1.  **Start developing.**
