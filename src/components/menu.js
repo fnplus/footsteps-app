@@ -1,12 +1,38 @@
 import React, { Component } from "react"
 import { Menu } from "antd"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
+import firebase from "firebase/app"
+import "firebase/auth"
 
 import styles from "../styles/menu.module.css"
 
 const { Item } = Menu
 
 class NavMenu extends Component {
+  state = {
+    expand: false,
+  }
+
+  expandMenu = () => {
+    this.setState({
+      expand: !this.state.expand,
+    })
+  }
+
+  profileClick = () => {
+    navigate("/profile/")
+    this.setState({
+      expand: !this.state.expand,
+    })
+  }
+
+  logoutClick = () => {
+    firebase.auth().signOut()
+    this.setState({
+      expand: !this.state.expand,
+    })
+  }
+
   render() {
     return (
       <div style={this.props.show ? {} : { display: "none" }}>
@@ -16,12 +42,32 @@ class NavMenu extends Component {
           </Item>
 
           <Item className={styles.menuItems}>
-            <Link to="/profile/">Profile</Link>
-          </Item>
-
-          <Item className={styles.menuItems}>
             <Link to="/about/">About</Link>
           </Item>
+
+          <Item className={styles.menuProfile}>
+            <img
+              className={styles.menuProfileImg}
+              src="https://avatars2.githubusercontent.com/u/17083512"
+              alt=""
+              onClick={this.expandMenu}
+            />
+          </Item>
+
+          <div
+            className={
+              this.state.expand
+                ? styles.dropDown + " " + styles.dropDownShow
+                : styles.dropDown
+            }
+          >
+            <div className={styles.dropDownItem} onClick={this.profileClick}>
+              Profile
+            </div>
+            <div className={styles.dropDownItem} onClick={this.logoutClick}>
+              Logout
+            </div>
+          </div>
         </Menu>
       </div>
     )

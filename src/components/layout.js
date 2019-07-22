@@ -19,6 +19,7 @@ export class layout extends Component {
   state = {
     isSignedIn: null,
     userId: "",
+    user: {},
     signUp: false,
   }
 
@@ -42,6 +43,7 @@ export class layout extends Component {
               this.setState({
                 isSignedIn: true,
                 userId: response.data.Users[0].id,
+                user: response.data.Users[0],
               })
             }
           })
@@ -64,7 +66,7 @@ export class layout extends Component {
       return (
         <div>
           <div className={styles.content}>
-            <Header show={false} />
+            <Header show={false} user={this.state.user} />
             <Loader />
           </div>
           <Footer />
@@ -74,7 +76,7 @@ export class layout extends Component {
       return (
         <div>
           <div className={styles.content}>
-            <Header show={false} />
+            <Header show={false} user={this.state.user} />
             {!this.state.signUp ? (
               <Login />
             ) : (
@@ -95,7 +97,7 @@ export class layout extends Component {
             <title>FootSteps</title>
           </Helmet>
           <div className={styles.content}>
-            <Header show={true} />
+            <Header show={true} user={this.state.user} />
             <main>{this.props.children}</main>
           </div>
           <Footer />

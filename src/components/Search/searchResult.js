@@ -117,7 +117,6 @@ export class SearchResult extends Component {
                     Filter By: <span>Level</span>
                   </h4>
                   <Select
-                    showSearch
                     style={{ width: 150, fontFamily: "'Montserrat'" }}
                     placeholder="Select a person"
                     optionFilterProp="children"

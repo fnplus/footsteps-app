@@ -30,7 +30,11 @@ export class header extends Component {
           <Col xs={18} md={22}>
             <div className={styles.menuContainer}>
               <div className={styles.navDesktop}>
-                <NavMenu mode="horizontal" show={this.props.show} />
+                <NavMenu
+                  mode="horizontal"
+                  show={this.props.show}
+                  user={this.props.user}
+                />
               </div>
 
               <Button className={styles.mobileToggle} onClick={this.showDrawer}>
@@ -47,6 +51,7 @@ export class header extends Component {
                 <NavMenu
                   mode="vertical"
                   show={this.props.show}
+                  user={this.props.user}
                   className={styles.navMobile}
                 />
               </Drawer>

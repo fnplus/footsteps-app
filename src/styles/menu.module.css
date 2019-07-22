@@ -4,10 +4,6 @@
   font-family: "Arvo", serif;
 }
 
-.menuItems:hover {
-  border-bottom: 2px solid black !important;
-}
-
 .menuItems a:hover {
   color: black !important;
 }
@@ -28,6 +24,54 @@
 
 .menuBtn a {
   color: white !important;
+}
+
+.menuProfile {
+  margin: 0 0 0 40px;
+}
+
+.menuProfile:hover {
+  border-bottom: none !important;
+}
+
+.menuProfileImg {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.dropDown {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  background-color: #f3f3f3;
+  right: 20px;
+  bottom: -140px;
+  text-align: center;
+  z-index: 9;
+  font-family: "Arvo", serif;
+  font-size: 16px;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dropDownShow {
+  opacity: 1;
+}
+
+.dropDown:before {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 20px;
+  top: -20px;
+  border: 10px solid;
+  border-color: transparent #f3f3f3 #f3f3f3 transparent;
+}
+
+.dropDownItem:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

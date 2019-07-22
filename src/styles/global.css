@@ -52,3 +52,22 @@ ul {
 .column {
   flex-direction: column;
 }
+
+.ant-menu-item-selected {
+  border-bottom: none !important;
+  color: black !important;
+}
+
+.ant-menu-item-selected a {
+  color: black !important;
+}
+
+.ant-menu-item-active {
+  border-bottom: none !important;
+}
+
+.ant-menu-item {
+  border-bottom: none !important;
+  margin: 0;
+  padding: 0;
+}
