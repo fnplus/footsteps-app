@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { Helmet } from "react-helmet"
-import { navigate } from "gatsby"
 import gql from "graphql-tag"
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -12,12 +11,15 @@ import Header from "./header"
 import Footer from "./footer"
 import Login from "./login"
 import Loader from "./loader"
+import SignUp from "./sign-up"
 
 import { client } from "../apollo/client"
 
 export class layout extends Component {
   state = {
     isSignedIn: null,
+    userId: "",
+    signUp: false,
   }
 
   componentDidMount() {
@@ -34,10 +36,13 @@ export class layout extends Component {
           .then(response => {
             if (response.data.Users.length === 0) {
               console.log("User not registered")
-              navigate("/sign-up")
+              this.setState({ isSignedIn: false, signUp: true })
             } else {
-              console.log("User Registered")
-              this.setState({ isSignedIn: true })
+              console.log("User Registered", response.data)
+              this.setState({
+                isSignedIn: true,
+                userId: response.data.Users[0].id,
+              })
             }
           })
       } else {
@@ -50,6 +55,10 @@ export class layout extends Component {
     this.unregisterAuthObserver()
   }
 
+  updateUserId = (userId, isSignedIn) => {
+    this.setState({ userId: userId, isSignedIn: isSignedIn })
+  }
+
   render() {
     if (this.state.isSignedIn === null) {
       return <Loader />
@@ -58,7 +67,11 @@ export class layout extends Component {
         <div>
           <div className={styles.content}>
             <Header />
-            <Login />
+            {!this.state.signUp ? (
+              <Login />
+            ) : (
+              <SignUp updateUserId={this.updateUserId} />
+            )}
           </div>
           <Footer />
         </div>
@@ -71,7 +84,7 @@ export class layout extends Component {
               name="Description"
               content="let's you make your learning path and inspire others to follow them."
             />
-            <title>FootSteps</title>firebase"
+            <title>FootSteps</title>
           </Helmet>
           <div className={styles.content}>
             <Header />
@@ -92,6 +105,7 @@ export const USER_EMAIL_QUERY_APOLLO = gql`
       first_name
       last_name
       email
+      id
     }
   }
 `
