@@ -44,7 +44,9 @@ export class layout extends Component {
                 userId: response.data.Users[0].id,
                 user: response.data.Users[0],
               })
-              localStorage.setItem("userId", response.data.Users[0].id)
+              if (typeof window !== undefined) {
+                localStorage.setItem("userId", response.data.Users[0].id)
+              }
             }
           })
       } else {
@@ -59,7 +61,9 @@ export class layout extends Component {
 
   updateUserId = (userId, isSignedIn) => {
     this.setState({ userId: userId, isSignedIn: isSignedIn })
-    localStorage.setItem("userId", userId)
+    if (typeof window !== undefined) {
+      localStorage.setItem("userId", userId)
+    }
   }
 
   render() {

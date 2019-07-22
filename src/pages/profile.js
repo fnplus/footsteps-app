@@ -7,15 +7,20 @@ import gql from "graphql-tag"
 import Loader from "../components/loader"
 
 export class profile extends Component {
-  componentDidMount() {
-    console.log(localStorage.getItem("userId"))
+  state = {
+    id: "",
   }
+  componentDidMount() {
+    if (typeof window !== undefined) {
+      this.setState({
+        id: localStorage.getItem("userId"),
+      })
+    }
+  }
+
   render() {
     return (
-      <Query
-        query={USERS_QUERY_APOLLO}
-        variables={{ id: localStorage.getItem("userId") }}
-      >
+      <Query query={USERS_QUERY_APOLLO} variables={{ id: this.state.id }}>
         {({ data, loading, error }) => {
           if (loading)
             return (
