@@ -1,6 +1,6 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyCbBsA6NBf-Ko1iIQZLcIR2cpspWslwx5I",
-  authDomain: "fnplus-rle-mvp.firebaseapp.com",
+  apiKey: process.env.GATSBY_FIREBASE_API_KEY,
+  authDomain: process.env.GATSBY_FIREBASE_AUTH_DOMAIN,
 }
 
 export default firebaseConfig
