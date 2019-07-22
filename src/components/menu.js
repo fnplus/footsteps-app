@@ -64,7 +64,11 @@ class NavMenu extends Component {
             <div className={styles.dropDownItem} onClick={this.profileClick}>
               Profile
             </div>
-            <div className={styles.dropDownItem} onClick={this.logoutClick}>
+            <div
+              className={styles.dropDownItem}
+              style={{ color: "#fe5e44" }}
+              onClick={this.logoutClick}
+            >
               Logout
             </div>
           </div>

@@ -1,5 +1,9 @@
 import React, { Component } from "react"
 import { Drawer, Button, Row, Col, Icon } from "antd"
+import { navigate } from "gatsby"
+import firebase from "firebase/app"
+import "firebase/auth"
+
 import styles from "../styles/header.module.css"
 
 import NavMenu from "./menu"
@@ -48,12 +52,28 @@ export class header extends Component {
                 visible={this.state.visible}
                 width={200}
               >
-                <NavMenu
-                  mode="vertical"
-                  show={this.props.show}
-                  user={this.props.user}
-                  className={styles.navMobile}
-                />
+                <div className={styles.navItem} onClick={() => navigate("/")}>
+                  Home
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => navigate("/about/")}
+                >
+                  About
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => navigate("/profile/")}
+                >
+                  Profile
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => firebase.auth().signOut()}
+                  style={{ color: "#fe5e44" }}
+                >
+                  Logout
+                </div>
               </Drawer>
             </div>
           </Col>

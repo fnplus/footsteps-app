@@ -27,4 +27,12 @@
   .mobileToggle {
     display: inline-block;
   }
+
+  .navItem {
+    text-align: center;
+    font-family: "Arvo", serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
 }
