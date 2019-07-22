@@ -61,12 +61,20 @@ export class layout extends Component {
 
   render() {
     if (this.state.isSignedIn === null) {
-      return <Loader />
+      return (
+        <div>
+          <div className={styles.content}>
+            <Header show={false} />
+            <Loader />
+          </div>
+          <Footer />
+        </div>
+      )
     } else if (this.state.isSignedIn === false) {
       return (
         <div>
           <div className={styles.content}>
-            <Header />
+            <Header show={false} />
             {!this.state.signUp ? (
               <Login />
             ) : (
@@ -87,7 +95,7 @@ export class layout extends Component {
             <title>FootSteps</title>
           </Helmet>
           <div className={styles.content}>
-            <Header />
+            <Header show={true} />
             <main>{this.props.children}</main>
           </div>
           <Footer />

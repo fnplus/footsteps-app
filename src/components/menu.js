@@ -9,7 +9,7 @@ const { Item } = Menu
 class NavMenu extends Component {
   render() {
     return (
-      <div>
+      <div style={this.props.show ? {} : { display: "none" }}>
         <Menu mode={this.props.mode} style={{ float: "right", border: "none" }}>
           <Item className={styles.menuItems}>
             <Link to="/">Home</Link>
