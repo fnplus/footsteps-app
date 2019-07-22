@@ -14,6 +14,10 @@ export class user extends Component {
     following: false,
   }
 
+  componentDidMount() {
+    console.log(this.props.user)
+  }
+
   changeView = title => {
     if (title === "footsteps") {
       this.setState({
@@ -78,16 +82,20 @@ export class user extends Component {
 
               <div className={styles.bio}>{data.bio}</div>
 
-              <div className={styles.skills}>
-                <h2>Skills</h2>
-                {data.skills.split(",").map((skill, i) => {
-                  return (
-                    <div key={i} className={styles.skill}>
-                      {skill}
-                    </div>
-                  )
-                })}
-              </div>
+              {data.skills !== null ? (
+                <div className={styles.skills}>
+                  <h2>Skills</h2>
+                  {data.skills.split(",").map((skill, i) => {
+                    return (
+                      <div key={i} className={styles.skill}>
+                        {skill}
+                      </div>
+                    )
+                  })}
+                </div>
+              ) : (
+                <div></div>
+              )}
 
               <div className={styles.social}>
                 <Row>
