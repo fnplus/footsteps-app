@@ -48,7 +48,7 @@ class NavMenu extends Component {
           <Item className={styles.menuProfile}>
             <img
               className={styles.menuProfileImg}
-              src="https://avatars2.githubusercontent.com/u/17083512"
+              src={this.props.user.profile_pic}
               alt=""
               onClick={this.expandMenu}
             />

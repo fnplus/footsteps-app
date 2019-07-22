@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from "react"
 import Layout from "../components/layout"
 import User from "../components/user"
 import { Query } from "react-apollo"
@@ -6,34 +6,41 @@ import gql from "graphql-tag"
 
 import Loader from "../components/loader"
 
-export default () => {
-  return (
-    <Query
-      query={USERS_QUERY_APOLLO}
-      variables={{ id: process.env.GATSBY_MOCK_USER_ID }}
-    >
-      {({ data, loading, error }) => {
-        if (loading)
+export class profile extends Component {
+  componentDidMount() {
+    console.log(localStorage.getItem("userId"))
+  }
+  render() {
+    return (
+      <Query
+        query={USERS_QUERY_APOLLO}
+        variables={{ id: localStorage.getItem("userId") }}
+      >
+        {({ data, loading, error }) => {
+          if (loading)
+            return (
+              <Layout>
+                <Loader />
+              </Layout>
+            )
+          if (error)
+            return (
+              <Layout>
+                <h1>Error Loading User</h1>
+              </Layout>
+            )
           return (
             <Layout>
-              <Loader />
+              <User data={data.User} />
             </Layout>
           )
-        if (error)
-          return (
-            <Layout>
-              <h1>Error Loading User</h1>
-            </Layout>
-          )
-        return (
-          <Layout>
-            <User data={data.User} />
-          </Layout>
-        )
-      }}
-    </Query>
-  )
+        }}
+      </Query>
+    )
+  }
 }
+
+export default profile
 
 export const USERS_QUERY_APOLLO = gql`
   query getuser($id: uuid!) {

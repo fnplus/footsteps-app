@@ -26,7 +26,6 @@ export class layout extends Component {
   componentDidMount() {
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        // this.setState({ isSignedIn: true })
         client
           .query({
             query: USER_EMAIL_QUERY_APOLLO,
@@ -45,6 +44,7 @@ export class layout extends Component {
                 userId: response.data.Users[0].id,
                 user: response.data.Users[0],
               })
+              localStorage.setItem("userId", response.data.Users[0].id)
             }
           })
       } else {
@@ -59,6 +59,7 @@ export class layout extends Component {
 
   updateUserId = (userId, isSignedIn) => {
     this.setState({ userId: userId, isSignedIn: isSignedIn })
+    localStorage.setItem("userId", userId)
   }
 
   render() {
@@ -116,6 +117,7 @@ export const USER_EMAIL_QUERY_APOLLO = gql`
       last_name
       email
       id
+      profile_pic
     }
   }
 `

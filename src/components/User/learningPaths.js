@@ -20,8 +20,8 @@ export class learningPaths extends Component {
 
     return (
       <div className={styles.learningPathsContainer}>
-        {data.map(path => (
-          <div>
+        {data.map((path, index) => (
+          <div key={index}>
             <div className={styles.learningPathCard}>
               <Row>
                 <Col span={5}>
@@ -56,6 +56,7 @@ export class learningPaths extends Component {
                   footstep={footstep}
                   size={path.footsteps.length}
                   position={index}
+                  key={index}
                 />
               ))}
             </div>

@@ -159,15 +159,6 @@ export class user extends Component {
                 >
                   Followers
                 </Col>
-                <Col
-                  lg={6}
-                  onClick={() => {
-                    firebase.auth().signOut()
-                    window.location.href = "/"
-                  }}
-                >
-                  logout
-                </Col>
               </Row>
             </div>
 
