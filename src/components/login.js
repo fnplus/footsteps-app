@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col, Form, Icon, Input, Button, Checkbox } from "antd"
+import { Row, Col, Form, Icon, Input, Button } from "antd"
 import firebase from "firebase/app"
 import "firebase/auth"
 
@@ -44,15 +44,7 @@ export class login extends Component {
                     placeholder="Password"
                   />
                 </Form.Item>
-                {/* <Form.Item>
-                  <a className="login-form-forgot" href="">
-                    Forgot password
-                  </a>
-                </Form.Item> */}
                 <Form.Item>
-                  <a className="login-form-forgot" href="">
-                    Forgot password
-                  </a>
                   <Button
                     type="primary"
                     style={{ float: "right" }}

@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import { Helmet } from "react-helmet"
+import { navigate } from "gatsby"
+import gql from "graphql-tag"
 import firebase from "firebase/app"
 import "firebase/auth"
 
@@ -11,6 +13,8 @@ import Footer from "./footer"
 import Login from "./login"
 import Loader from "./loader"
 
+import { client } from "../apollo/client"
+
 export class layout extends Component {
   state = {
     isSignedIn: null,
@@ -19,7 +23,23 @@ export class layout extends Component {
   componentDidMount() {
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        this.setState({ isSignedIn: true })
+        // this.setState({ isSignedIn: true })
+        client
+          .query({
+            query: USER_EMAIL_QUERY_APOLLO,
+            variables: {
+              email: firebase.auth().currentUser.email,
+            },
+          })
+          .then(response => {
+            if (response.data.Users.length === 0) {
+              console.log("User not registered")
+              navigate("/sign-up")
+            } else {
+              console.log("User Registered")
+              this.setState({ isSignedIn: true })
+            }
+          })
       } else {
         this.setState({ isSignedIn: false })
       }
@@ -65,3 +85,13 @@ export class layout extends Component {
 }
 
 export default layout
+
+export const USER_EMAIL_QUERY_APOLLO = gql`
+  query getUser($email: String!) {
+    Users(where: { email: { _like: $email } }) {
+      first_name
+      last_name
+      email
+    }
+  }
+`
