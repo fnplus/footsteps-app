@@ -160,7 +160,6 @@
   text-align: center;
   font-size: 35px;
   font-weight: 700;
-  /* color: black; */
 }
 
 .text {
@@ -173,106 +172,131 @@
   font-size: 16px;
 }
 
-/* Old Profile Code  */
-
-/* .profile {
-  padding: 40px;
+.menuContainer {
+  margin-top: -260px;
 }
 
-.profileContainer {
-  border-radius: 40px;
-  padding: 30px 0;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+.mobileProfile {
+  display: none;
 }
 
-.avatar {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
+@media only screen and (max-width: 768px) {
+  .mobileProfile {
+    display: block;
+  }
 
-.userDetails {
-  text-align: center;
-}
+  .desktopProfile {
+    display: none;
+  }
 
-.userDetails h2 {
-  margin: 5px;
-  padding: 0;
-  font-size: 18pt;
-  font-weight: 600;
-  color: #3f3f3f;
-}
+  .menuContainer {
+    margin-top: 20px;
+  }
 
-.userDetails h4 {
-  margin: 3px;
-  padding: 0;
-  font-size: 11pt;
-  color: #aaa;
-  font-weight: 400;
-}
+  .profile {
+    padding: 40px;
+  }
 
-.count {
-  font-size: 14pt;
-  font-weight: 700;
-  text-align: center;
-}
+  .mobileProfile {
+    margin-top: 80px;
+  }
 
-.text {
-  font-size: 10pt;
-  text-align: center;
-}
+  .profileContainer {
+    border-radius: 40px;
+    padding: 30px 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  }
 
-.userInfo {
-  margin-top: 25px;
-  font-family: "Montserrat", sans-serif;
-}
+  .avatar {
+    border-radius: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: -105px;
+  }
 
-.bio {
-  margin-top: 40px;
-  padding: 0 20px;
-  text-align: justify;
-  font-family: "Montserrat", sans-serif;
-}
+  .userDetails {
+    text-align: center;
+  }
 
-.social {
-  text-align: center;
-  margin-top: 50px;
-}
+  .userDetails h2 {
+    margin: 5px;
+    padding: 0;
+    font-size: 18pt;
+    font-weight: 600;
+    color: #3f3f3f;
+  }
 
-.icon {
-  font-size: 30px;
-  transition: transform 0.2s;
-}
+  .userDetails h4 {
+    margin: 3px;
+    padding: 0;
+    font-size: 11pt;
+    color: #aaa;
+    font-weight: 400;
+  }
 
-.icon:hover {
-  transform: scale(1.4);
-}
+  .count {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+  }
 
-.skills {
-  margin-top: 30px;
-  padding: 0 20px;
-}
+  .text {
+    font-size: 16px;
+    text-align: center;
+  }
 
-.skills h2 {
-  text-align: center;
-  font-size: 15pt;
-  font-weight: 600;
-  color: #3f3f3f;
-  margin-bottom: 20px;
-}
+  .userInfo {
+    margin-top: 15px;
+    font-family: "Montserrat", sans-serif;
+  }
 
-.skill {
-  display: inline-block;
-  padding: 0 10px;
-  border: 1px black solid;
-  border-radius: 20px;
-  color: black;
-  margin: 0 5px;
-  font-size: 10pt;
-  margin-bottom: 6px;
-} */
+  .bio {
+    margin-top: 20px;
+    padding: 0 20px;
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .social {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .icon {
+    font-size: 30px;
+    transition: transform 0.2s;
+  }
+
+  .icon:hover {
+    transform: scale(1.4);
+  }
+
+  .skills {
+    margin-top: 30px;
+    padding: 0 20px;
+  }
+
+  .skills h2 {
+    text-align: center;
+    font-size: 15pt;
+    font-weight: 600;
+    color: #3f3f3f;
+    margin-bottom: 20px;
+  }
+
+  .skill {
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px black solid;
+    border-radius: 20px;
+    color: black;
+    margin: 0 5px;
+    font-size: 10pt;
+    margin-bottom: 6px;
+  }
+}

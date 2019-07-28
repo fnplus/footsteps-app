@@ -43,7 +43,7 @@ export class user extends Component {
 
     return (
       <div className={styles.container}>
-        <div className={styles.profileContainer}>
+        <div className={styles.profileContainer + " " + styles.desktopProfile}>
           <div className={styles.profileInfo}>
             <h1>
               {data.first_name} {data.last_name}
@@ -124,7 +124,89 @@ export class user extends Component {
           </div>
         </div>
 
-        <Row style={{ marginTop: "-260px" }}>
+        <div className={styles.mobileProfile}>
+          <div className={styles.profileContainer}>
+            <img className={styles.avatar} src={data.profile_pic} alt="" />
+            <div className={styles.userDetails}>
+              <h2>
+                {data.first_name} {data.last_name}
+              </h2>
+              <h4>{data.username}</h4>
+              <h4>{data.about}</h4>
+            </div>
+
+            <div className={styles.userInfo}>
+              <Row>
+                <Col span={8}>
+                  <div className={styles.count}>
+                    {data.followers_aggregate.aggregate.count}
+                  </div>
+                  <div className={styles.text}>Followers</div>
+                </Col>
+                <Col span={8}>
+                  <div className={styles.count}>
+                    {data.following_aggregate.aggregate.count}
+                  </div>
+                  <div className={styles.text}>Following</div>
+                </Col>
+                <Col span={8}>
+                  <div className={styles.count}>
+                    {data.learning_paths_aggregate.aggregate.count}
+                  </div>
+                  <div className={styles.text}>Footsteps</div>
+                </Col>
+              </Row>
+            </div>
+
+            <div className={styles.bio}>{data.bio}</div>
+
+            {data.skills !== null ? (
+              <div className={styles.skills}>
+                <h2>Skills</h2>
+                {data.skills.split(",").map((skill, i) => {
+                  return (
+                    <div key={i} className={styles.skill}>
+                      {skill}
+                    </div>
+                  )
+                })}
+              </div>
+            ) : (
+              <div></div>
+            )}
+
+            <div className={styles.social}>
+              <Row>
+                <Col span={8}>
+                  <Icon
+                    onClick={() => window.open(data.facebook)}
+                    className={styles.icon}
+                    type="facebook"
+                    theme="filled"
+                  />
+                </Col>
+                <Col span={8}>
+                  <Icon
+                    onClick={() => window.open(data.github)}
+                    className={styles.icon}
+                    type="github"
+                    theme="filled"
+                  />
+                </Col>
+                <Col span={8}>
+                  <Icon
+                    onClick={() => window.open(data.linkedin)}
+                    className={styles.icon}
+                    type="linkedin"
+                    theme="filled"
+                  />
+                </Col>
+              </Row>
+            </div>
+          </div>
+        </div>
+
+        <Row className={styles.menuContainer}>
           <Col span={24}>
             <div className={styles.menu}>
               <Row>
