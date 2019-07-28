@@ -44,16 +44,66 @@ export class user extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.profileContainer}>
-          <div className={styles.profileDetail}>
+          <div className={styles.profileInfo}>
+            <h1>
+              {data.first_name} {data.last_name}
+            </h1>
+            <h2>{data.username}</h2>
+            <h3>{data.about}</h3>
+          </div>
+          <div className={styles.profileImgContainer}>
             <img className={styles.profileImg} src={data.profile_pic} alt="" />
-            <div className={styles.profileInfo}>
-              <h1>
-                {data.first_name} {data.last_name}
-              </h1>
-              <h2>{data.username}</h2>
-              <h3>{data.about}</h3>
+            <div className={styles.social}>
+              <Row>
+                <Col span={8}>
+                  <Icon
+                    onClick={() => window.open(data.github)}
+                    className={styles.icon}
+                    type="github"
+                    theme="filled"
+                  />
+                </Col>
+                <Col span={8}>
+                  <Icon
+                    onClick={() => window.open(data.linkedin)}
+                    className={styles.icon}
+                    type="linkedin"
+                    theme="filled"
+                  />
+                </Col>
+                <Col span={8}>
+                  <Icon
+                    onClick={() => window.open(data.facebook)}
+                    className={styles.icon}
+                    type="facebook"
+                    theme="filled"
+                  />
+                </Col>
+              </Row>
             </div>
           </div>
+          <div className={styles.profileDetail}>
+            <div className={styles.profileAbout}>
+              <h1>About</h1>
+              <p>{data.bio}</p>
+              {data.skills !== null ? (
+                <div className={styles.skills}>
+                  <h1>Skills</h1>
+                  {data.skills.split(",").map((skill, i) => {
+                    return (
+                      <div key={i} className={styles.skill}>
+                        {skill}
+                      </div>
+                    )
+                  })}
+                </div>
+              ) : (
+                <div></div>
+              )}
+            </div>
+          </div>
+
+          <Row></Row>
         </div>
 
         <Row>
