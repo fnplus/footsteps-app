@@ -70,7 +70,7 @@
 /* Profile Card Styles */
 
 .profileContainer {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .profileDetail {
@@ -114,6 +114,7 @@
 .profileAbout {
   margin-left: 300px;
   padding: 20px 20px 0 30px;
+  min-height: 180px;
 }
 
 .skills {
@@ -148,6 +149,28 @@
 
 .icon:hover {
   transform: scale(1.4);
+}
+
+.userInfo {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.count {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  /* color: black; */
+}
+
+.text {
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.bioContent {
+  font-size: 16px;
 }
 
 /* Old Profile Code  */

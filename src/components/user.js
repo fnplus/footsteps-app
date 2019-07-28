@@ -85,7 +85,7 @@ export class user extends Component {
           <div className={styles.profileDetail}>
             <div className={styles.profileAbout}>
               <h1>About</h1>
-              <p>{data.bio}</p>
+              <p className={styles.bioContent}>{data.bio}</p>
               {data.skills !== null ? (
                 <div className={styles.skills}>
                   <h1>Skills</h1>
@@ -101,12 +101,30 @@ export class user extends Component {
                 <div></div>
               )}
             </div>
+            <Row className={styles.userInfo}>
+              <Col span={8}>
+                <div className={styles.count}>
+                  {data.learning_paths_aggregate.aggregate.count}
+                  <span className={styles.text}>Footsteps</span>
+                </div>
+              </Col>
+              <Col span={8}>
+                <div className={styles.count}>
+                  {data.followers_aggregate.aggregate.count}
+                  <span className={styles.text}>Followers</span>
+                </div>
+              </Col>
+              <Col span={8}>
+                <div className={styles.count}>
+                  {data.following_aggregate.aggregate.count}
+                  <span className={styles.text}>Following</span>
+                </div>
+              </Col>
+            </Row>
           </div>
-
-          <Row></Row>
         </div>
 
-        <Row>
+        <Row style={{ marginTop: "-260px" }}>
           <Col span={24}>
             <div className={styles.menu}>
               <Row>
