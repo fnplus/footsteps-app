@@ -43,90 +43,21 @@ export class user extends Component {
 
     return (
       <div className={styles.container}>
-        <Row>
-          <Col lg={8} className={styles.profile}>
-            <div className={styles.profileContainer}>
-              <img className={styles.avatar} src={data.profile_pic} alt="" />
-              <div className={styles.userDetails}>
-                <h2>
-                  {data.first_name} {data.last_name}
-                </h2>
-                <h4>{data.username}</h4>
-                <h4>{data.about}</h4>
-              </div>
-
-              <div className={styles.userInfo}>
-                <Row>
-                  <Col span={8}>
-                    <div className={styles.count}>
-                      {data.followers_aggregate.aggregate.count}
-                    </div>
-                    <div className={styles.text}>Followers</div>
-                  </Col>
-                  <Col span={8}>
-                    <div className={styles.count}>
-                      {data.following_aggregate.aggregate.count}
-                    </div>
-                    <div className={styles.text}>Following</div>
-                  </Col>
-                  <Col span={8}>
-                    <div className={styles.count}>
-                      {data.learning_paths_aggregate.aggregate.count}
-                    </div>
-                    <div className={styles.text}>Footsteps</div>
-                  </Col>
-                </Row>
-              </div>
-
-              <div className={styles.bio}>{data.bio}</div>
-
-              {data.skills !== null ? (
-                <div className={styles.skills}>
-                  <h2>Skills</h2>
-                  {data.skills.split(",").map((skill, i) => {
-                    return (
-                      <div key={i} className={styles.skill}>
-                        {skill}
-                      </div>
-                    )
-                  })}
-                </div>
-              ) : (
-                <div></div>
-              )}
-
-              <div className={styles.social}>
-                <Row>
-                  <Col span={8}>
-                    <Icon
-                      onClick={() => window.open(data.facebook)}
-                      className={styles.icon}
-                      type="facebook"
-                      theme="filled"
-                    />
-                  </Col>
-                  <Col span={8}>
-                    <Icon
-                      onClick={() => window.open(data.github)}
-                      className={styles.icon}
-                      type="github"
-                      theme="filled"
-                    />
-                  </Col>
-                  <Col span={8}>
-                    <Icon
-                      onClick={() => window.open(data.linkedin)}
-                      className={styles.icon}
-                      type="linkedin"
-                      theme="filled"
-                    />
-                  </Col>
-                </Row>
-              </div>
+        <div className={styles.profileContainer}>
+          <div className={styles.profileDetail}>
+            <img className={styles.profileImg} src={data.profile_pic} alt="" />
+            <div className={styles.profileInfo}>
+              <h1>
+                {data.first_name} {data.last_name}
+              </h1>
+              <h2>{data.username}</h2>
+              <h3>{data.about}</h3>
             </div>
-          </Col>
+          </div>
+        </div>
 
-          <Col xs={24} lg={16}>
+        <Row>
+          <Col span={24}>
             <div className={styles.menu}>
               <Row>
                 <Col
