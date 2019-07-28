@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Menu } from "antd"
+import { Menu, Row, Col } from "antd"
 import { Link, navigate } from "gatsby"
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -61,7 +61,25 @@ class NavMenu extends Component {
                 : styles.dropDown
             }
           >
-            <div className={styles.dropDownItem} onClick={this.profileClick}>
+            <Row className={styles.dropDownInfo}>
+              <Col span={6}>
+                <img src={this.props.user.profile_pic} alt="" />
+              </Col>
+              <Col span={18}>
+                <h3>
+                  {this.props.user.first_name} {this.props.user.last_name}
+                </h3>
+                <h5>{this.props.user.email}</h5>
+                <div className={styles.profileBtn} onClick={this.profileClick}>
+                  My Profile
+                </div>
+              </Col>
+            </Row>
+            <div className={styles.logoutBtn} onClick={this.logoutClick}>
+              Logout
+            </div>
+
+            {/* <div className={styles.dropDownItem} onClick={this.profileClick}>
               Profile
             </div>
             <div
@@ -70,7 +88,7 @@ class NavMenu extends Component {
               onClick={this.logoutClick}
             >
               Logout
-            </div>
+            </div> */}
           </div>
         </Menu>
       </div>

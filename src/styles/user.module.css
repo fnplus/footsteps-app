@@ -3,6 +3,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Montserrat", sans-serif;
 }
 
 .menu {
@@ -144,11 +145,6 @@
 
 .icon {
   font-size: 22px;
-  transition: transform 0.2s;
-}
-
-.icon:hover {
-  transform: scale(1.4);
 }
 
 .userInfo {
