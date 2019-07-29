@@ -47,6 +47,12 @@ export const CREATE_USER_MUTATION_APOLLO = gql`
     $last_name: String!
     $username: String!
     $profile_pic: String!
+    $about: String!
+    $bio: String!
+    $skills: String!
+    $github: String!
+    $linkedin: String!
+    $facebook: String!
   ) {
     insert_Users(
       objects: {
@@ -56,6 +62,12 @@ export const CREATE_USER_MUTATION_APOLLO = gql`
         last_name: $last_name
         username: $username
         profile_pic: $profile_pic
+        about: $about
+        bio: $bio
+        skills: $skills
+        github: $github
+        linkedin: $linkedin
+        facebook: $facebook
       }
     ) {
       affected_rows

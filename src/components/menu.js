@@ -1,12 +1,10 @@
 import React, { Component } from "react"
-import { Menu, Row, Col } from "antd"
+import { Row, Col } from "antd"
 import { Link, navigate } from "gatsby"
 import firebase from "firebase/app"
 import "firebase/auth"
 
 import styles from "../styles/menu.module.css"
-
-const { Item } = Menu
 
 class NavMenu extends Component {
   state = {

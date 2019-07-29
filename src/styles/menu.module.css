@@ -103,6 +103,7 @@
   height: 30px;
   color: white;
   font-size: 14px;
+  font-weight: 600;
 }
 
 .logoutBtn {
@@ -115,6 +116,7 @@
   height: 30px;
   color: white;
   font-size: 14px;
+  font-weight: 600;
 }
 
 .profileBtn:hover {
