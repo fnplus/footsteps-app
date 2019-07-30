@@ -1,9 +1,8 @@
 import React from "react"
 import { Router } from "@reach/router"
-import Layout from "../components/layout"
-import Profile from "./profile"
+import { User_profile } from "./profile"
 export default () => (
   <Router>
-    <Profile path="/users/:userId" />
+    <User_profile path="/users/:userId" />
   </Router>
 )

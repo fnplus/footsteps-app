@@ -8,7 +8,7 @@ import Loader from "../components/loader"
 
 export class profile extends Component {
   state = {
-    id: "",
+    id: this.props.userId || "",
   }
   componentDidMount() {
     if (typeof window !== undefined) {
@@ -19,33 +19,35 @@ export class profile extends Component {
   }
 
   render() {
-    return (
-      <Query query={USERS_QUERY_APOLLO} variables={{ id: this.state.id }}>
-        {({ data, loading, error }) => {
-          if (loading)
-            return (
-              <Layout>
-                <Loader />
-              </Layout>
-            )
-          if (error)
-            return (
-              <Layout>
-                <h1>Error Loading User</h1>
-              </Layout>
-            )
-          return (
-            <Layout>
-              <User data={data.User} />
-            </Layout>
-          )
-        }}
-      </Query>
-    )
+    return <User_profile userId={this.state.id} />
   }
 }
 
 export default profile
+
+export const User_profile = ({ userId }) => (
+  <Query query={USERS_QUERY_APOLLO} variables={{ id: userId }}>
+    {({ data, loading, error }) => {
+      if (loading)
+        return (
+          <Layout>
+            <Loader />
+          </Layout>
+        )
+      if (error)
+        return (
+          <Layout>
+            <h1>Error Loading User</h1>
+          </Layout>
+        )
+      return (
+        <Layout>
+          <User data={data.User} />
+        </Layout>
+      )
+    }}
+  </Query>
+)
 
 export const USERS_QUERY_APOLLO = gql`
   query getuser($id: uuid!) {
