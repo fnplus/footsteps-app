@@ -13,7 +13,7 @@ export class profile extends Component {
   componentDidMount() {
     if (typeof window !== undefined) {
       this.setState({
-        id: localStorage.getItem("userId"),
+        id: this.props.userId || localStorage.getItem("userId"),
       })
     }
   }
