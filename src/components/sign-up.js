@@ -39,6 +39,12 @@ export class signUp extends Component {
   //     })
   // }
 
+  nextStep = () => {
+    this.setState({
+      step: this.state.step + 1,
+    })
+  }
+
   render() {
     if (this.state.step === 0) {
       return (
@@ -58,12 +64,18 @@ export class signUp extends Component {
                 We are glad to have you on board. Let us get to know you better
                 to enhance your experience with us.
               </h3>
-              <div>
+              <div onClick={this.nextStep}>
                 Get started{" "}
                 <Icon style={{ marginLeft: "10px" }} type="arrow-right"></Icon>
               </div>
             </Col>
           </Row>
+        </div>
+      )
+    } else if (this.state.step === 1) {
+      return (
+        <div className={styles.step1_container}>
+          <h1>Step2</h1>
         </div>
       )
     }

@@ -31,7 +31,7 @@
   background: #029843;
   color: white;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   display: inline-block;
   padding: 10px 20px;
   border-radius: 25px;
@@ -49,5 +49,26 @@
 @media only screen and (max-width: 768px) {
   .step0_img {
     width: 100%;
+  }
+
+  .step0_container {
+    margin: 0px 0px;
+  }
+
+  .step0_content {
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+
+  .step0_content h1 {
+    font-size: 40px;
+  }
+
+  .step0_content h2 {
+    font-size: 32px;
+  }
+
+  .step0_content h3 {
+    margin-top: 40px;
   }
 }
