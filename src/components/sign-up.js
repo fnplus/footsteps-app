@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
 import uuid from "uuid"
-import { Row, Col, Icon } from "antd"
+import { Row, Col, Icon, Input } from "antd"
 
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -13,6 +13,24 @@ import styles from "../styles/signUp.module.css"
 export class signUp extends Component {
   state = {
     step: 0,
+    email: "",
+    first_name: "",
+    last_name: "",
+    username: "",
+    about: "",
+    bio: "",
+    skills: "",
+    github: "",
+    linkedin: "",
+    facebook: "",
+  }
+
+  componentDidMount() {
+    this.setState({
+      first_name: firebase.auth().currentUser.displayName.split(" ")[0],
+      last_name: firebase.auth().currentUser.displayName.split(" ")[1],
+      email: firebase.auth().currentUser.email,
+    })
   }
 
   // componentDidMount() {
@@ -38,6 +56,13 @@ export class signUp extends Component {
   //       firebase.auth().signOut()
   //     })
   // }
+
+  handleInputChange = e => {
+    const target = e.target
+    this.setState({
+      [target.name]: target.value,
+    })
+  }
 
   nextStep = () => {
     this.setState({
@@ -75,7 +100,49 @@ export class signUp extends Component {
     } else if (this.state.step === 1) {
       return (
         <div className={styles.step1_container}>
-          <h1>Step2</h1>
+          <Row>
+            <Col xs={24} lg={12}></Col>
+            <Col xs={24} lg={12}>
+              <div>
+                <div className={styles.input_label}>Email</div>
+                <input
+                  className={styles.input}
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                  placeholder="Email ID"
+                  disabled
+                />
+              </div>
+
+              <div className={styles.input_label}>First Name</div>
+              <input
+                className={styles.input}
+                name="first_name"
+                value={this.state.first_name}
+                onChange={this.handleInputChange}
+                placeholder="First Name"
+              />
+
+              <div className={styles.input_label}>Last Name</div>
+              <input
+                className={styles.input}
+                name="last_name"
+                value={this.state.last_name}
+                onChange={this.handleInputChange}
+                placeholder="Last Name"
+              />
+
+              <div className={styles.input_label}>Username</div>
+              <input
+                className={styles.input}
+                name="username"
+                value={this.state.username}
+                onChange={this.handleInputChange}
+                placeholder="Username"
+              />
+            </Col>
+          </Row>
         </div>
       )
     }

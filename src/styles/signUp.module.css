@@ -46,6 +46,25 @@
   transform: scale(1.05);
 }
 
+.input {
+  border: none;
+  border-bottom: 1px solid #868686;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+.input_label {
+  font-weight: 600;
+  margin-top: 30px;
+}
+
 @media only screen and (max-width: 768px) {
   .step0_img {
     width: 100%;
