@@ -52,6 +52,7 @@
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   color: black;
+  width: 400px;
 }
 
 input:focus,
@@ -62,7 +63,37 @@ textarea:focus {
 
 .input_label {
   font-weight: 600;
-  margin-top: 30px;
+  margin-top: 35px;
+  font-family: "Montserrat", sans-serif;
+  color: #029843;
+}
+
+.step1_container {
+  margin: 0 100px;
+}
+
+.steps_content {
+  padding-top: 30px;
+}
+
+.steps_content h1 {
+  font-size: 100px;
+  font-weight: 700;
+  display: inline-block;
+  color: #029843;
+}
+
+.steps_content h2 {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 120px;
+  opacity: 0.5;
+}
+
+.steps_content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.5;
 }
 
 @media only screen and (max-width: 768px) {

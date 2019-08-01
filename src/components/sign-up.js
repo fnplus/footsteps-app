@@ -101,9 +101,20 @@ export class signUp extends Component {
       return (
         <div className={styles.step1_container}>
           <Row>
-            <Col xs={24} lg={12}></Col>
-            <Col xs={24} lg={12}>
-              <div>
+            <Col xs={24} lg={10} className={styles.steps_content}>
+              <h1>01</h1>
+              <h2>/ 03</h2>
+
+              <h3 style={{ opacity: "1" }}>Basic Information</h3>
+              <h3>About You</h3>
+              <h3>Your Socials</h3>
+            </Col>
+            <Col xs={24} lg={14}>
+              <h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                dicta!
+              </h1>
+              <div className={styles.step1_form}>
                 <div className={styles.input_label}>Email</div>
                 <input
                   className={styles.input}
@@ -113,34 +124,34 @@ export class signUp extends Component {
                   placeholder="Email ID"
                   disabled
                 />
+
+                <div className={styles.input_label}>First Name</div>
+                <input
+                  className={styles.input}
+                  name="first_name"
+                  value={this.state.first_name}
+                  onChange={this.handleInputChange}
+                  placeholder="First Name"
+                />
+
+                <div className={styles.input_label}>Last Name</div>
+                <input
+                  className={styles.input}
+                  name="last_name"
+                  value={this.state.last_name}
+                  onChange={this.handleInputChange}
+                  placeholder="Last Name"
+                />
+
+                <div className={styles.input_label}>Username</div>
+                <input
+                  className={styles.input}
+                  name="username"
+                  value={this.state.username}
+                  onChange={this.handleInputChange}
+                  placeholder="Username"
+                />
               </div>
-
-              <div className={styles.input_label}>First Name</div>
-              <input
-                className={styles.input}
-                name="first_name"
-                value={this.state.first_name}
-                onChange={this.handleInputChange}
-                placeholder="First Name"
-              />
-
-              <div className={styles.input_label}>Last Name</div>
-              <input
-                className={styles.input}
-                name="last_name"
-                value={this.state.last_name}
-                onChange={this.handleInputChange}
-                placeholder="Last Name"
-              />
-
-              <div className={styles.input_label}>Username</div>
-              <input
-                className={styles.input}
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChange}
-                placeholder="Username"
-              />
             </Col>
           </Row>
         </div>
