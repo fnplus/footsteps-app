@@ -126,6 +126,14 @@ textarea:focus {
   transform: scale(1.1);
 }
 
+.step_error {
+  color: #fe5e44;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
 @media only screen and (max-width: 768px) {
   .step0_img {
     width: 100%;

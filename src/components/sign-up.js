@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
 import uuid from "uuid"
-import { Row, Col, Icon, Input } from "antd"
+import { Row, Col, Icon } from "antd"
 
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -25,6 +25,7 @@ export class signUp extends Component {
     facebook: "",
     registered_usernames: [],
     username_error: false,
+    step_error: false,
   }
 
   componentDidMount() {
@@ -98,9 +99,29 @@ export class signUp extends Component {
   }
 
   nextStep = () => {
-    this.setState({
-      step: this.state.step + 1,
-    })
+    let { step } = this.state
+
+    if (step === 1) {
+      if (
+        !this.state.username_error &&
+        this.state.first_name !== "" &&
+        this.state.last_name !== "" &&
+        this.state.username !== ""
+      ) {
+        this.setState({
+          step: 2,
+          step_error: false,
+        })
+      } else {
+        this.setState({
+          step_error: true,
+        })
+      }
+    } else {
+      this.setState({
+        step: this.state.step + 1,
+      })
+    }
   }
 
   render() {
@@ -195,8 +216,16 @@ export class signUp extends Component {
                   This username is not available, try another one.
                 </div>
               </div>
-              <div className={styles.stepBtn}>
+              <div className={styles.stepBtn} onClick={this.nextStep}>
                 Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+              </div>
+              <div
+                style={
+                  this.state.step_error ? { opacity: "1" } : { opacity: "0" }
+                }
+                className={styles.step_error}
+              >
+                Please fill up all the fields
               </div>
             </Col>
           </Row>
