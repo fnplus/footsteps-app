@@ -23,6 +23,8 @@ export class signUp extends Component {
     github: "",
     linkedin: "",
     facebook: "",
+    registered_usernames: [],
+    username_error: false,
   }
 
   componentDidMount() {
@@ -31,6 +33,20 @@ export class signUp extends Component {
       last_name: firebase.auth().currentUser.displayName.split(" ")[1],
       email: firebase.auth().currentUser.email,
     })
+
+    client
+      .query({
+        query: GET_ALL_USERNAMES_QUERY_APOLLO,
+      })
+      .then(res => {
+        let registered_usernames = []
+        res.data.Users.map(user => {
+          registered_usernames.push(user.username)
+        })
+        this.setState({
+          registered_usernames,
+        })
+      })
   }
 
   // componentDidMount() {
@@ -62,6 +78,23 @@ export class signUp extends Component {
     this.setState({
       [target.name]: target.value,
     })
+  }
+
+  handleUsernameChange = e => {
+    let enteredUsername = e.target.value
+    this.setState({
+      username: enteredUsername,
+    })
+
+    if (this.state.registered_usernames.indexOf(enteredUsername) > -1) {
+      this.setState({
+        username_error: true,
+      })
+    } else {
+      this.setState({
+        username_error: false,
+      })
+    }
   }
 
   nextStep = () => {
@@ -148,9 +181,14 @@ export class signUp extends Component {
                   className={styles.input}
                   name="username"
                   value={this.state.username}
-                  onChange={this.handleInputChange}
+                  onChange={this.handleUsernameChange}
                   placeholder="Username"
                 />
+                {this.state.username_error ? (
+                  <div>This username is not available, try another one.</div>
+                ) : (
+                  ""
+                )}
               </div>
             </Col>
           </Row>
@@ -202,6 +240,14 @@ export const CREATE_USER_MUTATION_APOLLO = gql`
         username
         profile_pic
       }
+    }
+  }
+`
+
+export const GET_ALL_USERNAMES_QUERY_APOLLO = gql`
+  {
+    Users {
+      username
     }
   }
 `
