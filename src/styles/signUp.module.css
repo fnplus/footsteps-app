@@ -47,6 +47,8 @@
   transform: scale(1.05);
 }
 
+/* ! Step 1 */
+
 .input {
   border: none;
   border-bottom: 1px solid #868686;
@@ -132,6 +134,12 @@ textarea:focus {
   font-size: 14px;
   margin-top: 10px;
   font-family: "Montserrat", sans-serif;
+}
+
+/* ! Step 2 */
+
+.step2_container {
+  margin: 0 100px;
 }
 
 @media only screen and (max-width: 768px) {

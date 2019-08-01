@@ -231,6 +231,47 @@ export class signUp extends Component {
           </Row>
         </div>
       )
+    } else if (this.state.step === 2) {
+      return (
+        <div className={styles.step2_container}>
+          <Row>
+            <Col xs={24} lg={10} className={styles.steps_content}>
+              <h1>02</h1>
+              <h2>/ 03</h2>
+
+              <h3>Basic Information</h3>
+              <h3 style={{ opacity: "1" }}>About You</h3>
+              <h3>Your Socials</h3>
+            </Col>
+            <Col xs={24} lg={14}>
+              <h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium, corporis?
+              </h1>
+
+              <div className={styles.input_label}>Title</div>
+              <input
+                className={styles.input}
+                name="bio"
+                value={this.state.bio}
+                onChange={this.handleInputChange}
+                placeholder="Web Developer"
+              />
+
+              <div className={styles.input_label}>About</div>
+              <textarea
+                className={styles.input}
+                name="about"
+                value={this.state.about}
+                onChange={this.handleInputChange}
+                placeholder="Tell us about yourself and what you are passionate about"
+              />
+
+              <div className={styles.input_label}>Skills</div>
+            </Col>
+          </Row>
+        </div>
+      )
     }
   }
 }
