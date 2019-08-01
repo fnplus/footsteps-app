@@ -184,11 +184,19 @@ export class signUp extends Component {
                   onChange={this.handleUsernameChange}
                   placeholder="Username"
                 />
-                {this.state.username_error ? (
-                  <div>This username is not available, try another one.</div>
-                ) : (
-                  ""
-                )}
+                <div
+                  style={
+                    this.state.username_error
+                      ? { opacity: "1" }
+                      : { opacity: "0" }
+                  }
+                  className={styles.username_error}
+                >
+                  This username is not available, try another one.
+                </div>
+              </div>
+              <div className={styles.stepBtn}>
+                Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
               </div>
             </Col>
           </Row>

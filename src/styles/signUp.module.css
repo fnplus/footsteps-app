@@ -39,6 +39,7 @@
   margin-top: 30px;
   margin-right: 20px;
   transition: transform 0.2s;
+  font-family: "Montserrat", sans-serif;
 }
 
 .step0_content div:hover {
@@ -70,6 +71,7 @@ textarea:focus {
 
 .step1_container {
   margin: 0 100px;
+  margin-bottom: 50px;
 }
 
 .steps_content {
@@ -96,6 +98,34 @@ textarea:focus {
   opacity: 0.5;
 }
 
+.username_error {
+  color: #fe5e44;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.stepBtn {
+  background: #029843;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  float: right;
+  margin-top: 30px;
+  margin-right: 20px;
+  transition: transform 0.2s;
+  font-family: "Montserrat", sans-serif;
+}
+
+.stepBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 @media only screen and (max-width: 768px) {
   .step0_img {
     width: 100%;
@@ -120,5 +150,22 @@ textarea:focus {
 
   .step0_content h3 {
     margin-top: 40px;
+  }
+
+  .step1_container {
+    margin: 0 20px;
+    margin-bottom: 50px;
+  }
+
+  .input {
+    width: 90%;
+  }
+
+  .steps_content h2 {
+    margin-bottom: 30px;
+  }
+
+  .steps_content {
+    margin-bottom: 70px;
   }
 }
