@@ -54,29 +54,37 @@ export class signUp extends Component {
       })
   }
 
-  // componentDidMount() {
-  //   client
-  //     .mutate({
-  //       mutation: CREATE_USER_MUTATION_APOLLO,
-  //       variables: {
-  //         email: firebase.auth().currentUser.email,
-  //         id: uuid.v4(),
-  //         first_name: firebase.auth().currentUser.displayName.split(" ")[0],
-  //         last_name: firebase.auth().currentUser.displayName.split(" ")[1],
-  //         username: firebase.auth().currentUser.email.split("@")[0],
-  //         profile_pic: firebase.auth().currentUser.photoURL,
-  //       },
-  //     })
-  //     .then(res => {
-  //       console.log(res.data)
-  //       this.props.updateUserId(res.data.insert_Users.returning[0].id, true)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //       this.props.updateUserId("", false)
-  //       firebase.auth().signOut()
-  //     })
-  // }
+  signup = () => {
+    let data = this.state
+
+    client
+      .mutate({
+        mutation: CREATE_USER_MUTATION_APOLLO,
+        variables: {
+          email: firebase.auth().currentUser.email,
+          id: uuid.v4(),
+          first_name: data.first_name,
+          last_name: data.last_name,
+          username: data.username,
+          profile_pic: firebase.auth().currentUser.photoURL,
+          about: data.about,
+          bio: data.bio,
+          skills: data.skills,
+          github: data.github,
+          linkedin: data.linkedin,
+          facebook: data.facebook,
+        },
+      })
+      .then(res => {
+        console.log(res.data)
+        this.props.updateUserId(res.data.insert_Users.returning[0].id, true)
+      })
+      .catch(err => {
+        console.log(err)
+        this.props.updateUserId("", false)
+        firebase.auth().signOut()
+      })
+  }
 
   handleInputChange = e => {
     const target = e.target
@@ -418,7 +426,10 @@ export class signUp extends Component {
           >
             Nope. Let me review my details
           </div>
-          <div className={styles.preview_btn + " " + styles.yes_btn}>
+          <div
+            onClick={this.signup}
+            className={styles.preview_btn + " " + styles.yes_btn}
+          >
             Yes! Sign me up
           </div>
         </div>

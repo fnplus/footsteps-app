@@ -45,7 +45,7 @@ export class user extends Component {
               {data.first_name} {data.last_name}
             </h1>
             <h2>{data.username}</h2>
-            <h3>{data.about}</h3>
+            <h3>{data.bio}</h3>
           </div>
           <div className={styles.profileImgContainer}>
             <img className={styles.profileImg} src={data.profile_pic} alt="" />
@@ -93,7 +93,7 @@ export class user extends Component {
           <div className={styles.profileDetail}>
             <div className={styles.profileAbout}>
               <h1>About</h1>
-              <p className={styles.bioContent}>{data.bio}</p>
+              <p className={styles.bioContent}>{data.about}</p>
               {data.skills !== null ? (
                 <div className={styles.skills}>
                   <h1>Skills</h1>
@@ -140,7 +140,7 @@ export class user extends Component {
                 {data.first_name} {data.last_name}
               </h2>
               <h4>{data.username}</h4>
-              <h4>{data.about}</h4>
+              <h4>{data.bio}</h4>
             </div>
 
             <div className={styles.userInfo}>
@@ -166,7 +166,7 @@ export class user extends Component {
               </Row>
             </div>
 
-            <div className={styles.bio}>{data.bio}</div>
+            <div className={styles.bio}>{data.about}</div>
 
             {data.skills !== null ? (
               <div className={styles.skills}>
