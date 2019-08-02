@@ -218,6 +218,21 @@ textarea:focus {
     margin-bottom: 50px;
   }
 
+  .step2_container {
+    margin: 0 20px;
+    margin-bottom: 50px;
+  }
+
+  .step3_container {
+    margin: 0 20px;
+    margin-bottom: 50px;
+  }
+
+  .preview_container {
+    margin: 0 20px;
+    margin-bottom: 50px;
+  }
+
   .input {
     width: 90%;
   }
@@ -228,5 +243,21 @@ textarea:focus {
 
   .steps_content {
     margin-bottom: 70px;
+  }
+
+  .preview_heading {
+    font-size: 45px;
+    margin-top: 60px;
+  }
+
+  .preview_btn {
+    display: block;
+    text-align: center;
+    margin: 0 40px;
+  }
+
+  .yes_btn {
+    float: none;
+    margin-top: 40px;
   }
 }
