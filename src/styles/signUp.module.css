@@ -136,6 +136,11 @@ textarea:focus {
   font-family: "Montserrat", sans-serif;
 }
 
+.step_heading {
+  font-size: 50px;
+  font-weight: 600;
+}
+
 .step2_container {
   margin: 0 100px;
 }

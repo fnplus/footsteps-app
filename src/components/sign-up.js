@@ -150,9 +150,9 @@ export class signUp extends Component {
           step_error: true,
         })
       }
-    } else {
+    } else if (step === 3) {
       this.setState({
-        step: this.state.step + 1,
+        step: 4,
       })
     }
   }
@@ -210,10 +210,7 @@ export class signUp extends Component {
               <h3>Your Socials</h3>
             </Col>
             <Col xs={24} lg={14}>
-              <h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
-                dicta!
-              </h1>
+              <h1 className={styles.step_heading}>What do we call you?</h1>
               <div className={styles.step1_form}>
                 <div className={styles.input_label}>Email</div>
                 <input
@@ -285,15 +282,17 @@ export class signUp extends Component {
               <h1>02</h1>
               <h2>/ 03</h2>
 
-              <h3>Basic Information</h3>
+              <h3
+                style={{ opacity: "0.8", color: "#029843" }}
+                onClick={() => this.setState({ step: 1 })}
+              >
+                Basic Information
+              </h3>
               <h3 style={{ opacity: "1" }}>About You</h3>
               <h3>Your Socials</h3>
             </Col>
             <Col xs={24} lg={14}>
-              <h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium, corporis?
-              </h1>
+              <h1 className={styles.step_heading}>What do you do?</h1>
 
               <div className={styles.input_label}>Title</div>
               <input
@@ -348,11 +347,61 @@ export class signUp extends Component {
               <h1>03</h1>
               <h2>/ 03</h2>
 
-              <h3>Basic Information</h3>
-              <h3>About You</h3>
+              <h3
+                style={{ opacity: "0.8", color: "#029843" }}
+                onClick={() => this.setState({ step: 1 })}
+              >
+                Basic Information
+              </h3>
+              <h3
+                style={{ opacity: "0.8", color: "#029843" }}
+                onClick={() => this.setState({ step: 2 })}
+              >
+                About You
+              </h3>
               <h3 style={{ opacity: "1" }}>Your Socials</h3>
             </Col>
-            <Col xs={24} lg={14}></Col>
+            <Col xs={24} lg={14}>
+              <h1 className={styles.step_heading}>
+                Where can others find you online?
+              </h1>
+
+              <h2 style={{ fontSize: "16px" }}>
+                Please provide the full url. Leave it empty if you don't want to
+                give.
+              </h2>
+
+              <div className={styles.input_label}>Github</div>
+              <input
+                className={styles.input}
+                name="github"
+                vaLinkedinlue={this.state.github}
+                onChange={this.handleInputChange}
+                placeholder="Github URL"
+              />
+
+              <div className={styles.input_label}>Linkedin</div>
+              <input
+                className={styles.input}
+                name="linkedin"
+                value={this.state.linkedin}
+                onChange={this.handleInputChange}
+                placeholder="Linkedin Profile URL"
+              />
+
+              <div className={styles.input_label}>Facebook</div>
+              <input
+                className={styles.input}
+                name="facebook"
+                value={this.state.facebook}
+                onChange={this.handleInputChange}
+                placeholder="Facebook Profile URL"
+              />
+
+              <div className={styles.stepBtn} onClick={this.nextStep}>
+                Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+              </div>
+            </Col>
           </Row>
         </div>
       )
