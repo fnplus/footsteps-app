@@ -12,10 +12,6 @@ export class user extends Component {
     following: false,
   }
 
-  componentDidMount() {
-    console.log(this.props.user)
-  }
-
   changeView = title => {
     if (title === "footsteps") {
       this.setState({
@@ -55,30 +51,42 @@ export class user extends Component {
             <img className={styles.profileImg} src={data.profile_pic} alt="" />
             <div className={styles.social}>
               <Row>
-                <Col span={8}>
-                  <Icon
-                    onClick={() => window.open(data.github)}
-                    className={styles.icon}
-                    type="github"
-                    theme="filled"
-                  />
-                </Col>
-                <Col span={8}>
-                  <Icon
-                    onClick={() => window.open(data.linkedin)}
-                    className={styles.icon}
-                    type="linkedin"
-                    theme="filled"
-                  />
-                </Col>
-                <Col span={8}>
-                  <Icon
-                    onClick={() => window.open(data.facebook)}
-                    className={styles.icon}
-                    type="facebook"
-                    theme="filled"
-                  />
-                </Col>
+                {data.github !== "" ? (
+                  <Col span={8}>
+                    <Icon
+                      onClick={() => window.open(data.github)}
+                      className={styles.icon}
+                      type="github"
+                      theme="filled"
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
+                {data.linkedin !== "" ? (
+                  <Col span={8}>
+                    <Icon
+                      onClick={() => window.open(data.linkedin)}
+                      className={styles.icon}
+                      type="linkedin"
+                      theme="filled"
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
+                {data.facebook !== "" ? (
+                  <Col span={8}>
+                    <Icon
+                      onClick={() => window.open(data.facebook)}
+                      className={styles.icon}
+                      type="facebook"
+                      theme="filled"
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
               </Row>
             </div>
           </div>

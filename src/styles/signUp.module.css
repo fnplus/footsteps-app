@@ -149,6 +149,44 @@ textarea:focus {
   margin: 0 100px;
 }
 
+.preview_container {
+  margin: 0 100px;
+}
+
+.preview_heading {
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+.preview_btn {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 50px;
+  transition: transform 0.2s;
+}
+
+.preview_btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.no_btn {
+  background: #fe5e44;
+}
+
+.yes_btn {
+  background: #029843;
+  float: right;
+}
+
 @media only screen and (max-width: 768px) {
   .step0_img {
     width: 100%;

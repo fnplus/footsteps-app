@@ -9,6 +9,7 @@ import "firebase/auth"
 
 import { client } from "../apollo/client"
 
+import User from "./user"
 import styles from "../styles/signUp.module.css"
 
 export class signUp extends Component {
@@ -150,9 +151,9 @@ export class signUp extends Component {
           step_error: true,
         })
       }
-    } else if (step === 3) {
+    } else {
       this.setState({
-        step: 4,
+        step: this.state.step + 1,
       })
     }
   }
@@ -375,7 +376,7 @@ export class signUp extends Component {
               <input
                 className={styles.input}
                 name="github"
-                vaLinkedinlue={this.state.github}
+                value={this.state.github}
                 onChange={this.handleInputChange}
                 placeholder="Github URL"
               />
@@ -399,10 +400,27 @@ export class signUp extends Component {
               />
 
               <div className={styles.stepBtn} onClick={this.nextStep}>
-                Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+                Finish{" "}
+                <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
               </div>
             </Col>
           </Row>
+        </div>
+      )
+    } else if (this.state.step === 4) {
+      return (
+        <div className={styles.preview_container}>
+          <h1 className={styles.preview_heading}>Do you want to continue?</h1>
+
+          <div
+            onClick={() => this.setState({ step: 1 })}
+            className={styles.preview_btn + " " + styles.no_btn}
+          >
+            Nope. Let me review my details
+          </div>
+          <div className={styles.preview_btn + " " + styles.yes_btn}>
+            Yes! Sign me up
+          </div>
         </div>
       )
     }
