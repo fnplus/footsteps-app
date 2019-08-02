@@ -120,6 +120,30 @@ export class signUp extends Component {
           step_error: true,
         })
       }
+    } else if (step === 2) {
+      if (
+        this.state.about !== "" &&
+        this.state.bio !== "" &&
+        this.state.skills_array.length !== 0
+      ) {
+        let skills = ""
+        this.state.skills_array.map((skill, i) => {
+          if (i !== this.state.skills_array.length - 1) {
+            skills += skill.text + ","
+          } else {
+            skills += skill.text
+          }
+        })
+        this.setState({
+          step: 3,
+          step_error: false,
+          skills,
+        })
+      } else {
+        this.setState({
+          step_error: true,
+        })
+      }
     } else {
       this.setState({
         step: this.state.step + 1,
@@ -293,10 +317,24 @@ export class signUp extends Component {
                 allowDragDrop={false}
                 inputFieldPosition="top"
               />
+
+              <div className={styles.stepBtn} onClick={this.nextStep}>
+                Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+              </div>
+              <div
+                style={
+                  this.state.step_error ? { opacity: "1" } : { opacity: "0" }
+                }
+                className={styles.step_error}
+              >
+                Please fill up all the fields
+              </div>
             </Col>
           </Row>
         </div>
       )
+    } else if (this.state.step === 3) {
+      return <h1>Step 3</h1>
     }
   }
 }
