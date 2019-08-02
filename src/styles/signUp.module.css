@@ -7,6 +7,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 60px;
 }
 
 .step0_content {
@@ -189,7 +190,8 @@ textarea:focus {
 
 @media only screen and (max-width: 768px) {
   .step0_img {
-    width: 100%;
+    width: 90%;
+    margin-top: 40px;
   }
 
   .step0_container {

@@ -9,7 +9,6 @@ import "firebase/auth"
 
 import { client } from "../apollo/client"
 
-import User from "./user"
 import styles from "../styles/signUp.module.css"
 
 export class signUp extends Component {
@@ -145,8 +144,10 @@ export class signUp extends Component {
         this.state.skills_array.map((skill, i) => {
           if (i !== this.state.skills_array.length - 1) {
             skills += skill.text + ","
+            return 0
           } else {
             skills += skill.text
+            return 0
           }
         })
         this.setState({
@@ -187,7 +188,7 @@ export class signUp extends Component {
             <Col xs={24} lg={12}>
               <img
                 className={styles.step0_img}
-                src={require("../images/signup1.jpg")}
+                src={require("../images/signup.png")}
                 alt=""
               />
             </Col>
