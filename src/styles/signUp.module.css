@@ -136,9 +136,11 @@ textarea:focus {
   font-family: "Montserrat", sans-serif;
 }
 
-/* ! Step 2 */
-
 .step2_container {
+  margin: 0 100px;
+}
+
+.step3_container {
   margin: 0 100px;
 }
 

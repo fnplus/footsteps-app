@@ -86,9 +86,15 @@ export class signUp extends Component {
 
   handleUsernameChange = e => {
     let enteredUsername = e.target.value
-    this.setState({
-      username: enteredUsername,
-    })
+
+    if (
+      enteredUsername.match("^[a-zA-Z0-9]*$") &&
+      enteredUsername.length <= 15
+    ) {
+      this.setState({
+        username: enteredUsername,
+      })
+    }
 
     if (this.state.registered_usernames.indexOf(enteredUsername) > -1) {
       this.setState({
@@ -159,7 +165,7 @@ export class signUp extends Component {
   }
 
   handleTagAddition = tag => {
-    if (this.state.skills_array.length < 5) {
+    if (this.state.skills_array.length < 10) {
       this.setState(state => ({ skills_array: [...state.skills_array, tag] }))
     }
   }
@@ -316,6 +322,7 @@ export class signUp extends Component {
                 handleAddition={this.handleTagAddition}
                 allowDragDrop={false}
                 inputFieldPosition="top"
+                autofocus={false}
               />
 
               <div className={styles.stepBtn} onClick={this.nextStep}>
@@ -334,7 +341,21 @@ export class signUp extends Component {
         </div>
       )
     } else if (this.state.step === 3) {
-      return <h1>Step 3</h1>
+      return (
+        <div className={styles.step3_container}>
+          <Row>
+            <Col xs={24} lg={10} className={styles.steps_content}>
+              <h1>03</h1>
+              <h2>/ 03</h2>
+
+              <h3>Basic Information</h3>
+              <h3>About You</h3>
+              <h3 style={{ opacity: "1" }}>Your Socials</h3>
+            </Col>
+            <Col xs={24} lg={14}></Col>
+          </Row>
+        </div>
+      )
     }
   }
 }

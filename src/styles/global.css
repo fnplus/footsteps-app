@@ -87,7 +87,7 @@ div.ReactTags__selected span.ReactTags__tag {
   font-size: 16px;
   display: inline-block;
   padding: 5px;
-  margin: 0 5px;
+  margin: 5px 10px 5px 0;
   border-radius: 2px;
 }
 div.ReactTags__selected a.ReactTags__remove {
