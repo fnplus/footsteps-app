@@ -53,21 +53,45 @@ ul {
   flex-direction: column;
 }
 
-.ant-menu-item-selected {
-  border-bottom: none !important;
-  color: black !important;
+/* ! Skills Tags */
+
+div.ReactTags__tags {
+  position: relative;
 }
 
-.ant-menu-item-selected a {
-  color: black !important;
+/* Styles for the input */
+div.ReactTags__tagInput {
+  width: 200px;
+  display: inline-block;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.ant-menu-item-active {
-  border-bottom: none !important;
-}
-
-.ant-menu-item {
-  border-bottom: none !important;
+div.ReactTags__tagInput input.ReactTags__tagInputField,
+div.ReactTags__tagInput input.ReactTags__tagInputField:focus {
+  height: auto;
   margin: 0;
-  padding: 0;
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #868686;
+  padding: 0 4px;
+}
+
+/* Styles for selected tags */
+div.ReactTags__selected span.ReactTags__tag {
+  border: 1px solid#ddd;
+  background: #eee;
+  font-size: 16px;
+  display: inline-block;
+  padding: 5px;
+  margin: 0 5px;
+  border-radius: 2px;
+}
+div.ReactTags__selected a.ReactTags__remove {
+  color: #aaa;
+  margin-left: 5px;
+  cursor: pointer;
 }

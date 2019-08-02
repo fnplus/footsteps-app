@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import gql from "graphql-tag"
 import uuid from "uuid"
 import { Row, Col, Icon } from "antd"
+import { WithContext as ReactTags } from "react-tag-input"
 
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -20,6 +21,7 @@ export class signUp extends Component {
     about: "",
     bio: "",
     skills: "",
+    skills_array: [],
     github: "",
     linkedin: "",
     facebook: "",
@@ -43,6 +45,7 @@ export class signUp extends Component {
         let registered_usernames = []
         res.data.Users.map(user => {
           registered_usernames.push(user.username)
+          return 0
         })
         this.setState({
           registered_usernames,
@@ -121,6 +124,19 @@ export class signUp extends Component {
       this.setState({
         step: this.state.step + 1,
       })
+    }
+  }
+
+  handleTagDelete = i => {
+    const { skills_array } = this.state
+    this.setState({
+      skills_array: skills_array.filter((tag, index) => index !== i),
+    })
+  }
+
+  handleTagAddition = tag => {
+    if (this.state.skills_array.length < 5) {
+      this.setState(state => ({ skills_array: [...state.skills_array, tag] }))
     }
   }
 
@@ -268,6 +284,15 @@ export class signUp extends Component {
               />
 
               <div className={styles.input_label}>Skills</div>
+              <ReactTags
+                tags={this.state.skills_array}
+                placeholder={"Enter your Skills"}
+                delimiters={[188, 13]}
+                handleDelete={this.handleTagDelete}
+                handleAddition={this.handleTagAddition}
+                allowDragDrop={false}
+                inputFieldPosition="top"
+              />
             </Col>
           </Row>
         </div>
