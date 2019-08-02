@@ -11,14 +11,16 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GATSBY_GOOGLE_TRACKING_ID,
         head: true,
       },
+    },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/users/*`] },
     },
     {
       resolve: `gatsby-plugin-typography`,
