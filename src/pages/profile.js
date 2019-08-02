@@ -88,6 +88,7 @@ export const USERS_QUERY_APOLLO = gql`
       bio
       linkedin
       github
+      facebook
       learning_paths {
         id
         title

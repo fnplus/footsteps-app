@@ -12,6 +12,10 @@ export class user extends Component {
     following: false,
   }
 
+  componentDidMount() {
+    console.log(this.props.data)
+  }
+
   changeView = title => {
     if (title === "footsteps") {
       this.setState({
