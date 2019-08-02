@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { Helmet } from "react-helmet"
 import gql from "graphql-tag"
+import { navigate } from "gatsby"
+
 import firebase from "firebase/app"
 import "firebase/auth"
 
@@ -60,10 +62,12 @@ export class layout extends Component {
   }
 
   updateUserId = (userId, isSignedIn) => {
-    this.setState({ userId: userId, isSignedIn: isSignedIn })
+    navigate("/")
     if (typeof window !== undefined) {
+      window.location.reload()
       localStorage.setItem("userId", userId)
     }
+    this.setState({ userId: userId, isSignedIn: isSignedIn })
   }
 
   render() {

@@ -31,14 +31,15 @@ export class header extends Component {
           <Col xs={6} md={2} className={styles.logo}>
             <img src={require("../images/brand-logo.png")} alt="" />
           </Col>
-          <Col xs={18} md={22}>
+
+          <Col
+            xs={18}
+            md={22}
+            style={this.props.show ? {} : { display: "none" }}
+          >
             <div className={styles.menuContainer}>
               <div className={styles.navDesktop}>
-                <NavMenu
-                  mode="horizontal"
-                  show={this.props.show}
-                  user={this.props.user}
-                />
+                <NavMenu mode="horizontal" user={this.props.user} />
               </div>
 
               <Button className={styles.mobileToggle} onClick={this.showDrawer}>

@@ -29,11 +29,12 @@ class NavMenu extends Component {
     this.setState({
       expand: !this.state.expand,
     })
+    navigate("/")
   }
 
   render() {
     return (
-      <div style={this.props.show ? {} : { display: "none" }}>
+      <div>
         <ul>
           <li className={styles.menuProfile}>
             <img
