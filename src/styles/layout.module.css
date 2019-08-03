@@ -3,3 +3,40 @@
   margin-bottom: -40px;
   padding-bottom: 40px;
 }
+
+/* Public Profile */
+
+.public_not_found {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 100px 50px;
+}
+
+.public_not_found_username {
+  color: #029843;
+}
+
+.public_not_found_go_home {
+  display: inline-block;
+  text-align: center;
+  background: #029843;
+  font-size: 25px;
+  color: white;
+  font-weight: 600;
+  padding: 5px 20px;
+  border-radius: 40px;
+  font-family: "Montserrat", sans-serif;
+  transition: transform 0.2s;
+}
+
+.public_not_found_go_home:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 768px) {
+  .public_not_found {
+    margin: 80px 20px;
+  }
+}
