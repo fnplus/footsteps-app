@@ -52,3 +52,27 @@ textarea:focus {
 .icon_container img {
   border-radius: 50%;
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 0 30px;
+  }
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .icon_container {
+    width: 120px;
+    height: 120px;
+    margin-top: 50px;
+  }
+
+  .icon_input_container {
+    width: 100%;
+  }
+}

@@ -40,6 +40,7 @@ export class addPath extends Component {
               value={this.state.description}
               onChange={this.handleInputChange}
               placeholder="Gatsby is a free and open source framework based on React"
+              style={{ height: "100px" }}
             />
           </Col>
           <Col xs={24} lg={12}>
