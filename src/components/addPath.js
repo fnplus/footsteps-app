@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col } from "antd"
+import { Row, Col, InputNumber } from "antd"
 
 import styles from "../styles/add.module.css"
 
@@ -16,6 +16,10 @@ export class addPath extends Component {
     this.setState({
       [target.name]: target.value,
     })
+  }
+
+  onFootstepCounterChange = value => {
+    console.log(value)
   }
 
   render() {
@@ -60,6 +64,21 @@ export class addPath extends Component {
             </div>
           </Col>
         </Row>
+
+        <div className={styles.footsteps_container}>
+          <h1 className={styles.footsteps_heading}>Add Footsteps</h1>
+
+          <div className={styles.footsteps_counter_container}>
+            <h4>Count: </h4>
+            <InputNumber
+              min={1}
+              max={10}
+              defaultValue={3}
+              onChange={this.onFootstepCounterChange}
+              className={styles.footsteps_counter_input}
+            />
+          </div>
+        </div>
       </div>
     )
   }

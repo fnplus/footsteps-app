@@ -76,3 +76,34 @@ textarea:focus {
     width: 100%;
   }
 }
+
+.footsteps_container {
+  margin-top: 50px;
+}
+
+.footsteps_heading {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.footsteps_counter_container {
+  height: 50px;
+  width: 150px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footsteps_counter_input {
+  width: 60px;
+}
+
+.footsteps_counter_container h4 {
+  line-height: 32px;
+  font-weight: 600;
+}

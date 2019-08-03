@@ -58,9 +58,9 @@ export class header extends Component {
                   </div>
                   <div
                     className={styles.navItem}
-                    onClick={() => navigate("/about/")}
+                    onClick={() => navigate("/add/")}
                   >
-                    About
+                    Create Path
                   </div>
                   <div
                     className={styles.navItem}

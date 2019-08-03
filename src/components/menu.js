@@ -46,7 +46,7 @@ class NavMenu extends Component {
           </li>
 
           <li className={styles.menuItems}>
-            <Link to="/about/">About</Link>
+            <Link to="/add/">Create Path</Link>
           </li>
           <li className={styles.menuItems}>
             <Link to="/">Home</Link>
