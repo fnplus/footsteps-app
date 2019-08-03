@@ -21,7 +21,7 @@ export default ({ users, type }) => {
       {users_info_list.map(user => (
         <Col xs={12} lg={6} className={styles.userContainer} key={user.id}>
           <img className={styles.userImg} src={user.profile_pic} alt="" />
-          <Link to={`/users/${user.id}`}>
+          <Link to={`/user/${user.username}`}>
             <h4 className={styles.userName}>
               {user.first_name + " " + user.last_name}
             </h4>

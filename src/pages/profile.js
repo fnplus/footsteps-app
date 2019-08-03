@@ -8,46 +8,45 @@ import Loader from "../components/loader"
 
 export class profile extends Component {
   state = {
-    id: this.props.userId || "",
+    id: "",
   }
+
   componentDidMount() {
     if (typeof window !== undefined) {
       this.setState({
-        id: this.props.userId || localStorage.getItem("userId"),
+        id: localStorage.getItem("userId"),
       })
     }
   }
 
   render() {
-    return <User_profile userId={this.state.id} />
+    return (
+      <Query query={USERS_QUERY_APOLLO} variables={{ id: this.state.id }}>
+        {({ data, loading, error }) => {
+          if (loading)
+            return (
+              <Layout>
+                <Loader />
+              </Layout>
+            )
+          if (error)
+            return (
+              <Layout>
+                <h1>Error Loading User</h1>
+              </Layout>
+            )
+          return (
+            <Layout>
+              <User data={data.User} />
+            </Layout>
+          )
+        }}
+      </Query>
+    )
   }
 }
 
 export default profile
-
-export const User_profile = ({ userId }) => (
-  <Query query={USERS_QUERY_APOLLO} variables={{ id: userId }}>
-    {({ data, loading, error }) => {
-      if (loading)
-        return (
-          <Layout>
-            <Loader />
-          </Layout>
-        )
-      if (error)
-        return (
-          <Layout>
-            <h1>Error Loading User</h1>
-          </Layout>
-        )
-      return (
-        <Layout>
-          <User data={data.User} />
-        </Layout>
-      )
-    }}
-  </Query>
-)
 
 export const USERS_QUERY_APOLLO = gql`
   query getuser($id: uuid!) {

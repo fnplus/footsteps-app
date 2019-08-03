@@ -1,8 +1,10 @@
 import React from "react"
 import { Router } from "@reach/router"
-import { User_profile } from "./profile"
+
+import PublicProfile from "../components/publicProfile"
+
 export default () => (
   <Router>
-    <User_profile path="/users/:userId" />
+    <PublicProfile path="/user/:username" />
   </Router>
 )

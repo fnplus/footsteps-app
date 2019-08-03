@@ -95,10 +95,7 @@ export class signUp extends Component {
   handleUsernameChange = e => {
     let enteredUsername = e.target.value
 
-    if (
-      enteredUsername.match("^[a-zA-Z0-9]*$") &&
-      enteredUsername.length <= 15
-    ) {
+    if (enteredUsername.match("^[a-z0-9_]*$") && enteredUsername.length <= 15) {
       this.setState({
         username: enteredUsername,
       })

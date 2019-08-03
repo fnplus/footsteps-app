@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/users/*`] },
+      options: { prefixes: [`/user/*`] },
     },
     {
       resolve: `gatsby-plugin-typography`,

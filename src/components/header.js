@@ -32,52 +32,55 @@ export class header extends Component {
             <img src={require("../images/brand-logo.png")} alt="" />
           </Col>
 
-          <Col
-            xs={18}
-            md={22}
-            style={this.props.show ? {} : { display: "none" }}
-          >
-            <div className={styles.menuContainer}>
-              <div className={styles.navDesktop}>
-                <NavMenu mode="horizontal" user={this.props.user} />
+          {this.props.show ? (
+            <Col xs={18} md={22}>
+              <div className={styles.menuContainer}>
+                <div className={styles.navDesktop}>
+                  <NavMenu mode="horizontal" user={this.props.user} />
+                </div>
+
+                <Button
+                  className={styles.mobileToggle}
+                  onClick={this.showDrawer}
+                >
+                  <Icon type="menu" />
+                </Button>
+
+                <Drawer
+                  placement="right"
+                  closable={false}
+                  onClose={this.onClose}
+                  visible={this.state.visible}
+                  width={200}
+                >
+                  <div className={styles.navItem} onClick={() => navigate("/")}>
+                    Home
+                  </div>
+                  <div
+                    className={styles.navItem}
+                    onClick={() => navigate("/about/")}
+                  >
+                    About
+                  </div>
+                  <div
+                    className={styles.navItem}
+                    onClick={() => navigate("/profile/")}
+                  >
+                    Profile
+                  </div>
+                  <div
+                    className={styles.navItem}
+                    onClick={() => firebase.auth().signOut()}
+                    style={{ color: "#fe5e44" }}
+                  >
+                    Logout
+                  </div>
+                </Drawer>
               </div>
-
-              <Button className={styles.mobileToggle} onClick={this.showDrawer}>
-                <Icon type="menu" />
-              </Button>
-
-              <Drawer
-                placement="right"
-                closable={false}
-                onClose={this.onClose}
-                visible={this.state.visible}
-                width={200}
-              >
-                <div className={styles.navItem} onClick={() => navigate("/")}>
-                  Home
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => navigate("/about/")}
-                >
-                  About
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => navigate("/profile/")}
-                >
-                  Profile
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => firebase.auth().signOut()}
-                  style={{ color: "#fe5e44" }}
-                >
-                  Logout
-                </div>
-              </Drawer>
-            </div>
-          </Col>
+            </Col>
+          ) : (
+            ""
+          )}
         </Row>
       </nav>
     )
