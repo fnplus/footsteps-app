@@ -97,7 +97,7 @@ export class footstepsCard extends Component {
           <div
             style={
               this.props.position + 1 === this.props.size
-                ? { display: "none" }
+                ? { opacity: "0", width: "150px" }
                 : {}
             }
             className={styles.timelineBox}

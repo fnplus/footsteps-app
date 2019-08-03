@@ -1,0 +1,54 @@
+.container {
+  margin: 0 100px;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 700;
+  margin: 20px;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid #868686;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  width: 400px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+.input_label {
+  font-weight: 600;
+  margin-top: 35px;
+  font-family: "Montserrat", sans-serif;
+  color: #029843;
+}
+
+.icon_input_container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+.icon_container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.icon_container img {
+  border-radius: 50%;
+}
