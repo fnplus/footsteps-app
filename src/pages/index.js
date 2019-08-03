@@ -1,13 +1,7 @@
 import React, { Component } from "react"
-import firebase from "firebase/app"
-import "firebase/auth"
 
 import Layout from "../components/layout"
 import Landing from "../components/landing"
-
-import firebaseConfig from "../firebase/config"
-
-firebase.initializeApp(firebaseConfig)
 
 export class index extends Component {
   render() {

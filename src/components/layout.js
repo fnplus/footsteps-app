@@ -5,6 +5,7 @@ import { navigate } from "gatsby"
 
 import firebase from "firebase/app"
 import "firebase/auth"
+import firebaseConfig from "../firebase/config"
 
 import styles from "../styles/layout.module.css"
 import "antd/dist/antd.css"
@@ -26,6 +27,10 @@ export class layout extends Component {
   }
 
   componentDidMount() {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig)
+    }
+
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
       if (user) {
         client
