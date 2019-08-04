@@ -23,14 +23,23 @@ export class login extends Component {
     return (
       <div>
         <Row>
-          <Col xs={24} lg={12}></Col>
-          <Col xs={24} lg={12}>
+          <Col xs={24} lg={14}>
+            <img
+              className={styles.image}
+              src={require("../images/signin.png")}
+              alt=""
+            />
+          </Col>
+          <Col xs={24} lg={10}>
             <div className={styles.container}>
               <Form className="login-form">
                 <Form.Item>
                   <Input
                     prefix={
-                      <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
+                      <Icon
+                        type="uswidther"
+                        style={{ color: "rgba(0,0,0,.25)" }}
+                      />
                     }
                     placeholder="Email ID"
                   />

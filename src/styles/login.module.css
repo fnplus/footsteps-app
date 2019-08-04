@@ -5,3 +5,16 @@
   margin-right: auto;
   margin-top: 70px;
 }
+
+.image {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .image {
+    width: 90%;
+  }
+}

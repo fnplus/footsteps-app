@@ -31,7 +31,7 @@ export class addPath extends Component {
             <div className={styles.input_label}>Title</div>
             <input
               className={styles.input}
-              name="tile"
+              name="title"
               value={this.state.title}
               onChange={this.handleInputChange}
               placeholder="Intro to Gatsby"
