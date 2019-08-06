@@ -102,6 +102,7 @@ export const USERS_QUERY_APOLLO = gql`
         }
         footsteps {
           id
+          title
           resource_icon
           resource_url
           resource_type

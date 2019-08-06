@@ -10,7 +10,7 @@
   width: 60px;
 }
 
-.mobileToggle {
+.mobile_toggle {
   display: none;
   float: right;
   border: none;
@@ -24,7 +24,7 @@
     display: none;
   }
 
-  .mobileToggle {
+  .mobile_toggle {
     display: inline-block;
   }
 

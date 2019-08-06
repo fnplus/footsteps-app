@@ -40,7 +40,7 @@ export class header extends Component {
                 </div>
 
                 <Button
-                  className={styles.mobileToggle}
+                  className={styles.mobile_toggle}
                   onClick={this.showDrawer}
                 >
                   <Icon type="menu" />
