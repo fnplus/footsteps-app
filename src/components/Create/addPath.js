@@ -1,7 +1,9 @@
 import React, { Component } from "react"
 import { Row, Col, InputNumber } from "antd"
 
-import styles from "../styles/add.module.css"
+import styles from "../../styles/add.module.css"
+
+import AddFootsteps from "./addFootstep"
 
 export class addPath extends Component {
   state = {
@@ -68,16 +70,7 @@ export class addPath extends Component {
         <div className={styles.footsteps_container}>
           <h1 className={styles.footsteps_heading}>Add Footsteps</h1>
 
-          <div className={styles.footsteps_counter_container}>
-            <h4>Count: </h4>
-            <InputNumber
-              min={1}
-              max={10}
-              defaultValue={3}
-              onChange={this.onFootstepCounterChange}
-              className={styles.footsteps_counter_input}
-            />
-          </div>
+          <AddFootsteps />
         </div>
       </div>
     )
