@@ -143,6 +143,21 @@ textarea:focus {
   color: white;
   font-weight: 700;
   font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.footsteps_new:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.footstep_remove_btn {
+  text-align: right;
+  font-weight: 700;
+}
+
+.footstep_remove_btn:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

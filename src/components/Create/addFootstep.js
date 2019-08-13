@@ -50,10 +50,26 @@ export class addFootstep extends Component {
     })
   }
 
+  componentDidMount() {
+    console.log(this.props.data.id)
+    // this.props.remove(this.props.data.id)
+  }
+
   render() {
     return (
       <div className={styles.footstep_container}>
-        <Icon type="close" style={{ float: "right" }} />
+        {/* <Icon
+          type="close"
+          style={{ float: "right" }}
+          onClick={() => this.props.remove(this.props.data.id)}
+        /> */}
+
+        <div
+          onClick={() => this.props.remove(this.props.data.id)}
+          className={styles.footstep_remove_btn}
+        >
+          X
+        </div>
 
         <Row>
           <Col xs={24} lg={14}>

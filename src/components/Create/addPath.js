@@ -30,6 +30,18 @@ export class addPath extends Component {
     })
   }
 
+  removeNewFootstep = id => {
+    let removed_footstep = this.state.footsteps.filter(footstep => {
+      if (footstep.id !== id) {
+        return footstep
+      }
+    })
+
+    this.setState({
+      footsteps: removed_footstep,
+    })
+  }
+
   render() {
     return (
       <div className={styles.container}>
@@ -76,10 +88,10 @@ export class addPath extends Component {
         <div className={styles.footsteps_container}>
           <h1 className={styles.footsteps_heading}>Add Footsteps</h1>
 
-          {this.state.footsteps.map((i, footstep) => {
+          {this.state.footsteps.map(footstep => {
             return (
-              <div>
-                <AddFootsteps />
+              <div key={footstep.id}>
+                <AddFootsteps data={footstep} remove={this.removeNewFootstep} />
               </div>
             )
           })}
