@@ -52,9 +52,9 @@ export class addFootstep extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.footstep_container}>
         <Row>
-          <Col xs={24} lg={12}>
+          <Col xs={24} lg={14}>
             <div className={styles.input_label}>Title</div>
             <input
               className={styles.input}
@@ -82,30 +82,35 @@ export class addFootstep extends Component {
               placeholder="Link to the resource"
             />
 
-            <div className={styles.input_label}>Resource Type</div>
-            <Select
-              placeholder="Select the resource type"
-              style={{ width: 120 }}
-              onChange={this.handleTypeChange}
-            >
-              <Option value="Website">Website</Option>
-              <Option value="Documentation">Documentation</Option>
-              <Option value="Video">Video</Option>
-            </Select>
-
-            <div className={styles.input_label}>Resource Level</div>
-            <Select
-              placeholder="Select the resource Level"
-              style={{ width: 120 }}
-              onChange={this.handleLevelChange}
-            >
-              <Option value={0}>Beginner</Option>
-              <Option value={1}>Intermediate</Option>
-              <Option value={2}>Expert</Option>
-            </Select>
+            <Row>
+              <Col span={12}>
+                <div className={styles.input_label}>Resource Type</div>
+                <Select
+                  defaultValue="Website"
+                  style={{ minWidth: 120 }}
+                  onChange={this.handleTypeChange}
+                >
+                  <Option value="Website">Website</Option>
+                  <Option value="Documentation">Documentation</Option>
+                  <Option value="Video">Video</Option>
+                </Select>
+              </Col>
+              <Col span={12}>
+                <div className={styles.input_label}>Resource Level</div>
+                <Select
+                  defaultValue={0}
+                  style={{ minWidth: 120 }}
+                  onChange={this.handleLevelChange}
+                >
+                  <Option value={0}>Beginner</Option>
+                  <Option value={1}>Intermediate</Option>
+                  <Option value={2}>Expert</Option>
+                </Select>
+              </Col>
+            </Row>
           </Col>
 
-          <Col xs={24} lg={12}>
+          <Col xs={24} lg={10}>
             <div
               className={styles.icon_container}
               style={{
