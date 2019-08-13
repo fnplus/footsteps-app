@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col, Select } from "antd"
+import { Row, Col, Select, Icon } from "antd"
 import { WithContext as ReactTags } from "react-tag-input"
 
 import styles from "../../styles/add.module.css"
@@ -53,6 +53,8 @@ export class addFootstep extends Component {
   render() {
     return (
       <div className={styles.footstep_container}>
+        <Icon type="close" style={{ float: "right" }} />
+
         <Row>
           <Col xs={24} lg={14}>
             <div className={styles.input_label}>Title</div>
@@ -87,7 +89,7 @@ export class addFootstep extends Component {
                 <div className={styles.input_label}>Resource Type</div>
                 <Select
                   defaultValue="Website"
-                  style={{ minWidth: 120 }}
+                  style={{ minWidth: 120, marginTop: "10px" }}
                   onChange={this.handleTypeChange}
                 >
                   <Option value="Website">Website</Option>
@@ -99,7 +101,7 @@ export class addFootstep extends Component {
                 <div className={styles.input_label}>Resource Level</div>
                 <Select
                   defaultValue={0}
-                  style={{ minWidth: 120 }}
+                  style={{ minWidth: 120, marginTop: "10px" }}
                   onChange={this.handleLevelChange}
                 >
                   <Option value={0}>Beginner</Option>

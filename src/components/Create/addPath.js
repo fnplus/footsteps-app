@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { Row, Col, InputNumber } from "antd"
+import { Row, Col } from "antd"
+import uuid from "uuid"
 
 import styles from "../../styles/add.module.css"
 
@@ -11,6 +12,7 @@ export class addPath extends Component {
     description: "",
     icon:
       "https://www.gatsbyjs.org/static/gatsby-icon-4a9773549091c227cd2eb82ccd9c5e3a.png",
+    footsteps: [],
   }
 
   handleInputChange = e => {
@@ -20,8 +22,12 @@ export class addPath extends Component {
     })
   }
 
-  onFootstepCounterChange = value => {
-    console.log(value)
+  addNewFootstep = () => {
+    this.setState(state => {
+      let new_footstep = { id: uuid.v4() }
+
+      return { footsteps: [...state.footsteps, new_footstep] }
+    })
   }
 
   render() {
@@ -70,7 +76,19 @@ export class addPath extends Component {
         <div className={styles.footsteps_container}>
           <h1 className={styles.footsteps_heading}>Add Footsteps</h1>
 
-          <AddFootsteps />
+          {this.state.footsteps.map((i, footstep) => {
+            return (
+              <div>
+                <AddFootsteps />
+              </div>
+            )
+          })}
+
+          <div className={styles.footsteps_new_container}>
+            <div className={styles.footsteps_new} onClick={this.addNewFootstep}>
+              Create a new Footstep
+            </div>
+          </div>
         </div>
       </div>
     )

@@ -84,6 +84,7 @@ textarea:focus {
 .footsteps_heading {
   font-weight: 600;
   font-size: 30px;
+  margin-top: 100px;
 }
 
 .footsteps_counter_container {
@@ -123,4 +124,33 @@ textarea:focus {
   right: 0;
   font-size: 30px;
   font-weight: 700;
+}
+.footsteps_new_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px #545353 dashed;
+  padding: 50px 0;
+  margin: 50px;
+}
+
+.footsteps_new {
+  display: inline-block;
+  background: #029843;
+  padding: 10px 30px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 24px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+  .footstep_container {
+    padding: 30px 20px;
+  }
+
+  .footsteps_new_container {
+    margin: 50px 0;
+  }
 }
