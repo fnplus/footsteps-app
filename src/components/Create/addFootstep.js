@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col, Select, Icon } from "antd"
+import { Row, Col, Select } from "antd"
 import { WithContext as ReactTags } from "react-tag-input"
 
 import styles from "../../styles/add.module.css"

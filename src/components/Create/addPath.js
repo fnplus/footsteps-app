@@ -31,11 +31,11 @@ export class addPath extends Component {
   }
 
   removeNewFootstep = id => {
-    let removed_footstep = this.state.footsteps.filter(footstep => {
-      if (footstep.id !== id) {
-        return footstep
-      }
-    })
+    let removed_footstep = this.state.footsteps.filter(
+      footstep => footstep.id !== id
+    )
+
+    console.log(removed_footstep)
 
     this.setState({
       footsteps: removed_footstep,
