@@ -13,6 +13,13 @@ export class addPath extends Component {
     icon:
       "https://www.gatsbyjs.org/static/gatsby-icon-4a9773549091c227cd2eb82ccd9c5e3a.png",
     footsteps: [],
+    id: "",
+  }
+
+  componentDidMount() {
+    this.setState({
+      id: uuid.v4(),
+    })
   }
 
   handleInputChange = e => {
@@ -30,12 +37,14 @@ export class addPath extends Component {
     })
   }
 
+  updateFootstepContent = newFootstep => {
+    console.log(newFootstep)
+  }
+
   removeNewFootstep = id => {
     let removed_footstep = this.state.footsteps.filter(
       footstep => footstep.id !== id
     )
-
-    console.log(removed_footstep)
 
     this.setState({
       footsteps: removed_footstep,
@@ -91,7 +100,12 @@ export class addPath extends Component {
           {this.state.footsteps.map(footstep => {
             return (
               <div key={footstep.id}>
-                <AddFootsteps data={footstep} remove={this.removeNewFootstep} />
+                <AddFootsteps
+                  pathId={this.state.id}
+                  data={footstep}
+                  remove={this.removeNewFootstep}
+                  update={this.updateFootstepContent}
+                />
               </div>
             )
           })}

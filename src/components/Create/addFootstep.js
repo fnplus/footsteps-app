@@ -18,11 +18,29 @@ export class addFootstep extends Component {
     icon: "",
   }
 
+  updateFootstepArray = () => {
+    let newFootstepContent = {
+      id: this.props.data.id,
+      title: this.state.title,
+      description: this.state.description,
+      resource_type: this.state.type,
+      resource_url: this.state.url,
+      tags: this.state.tags,
+      learning_path: this.props.pathId,
+      level: this.state.level,
+      resource_icon: this.state.icon,
+    }
+
+    this.props.update(newFootstepContent)
+  }
+
   handleInputChange = e => {
     const target = e.target
     this.setState({
       [target.name]: target.value,
     })
+
+    this.updateFootstepArray()
   }
 
   handleTagDelete = i => {
@@ -42,12 +60,16 @@ export class addFootstep extends Component {
     this.setState({
       type: value,
     })
+
+    this.updateFootstepArray()
   }
 
   handleLevelChange = value => {
     this.setState({
       level: value,
     })
+
+    this.updateFootstepArray()
   }
 
   render() {
