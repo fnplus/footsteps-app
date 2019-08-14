@@ -36,11 +36,14 @@ export class addFootstep extends Component {
 
   handleInputChange = e => {
     const target = e.target
-    this.setState({
-      [target.name]: target.value,
-    })
-
-    this.updateFootstepArray()
+    this.setState(
+      {
+        [target.name]: target.value,
+      },
+      () => {
+        this.updateFootstepArray()
+      }
+    )
   }
 
   handleTagDelete = i => {
@@ -57,19 +60,25 @@ export class addFootstep extends Component {
   }
 
   handleTypeChange = value => {
-    this.setState({
-      type: value,
-    })
-
-    this.updateFootstepArray()
+    this.setState(
+      {
+        type: value,
+      },
+      () => {
+        this.updateFootstepArray()
+      }
+    )
   }
 
   handleLevelChange = value => {
-    this.setState({
-      level: value,
-    })
-
-    this.updateFootstepArray()
+    this.setState(
+      {
+        level: value,
+      },
+      () => {
+        this.updateFootstepArray()
+      }
+    )
   }
 
   render() {
