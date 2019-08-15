@@ -10,7 +10,7 @@ export class addFootstep extends Component {
   state = {
     title: "",
     description: "",
-    type: "",
+    type: "Website",
     url: "",
     level: 0,
     tags: "",

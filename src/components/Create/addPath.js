@@ -185,7 +185,10 @@ export class addPath extends Component {
         <div className={styles.error_message}>{this.state.err_msg}</div>
 
         <div className={styles.path_submit_container}>
-          <div className={styles.path_submit} onClick={this.submitPath}>
+          <div
+            className={styles.path_submit}
+            onClick={this.validatePathDetails}
+          >
             Create Path
           </div>
         </div>
@@ -195,3 +198,34 @@ export class addPath extends Component {
 }
 
 export default addPath
+
+export const CREATE_PATH_MUTATION_APOLLO = gql`
+  mutation insert_path(
+    $author: uuid!
+    $icon: String!
+    $title: String!
+    $description: String!
+  ) {
+    insert_Learning_Paths(
+      objects: {
+        author: $author
+        description: $description
+        icon: $icon
+        title: $title
+      }
+    ) {
+      affected_rows
+      returning {
+        id
+      }
+    }
+  }
+`
+
+export const ADD_FOOTSTEPS_MUTATION_APOLLO = gql`
+  mutation insert_footstep($data: [Footsteps_insert_input!]!) {
+    insert_Footsteps(objects: $data) {
+      affected_rows
+    }
+  }
+`
