@@ -110,12 +110,20 @@ export class addFootstep extends Component {
   render() {
     return (
       <div className={styles.footstep_container}>
-        <div
-          onClick={() => this.props.remove(this.props.data.id)}
-          className={styles.footstep_remove_btn}
-        >
-          X
-        </div>
+        <Row>
+          <Col span={12}>
+            <div className={styles.footstep_counter}>{this.props.index}</div>
+          </Col>
+
+          <Col span={12}>
+            <div
+              onClick={() => this.props.remove(this.props.data.id)}
+              className={styles.footstep_remove_btn}
+            >
+              X
+            </div>
+          </Col>
+        </Row>
 
         <Row>
           <Col xs={24} lg={14}>
@@ -151,7 +159,11 @@ export class addFootstep extends Component {
                 <div className={styles.input_label}>Resource Type</div>
                 <Select
                   defaultValue="Website"
-                  style={{ minWidth: 120, marginTop: "10px" }}
+                  style={{
+                    minWidth: 120,
+                    marginTop: "10px",
+                    fontFamily: "'Montserrat'",
+                  }}
                   onChange={this.handleTypeChange}
                 >
                   <Option value="Website">Website</Option>
@@ -163,7 +175,11 @@ export class addFootstep extends Component {
                 <div className={styles.input_label}>Resource Level</div>
                 <Select
                   defaultValue={0}
-                  style={{ minWidth: 120, marginTop: "10px" }}
+                  style={{
+                    minWidth: 120,
+                    marginTop: "10px",
+                    fontFamily: "'Montserrat'",
+                  }}
                   onChange={this.handleLevelChange}
                 >
                   <Option value={0}>Beginner</Option>

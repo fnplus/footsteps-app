@@ -109,10 +109,11 @@ export class addPath extends Component {
         <div className={styles.footsteps_container}>
           <h1 className={styles.footsteps_heading}>Add Footsteps</h1>
 
-          {this.state.footsteps.map(footstep => {
+          {this.state.footsteps.map((footstep, i) => {
             return (
               <div key={footstep.id}>
                 <AddFootsteps
+                  index={i + 1}
                   pathId={this.state.id}
                   data={footstep}
                   remove={this.removeNewFootstep}

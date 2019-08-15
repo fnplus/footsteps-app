@@ -144,6 +144,7 @@ textarea:focus {
   font-weight: 700;
   font-size: 18px;
   transition: transform 0.2s;
+  text-align: center;
 }
 
 .footsteps_new:hover {
@@ -160,6 +161,12 @@ textarea:focus {
   cursor: pointer;
 }
 
+.footstep_counter {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
 @media only screen and (max-width: 768px) {
   .footstep_container {
     padding: 30px 20px;
@@ -167,5 +174,6 @@ textarea:focus {
 
   .footsteps_new_container {
     margin: 50px 0;
+    padding: 50px 10px;
   }
 }
