@@ -15,7 +15,7 @@ export class addFootstep extends Component {
     level: 0,
     tags: "",
     tags_array: [],
-    icon: "",
+    icon: "https://i.imgur.com/frwNB0V.png",
   }
 
   updateFootstepArray = () => {

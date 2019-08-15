@@ -10,8 +10,7 @@ export class addPath extends Component {
   state = {
     title: "",
     description: "",
-    icon:
-      "https://www.gatsbyjs.org/static/gatsby-icon-4a9773549091c227cd2eb82ccd9c5e3a.png",
+    icon: "https://image.flaticon.com/icons/svg/284/284471.svg",
     footsteps: [],
     id: "",
     err_msg: "",
@@ -60,6 +59,53 @@ export class addPath extends Component {
     this.setState({
       footsteps: removed_footstep,
     })
+  }
+
+  validatePathDetails = () => {
+    console.log(this.state)
+
+    if (
+      this.state.title === "" ||
+      this.state.description === "" ||
+      this.state.icon === ""
+    ) {
+      this.setState({
+        err_msg: "Please fill the Path Details",
+      })
+    } else if (this.state.footsteps.length < 1) {
+      this.setState({
+        err_msg: "Please add a few footsteps. Footsteps can not be empty.",
+      })
+    } else {
+      this.setState({
+        err_msg: "",
+      })
+    }
+
+    this.state.footsteps.every((footstep, index) => {
+      let footstepKeys = Object.keys(footstep)
+
+      if (footstepKeys.length <= 1) {
+        this.setState({
+          err_msg: `Please fill in Content for Footstep ${index + 1}`,
+        })
+        return false
+      }
+
+      footstepKeys.forEach(key => {
+        if (footstep[key] === "") {
+          this.setState({
+            err_msg: `Please fill all the fields in Footstep ${index + 1}`,
+          })
+          return false
+        }
+      })
+
+      return true
+    })
+
+    if (this.state.err_msg === "") {
+    }
   }
 
   render() {
@@ -139,7 +185,9 @@ export class addPath extends Component {
         <div className={styles.error_message}>{this.state.err_msg}</div>
 
         <div className={styles.path_submit_container}>
-          <div className={styles.path_submit}>Create Path</div>
+          <div className={styles.path_submit} onClick={this.submitPath}>
+            Create Path
+          </div>
         </div>
       </div>
     )
