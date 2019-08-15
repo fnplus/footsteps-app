@@ -14,6 +14,7 @@ export class addPath extends Component {
       "https://www.gatsbyjs.org/static/gatsby-icon-4a9773549091c227cd2eb82ccd9c5e3a.png",
     footsteps: [],
     id: "",
+    err_msg: "Fill all fields",
   }
 
   componentDidMount() {
@@ -38,8 +39,6 @@ export class addPath extends Component {
   }
 
   updateFootstepContent = newFootstep => {
-    console.log(newFootstep)
-
     let { footsteps } = this.state
 
     let footstepToReplaceIndex = footsteps.findIndex(
@@ -107,7 +106,7 @@ export class addPath extends Component {
         </Row>
 
         <div className={styles.footsteps_container}>
-          <h1 className={styles.footsteps_heading}>Add Footsteps</h1>
+          <h1 className={styles.footsteps_heading}>Footsteps</h1>
 
           {this.state.footsteps.map((footstep, i) => {
             return (
@@ -125,9 +124,15 @@ export class addPath extends Component {
 
           <div className={styles.footsteps_new_container}>
             <div className={styles.footsteps_new} onClick={this.addNewFootstep}>
-              Create a new Footstep
+              Add new Footstep
             </div>
           </div>
+        </div>
+
+        <div className={styles.error_message}>{this.state.err_msg}</div>
+
+        <div className={styles.path_submit_container}>
+          <div className={styles.path_submit}>Create Path</div>
         </div>
       </div>
     )

@@ -129,7 +129,7 @@ textarea:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px #545353 dashed;
+  border: 4px #545353 dashed;
   padding: 50px 0;
   margin: 50px;
 }
@@ -142,7 +142,7 @@ textarea:focus {
   border-radius: 24px;
   color: white;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   transition: transform 0.2s;
   text-align: center;
 }
@@ -165,6 +165,39 @@ textarea:focus {
   font-size: 25px;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
+}
+
+.path_submit_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 80px 0;
+}
+
+.path_submit {
+  display: inline-block;
+  background: #029843;
+  padding: 10px 30px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 24px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.path_submit:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.error_message {
+  text-align: center;
+  color: #fe5e44;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 768px) {
