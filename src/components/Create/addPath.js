@@ -39,6 +39,18 @@ export class addPath extends Component {
 
   updateFootstepContent = newFootstep => {
     console.log(newFootstep)
+
+    let { footsteps } = this.state
+
+    let footstepToReplaceIndex = footsteps.findIndex(
+      footstep => footstep.id === newFootstep.id
+    )
+
+    footsteps[footstepToReplaceIndex] = newFootstep
+
+    this.setState({
+      footsteps,
+    })
   }
 
   removeNewFootstep = id => {
