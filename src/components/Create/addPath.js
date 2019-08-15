@@ -14,7 +14,7 @@ export class addPath extends Component {
       "https://www.gatsbyjs.org/static/gatsby-icon-4a9773549091c227cd2eb82ccd9c5e3a.png",
     footsteps: [],
     id: "",
-    err_msg: "Fill all fields",
+    err_msg: "",
   }
 
   componentDidMount() {
@@ -122,11 +122,18 @@ export class addPath extends Component {
             )
           })}
 
-          <div className={styles.footsteps_new_container}>
-            <div className={styles.footsteps_new} onClick={this.addNewFootstep}>
-              Add new Footstep
+          {this.state.footsteps.length < 10 ? (
+            <div className={styles.footsteps_new_container}>
+              <div
+                className={styles.footsteps_new}
+                onClick={this.addNewFootstep}
+              >
+                Add new Footstep
+              </div>
             </div>
-          </div>
+          ) : (
+            ""
+          )}
         </div>
 
         <div className={styles.error_message}>{this.state.err_msg}</div>
