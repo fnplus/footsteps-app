@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import gql from "graphql-tag"
 import { Row, Col } from "antd"
 import uuid from "uuid"
+import { navigate } from "gatsby"
 
 import styles from "../../styles/add.module.css"
 
@@ -17,12 +18,16 @@ export class addPath extends Component {
     footsteps: [],
     id: "",
     err_msg: "",
+    user_id: "",
   }
 
   componentDidMount() {
-    this.setState({
-      id: uuid.v4(),
-    })
+    if (typeof window !== undefined) {
+      this.setState({
+        user_id: localStorage.getItem("userId"),
+        id: uuid.v4(),
+      })
+    }
   }
 
   handleInputChange = e => {
@@ -99,8 +104,6 @@ export class addPath extends Component {
   }
 
   validatePathDetails = () => {
-    console.log(this.state)
-
     if (
       this.state.title === "" ||
       this.state.description === "" ||
@@ -134,7 +137,38 @@ export class addPath extends Component {
   }
 
   submitPath = () => {
-    console.log(this.validatePathDetails())
+    if (this.validatePathDetails()) {
+      client
+        .mutate({
+          mutation: CREATE_PATH_MUTATION_APOLLO,
+          variables: {
+            author: this.state.user_id,
+            icon: this.state.icon,
+            title: this.state.title,
+            description: this.state.description,
+          },
+        })
+        .then(res => {
+          let path_id = res.data.insert_Learning_Paths.returning[0].id
+
+          let { footsteps } = this.state
+
+          footsteps.forEach(footstep => {
+            delete footstep.id
+            footstep.learning_path = path_id
+          })
+
+          client.mutate({
+            mutation: ADD_FOOTSTEPS_MUTATION_APOLLO,
+            variables: {
+              data: footsteps,
+            },
+          })
+
+          alert(`Successfully created path '${this.state.title}'`)
+          navigate("/")
+        })
+    }
   }
 
   render() {
