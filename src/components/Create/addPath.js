@@ -78,8 +78,19 @@ export class addPath extends Component {
     })
   }
 
+  emptyContent = () => {
+    return this.state.footsteps.every(footstep => {
+      for (var key in footstep) {
+        if (footstep[key] === "") {
+          return true
+        }
+      }
+      return false
+    })
+  }
+
   validatePathDetails = () => {
-    // console.log(this.state)
+    console.log(this.state)
 
     if (
       this.state.title === "" ||
