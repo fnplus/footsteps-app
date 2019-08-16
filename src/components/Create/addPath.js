@@ -67,26 +67,35 @@ export class addPath extends Component {
   // Footstep validation functions
 
   noContent = () => {
-    return this.state.footsteps.every(footstep => {
-      let footstepKeys = Object.keys(footstep)
+    let valid = false
 
-      if (footstepKeys.length <= 1) {
-        return true
-      } else {
-        return false
+    let { footsteps } = this.state
+
+    for (var i = 0; i < footsteps.length; i++) {
+      if (Object.keys(footsteps[i]).length <= 1) {
+        valid = true
       }
-    })
+    }
+
+    return valid
   }
 
   emptyContent = () => {
-    return this.state.footsteps.every(footstep => {
+    let valid = false
+
+    let { footsteps } = this.state
+
+    for (var i = 0; i < footsteps.length; i++) {
+      let footstep = footsteps[i]
+
       for (var key in footstep) {
         if (footstep[key] === "") {
-          return true
+          valid = true
         }
       }
-      return false
-    })
+    }
+
+    return valid
   }
 
   validatePathDetails = () => {
