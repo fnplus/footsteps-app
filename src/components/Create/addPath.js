@@ -1,10 +1,13 @@
 import React, { Component } from "react"
+import gql from "graphql-tag"
 import { Row, Col } from "antd"
 import uuid from "uuid"
 
 import styles from "../../styles/add.module.css"
 
 import AddFootsteps from "./addFootstep"
+
+import { client } from "../../apollo/client"
 
 export class addPath extends Component {
   state = {
@@ -61,8 +64,22 @@ export class addPath extends Component {
     })
   }
 
+  // Footstep validation functions
+
+  noContent = () => {
+    return this.state.footsteps.every(footstep => {
+      let footstepKeys = Object.keys(footstep)
+
+      if (footstepKeys.length <= 1) {
+        return true
+      } else {
+        return false
+      }
+    })
+  }
+
   validatePathDetails = () => {
-    console.log(this.state)
+    // console.log(this.state)
 
     if (
       this.state.title === "" ||
@@ -72,40 +89,32 @@ export class addPath extends Component {
       this.setState({
         err_msg: "Please fill the Path Details",
       })
+      return false
     } else if (this.state.footsteps.length < 1) {
       this.setState({
         err_msg: "Please add a few footsteps. Footsteps can not be empty.",
       })
+      return false
+    } else if (this.noContent()) {
+      this.setState({
+        err_msg: "Please fill the footstep content",
+      })
+      return false
+    } else if (this.emptyContent()) {
+      this.setState({
+        err_msg: "Please fill all the footstep fields",
+      })
+      return false
     } else {
       this.setState({
         err_msg: "",
       })
-    }
-
-    this.state.footsteps.every((footstep, index) => {
-      let footstepKeys = Object.keys(footstep)
-
-      if (footstepKeys.length <= 1) {
-        this.setState({
-          err_msg: `Please fill in Content for Footstep ${index + 1}`,
-        })
-        return false
-      }
-
-      footstepKeys.forEach(key => {
-        if (footstep[key] === "") {
-          this.setState({
-            err_msg: `Please fill all the fields in Footstep ${index + 1}`,
-          })
-          return false
-        }
-      })
-
       return true
-    })
-
-    if (this.state.err_msg === "") {
     }
+  }
+
+  submitPath = () => {
+    console.log(this.validatePathDetails())
   }
 
   render() {
@@ -185,10 +194,7 @@ export class addPath extends Component {
         <div className={styles.error_message}>{this.state.err_msg}</div>
 
         <div className={styles.path_submit_container}>
-          <div
-            className={styles.path_submit}
-            onClick={this.validatePathDetails}
-          >
+          <div className={styles.path_submit} onClick={this.submitPath}>
             Create Path
           </div>
         </div>
