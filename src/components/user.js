@@ -5,10 +5,6 @@ import styles from "../styles/user.module.css"
 import LearningPaths from "./User/learningPaths"
 
 export class user extends Component {
-  componentDidMount() {
-    console.log(this.props.data)
-  }
-
   render() {
     const data = this.props.data
 
