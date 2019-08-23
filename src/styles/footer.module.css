@@ -3,3 +3,11 @@ footer {
   height: 40px;
   box-sizing: border-box;
 }
+
+.OS_link {
+  color: rgb(0, 0, 0, 0.65);
+}
+
+.OS_link:hover {
+  color: black;
+}
