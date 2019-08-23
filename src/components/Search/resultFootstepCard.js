@@ -11,7 +11,14 @@ export class resultFootstepCard extends Component {
     resourceLink: "",
     iconLink: "",
     video: false,
-    documentation: false,
+    internet: false,
+    blog: false,
+    course: false,
+    plan: false,
+    quiz: false,
+    audio: false,
+    page: false,
+    book: false,
   }
 
   componentDidMount() {
@@ -28,7 +35,83 @@ export class resultFootstepCard extends Component {
       this.setState({
         resourceTitle: "Documentation",
         resourceLink: "Visit Website",
-        documentation: true,
+        internet: true,
+      })
+    } else if (
+      this.props.data.resource_type === "Article" ||
+      this.props.data.resource_type === "Blog"
+    ) {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `Read ${this.props.data.resource_type}`,
+        blog: true,
+      })
+    } else if (
+      this.props.data.resource_type === "MOOC" ||
+      this.props.data.resource_type === "Course" ||
+      this.props.data.resource_type === "Lecture"
+    ) {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `Watch ${this.props.data.resource_type}`,
+        course: true,
+      })
+    } else if (this.props.data.resource_type === "Book") {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `Read ${this.props.data.resource_type}`,
+        book: true,
+      })
+    } else if (this.props.data.resource_type === "Cheat Sheet") {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `See ${this.props.data.resource_type}`,
+        page: true,
+      })
+    } else if (this.props.data.resource_type === "Tool") {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `Use Tool`,
+        plan: true,
+      })
+    } else if (this.props.data.resource_type === "Research Paper") {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `Read Paper`,
+        page: true,
+      })
+    } else if (this.props.data.resource_type === "Quiz") {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `Take ${this.props.data.resource_type}`,
+        quiz: true,
+      })
+    } else if (this.props.data.resource_type === "Resource List") {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `See List`,
+        page: true,
+      })
+    } else if (this.props.data.resource_type === "Study Plan") {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `See Plan`,
+        plan: true,
+      })
+    } else if (this.props.data.resource_type === "Audio") {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `Listen to Audio`,
+        audio: true,
+      })
+    } else if (
+      this.props.data.resource_type === "Question" ||
+      this.props.data.resource_type === "Competition"
+    ) {
+      this.setState({
+        resourceTitle: this.props.data.resource_type,
+        resourceLink: `Visit Site`,
+        quiz: true,
       })
     }
   }
@@ -49,7 +132,7 @@ export class resultFootstepCard extends Component {
 
             <Row className={styles.typeContainer}>
               <Col span={4}>
-                {this.state.documentation ? (
+                {this.state.internet ? (
                   <img
                     className={styles.typeImage}
                     src={require("../../images/footsteps/internet.png")}
@@ -63,6 +146,76 @@ export class resultFootstepCard extends Component {
                   <img
                     className={styles.typeImage}
                     src={require("../../images/footsteps/video.png")}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+
+                {this.state.blog ? (
+                  <img
+                    className={styles.typeImage}
+                    src={require("../../images/footsteps/blog.png")}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+
+                {this.state.course ? (
+                  <img
+                    className={styles.typeImage}
+                    src={require("../../images/footsteps/course.png")}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+
+                {this.state.plan ? (
+                  <img
+                    className={styles.typeImage}
+                    src={require("../../images/footsteps/plan.png")}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+
+                {this.state.quiz ? (
+                  <img
+                    className={styles.typeImage}
+                    src={require("../../images/footsteps/quiz.png")}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+
+                {this.state.audio ? (
+                  <img
+                    className={styles.typeImage}
+                    src={require("../../images/footsteps/audio.png")}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+
+                {this.state.page ? (
+                  <img
+                    className={styles.typeImage}
+                    src={require("../../images/footsteps/page.png")}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+
+                {this.state.book ? (
+                  <img
+                    className={styles.typeImage}
+                    src={require("../../images/footsteps/book.png")}
                     alt=""
                   />
                 ) : (
