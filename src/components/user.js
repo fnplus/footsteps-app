@@ -3,7 +3,6 @@ import { Row, Col, Icon } from "antd"
 
 import styles from "../styles/user.module.css"
 import LearningPaths from "./User/learningPaths"
-import Follow from "./User/follow"
 
 export class user extends Component {
   componentDidMount() {

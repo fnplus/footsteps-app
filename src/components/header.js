@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Drawer, Button, Row, Col, Icon } from "antd"
+import { Drawer, Button, Row, Col } from "antd"
 import { navigate } from "gatsby"
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -39,12 +39,9 @@ export class header extends Component {
                   <NavMenu mode="horizontal" user={this.props.user} />
                 </div>
 
-                <Button
-                  className={styles.mobile_toggle}
-                  onClick={this.showDrawer}
-                >
-                  <Icon type="menu" />
-                </Button>
+                <div className={styles.mobile_toggle} onClick={this.showDrawer}>
+                  <img src={require("../images/menu.png")} alt="Menu" />
+                </div>
 
                 <Drawer
                   placement="right"

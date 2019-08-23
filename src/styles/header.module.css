@@ -19,6 +19,11 @@
   padding-right: 5px;
 }
 
+.mobile_toggle img {
+  width: 25px;
+  margin-top: 10px;
+}
+
 @media only screen and (max-width: 768px) {
   .navDesktop {
     display: none;
