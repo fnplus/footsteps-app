@@ -9,7 +9,9 @@ export default () => (
     <Row>
       <Col sm={24} lg={14}>
         <h1 className={styles.heading}>Footsteps</h1>
-        <p className={styles.subHeading}>Learning Resource Aggregator</p>
+        <p className={styles.subHeading}>
+          What are You Willing to Learn Today?
+        </p>
         <img
           src={require("../images/road-sign.svg")}
           alt=""

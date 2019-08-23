@@ -3,7 +3,7 @@ input[type="search"] {
   text-align: center;
   flex: 1 1 auto;
   margin: 0 20px;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 input[type="search"]:focus {
@@ -22,6 +22,7 @@ input[type="search"]:focus {
   width: 140px;
   text-align: center;
   font-size: 20px;
+  font-weight: 600;
 }
 
 .searchBtn:focus {
@@ -39,19 +40,17 @@ input[type="search"]:focus {
   border: 2px solid #000;
   width: 100%;
   border-radius: 25px;
-  font-family: "Arvo", serif;
+  font-family: "Montserrat", serif;
 }
 
 @media only screen and (max-width: 768px) {
   input[type="search"] {
-    font-size: 15px;
+    font-size: 16px;
     margin: 0 0 0 20px;
   }
 
-  select {
-    margin: 5px 5px 5px 0px;
-    font-size: 12px;
-    width: 110px;
+  .searchBtn {
+    font-size: 16px;
   }
 }
 

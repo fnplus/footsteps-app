@@ -46,7 +46,7 @@ export class searchbar extends Component {
             type="search"
             name="q"
             placeholder="Search Footsteps"
-            aria-label="Search"
+            label="Search"
             onChange={this.updateQuery}
             onKeyDown={this.pressEnter}
           />
