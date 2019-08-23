@@ -3,6 +3,7 @@ import gql from "graphql-tag"
 import { Row, Col } from "antd"
 import uuid from "uuid"
 import { navigate } from "gatsby"
+import { WithContext as ReactTags } from "react-tag-input"
 
 import styles from "../../styles/add.module.css"
 
@@ -19,6 +20,8 @@ export class addPath extends Component {
     id: "",
     err_msg: "",
     user_id: "",
+    tags: "",
+    tags_array: [],
   }
 
   componentDidMount() {
@@ -107,7 +110,8 @@ export class addPath extends Component {
     if (
       this.state.title === "" ||
       this.state.description === "" ||
-      this.state.icon === ""
+      this.state.icon === "" ||
+      this.state.tags === ""
     ) {
       this.setState({
         err_msg: "Please fill the Path Details",
@@ -136,6 +140,40 @@ export class addPath extends Component {
     }
   }
 
+  // Tag Handling Functions
+
+  handleTagDelete = i => {
+    const { tags_array } = this.state
+    this.setState({
+      tags_array: tags_array.filter((_tag, index) => index !== i),
+    })
+  }
+
+  handleTagAddition = tag => {
+    if (this.state.tags_array.length < 10) {
+      this.setState(
+        state => ({ tags_array: [...state.tags_array, tag] }),
+        () => {
+          let tags = ""
+
+          this.state.tags_array.map((skill, i) => {
+            if (i !== this.state.tags_array.length - 1) {
+              tags += skill.text + ","
+              return 0
+            } else {
+              tags += skill.text
+              return 0
+            }
+          })
+
+          this.setState({
+            tags,
+          })
+        }
+      )
+    }
+  }
+
   submitPath = () => {
     if (this.validatePathDetails()) {
       client
@@ -146,6 +184,7 @@ export class addPath extends Component {
             icon: this.state.icon,
             title: this.state.title,
             description: this.state.description,
+            tags: this.state.tags,
           },
         })
         .then(res => {
@@ -194,6 +233,18 @@ export class addPath extends Component {
               onChange={this.handleInputChange}
               placeholder="Gatsby is a free and open source framework based on React"
               style={{ height: "100px" }}
+            />
+
+            <div className={styles.input_label}>Tags</div>
+            <ReactTags
+              tags={this.state.tags_array}
+              placeholder={"Enter relevant tags"}
+              delimiters={[188, 13]}
+              handleDelete={this.handleTagDelete}
+              handleAddition={this.handleTagAddition}
+              allowDragDrop={false}
+              inputFieldPosition="top"
+              autofocus={false}
             />
           </Col>
           <Col xs={24} lg={12}>
