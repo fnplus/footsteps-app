@@ -149,7 +149,6 @@ export const USERS_QUERY_APOLLO = gql`
           resource_url
           resource_type
           level
-          tags
           description
         }
       }

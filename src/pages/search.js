@@ -64,7 +64,11 @@ export default search
 
 export const SEARCH_QUERY_APOLLO = gql`
   query searchPaths($query: String!) {
-    Learning_Paths(where: { title: { _ilike: $query } }) {
+    Learning_Paths(
+      where: {
+        _or: [{ title: { _ilike: $query } }, { tags: { _ilike: $query } }]
+      }
+    ) {
       title
       author
       description
@@ -73,7 +77,6 @@ export const SEARCH_QUERY_APOLLO = gql`
         description
         learning_path
         title
-        tags
         resource_url
         resource_type
         resource_icon
@@ -99,11 +102,7 @@ export const SEARCH_QUERY_APOLLO = gql`
         }
       }
     }
-    Footsteps(
-      where: {
-        _or: [{ title: { _ilike: $query } }, { tags: { _ilike: $query } }]
-      }
-    ) {
+    Footsteps(where: { title: { _ilike: $query } }) {
       description
       id
       learning_path
@@ -111,7 +110,6 @@ export const SEARCH_QUERY_APOLLO = gql`
       resource_icon
       resource_type
       resource_url
-      tags
       title
     }
   }
