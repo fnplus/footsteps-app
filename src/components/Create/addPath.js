@@ -97,8 +97,10 @@ export class addPath extends Component {
       let footstep = footsteps[i]
 
       for (var key in footstep) {
-        if (footstep[key] === "") {
-          valid = true
+        if (key !== "description") {
+          if (footstep[key] === "") {
+            valid = true
+          }
         }
       }
     }

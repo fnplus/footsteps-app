@@ -100,7 +100,7 @@ export class addFootstep extends Component {
               value={this.state.description}
               onChange={this.handleInputChange}
               maxLength="80"
-              placeholder="Short description of the footstep (max 80 chars)"
+              placeholder="Short description of the footstep (max 80 chars) -- Optional"
             />
 
             <div className={styles.input_label}>Resource URL</div>

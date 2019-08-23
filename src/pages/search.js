@@ -35,12 +35,10 @@ export class search extends Component {
                 if (error) return <h1>Error Loading Results</h1>
 
                 if (data) {
-                  console.log(data)
                   if (
                     data.Learning_Paths.length !== 0 ||
                     data.Footsteps.length !== 0
                   ) {
-                    console.log(data)
                     return (
                       <SearchResult
                         paths={data.Learning_Paths}

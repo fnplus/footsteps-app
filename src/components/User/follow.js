@@ -5,7 +5,6 @@ import styles from "../../styles/user.module.css"
 import { Link } from "gatsby"
 
 export default ({ users, type }) => {
-  console.log(users)
   if (users.length === 0)
     return (
       <div className={styles.followContainer}>
@@ -15,7 +14,6 @@ export default ({ users, type }) => {
   let users_info_list = users.map(user =>
     type ? user.follower_info : user.follow_info
   )
-  console.log(users_info_list)
   return (
     <div className={styles.followContainer}>
       {users_info_list.map(user => (
