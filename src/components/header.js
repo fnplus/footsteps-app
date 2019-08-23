@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Drawer, Button, Row, Col } from "antd"
+import { Drawer, Row, Col } from "antd"
 import { navigate } from "gatsby"
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -29,7 +29,11 @@ export class header extends Component {
       <nav className={styles.navContainer}>
         <Row>
           <Col xs={6} md={2} className={styles.logo}>
-            <img src={require("../images/brand-logo.png")} alt="" />
+            <img
+              src={require("../images/brand-logo.png")}
+              alt=""
+              onClick={() => navigate("/")}
+            />
           </Col>
 
           {this.props.show ? (

@@ -35,7 +35,7 @@ class NavMenu extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className={styles.menuContainer}>
           <li className={styles.menuProfile}>
             <img
               className={styles.menuProfileImg}

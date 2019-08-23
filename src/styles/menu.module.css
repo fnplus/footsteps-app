@@ -8,6 +8,10 @@
   font-weight: 600;
 }
 
+.menuContainer {
+  margin-top: -14px;
+}
+
 .menuItems a {
   color: #3f3f3f;
 }

@@ -10,6 +10,10 @@
   width: 60px;
 }
 
+.logo img:hover {
+  cursor: pointer;
+}
+
 .mobile_toggle {
   display: none;
   float: right;
@@ -35,7 +39,8 @@
 
   .navItem {
     text-align: center;
-    font-family: "Arvo", serif;
+    font-family: "Montserrat";
+    font-weight: 600;
     font-size: 18px;
     margin-bottom: 20px;
     margin-top: 10px;
