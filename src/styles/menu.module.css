@@ -75,7 +75,7 @@
 }
 
 .dropDownInfo {
-  height: 90px;
+  height: 90px !important;
 }
 
 .dropDownInfo img {
