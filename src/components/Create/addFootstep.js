@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { Row, Col, Select } from "antd"
-import { WithContext as ReactTags } from "react-tag-input"
 
 import styles from "../../styles/add.module.css"
 
@@ -13,35 +12,16 @@ export class addFootstep extends Component {
     type: "Website",
     url: "",
     level: 0,
-    tags: "",
-    tags_array: [],
     icon: "https://i.imgur.com/frwNB0V.png",
   }
 
   updateFootstepArray = () => {
-    let tags = ""
-
-    this.state.tags_array.map((skill, i) => {
-      if (i !== this.state.tags_array.length - 1) {
-        tags += skill.text + ","
-        return 0
-      } else {
-        tags += skill.text
-        return 0
-      }
-    })
-
-    this.setState({
-      tags,
-    })
-
     let newFootstepContent = {
       id: this.props.data.id,
       title: this.state.title,
       description: this.state.description,
       resource_type: this.state.type,
       resource_url: this.state.url,
-      tags,
       learning_path: this.props.pathId,
       level: this.state.level,
       resource_icon: this.state.icon,
@@ -60,29 +40,6 @@ export class addFootstep extends Component {
         this.updateFootstepArray()
       }
     )
-  }
-
-  handleTagDelete = i => {
-    const { tags_array } = this.state
-    this.setState(
-      {
-        tags_array: tags_array.filter((_tag, index) => index !== i),
-      },
-      () => {
-        this.updateFootstepArray()
-      }
-    )
-  }
-
-  handleTagAddition = tag => {
-    if (this.state.tags_array.length < 10) {
-      this.setState(
-        state => ({ tags_array: [...state.tags_array, tag] }),
-        () => {
-          this.updateFootstepArray()
-        }
-      )
-    }
   }
 
   handleTypeChange = value => {
@@ -126,7 +83,7 @@ export class addFootstep extends Component {
         </Row>
 
         <Row>
-          <Col xs={24} lg={14}>
+          <Col xs={24} lg={12}>
             <div className={styles.input_label}>Title</div>
             <input
               className={styles.input}
@@ -154,7 +111,33 @@ export class addFootstep extends Component {
               onChange={this.handleInputChange}
               placeholder="Link to the resource"
             />
+          </Col>
 
+          <Col xs={24} lg={12}>
+            <div
+              className={styles.icon_container}
+              style={{
+                width: "100px",
+                height: "100px",
+              }}
+            >
+              <img
+                style={{ width: "100px", height: "100px" }}
+                src={this.state.icon}
+                alt=""
+              />
+            </div>
+
+            <div>
+              <div className={styles.input_label}>Icon URL</div>
+              <input
+                className={styles.input}
+                name="icon"
+                value={this.state.icon}
+                onChange={this.handleInputChange}
+                placeholder="Icon URL"
+              />
+            </div>
             <Row>
               <Col span={12}>
                 <div className={styles.input_label}>Resource Type</div>
@@ -204,45 +187,6 @@ export class addFootstep extends Component {
                 </Select>
               </Col>
             </Row>
-          </Col>
-
-          <Col xs={24} lg={10}>
-            <div
-              className={styles.icon_container}
-              style={{
-                width: "100px",
-                height: "100px",
-              }}
-            >
-              <img
-                style={{ width: "100px", height: "100px" }}
-                src={this.state.icon}
-                alt=""
-              />
-            </div>
-
-            <div>
-              <div className={styles.input_label}>Icon URL</div>
-              <input
-                className={styles.input}
-                name="icon"
-                value={this.state.icon}
-                onChange={this.handleInputChange}
-                placeholder="Icon URL"
-              />
-            </div>
-
-            <div className={styles.input_label}>Tags</div>
-            <ReactTags
-              tags={this.state.tags_array}
-              placeholder={"Enter relevant tags"}
-              delimiters={[188, 13]}
-              handleDelete={this.handleTagDelete}
-              handleAddition={this.handleTagAddition}
-              allowDragDrop={false}
-              inputFieldPosition="top"
-              autofocus={false}
-            />
           </Col>
         </Row>
       </div>
