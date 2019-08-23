@@ -22,7 +22,7 @@ export class user extends Component {
             <img className={styles.profileImg} src={data.profile_pic} alt="" />
             <div className={styles.social}>
               <Row>
-                {data.github !== "" ? (
+                {data.github !== "" && data.github !== "https://github.com/" ? (
                   <Col span={8}>
                     <Icon
                       onClick={() => window.open(data.github)}
@@ -34,7 +34,8 @@ export class user extends Component {
                 ) : (
                   ""
                 )}
-                {data.linkedin !== "" ? (
+                {data.linkedin !== "" &&
+                data.linkedin !== "https://linkedin.com/" ? (
                   <Col span={8}>
                     <Icon
                       onClick={() => window.open(data.linkedin)}
@@ -46,7 +47,8 @@ export class user extends Component {
                 ) : (
                   ""
                 )}
-                {data.facebook !== "" ? (
+                {data.facebook !== "" &&
+                data.facebook !== "https://facebook.com/" ? (
                   <Col span={8}>
                     <Icon
                       onClick={() => window.open(data.facebook)}
