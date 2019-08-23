@@ -113,6 +113,26 @@
   margin-top: 50px;
 }
 
+.learningPathHeading {
+  font-weight: 700;
+  font-size: 38px;
+  margin-bottom: 60px;
+}
+
+.learningPathEmpty img {
+  width: 300px;
+  opacity: 0.8;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.learningPathEmpty h1 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
 .learningPathCard {
   width: 95%;
   display: block;
@@ -171,5 +191,9 @@
 
   .pathIcon {
     margin-top: 40px;
+  }
+
+  .learningPathHeading {
+    font-size: 30px;
   }
 }

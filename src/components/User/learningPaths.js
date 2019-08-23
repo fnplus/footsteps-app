@@ -20,6 +20,24 @@ export class learningPaths extends Component {
 
     return (
       <div className={styles.learningPathsContainer}>
+        <h1 className={styles.learningPathHeading}>
+          Learning Paths ({data.length})
+        </h1>
+
+        {data.length === 0 ? (
+          <div className={styles.learningPathEmpty}>
+            <img
+              src={require("../../images/path_empty.png")}
+              alt="Path Empty"
+            />
+            <h1>
+              No Learning Paths found. <br /> Create one now!
+            </h1>
+          </div>
+        ) : (
+          ""
+        )}
+
         {data.map((path, index) => (
           <div key={index}>
             <div className={styles.learningPathCard}>
