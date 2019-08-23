@@ -316,6 +316,7 @@ export const CREATE_PATH_MUTATION_APOLLO = gql`
     $icon: String!
     $title: String!
     $description: String!
+    $tags: String!
   ) {
     insert_Learning_Paths(
       objects: {
@@ -323,6 +324,7 @@ export const CREATE_PATH_MUTATION_APOLLO = gql`
         description: $description
         icon: $icon
         title: $title
+        tags: $tags
       }
     ) {
       affected_rows
