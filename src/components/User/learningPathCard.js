@@ -21,7 +21,7 @@ export class learningPathCard extends Component {
 
     return (
       <div>
-        <div className={styles.learningPathCard}>
+        <div className={styles.learningPathCard} onClick={() => this.expand()}>
           <Row>
             <Col span={5}>
               <img className={styles.pathIcon} src={path.icon} alt="" />
@@ -39,7 +39,7 @@ export class learningPathCard extends Component {
                   : styles.pathExpand
               }
             >
-              <Icon type="down" onClick={() => this.expand()} />
+              <Icon type="down" />
             </Col>
           </Row>
         </div>
