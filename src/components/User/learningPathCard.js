@@ -23,16 +23,17 @@ export class learningPathCard extends Component {
       <div>
         <div className={styles.learningPathCard} onClick={() => this.expand()}>
           <Row>
-            <Col span={5}>
+            <Col xs={24} lg={5}>
               <img className={styles.pathIcon} src={path.icon} alt="" />
             </Col>
-            <Col span={17} className={styles.pathHeading}>
+            <Col xs={24} lg={17} className={styles.pathHeading}>
               <h1>{path.title}</h1>
               <h5>{path.description}</h5>
               <Progress percent={path.percent} />
             </Col>
             <Col
-              span={2}
+              xs={24}
+              lg={2}
               className={
                 this.state.expand
                   ? styles.pathExpand + " " + styles.expandRotate

@@ -20,7 +20,7 @@ export class resultPathCard extends Component {
 
     return (
       <div>
-        <Row className={styles.cardContainer}>
+        <Row className={styles.cardContainer} onClick={() => this.expand()}>
           <Col span={2}>
             <div className={styles.iconContainer}>
               <img src={data.icon} alt="" className={styles.icon} />
@@ -52,7 +52,7 @@ export class resultPathCard extends Component {
                     : styles.pathExpand
                 }
               >
-                <Icon type="down" onClick={() => this.expand()} />
+                <Icon type="down" />
               </Col>
             </Row>
           </Col>
