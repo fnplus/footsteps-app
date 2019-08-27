@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import { Row, Col, Icon, Progress } from "antd"
 
 import styles from "../../styles/footsteps.module.css"
-import FootstepCard from "./footstepsCard"
+
+import LearningPathCard from "./learningPathCard"
 
 export class learningPaths extends Component {
   state = {
@@ -39,46 +39,7 @@ export class learningPaths extends Component {
         )}
 
         {data.map((path, index) => (
-          <div key={index}>
-            <div className={styles.learningPathCard}>
-              <Row>
-                <Col span={5}>
-                  <img className={styles.pathIcon} src={path.icon} alt="" />
-                </Col>
-                <Col span={17} className={styles.pathHeading}>
-                  <h1>{path.title}</h1>
-                  <h5>{path.description}</h5>
-                  <Progress percent={path.percent} />
-                </Col>
-                <Col
-                  span={2}
-                  className={
-                    this.state.expand
-                      ? styles.pathExpand + " " + styles.expandRotate
-                      : styles.pathExpand
-                  }
-                >
-                  <Icon type="down" onClick={() => this.expand()} />
-                </Col>
-              </Row>
-            </div>
-            <div
-              className={
-                this.state.expand
-                  ? styles.footstepsContainer
-                  : styles.footstepsContainer + " " + styles.footstepsHide
-              }
-            >
-              {path.footsteps.map((footstep, index) => (
-                <FootstepCard
-                  footstep={footstep}
-                  size={path.footsteps.length}
-                  position={index}
-                  key={index}
-                />
-              ))}
-            </div>
-          </div>
+          <LearningPathCard path={path} key={index} />
         ))}
       </div>
     )
