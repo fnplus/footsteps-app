@@ -8,6 +8,7 @@ import { WithContext as ReactTags } from "react-tag-input"
 import styles from "../../styles/add.module.css"
 
 import AddFootsteps from "./addFootstep"
+import AddImage from "./addImage"
 
 import { client } from "../../apollo/client"
 
@@ -250,7 +251,8 @@ export class addPath extends Component {
             />
           </Col>
           <Col xs={24} lg={12}>
-            <div className={styles.icon_container}>
+            <AddImage type="path" />
+            {/* <div className={styles.icon_container}>
               <img src={this.state.icon} alt="" />
             </div>
 
@@ -263,7 +265,7 @@ export class addPath extends Component {
                 onChange={this.handleInputChange}
                 placeholder="Icon URL"
               />
-            </div>
+            </div> */}
           </Col>
         </Row>
 
