@@ -1,13 +1,36 @@
 footer {
-  text-align: center;
   height: 40px;
   box-sizing: border-box;
 }
 
-.OS_link {
+.container {
+  margin: 0 120px;
+}
+
+.link {
   color: rgb(0, 0, 0, 0.65);
 }
 
-.OS_link:hover {
+.link:hover {
   color: black;
+}
+
+.footer_right {
+  text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 0 50px;
+  }
+
+  footer {
+    text-align: center;
+    height: 52px;
+  }
+
+  .footer_right {
+    text-align: center;
+    margin: 5px 0;
+  }
 }

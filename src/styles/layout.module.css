@@ -39,4 +39,9 @@
   .public_not_found {
     margin: 80px 20px;
   }
+
+  .content {
+    margin-bottom: -62px;
+    padding-bottom: 62px;
+  }
 }
