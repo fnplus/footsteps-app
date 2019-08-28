@@ -9,6 +9,7 @@ footer {
 
 .link {
   color: rgb(0, 0, 0, 0.65);
+  font-weight: 700;
 }
 
 .link:hover {

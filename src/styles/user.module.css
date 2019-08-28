@@ -170,6 +170,9 @@
 
 .menuContainer {
   margin-top: -260px;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 50px;
 }
 
 .mobileProfile {
