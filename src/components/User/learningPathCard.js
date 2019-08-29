@@ -21,6 +21,14 @@ export class learningPathCard extends Component {
 
     return (
       <div>
+        {this.props.show_edit ? (
+          <div className={styles.editBtn}>
+            <Icon type="edit" />
+          </div>
+        ) : (
+          ""
+        )}
+
         <div className={styles.learningPathCard} onClick={() => this.expand()}>
           <Row>
             <Col xs={24} lg={5}>

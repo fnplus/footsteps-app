@@ -190,7 +190,10 @@ export class user extends Component {
         <Row className={styles.menuContainer}>
           <Col span={24}>
             <div className={styles.content}>
-              <LearningPaths learning_paths={data.learning_paths} />
+              <LearningPaths
+                learning_paths={data.learning_paths}
+                user_id={data.id}
+              />
             </div>
           </Col>
         </Row>

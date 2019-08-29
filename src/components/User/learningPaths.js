@@ -6,13 +6,18 @@ import LearningPathCard from "./learningPathCard"
 
 export class learningPaths extends Component {
   state = {
-    expand: false,
+    show_edit: false,
   }
 
-  expand = () => {
-    this.setState({
-      expand: !this.state.expand,
-    })
+  componentDidMount() {
+    if (typeof window !== undefined) {
+      if (localStorage.getItem("userId") === this.props.user_id) {
+        console.log("match")
+        this.setState(oldState => ({
+          show_edit: !oldState.show_edit,
+        }))
+      }
+    }
   }
 
   render() {
@@ -39,7 +44,11 @@ export class learningPaths extends Component {
         )}
 
         {data.map((path, index) => (
-          <LearningPathCard path={path} key={index} />
+          <LearningPathCard
+            path={path}
+            key={index}
+            show_edit={this.state.show_edit}
+          />
         ))}
       </div>
     )

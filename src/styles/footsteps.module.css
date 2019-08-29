@@ -140,9 +140,17 @@
   margin-right: auto;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
-  margin: 30px;
+  margin: 0 30px 30px 30px;
   border-radius: 50px;
   cursor: pointer;
+}
+
+.editBtn {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: inline-block;
+  padding: 5px 8px;
+  transform: scale(1.2);
 }
 
 .pathIcon {
