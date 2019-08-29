@@ -194,7 +194,6 @@ textarea:focus {
 }
 
 .path_submit {
-  display: inline-block;
   background: #029843;
   padding: 10px 30px;
   font-family: "Montserrat", sans-serif;
@@ -204,6 +203,7 @@ textarea:focus {
   font-size: 20px;
   transition: transform 0.2s;
   text-align: center;
+  width: 40%;
 }
 
 .path_submit:hover {
@@ -227,5 +227,9 @@ textarea:focus {
   .footsteps_new_container {
     margin: 50px 0;
     padding: 50px 10px;
+  }
+
+  .path_submit {
+    width: 100%;
   }
 }
