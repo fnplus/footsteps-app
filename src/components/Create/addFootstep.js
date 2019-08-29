@@ -87,7 +87,11 @@ export class addFootstep extends Component {
       .ref("Footsteps")
       .child(filename)
       .getDownloadURL()
-      .then(url => this.setState({ icon_url: url }))
+      .then(url =>
+        this.setState({ icon_url: url }, () => {
+          this.updateFootstepArray()
+        })
+      )
   }
 
   render() {
