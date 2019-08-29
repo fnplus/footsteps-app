@@ -1,5 +1,8 @@
 import React, { Component } from "react"
-import { Row, Col, Select } from "antd"
+import { Row, Col, Select, Icon } from "antd"
+import FileUploader from "react-firebase-file-uploader"
+import firebase from "firebase/app"
+import "firebase/storage"
 
 import styles from "../../styles/add.module.css"
 
@@ -12,7 +15,10 @@ export class addFootstep extends Component {
     type: "Website",
     url: "",
     level: 0,
-    icon: "https://i.imgur.com/frwNB0V.png",
+    icon: "",
+    icon_url: "https://i.imgur.com/frwNB0V.png",
+    isUploading: false,
+    progress: 0,
   }
 
   updateFootstepArray = () => {
@@ -24,7 +30,7 @@ export class addFootstep extends Component {
       resource_url: this.state.url,
       learning_path: this.props.pathId,
       level: this.state.level,
-      resource_icon: this.state.icon,
+      resource_icon: this.state.icon_url,
     }
 
     this.props.update(newFootstepContent)
@@ -62,6 +68,26 @@ export class addFootstep extends Component {
         this.updateFootstepArray()
       }
     )
+  }
+
+  // Image Upload Functions
+
+  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 })
+  handleProgress = progress => this.setState({ progress })
+
+  handleUploadError = error => {
+    this.setState({ isUploading: false })
+    console.error(error)
+  }
+
+  handleUploadSuccess = filename => {
+    this.setState({ icon: filename, progress: 100, isUploading: false })
+    firebase
+      .storage()
+      .ref("Footsteps")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => this.setState({ icon_url: url }))
   }
 
   render() {
@@ -114,30 +140,44 @@ export class addFootstep extends Component {
           </Col>
 
           <Col xs={24} lg={12}>
-            <div
-              className={styles.icon_container}
-              style={{
-                width: "100px",
-                height: "100px",
-              }}
-            >
-              <img
-                style={{ width: "100px", height: "100px" }}
-                src={this.state.icon}
-                alt=""
-              />
+            <div className={styles.icon_container}>
+              {this.state.icon_url && (
+                <img src={this.state.icon_url} alt="Icon URL" />
+              )}
             </div>
 
-            <div>
-              <div className={styles.input_label}>Icon URL</div>
-              <input
-                className={styles.input}
-                name="icon"
-                value={this.state.icon}
-                onChange={this.handleInputChange}
-                placeholder="Icon URL"
-              />
-            </div>
+            <Row>
+              <Col span={20}>
+                <div className={styles.input_label} style={{ marginTop: "0" }}>
+                  Icon URL
+                </div>
+                <input
+                  style={{ width: "100%" }}
+                  className={styles.input}
+                  name="icon"
+                  value={this.state.icon_url}
+                  onChange={this.handleInputChange}
+                  placeholder="Icon URL"
+                />
+              </Col>
+
+              <Col span={4}>
+                <label className={styles.add_image_btn}>
+                  <Icon type="cloud-upload" style={{ fontSize: "25px" }}></Icon>
+                  <FileUploader
+                    hidden
+                    accept="image/*"
+                    name="icon"
+                    randomizeFilename
+                    storageRef={firebase.storage().ref("Footsteps")}
+                    onUploadStart={this.handleUploadStart}
+                    onUploadError={this.handleUploadError}
+                    onUploadSuccess={this.handleUploadSuccess}
+                    onProgress={this.handleProgress}
+                  />
+                </label>
+              </Col>
+            </Row>
             <Row>
               <Col span={12}>
                 <div className={styles.input_label}>Resource Type</div>

@@ -118,7 +118,7 @@ export class addPath extends Component {
     if (
       this.state.title === "" ||
       this.state.description === "" ||
-      this.state.icon === "" ||
+      this.state.icon_url === "" ||
       this.state.tags === ""
     ) {
       this.setState({
@@ -189,7 +189,7 @@ export class addPath extends Component {
           mutation: CREATE_PATH_MUTATION_APOLLO,
           variables: {
             author: this.state.user_id,
-            icon: this.state.icon,
+            icon: this.state.icon_url,
             title: this.state.title,
             description: this.state.description,
             tags: this.state.tags,
@@ -232,7 +232,7 @@ export class addPath extends Component {
     this.setState({ icon: filename, progress: 100, isUploading: false })
     firebase
       .storage()
-      .ref(this.props.type)
+      .ref("Path")
       .child(filename)
       .getDownloadURL()
       .then(url => this.setState({ icon_url: url }))
@@ -312,7 +312,7 @@ export class addPath extends Component {
                       accept="image/*"
                       name="icon"
                       randomizeFilename
-                      storageRef={firebase.storage().ref(this.props.type)}
+                      storageRef={firebase.storage().ref("Path")}
                       onUploadStart={this.handleUploadStart}
                       onUploadError={this.handleUploadError}
                       onUploadSuccess={this.handleUploadSuccess}

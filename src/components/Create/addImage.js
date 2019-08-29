@@ -40,10 +40,7 @@ class AddImage extends Component {
           {this.state.imageUrl && <img src={this.state.imageUrl} />}
         </div>
 
-        <div
-          // className={styles.icon_input_container}
-          style={{ marginTop: "35px" }}
-        >
+        <div style={{ marginTop: "35px" }}>
           <Row>
             <Col xs={24} lg={14}>
               <div className={styles.input_label} style={{ marginTop: "0" }}>
