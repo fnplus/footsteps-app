@@ -57,13 +57,14 @@ textarea:focus {
 
 .add_image_btn {
   background: #029843;
-  /* width: 100%; */
   font-family: "Montserrat";
   color: white;
   font-weight: 600;
   padding: 5px 10px;
   margin: 20px 0 0 20px;
   display: inline-block;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
@@ -83,6 +84,11 @@ textarea:focus {
     width: 120px;
     height: 120px;
     margin-top: 50px;
+  }
+
+  .icon_container img {
+    width: 120px;
+    height: 120px;
   }
 
   .icon_input_container {

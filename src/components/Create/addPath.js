@@ -4,11 +4,13 @@ import { Row, Col } from "antd"
 import uuid from "uuid"
 import { navigate } from "gatsby"
 import { WithContext as ReactTags } from "react-tag-input"
+import FileUploader from "react-firebase-file-uploader"
+import firebase from "firebase/app"
+import "firebase/storage"
 
 import styles from "../../styles/add.module.css"
 
 import AddFootsteps from "./addFootstep"
-import AddImage from "./addImage"
 
 import { client } from "../../apollo/client"
 
@@ -16,13 +18,16 @@ export class addPath extends Component {
   state = {
     title: "",
     description: "",
-    icon: "https://image.flaticon.com/icons/svg/284/284471.svg",
+    icon: "",
+    icon_url: "https://image.flaticon.com/icons/svg/284/284471.svg",
     footsteps: [],
     id: "",
     err_msg: "",
     user_id: "",
     tags: "",
     tags_array: [],
+    isUploading: false,
+    progress: 0,
   }
 
   componentDidMount() {
@@ -213,6 +218,26 @@ export class addPath extends Component {
     }
   }
 
+  // Image Upload Functions
+
+  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 })
+  handleProgress = progress => this.setState({ progress })
+
+  handleUploadError = error => {
+    this.setState({ isUploading: false })
+    console.error(error)
+  }
+
+  handleUploadSuccess = filename => {
+    this.setState({ icon: filename, progress: 100, isUploading: false })
+    firebase
+      .storage()
+      .ref(this.props.type)
+      .child(filename)
+      .getDownloadURL()
+      .then(url => this.setState({ icon_url: url }))
+  }
+
   render() {
     return (
       <div className={styles.container}>
@@ -251,21 +276,52 @@ export class addPath extends Component {
             />
           </Col>
           <Col xs={24} lg={12}>
-            <AddImage type="path" />
-            {/* <div className={styles.icon_container}>
-              <img src={this.state.icon} alt="" />
+            <div className={styles.icon_container}>
+              {this.state.icon_url && (
+                <img src={this.state.icon_url} alt="icon" />
+              )}
             </div>
 
-            <div className={styles.icon_input_container}>
-              <div className={styles.input_label}>Icon URL</div>
-              <input
-                className={styles.input}
-                name="icon"
-                value={this.state.icon}
-                onChange={this.handleInputChange}
-                placeholder="Icon URL"
-              />
-            </div> */}
+            <div
+              // className={styles.icon_input_container}
+              style={{ marginTop: "35px" }}
+            >
+              <Row>
+                <Col xs={24} lg={14}>
+                  <div
+                    className={styles.input_label}
+                    style={{ marginTop: "0" }}
+                  >
+                    Icon URL
+                  </div>
+                  <input
+                    style={{ width: "100%" }}
+                    className={styles.input}
+                    name="icon"
+                    value={this.state.icon_url}
+                    onChange={this.handleInputChange}
+                    placeholder="Icon URL"
+                  />
+                </Col>
+
+                <Col xs={24} lg={10}>
+                  <label className={styles.add_image_btn}>
+                    Upload Custom Icon
+                    <FileUploader
+                      hidden
+                      accept="image/*"
+                      name="icon"
+                      randomizeFilename
+                      storageRef={firebase.storage().ref(this.props.type)}
+                      onUploadStart={this.handleUploadStart}
+                      onUploadError={this.handleUploadError}
+                      onUploadSuccess={this.handleUploadSuccess}
+                      onProgress={this.handleProgress}
+                    />
+                  </label>
+                </Col>
+              </Row>
+            </div>
           </Col>
         </Row>
 

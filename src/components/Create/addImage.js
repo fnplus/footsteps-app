@@ -45,7 +45,7 @@ class AddImage extends Component {
           style={{ marginTop: "35px" }}
         >
           <Row>
-            <Col span={14}>
+            <Col xs={24} lg={14}>
               <div className={styles.input_label} style={{ marginTop: "0" }}>
                 Icon URL
               </div>
@@ -59,8 +59,8 @@ class AddImage extends Component {
               />
             </Col>
 
-            <Col span={10}>
-              <div className={styles.add_image_btn}>
+            <Col xs={24} lg={10}>
+              <label className={styles.add_image_btn}>
                 Upload Custom Image
                 <FileUploader
                   hidden
@@ -73,7 +73,7 @@ class AddImage extends Component {
                   onUploadSuccess={this.handleUploadSuccess}
                   onProgress={this.handleProgress}
                 />
-              </div>
+              </label>
             </Col>
           </Row>
         </div>
