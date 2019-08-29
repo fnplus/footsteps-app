@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Row, Col, Icon, Progress } from "antd"
+import { navigate } from "gatsby"
 
 import FootstepCard from "./footstepsCard"
 
@@ -22,7 +23,11 @@ export class learningPathCard extends Component {
     return (
       <div>
         {this.props.show_edit ? (
-          <div className={styles.editBtn}>
+          <div
+            title="Edit Path"
+            className={styles.editBtn}
+            onClick={() => navigate(`/editPath/${path.id}`)}
+          >
             <Icon type="edit" />
           </div>
         ) : (

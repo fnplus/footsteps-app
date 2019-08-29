@@ -151,6 +151,12 @@
   display: inline-block;
   padding: 5px 8px;
   transform: scale(1.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.editBtn:hover {
+  transform: scale(1.4);
 }
 
 .pathIcon {

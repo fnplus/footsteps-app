@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/user/*`] },
+      options: { prefixes: [`/user/*`, `/editPath/*`] },
     },
     {
       resolve: `gatsby-plugin-typography`,
