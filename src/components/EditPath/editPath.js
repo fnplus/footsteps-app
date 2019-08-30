@@ -49,6 +49,8 @@ export class EditPath extends Component {
         text: tag,
       }
       new_tags_array.push(tag_obj)
+
+      return 0
     })
 
     this.setState({
@@ -238,7 +240,6 @@ export class EditPath extends Component {
           },
         })
         .then(res => {
-          console.log(res)
           let path_id = res.data.update_Learning_Paths.returning[0].id
 
           let { footsteps } = this.state
@@ -249,8 +250,6 @@ export class EditPath extends Component {
             footstep.learning_path = path_id
           })
 
-          // console.log(footsteps)
-
           client
             .mutate({
               mutation: DELETE_FOOTSTEPS_MUTATION_APOLLO,
@@ -259,7 +258,6 @@ export class EditPath extends Component {
               },
             })
             .then(res => {
-              console.log(res, footsteps)
               client.mutate({
                 mutation: ADD_FOOTSTEPS_MUTATION_APOLLO,
                 variables: {
@@ -328,9 +326,9 @@ export class EditPath extends Component {
           cancelText="No"
           onConfirm={this.deletePath}
         >
-          <a className={addStyles.deletePath} href="#">
+          <div className={addStyles.deletePath}>
             <Icon type="close-circle" /> Delete Path
-          </a>
+          </div>
         </Popconfirm>
 
         <Row>

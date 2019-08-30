@@ -75,11 +75,9 @@ export class signUp extends Component {
         },
       })
       .then(res => {
-        console.log(res.data)
         this.props.updateUserId(res.data.insert_Users.returning[0].id, true)
       })
       .catch(err => {
-        console.log(err)
         this.props.updateUserId("", false)
         firebase.auth().signOut()
       })

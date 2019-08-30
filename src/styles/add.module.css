@@ -246,6 +246,7 @@ textarea:focus {
   border-radius: 20px;
   font-family: "Montserrat", sans-serif;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .deletePath:hover {

@@ -42,10 +42,8 @@ export class layout extends Component {
           })
           .then(response => {
             if (response.data.Users.length === 0) {
-              console.log("User not registered")
               this.setState({ isSignedIn: false, signUp: true })
             } else {
-              console.log("User Registered", response.data)
               this.setState({
                 isSignedIn: true,
                 userId: response.data.Users[0].id,

@@ -99,8 +99,6 @@ export class addPath extends Component {
 
     let { footsteps } = this.state
 
-    console.log(footsteps)
-
     for (var i = 0; i < footsteps.length; i++) {
       let footstep = footsteps[i]
 
