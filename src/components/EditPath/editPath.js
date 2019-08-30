@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
-import { Row, Col } from "antd"
+import { Row, Col, Icon, Popconfirm } from "antd"
 import uuid from "uuid"
 import { navigate } from "gatsby"
 import { WithContext as ReactTags } from "react-tag-input"
@@ -275,10 +275,45 @@ export class EditPath extends Component {
       .then(url => this.setState({ icon_url: url }))
   }
 
+  deletePath = () => {
+    client
+      .mutate({
+        mutation: DELETE_FOOTSTEPS_MUTATION_APOLLO,
+        variables: {
+          path_id: this.state.path_id,
+        },
+      })
+      .then(res => {
+        client
+          .mutate({
+            mutation: DELETE_PATH_MUTATION_APOLLO,
+            variables: {
+              path_id: this.state.path_id,
+            },
+          })
+          .then(res => {
+            alert(`Successfully Deleted Path ${this.state.title}`)
+            navigate("/")
+          })
+      })
+  }
+
   render() {
     return (
       <div className={addStyles.container}>
         <h1 className={addStyles.heading}>Edit '{this.props.data.title}'</h1>
+
+        <Popconfirm
+          title="Are you sure you want to delete this path"
+          okText="Yes"
+          cancelText="No"
+          onConfirm={this.deletePath}
+        >
+          <a className={addStyles.deletePath} href="#">
+            <Icon type="close-circle" /> Delete Path
+          </a>
+        </Popconfirm>
+
         <Row>
           <Col xs={24} lg={12}>
             <div className={addStyles.input_label}>Title</div>
@@ -435,6 +470,14 @@ export const UPDATE_PATH_MUTATION_APOLLO = gql`
 export const DELETE_FOOTSTEPS_MUTATION_APOLLO = gql`
   mutation delete_footsteps($path_id: Int!) {
     delete_Footsteps(where: { learning_path: { _eq: $path_id } }) {
+      affected_rows
+    }
+  }
+`
+
+export const DELETE_PATH_MUTATION_APOLLO = gql`
+  mutation delete_path($path_id: Int!) {
+    delete_Learning_Paths(where: { id: { _eq: $path_id } }) {
       affected_rows
     }
   }
