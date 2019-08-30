@@ -39,14 +39,22 @@ export class index extends Component {
               </Layout>
             )
           if (data) {
-            if (data.Learning_Paths[0].author === this.state.user_id) {
+            if (this.state.user_id === "") {
               return (
                 <Layout>
-                  <EditPath data={data.Learning_Paths[0]} />
+                  <Loader />
                 </Layout>
               )
             } else {
-              return <Layout>{navigate("/")}</Layout>
+              if (data.Learning_Paths[0].author === this.state.user_id) {
+                return (
+                  <Layout>
+                    <EditPath data={data.Learning_Paths[0]} />
+                  </Layout>
+                )
+              } else {
+                return <Layout>{navigate("/")}</Layout>
+              }
             }
           }
         }}
