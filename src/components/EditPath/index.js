@@ -4,8 +4,9 @@ import { Query } from "react-apollo"
 
 import Layout from "../layout"
 import Loader from "../loader"
+import EditPath from "./editPath"
 
-export class EditPath extends Component {
+export class index extends Component {
   render() {
     return (
       <Query
@@ -25,10 +26,9 @@ export class EditPath extends Component {
                 <h1>Error Loading User</h1>
               </Layout>
             )
-          console.log(data)
           return (
             <Layout>
-              <h1>{this.props.pathId}</h1>
+              <EditPath data={data.Learning_Paths[0]} />
             </Layout>
           )
         }}
@@ -37,7 +37,7 @@ export class EditPath extends Component {
   }
 }
 
-export default EditPath
+export default index
 
 export const GET_PATH_INFO_QUERY_APOLLO = gql`
   query getPath($id: Int) {

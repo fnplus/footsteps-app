@@ -8,18 +8,18 @@ import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
 import "firebase/storage"
 
-import styles from "../../styles/add.module.css"
+import addStyles from "../../styles/add.module.css"
 
-import AddFootsteps from "./addFootstep"
+import EditFootsteps from "./editFootstep"
 
 import { client } from "../../apollo/client"
 
-export class addPath extends Component {
+export class EditPath extends Component {
   state = {
     title: "",
     description: "",
     icon: "",
-    icon_url: "https://image.flaticon.com/icons/svg/284/284471.svg",
+    icon_url: "",
     footsteps: [],
     id: "",
     err_msg: "",
@@ -37,6 +37,28 @@ export class addPath extends Component {
         id: uuid.v4(),
       })
     }
+
+    const data = this.props.data
+    console.log(data)
+
+    let new_tags_array = []
+
+    data.tags.split(",").map(tag => {
+      let tag_obj = {
+        id: tag,
+        text: tag,
+      }
+      new_tags_array.push(tag_obj)
+    })
+
+    this.setState({
+      title: data.title,
+      icon_url: data.icon,
+      description: data.description,
+      footsteps: data.footsteps,
+      tags: data.tags,
+      tags_array: new_tags_array,
+    })
   }
 
   handleInputChange = e => {
@@ -240,22 +262,22 @@ export class addPath extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        <h1 className={styles.heading}>Create a new Path</h1>
+      <div className={addStyles.container}>
+        <h1 className={addStyles.heading}>Edit '{this.props.data.title}'</h1>
         <Row>
           <Col xs={24} lg={12}>
-            <div className={styles.input_label}>Title</div>
+            <div className={addStyles.input_label}>Title</div>
             <input
-              className={styles.input}
+              className={addStyles.input}
               name="title"
               value={this.state.title}
               onChange={this.handleInputChange}
               placeholder="Intro to Gatsby"
             />
 
-            <div className={styles.input_label}>Description</div>
+            <div className={addStyles.input_label}>Description</div>
             <textarea
-              className={styles.input}
+              className={addStyles.input}
               name="description"
               value={this.state.description}
               onChange={this.handleInputChange}
@@ -263,7 +285,7 @@ export class addPath extends Component {
               style={{ height: "100px" }}
             />
 
-            <div className={styles.input_label}>Tags</div>
+            <div className={addStyles.input_label}>Tags</div>
             <ReactTags
               tags={this.state.tags_array}
               placeholder={"Enter relevant tags"}
@@ -276,27 +298,27 @@ export class addPath extends Component {
             />
           </Col>
           <Col xs={24} lg={12}>
-            <div className={styles.icon_container}>
+            <div className={addStyles.icon_container}>
               {this.state.icon_url && (
                 <img src={this.state.icon_url} alt="icon" />
               )}
             </div>
 
             <div
-              // className={styles.icon_input_container}
+              // className={addStyles.icon_input_container}
               style={{ marginTop: "35px" }}
             >
               <Row>
                 <Col xs={24} lg={14}>
                   <div
-                    className={styles.input_label}
+                    className={addStyles.input_label}
                     style={{ marginTop: "0" }}
                   >
                     Icon URL
                   </div>
                   <input
                     style={{ width: "100%" }}
-                    className={styles.input}
+                    className={addStyles.input}
                     name="icon"
                     value={this.state.icon_url}
                     onChange={this.handleInputChange}
@@ -305,7 +327,7 @@ export class addPath extends Component {
                 </Col>
 
                 <Col xs={24} lg={10}>
-                  <label className={styles.add_image_btn}>
+                  <label className={addStyles.add_image_btn}>
                     Upload Custom Icon
                     <FileUploader
                       hidden
@@ -325,10 +347,10 @@ export class addPath extends Component {
           </Col>
         </Row>
 
-        <div className={styles.footsteps_container}>
-          <h1 className={styles.footsteps_heading}>Footsteps</h1>
+        <div className={addStyles.footsteps_container}>
+          <h1 className={addStyles.footsteps_heading}>Footsteps</h1>
 
-          {this.state.footsteps.map((footstep, i) => {
+          {/* {this.state.footsteps.map((footstep, i) => {
             return (
               <div key={footstep.id}>
                 <AddFootsteps
@@ -340,12 +362,12 @@ export class addPath extends Component {
                 />
               </div>
             )
-          })}
+          })} */}
 
           {this.state.footsteps.length < 10 ? (
-            <div className={styles.footsteps_new_container}>
+            <div className={addStyles.footsteps_new_container}>
               <div
-                className={styles.footsteps_new}
+                className={addStyles.footsteps_new}
                 onClick={this.addNewFootstep}
               >
                 Add new Footstep
@@ -356,10 +378,10 @@ export class addPath extends Component {
           )}
         </div>
 
-        <div className={styles.error_message}>{this.state.err_msg}</div>
+        <div className={addStyles.error_message}>{this.state.err_msg}</div>
 
-        <div className={styles.path_submit_container}>
-          <div className={styles.path_submit} onClick={this.submitPath}>
+        <div className={addStyles.path_submit_container}>
+          <div className={addStyles.path_submit} onClick={this.submitPath}>
             Create Path
           </div>
         </div>
@@ -368,7 +390,7 @@ export class addPath extends Component {
   }
 }
 
-export default addPath
+export default EditPath
 
 export const CREATE_PATH_MUTATION_APOLLO = gql`
   mutation insert_path(
