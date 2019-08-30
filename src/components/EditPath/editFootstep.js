@@ -4,7 +4,7 @@ import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
 import "firebase/storage"
 
-import styles from "../../styles/add.module.css"
+import addStyles from "../../styles/add.module.css"
 
 const { Option } = Select
 
@@ -19,6 +19,20 @@ export class addFootstep extends Component {
     icon_url: "https://i.imgur.com/frwNB0V.png",
     isUploading: false,
     progress: 0,
+  }
+
+  componentDidMount() {
+    console.log(this.props.data)
+    const data = this.props.data
+
+    this.setState({
+      title: data.title,
+      description: data.description,
+      url: data.resource_url,
+      icon_url: data.resource_icon,
+      type: data.resource_type,
+      level: data.level,
+    })
   }
 
   updateFootstepArray = () => {
@@ -96,16 +110,16 @@ export class addFootstep extends Component {
 
   render() {
     return (
-      <div className={styles.footstep_container}>
+      <div className={addStyles.footstep_container}>
         <Row>
           <Col span={12}>
-            <div className={styles.footstep_counter}>{this.props.index}</div>
+            <div className={addStyles.footstep_counter}>{this.props.index}</div>
           </Col>
 
           <Col span={12}>
             <div
               onClick={() => this.props.remove(this.props.data.id)}
-              className={styles.footstep_remove_btn}
+              className={addStyles.footstep_remove_btn}
             >
               X
             </div>
@@ -114,18 +128,18 @@ export class addFootstep extends Component {
 
         <Row>
           <Col xs={24} lg={12}>
-            <div className={styles.input_label}>Title</div>
+            <div className={addStyles.input_label}>Title</div>
             <input
-              className={styles.input}
+              className={addStyles.input}
               name="title"
               value={this.state.title}
               onChange={this.handleInputChange}
               placeholder="Footsteps Title"
             />
 
-            <div className={styles.input_label}>Description</div>
+            <div className={addStyles.input_label}>Description</div>
             <textarea
-              className={styles.input}
+              className={addStyles.input}
               name="description"
               value={this.state.description}
               onChange={this.handleInputChange}
@@ -133,9 +147,9 @@ export class addFootstep extends Component {
               placeholder="Short description of the footstep (max 80 chars) -- Optional"
             />
 
-            <div className={styles.input_label}>Resource URL</div>
+            <div className={addStyles.input_label}>Resource URL</div>
             <input
-              className={styles.input}
+              className={addStyles.input}
               name="url"
               value={this.state.url}
               onChange={this.handleInputChange}
@@ -144,7 +158,7 @@ export class addFootstep extends Component {
           </Col>
 
           <Col xs={24} lg={12}>
-            <div className={styles.icon_container}>
+            <div className={addStyles.icon_container}>
               {this.state.icon_url && (
                 <img src={this.state.icon_url} alt="Icon URL" />
               )}
@@ -152,12 +166,15 @@ export class addFootstep extends Component {
 
             <Row>
               <Col span={20}>
-                <div className={styles.input_label} style={{ marginTop: "0" }}>
+                <div
+                  className={addStyles.input_label}
+                  style={{ marginTop: "0" }}
+                >
                   Icon URL
                 </div>
                 <input
                   style={{ width: "100%" }}
-                  className={styles.input}
+                  className={addStyles.input}
                   name="icon"
                   value={this.state.icon_url}
                   onChange={this.handleInputChange}
@@ -166,7 +183,7 @@ export class addFootstep extends Component {
               </Col>
 
               <Col span={4}>
-                <label className={styles.add_image_btn}>
+                <label className={addStyles.add_image_btn}>
                   <Icon type="cloud-upload" style={{ fontSize: "25px" }}></Icon>
                   <FileUploader
                     hidden
@@ -184,9 +201,9 @@ export class addFootstep extends Component {
             </Row>
             <Row>
               <Col span={12}>
-                <div className={styles.input_label}>Resource Type</div>
+                <div className={addStyles.input_label}>Resource Type</div>
                 <Select
-                  defaultValue="Website"
+                  value={this.state.type}
                   style={{
                     minWidth: 120,
                     marginTop: "10px",
@@ -215,9 +232,9 @@ export class addFootstep extends Component {
                 </Select>
               </Col>
               <Col span={12}>
-                <div className={styles.input_label}>Resource Level</div>
+                <div className={addStyles.input_label}>Resource Level</div>
                 <Select
-                  defaultValue={0}
+                  value={this.state.level}
                   style={{
                     minWidth: 120,
                     marginTop: "10px",

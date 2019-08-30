@@ -353,10 +353,10 @@ export class EditPath extends Component {
         <div className={addStyles.footsteps_container}>
           <h1 className={addStyles.footsteps_heading}>Footsteps</h1>
 
-          {/* {this.state.footsteps.map((footstep, i) => {
+          {this.state.footsteps.map((footstep, i) => {
             return (
               <div key={footstep.id}>
-                <AddFootsteps
+                <EditFootsteps
                   index={i + 1}
                   pathId={this.state.id}
                   data={footstep}
@@ -365,7 +365,7 @@ export class EditPath extends Component {
                 />
               </div>
             )
-          })} */}
+          })}
 
           {this.state.footsteps.length < 10 ? (
             <div className={addStyles.footsteps_new_container}>
@@ -385,7 +385,7 @@ export class EditPath extends Component {
 
         <div className={addStyles.path_submit_container}>
           <div className={addStyles.path_submit} onClick={this.submitPath}>
-            Create Path
+            Save Path
           </div>
         </div>
       </div>
