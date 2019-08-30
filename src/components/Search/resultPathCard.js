@@ -58,7 +58,7 @@ export class resultPathCard extends Component {
           </Col>
         </Row>
         <div className={styles.mobCardContainer}>
-          <Row>
+          <Row onClick={() => this.expand()}>
             <Col
               span={22}
               style={{

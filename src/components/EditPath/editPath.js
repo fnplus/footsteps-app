@@ -175,9 +175,28 @@ export class EditPath extends Component {
 
   handleTagDelete = i => {
     const { tags_array } = this.state
-    this.setState({
-      tags_array: tags_array.filter((_tag, index) => index !== i),
-    })
+    this.setState(
+      {
+        tags_array: tags_array.filter((_tag, index) => index !== i),
+      },
+      () => {
+        let tags = ""
+
+        this.state.tags_array.map((skill, i) => {
+          if (i !== this.state.tags_array.length - 1) {
+            tags += skill.text + ","
+            return 0
+          } else {
+            tags += skill.text
+            return 0
+          }
+        })
+
+        this.setState({
+          tags,
+        })
+      }
+    )
   }
 
   handleTagAddition = tag => {
@@ -304,7 +323,7 @@ export class EditPath extends Component {
         <h1 className={addStyles.heading}>Edit '{this.props.data.title}'</h1>
 
         <Popconfirm
-          title="Are you sure you want to delete this path"
+          title={`Are you sure you want to delete ${this.state.title}?`}
           okText="Yes"
           cancelText="No"
           onConfirm={this.deletePath}
