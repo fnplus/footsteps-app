@@ -158,7 +158,7 @@ export class addFootstep extends Component {
                 <input
                   style={{ width: "100%" }}
                   className={styles.input}
-                  name="icon"
+                  name="icon_url"
                   value={this.state.icon_url}
                   onChange={this.handleInputChange}
                   placeholder="Icon URL"
