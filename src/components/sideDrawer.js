@@ -24,6 +24,11 @@ export class header extends Component {
     })
   }
 
+  logoutClick = () => {
+    firebase.auth().signOut()
+    navigate("/")
+  }
+
   render() {
     return (
       <nav className={styles.navContainer}>
@@ -71,7 +76,7 @@ export class header extends Component {
                   </div>
                   <div
                     className={styles.navItem}
-                    onClick={() => firebase.auth().signOut()}
+                    onClick={this.logoutClick}
                     style={{ color: "#fe5e44" }}
                   >
                     Logout

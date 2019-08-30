@@ -10,7 +10,7 @@ import firebaseConfig from "../firebase/config"
 import styles from "../styles/layout.module.css"
 import "antd/dist/antd.css"
 
-import Header from "./header"
+import Header from "./sideDrawer"
 import Footer from "./footer"
 import Login from "./login"
 import Loader from "./loader"

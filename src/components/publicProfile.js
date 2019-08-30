@@ -4,7 +4,7 @@ import gql from "graphql-tag"
 import { Icon } from "antd"
 import { navigate } from "gatsby"
 
-import Header from "./header"
+import Header from "./sideDrawer"
 import Footer from "./footer"
 import User from "./user"
 import Loader from "./loader"
