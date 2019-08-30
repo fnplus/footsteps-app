@@ -32,10 +32,13 @@ export class EditPath extends Component {
 
   componentDidMount() {
     if (typeof window !== undefined) {
-      this.setState({
-        user_id: localStorage.getItem("userId"),
-        id: uuid.v4(),
-      })
+      this.setState(
+        {
+          user_id: localStorage.getItem("userId"),
+          id: uuid.v4(),
+        },
+        () => {}
+      )
     }
 
     const data = this.props.data

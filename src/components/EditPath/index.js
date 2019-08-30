@@ -1,12 +1,24 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
 import { Query } from "react-apollo"
+import { navigate } from "gatsby"
 
 import Layout from "../layout"
 import Loader from "../loader"
 import EditPath from "./editPath"
 
 export class index extends Component {
+  state = {
+    user_id: "",
+  }
+
+  componentDidMount() {
+    if (typeof window !== undefined) {
+      this.setState({
+        user_id: localStorage.getItem("userId"),
+      })
+    }
+  }
   render() {
     return (
       <Query
@@ -26,11 +38,17 @@ export class index extends Component {
                 <h1>Error Loading User</h1>
               </Layout>
             )
-          return (
-            <Layout>
-              <EditPath data={data.Learning_Paths[0]} />
-            </Layout>
-          )
+          if (data) {
+            if (data.Learning_Paths[0].author === this.state.user_id) {
+              return (
+                <Layout>
+                  <EditPath data={data.Learning_Paths[0]} />
+                </Layout>
+              )
+            } else {
+              return <Layout>{navigate("/")}</Layout>
+            }
+          }
         }}
       </Query>
     )
