@@ -28,21 +28,18 @@ export class EditPath extends Component {
     tags_array: [],
     isUploading: false,
     progress: 0,
+    path_id: 0,
   }
 
   componentDidMount() {
     if (typeof window !== undefined) {
-      this.setState(
-        {
-          user_id: localStorage.getItem("userId"),
-          id: uuid.v4(),
-        },
-        () => {}
-      )
+      this.setState({
+        user_id: localStorage.getItem("userId"),
+        id: uuid.v4(),
+      })
     }
 
     const data = this.props.data
-    console.log(data)
 
     let new_tags_array = []
 
@@ -61,6 +58,7 @@ export class EditPath extends Component {
       footsteps: data.footsteps,
       tags: data.tags,
       tags_array: new_tags_array,
+      path_id: data.id,
     })
   }
 
@@ -211,9 +209,9 @@ export class EditPath extends Component {
     if (this.validatePathDetails()) {
       client
         .mutate({
-          mutation: CREATE_PATH_MUTATION_APOLLO,
+          mutation: UPDATE_PATH_MUTATION_APOLLO,
           variables: {
-            author: this.state.user_id,
+            id: this.state.path_id,
             icon: this.state.icon_url,
             title: this.state.title,
             description: this.state.description,
@@ -221,24 +219,38 @@ export class EditPath extends Component {
           },
         })
         .then(res => {
-          let path_id = res.data.insert_Learning_Paths.returning[0].id
+          console.log(res)
+          let path_id = res.data.update_Learning_Paths.returning[0].id
 
           let { footsteps } = this.state
 
           footsteps.forEach(footstep => {
             delete footstep.id
+            delete footstep.__typename
             footstep.learning_path = path_id
           })
 
-          client.mutate({
-            mutation: ADD_FOOTSTEPS_MUTATION_APOLLO,
-            variables: {
-              data: footsteps,
-            },
-          })
+          // console.log(footsteps)
 
-          alert(`Successfully created path '${this.state.title}'`)
-          navigate("/")
+          client
+            .mutate({
+              mutation: DELETE_FOOTSTEPS_MUTATION_APOLLO,
+              variables: {
+                path_id,
+              },
+            })
+            .then(res => {
+              console.log(res, footsteps)
+              client.mutate({
+                mutation: ADD_FOOTSTEPS_MUTATION_APOLLO,
+                variables: {
+                  data: footsteps,
+                },
+              })
+
+              alert(`Successfully Edited path '${this.state.title}'`)
+              navigate("/")
+            })
         })
     }
   }
@@ -355,7 +367,7 @@ export class EditPath extends Component {
 
           {this.state.footsteps.map((footstep, i) => {
             return (
-              <div key={footstep.id}>
+              <div key={i}>
                 <EditFootsteps
                   index={i + 1}
                   pathId={this.state.id}
@@ -395,27 +407,35 @@ export class EditPath extends Component {
 
 export default EditPath
 
-export const CREATE_PATH_MUTATION_APOLLO = gql`
-  mutation insert_path(
-    $author: uuid!
-    $icon: String!
-    $title: String!
+export const UPDATE_PATH_MUTATION_APOLLO = gql`
+  mutation update_path(
+    $id: Int!
     $description: String!
+    $icon: String!
     $tags: String!
+    $title: String!
   ) {
-    insert_Learning_Paths(
-      objects: {
-        author: $author
+    update_Learning_Paths(
+      where: { id: { _eq: $id } }
+      _set: {
         description: $description
         icon: $icon
-        title: $title
         tags: $tags
+        title: $title
       }
     ) {
       affected_rows
       returning {
         id
       }
+    }
+  }
+`
+
+export const DELETE_FOOTSTEPS_MUTATION_APOLLO = gql`
+  mutation delete_footsteps($path_id: Int!) {
+    delete_Footsteps(where: { learning_path: { _eq: $path_id } }) {
+      affected_rows
     }
   }
 `

@@ -8,7 +8,7 @@ import addStyles from "../../styles/add.module.css"
 
 const { Option } = Select
 
-export class addFootstep extends Component {
+export class editFootstep extends Component {
   state = {
     title: "",
     description: "",
@@ -256,4 +256,4 @@ export class addFootstep extends Component {
   }
 }
 
-export default addFootstep
+export default editFootstep
