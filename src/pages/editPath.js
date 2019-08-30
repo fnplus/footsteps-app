@@ -1,7 +1,7 @@
 import React from "react"
 import { Router } from "@reach/router"
 
-import EditPath from "../components/EditPath/EditPath"
+import EditPath from "../components/EditPath"
 
 export default () => (
   <Router>

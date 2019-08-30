@@ -12,7 +12,6 @@ export class learningPaths extends Component {
   componentDidMount() {
     if (typeof window !== undefined) {
       if (localStorage.getItem("userId") === this.props.user_id) {
-        console.log("match")
         this.setState(oldState => ({
           show_edit: !oldState.show_edit,
         }))
