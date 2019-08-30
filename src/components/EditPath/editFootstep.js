@@ -22,17 +22,18 @@ export class addFootstep extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.data)
     const data = this.props.data
 
-    this.setState({
-      title: data.title,
-      description: data.description,
-      url: data.resource_url,
-      icon_url: data.resource_icon,
-      type: data.resource_type,
-      level: data.level,
-    })
+    if (data.title !== undefined) {
+      this.setState({
+        title: data.title,
+        description: data.description,
+        url: data.resource_url,
+        icon_url: data.resource_icon,
+        type: data.resource_type,
+        level: data.level,
+      })
+    }
   }
 
   updateFootstepArray = () => {
