@@ -36,10 +36,10 @@ export class learningPathCard extends Component {
 
         <div className={styles.learningPathCard} onClick={() => this.expand()}>
           <Row>
-            <Col xs={24} lg={5}>
+            <Col xs={24} lg={4}>
               <img className={styles.pathIcon} src={path.icon} alt="" />
             </Col>
-            <Col xs={24} lg={17} className={styles.pathHeading}>
+            <Col xs={24} lg={18} className={styles.pathHeading}>
               <h1>{path.title}</h1>
               <h5>{path.description}</h5>
               <Progress percent={path.percent} />

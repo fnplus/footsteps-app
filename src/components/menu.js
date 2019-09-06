@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col } from "antd"
+import { Row, Col, Icon } from "antd"
 import { Link, navigate } from "gatsby"
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -34,7 +34,7 @@ class NavMenu extends Component {
 
   render() {
     return (
-      <div>
+      <Row>
         <ul className={styles.menuContainer}>
           <li className={styles.menuProfile}>
             <img
@@ -69,16 +69,28 @@ class NavMenu extends Component {
                 {this.props.user.first_name} {this.props.user.last_name}
               </h3>
               <h5>{this.props.user.email}</h5>
-              <div className={styles.profileBtn} onClick={this.profileClick}>
-                My Profile
-              </div>
+              <Row>
+                <Col span={10}>
+                  <div
+                    className={styles.profileBtn}
+                    onClick={this.profileClick}
+                  >
+                    My Profile
+                  </div>
+                </Col>
+                <Col span={14}>
+                  <div className={styles.settingsBtn}>
+                    <Icon type="setting" theme="filled"></Icon>
+                  </div>
+                </Col>
+              </Row>
             </Col>
           </Row>
           <div className={styles.logoutBtn} onClick={this.logoutClick}>
             Logout
           </div>
         </div>
-      </div>
+      </Row>
     )
   }
 }
