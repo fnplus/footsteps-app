@@ -79,7 +79,10 @@ class NavMenu extends Component {
                   </div>
                 </Col>
                 <Col span={14}>
-                  <div className={styles.settingsBtn}>
+                  <div
+                    className={styles.settingsBtn}
+                    onClick={() => navigate("/settings/")}
+                  >
                     <Icon type="setting" theme="filled"></Icon>
                   </div>
                 </Col>
