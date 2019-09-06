@@ -1,4 +1,7 @@
 import React, { Component } from "react"
+import { Row, Col } from "antd"
+
+import styles from "./styles.module.css"
 
 export class settings extends Component {
   state = {
@@ -48,10 +51,62 @@ export class settings extends Component {
     })
   }
 
+  handleInputChange = e => {
+    const target = e.target
+    this.setState({
+      [target.name]: target.value,
+    })
+  }
+
   render() {
     return (
-      <div>
-        <h1>Settings</h1>
+      <div className={styles.container}>
+        <h1 className={styles.heading}>Settings</h1>
+
+        <h2 className={styles.sub_heading}>Personal</h2>
+        <Row>
+          <Col xs={24} lg={12}>
+            <div className={styles.input_label}>First Name</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="First Name"
+              value={this.state.first_name}
+              onChange={this.handleInputChange}
+              name="first_name"
+            />
+
+            <div className={styles.input_label}>Last Name</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Last Name"
+              value={this.state.last_name}
+              onChange={this.handleInputChange}
+              name="last_name"
+            />
+
+            <div className={styles.input_label}>Username</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Username"
+              value={this.state.username}
+              name="username"
+              disabled
+            />
+
+            <div className={styles.input_label}>Email ID</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Email ID"
+              value={this.state.email}
+              name="last_name"
+              disabled
+            />
+          </Col>
+        </Row>
       </div>
     )
   }

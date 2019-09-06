@@ -1,0 +1,39 @@
+.container {
+  margin: 30px 150px;
+  padding: 0 50px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.sub_heading {
+  margin-top: 50px;
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid #868686;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  width: 400px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+.input_label {
+  font-weight: 600;
+  margin-top: 35px;
+  font-family: "Montserrat", sans-serif;
+  color: #029843;
+}
