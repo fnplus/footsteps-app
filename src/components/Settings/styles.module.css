@@ -44,6 +44,7 @@ textarea:focus {
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
+  position: relative;
 }
 
 .profile_pic {
@@ -64,7 +65,7 @@ textarea:focus {
   font-size: 18px;
   position: absolute;
   bottom: 33px;
-  right: 120px;
+  right: 8px;
   border-radius: 50%;
   transition: transform 0.2s;
 }
@@ -114,10 +115,6 @@ textarea:focus {
 
   .input {
     width: 100%;
-  }
-
-  .add_image_btn {
-    right: 56px;
   }
 
   .sub_heading {
