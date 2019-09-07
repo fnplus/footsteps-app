@@ -90,6 +90,7 @@ export const USERS_QUERY_APOLLO = gql`
       linkedin
       github
       facebook
+      twitter
       learning_paths {
         id
         title

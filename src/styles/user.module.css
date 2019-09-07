@@ -143,6 +143,12 @@
   margin-top: 0px;
 }
 
+.social_row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .icon {
   font-size: 22px;
 }
