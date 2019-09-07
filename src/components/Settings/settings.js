@@ -256,6 +256,47 @@ export class settings extends Component {
             />
           </Col>
         </Row>
+
+        <Row>
+          <h2 className={styles.sub_heading}>Socials</h2>
+          <Col xs={24} lg={12}>
+            <div className={styles.input_label}>Github</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Github"
+              value={this.state.github}
+              onChange={this.handleInputChange}
+              name="github"
+            />
+          </Col>
+
+          <Col xs={24} lg={12}>
+            <div className={styles.input_label}>Facebook</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Facebook"
+              value={this.state.facebook}
+              onChange={this.handleInputChange}
+              name="facebook"
+            />
+          </Col>
+
+          <Col xs={24} lg={12}>
+            <div className={styles.input_label}>Linkedin</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Linkedin"
+              value={this.state.linkedin}
+              onChange={this.handleInputChange}
+              name="linkedin"
+            />
+          </Col>
+        </Row>
+
+        <div className={styles.update_btn}>Update Profile</div>
       </div>
     )
   }
