@@ -54,6 +54,7 @@ export default index
 export const GET_USER_DETAILS_QUERY_APOLLO = gql`
   query get_user_details($id: uuid!) {
     Users(where: { id: { _eq: $id } }) {
+      id
       about
       bio
       email
