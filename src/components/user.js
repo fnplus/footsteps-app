@@ -22,7 +22,9 @@ export class user extends Component {
             <img className={styles.profileImg} src={data.profile_pic} alt="" />
             <div className={styles.social}>
               <Row className={styles.social_row}>
-                {data.github !== "" && data.github !== "https://github.com/" ? (
+                {data.github !== "" &&
+                data.github !== null &&
+                data.github !== "https://github.com/" ? (
                   <Col span={6}>
                     <Icon
                       onClick={() => window.open(data.github)}
@@ -35,6 +37,7 @@ export class user extends Component {
                   ""
                 )}
                 {data.linkedin !== "" &&
+                data.linkedin !== null &&
                 data.linkedin !== "https://linkedin.com/" ? (
                   <Col span={6}>
                     <Icon
@@ -48,6 +51,7 @@ export class user extends Component {
                   ""
                 )}
                 {data.twitter !== "" &&
+                data.twitter !== null &&
                 data.twitter !== "https://twitter.com/" ? (
                   <Col span={6}>
                     <Icon
@@ -60,6 +64,7 @@ export class user extends Component {
                   ""
                 )}
                 {data.facebook !== "" &&
+                data.facebook !== null &&
                 data.facebook !== "https://facebook.com/" ? (
                   <Col span={6}>
                     <Icon
@@ -170,7 +175,9 @@ export class user extends Component {
 
             <div className={styles.social}>
               <Row className={styles.social_row}>
-                {data.github !== "" && data.github !== "https://github.com/" ? (
+                {data.github !== "" &&
+                data.github !== null &&
+                data.github !== "https://github.com/" ? (
                   <Col span={6}>
                     <Icon
                       onClick={() => window.open(data.github)}
@@ -183,6 +190,7 @@ export class user extends Component {
                   ""
                 )}
                 {data.linkedin !== "" &&
+                data.linkedin !== null &&
                 data.linkedin !== "https://linkedin.com/" ? (
                   <Col span={6}>
                     <Icon
@@ -196,6 +204,7 @@ export class user extends Component {
                   ""
                 )}
                 {data.twitter !== "" &&
+                data.twitter !== null &&
                 data.twitter !== "https://twitter.com/" ? (
                   <Col span={6}>
                     <Icon
@@ -208,6 +217,7 @@ export class user extends Component {
                   ""
                 )}
                 {data.facebook !== "" &&
+                data.facebook !== null &&
                 data.facebook !== "https://facebook.com/" ? (
                   <Col span={6}>
                     <Icon
