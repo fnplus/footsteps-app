@@ -25,6 +25,7 @@ export class signUp extends Component {
     github: "https://github.com/",
     linkedin: "https://linkedin.com/",
     facebook: "https://facebook.com/",
+    twitter: "https://twitter.com/",
     registered_usernames: [],
     username_error: false,
     step_error: false,
@@ -72,6 +73,7 @@ export class signUp extends Component {
           github: data.github,
           linkedin: data.linkedin,
           facebook: data.facebook,
+          twitter: data.twitter,
         },
       })
       .then(res => {
@@ -403,6 +405,15 @@ export class signUp extends Component {
                 placeholder="Facebook Profile URL"
               />
 
+              <div className={styles.input_label}>Twitter</div>
+              <input
+                className={styles.input}
+                name="twitter"
+                value={this.state.twitter}
+                onChange={this.handleInputChange}
+                placeholder="Twitter Profile URL"
+              />
+
               <div className={styles.stepBtn} onClick={this.nextStep}>
                 Finish{" "}
                 <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
@@ -450,6 +461,7 @@ export const CREATE_USER_MUTATION_APOLLO = gql`
     $github: String!
     $linkedin: String!
     $facebook: String!
+    $twitter: String!
   ) {
     insert_Users(
       objects: {
@@ -465,6 +477,7 @@ export const CREATE_USER_MUTATION_APOLLO = gql`
         github: $github
         linkedin: $linkedin
         facebook: $facebook
+        twitter: $twitter
       }
     ) {
       affected_rows

@@ -141,6 +141,7 @@
 .social {
   text-align: center;
   margin-top: 0px;
+  min-height: 25px;
 }
 
 .social_row {
