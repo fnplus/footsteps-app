@@ -10,18 +10,22 @@ import styles from "./styles.module.css"
 
 export class settings extends Component {
   state = {
+    //personal
     first_name: "",
     last_name: "",
+    email: "",
+    profile_pic: "",
+    username: "",
+    // about
     about: "",
     bio: "",
-    email: "",
+    skills: "",
+    skills_array: [],
+    // social
     facebook: "",
     github: "",
     linkedin: "",
-    profile_pic: "",
-    skills: "",
-    skills_array: [],
-    username: "",
+    // image upload
     isUploading: false,
     progress: 0,
     pic: "",
@@ -85,6 +89,59 @@ export class settings extends Component {
       .child(filename)
       .getDownloadURL()
       .then(url => this.setState({ profile_pic: url }))
+  }
+
+  // Tag Handling Functions
+
+  handleTagDelete = i => {
+    const { skills_array } = this.state
+    this.setState(
+      {
+        skills_array: skills_array.filter((_tag, index) => index !== i),
+      },
+      () => {
+        let skills = ""
+
+        this.state.skills_array.map((skill, i) => {
+          if (i !== this.state.skills_array.length - 1) {
+            skills += skill.text + ","
+            return 0
+          } else {
+            skills += skill.text
+            return 0
+          }
+        })
+
+        this.setState({
+          skills,
+        })
+      }
+    )
+  }
+
+  handleTagAddition = skill => {
+    if (this.state.skills_array.length < 10) {
+      this.setState(
+        state => ({ skills_array: [...state.skills_array, skill] }),
+        () => {
+          let skills = ""
+
+          this.state.skills_array.map((skill, i) => {
+            if (i !== this.state.skills_array.length - 1) {
+              skills += skill.text + ","
+              return 0
+            } else {
+              skills += skill.text
+              return 0
+            }
+          })
+
+          this.setState({
+            skills,
+          })
+        }
+      )
+    }
   }
 
   render() {
@@ -157,6 +214,46 @@ export class settings extends Component {
                 />
               </label>
             </div>
+          </Col>
+        </Row>
+
+        <Row>
+          <h2 className={styles.sub_heading}>About</h2>
+
+          <Col xs={24} lg={13}>
+            <div className={styles.input_label}>Bio</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Bio"
+              value={this.state.bio}
+              onChange={this.handleInputChange}
+              name="bio"
+            />
+
+            <div className={styles.input_label}>Description</div>
+            <textarea
+              type="text"
+              className={styles.input}
+              placeholder="Tell us about yourself"
+              value={this.state.about}
+              onChange={this.handleInputChange}
+              name="about"
+            />
+          </Col>
+
+          <Col xs={24} lg={11}>
+            <div className={styles.input_label}>Skills</div>
+            <ReactTags
+              tags={this.state.skills_array}
+              placeholder={"Enter your skills"}
+              delimiters={[188, 13]}
+              handleDelete={this.handleTagDelete}
+              handleAddition={this.handleTagAddition}
+              allowDragDrop={false}
+              inputFieldPosition="top"
+              autofocus={false}
+            />
           </Col>
         </Row>
       </div>
