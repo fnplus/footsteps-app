@@ -1,5 +1,10 @@
 import React, { Component } from "react"
-import { Row, Col } from "antd"
+import { Row, Col, Icon } from "antd"
+import FileUploader from "react-firebase-file-uploader"
+import { WithContext as ReactTags } from "react-tag-input"
+
+import firebase from "firebase/app"
+import "firebase/storage"
 
 import styles from "./styles.module.css"
 
@@ -17,6 +22,9 @@ export class settings extends Component {
     skills: "",
     skills_array: [],
     username: "",
+    isUploading: false,
+    progress: 0,
+    pic: "",
   }
 
   componentDidMount() {
@@ -56,6 +64,27 @@ export class settings extends Component {
     this.setState({
       [target.name]: target.value,
     })
+  }
+
+  // Image Upload Functions
+
+  handleUploadStart = () => this.setState({ isUploading: true, progress: 0 })
+
+  handleProgress = progress => this.setState({ progress })
+
+  handleUploadError = error => {
+    this.setState({ isUploading: false })
+    console.error(error)
+  }
+
+  handleUploadSuccess = filename => {
+    this.setState({ pic: filename, progress: 100, isUploading: false })
+    firebase
+      .storage()
+      .ref("Profile_pic")
+      .child(filename)
+      .getDownloadURL()
+      .then(url => this.setState({ profile_pic: url }))
   }
 
   render() {
@@ -105,6 +134,29 @@ export class settings extends Component {
               name="last_name"
               disabled
             />
+          </Col>
+          <Col xs={24} lg={12}>
+            <div className={styles.pic_container}>
+              <img
+                className={styles.profile_pic}
+                src={this.state.profile_pic}
+                alt="Profile Picture"
+              />
+              <label className={styles.add_image_btn}>
+                <Icon type="camera" theme="filled"></Icon>
+                <FileUploader
+                  hidden
+                  accept="image/*"
+                  name="profile_pic"
+                  randomizeFilename
+                  storageRef={firebase.storage().ref("Profile_pic")}
+                  onUploadStart={this.handleUploadStart}
+                  onUploadError={this.handleUploadError}
+                  onUploadSuccess={this.handleUploadSuccess}
+                  onProgress={this.handleProgress}
+                />
+              </label>
+            </div>
           </Col>
         </Row>
       </div>
