@@ -30,6 +30,7 @@ export class settings extends Component {
     facebook: "",
     github: "",
     linkedin: "",
+    twitter: "",
     // image upload
     isUploading: false,
     progress: 0,
@@ -60,14 +61,51 @@ export class settings extends Component {
       bio: data.bio,
       username: data.username,
       email: data.email,
-      facebook: data.facebook,
-      github: data.github,
-      linkedin: data.linkedin,
       skills: data.skills,
       profile_pic: data.profile_pic,
       skills_array,
       id: data.id,
     })
+
+    if (data.facebook === null || data.facebook === "") {
+      this.setState({
+        facebook: "https://facebook.com/",
+      })
+    } else {
+      this.setState({
+        facebook: data.facebook,
+      })
+    }
+
+    if (data.github === null || data.github === "") {
+      this.setState({
+        github: "https://github.com/",
+      })
+    } else {
+      this.setState({
+        github: data.github,
+      })
+    }
+
+    if (data.twitter === null || data.twitter === "") {
+      this.setState({
+        twitter: "https://twitter.com/",
+      })
+    } else {
+      this.setState({
+        twitter: data.twitter,
+      })
+    }
+
+    if (data.linkedin === null || data.linkedin === "") {
+      this.setState({
+        linkedin: "https://linkedin.com/in/",
+      })
+    } else {
+      this.setState({
+        linkedin: data.linkedin,
+      })
+    }
   }
 
   handleInputChange = e => {
@@ -184,6 +222,7 @@ export class settings extends Component {
         github,
         skills,
         profile_pic,
+        twitter,
       } = this.state
 
       client
@@ -198,6 +237,7 @@ export class settings extends Component {
             linkedin,
             facebook,
             github,
+            twitter,
             skills,
             profile_pic,
           },
@@ -363,6 +403,18 @@ export class settings extends Component {
               name="linkedin"
             />
           </Col>
+
+          <Col xs={24} lg={12}>
+            <div className={styles.input_label}>Twitter</div>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Twitter"
+              value={this.state.twitter}
+              onChange={this.handleInputChange}
+              name="twitter"
+            />
+          </Col>
         </Row>
         <div className={styles.error_container}>
           {this.state.error ? (
@@ -391,6 +443,7 @@ export const UPDATE_USER_INFO_MUTATION_APOLLO = gql`
     $github: String!
     $last_name: String!
     $linkedin: String!
+    $twitter: String!
     $profile_pic: String!
     $skills: String!
   ) {
@@ -406,6 +459,7 @@ export const UPDATE_USER_INFO_MUTATION_APOLLO = gql`
         linkedin: $linkedin
         profile_pic: $profile_pic
         skills: $skills
+        twitter: $twitter
       }
     ) {
       affected_rows

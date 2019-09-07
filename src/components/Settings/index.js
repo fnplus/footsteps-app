@@ -63,6 +63,7 @@ export const GET_USER_DETAILS_QUERY_APOLLO = gql`
       github
       last_name
       linkedin
+      twitter
       profile_pic
       skills
       username

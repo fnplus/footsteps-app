@@ -23,7 +23,7 @@ export class signUp extends Component {
     skills: "",
     skills_array: [],
     github: "https://github.com/",
-    linkedin: "https://linkedin.com/",
+    linkedin: "https://linkedin.com/in/",
     facebook: "https://facebook.com/",
     twitter: "https://twitter.com/",
     registered_usernames: [],
