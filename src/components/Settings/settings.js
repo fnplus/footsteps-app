@@ -295,8 +295,9 @@ export class settings extends Component {
             />
           </Col>
         </Row>
-
-        <div className={styles.update_btn}>Update Profile</div>
+        <div className={styles.btn_container}>
+          <div className={styles.update_btn}>Update Profile</div>
+        </div>
       </div>
     )
   }

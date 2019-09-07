@@ -76,6 +76,12 @@ export class header extends Component {
                   </div>
                   <div
                     className={styles.navItem}
+                    onClick={() => navigate("/settings/")}
+                  >
+                    Settings
+                  </div>
+                  <div
+                    className={styles.navItem}
                     onClick={this.logoutClick}
                     style={{ color: "#fe5e44" }}
                   >
