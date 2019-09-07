@@ -2,14 +2,19 @@ import React, { Component } from "react"
 import { Row, Col, Icon } from "antd"
 import FileUploader from "react-firebase-file-uploader"
 import { WithContext as ReactTags } from "react-tag-input"
+import gql from "graphql-tag"
+import { navigate } from "gatsby"
 
 import firebase from "firebase/app"
 import "firebase/storage"
 
 import styles from "./styles.module.css"
 
+import { client } from "../../apollo/client"
+
 export class settings extends Component {
   state = {
+    id: "",
     //personal
     first_name: "",
     last_name: "",
@@ -29,6 +34,7 @@ export class settings extends Component {
     isUploading: false,
     progress: 0,
     pic: "",
+    error: false,
   }
 
   componentDidMount() {
@@ -60,6 +66,7 @@ export class settings extends Component {
       skills: data.skills,
       profile_pic: data.profile_pic,
       skills_array,
+      id: data.id,
     })
   }
 
@@ -144,6 +151,68 @@ export class settings extends Component {
     }
   }
 
+  validate_details = () => {
+    let state = this.state
+
+    if (
+      state.first_name !== "" &&
+      state.last_name !== "" &&
+      state.about !== "" &&
+      state.bio !== "" &&
+      state.profile_pic !== ""
+    ) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  update_user = () => {
+    if (this.validate_details()) {
+      this.setState({
+        error: false,
+      })
+
+      let {
+        id,
+        first_name,
+        last_name,
+        bio,
+        about,
+        linkedin,
+        facebook,
+        github,
+        skills,
+        profile_pic,
+      } = this.state
+
+      client
+        .mutate({
+          mutation: UPDATE_USER_INFO_MUTATION_APOLLO,
+          variables: {
+            id,
+            first_name,
+            last_name,
+            bio,
+            about,
+            linkedin,
+            facebook,
+            github,
+            skills,
+            profile_pic,
+          },
+        })
+        .then(res => {
+          alert("Successfully Updated Profile")
+          navigate("/")
+        })
+    } else {
+      this.setState({
+        error: true,
+      })
+    }
+  }
+
   render() {
     return (
       <div className={styles.container}>
@@ -197,7 +266,7 @@ export class settings extends Component {
               <img
                 className={styles.profile_pic}
                 src={this.state.profile_pic}
-                alt="Profile Picture"
+                alt=""
               />
               <label className={styles.add_image_btn}>
                 <Icon type="camera" theme="filled"></Icon>
@@ -295,8 +364,15 @@ export class settings extends Component {
             />
           </Col>
         </Row>
+        <div className={styles.error_container}>
+          {this.state.error ? (
+            <div className={styles.error}>Please Fill all the Fields</div>
+          ) : null}
+        </div>
         <div className={styles.btn_container}>
-          <div className={styles.update_btn}>Update Profile</div>
+          <div className={styles.update_btn} onClick={this.update_user}>
+            Update Profile
+          </div>
         </div>
       </div>
     )
@@ -304,3 +380,40 @@ export class settings extends Component {
 }
 
 export default settings
+
+export const UPDATE_USER_INFO_MUTATION_APOLLO = gql`
+  mutation update_user_info(
+    $id: uuid!
+    $about: String!
+    $bio: String!
+    $facebook: String!
+    $first_name: String!
+    $github: String!
+    $last_name: String!
+    $linkedin: String!
+    $profile_pic: String!
+    $skills: String!
+  ) {
+    update_Users(
+      where: { id: { _eq: $id } }
+      _set: {
+        about: $about
+        bio: $bio
+        facebook: $facebook
+        first_name: $first_name
+        github: $github
+        last_name: $last_name
+        linkedin: $linkedin
+        profile_pic: $profile_pic
+        skills: $skills
+      }
+    ) {
+      affected_rows
+      returning {
+        id
+        username
+        email
+      }
+    }
+  }
+`
