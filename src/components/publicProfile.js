@@ -6,7 +6,7 @@ import { navigate } from "gatsby"
 
 import Header from "./sideDrawer"
 import Footer from "./footer"
-import User from "./user"
+import User from "./User"
 import Loader from "./loader"
 
 import styles from "../styles/layout.module.css"

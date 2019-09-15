@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { Row, Col, Icon } from "antd"
 
-import styles from "../styles/user.module.css"
-import LearningPaths from "./User/learningPaths"
+import styles from "../../styles/user.module.css"
+import LearningPaths from "./learningPaths"
 
 export class user extends Component {
   render() {
