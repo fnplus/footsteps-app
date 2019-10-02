@@ -18,6 +18,8 @@ import SignUp from "./sign-up"
 
 import { client } from "../apollo/client"
 
+import UserContext from "../context/userContext"
+
 export class layout extends Component {
   state = {
     isSignedIn: null,
@@ -100,20 +102,22 @@ export class layout extends Component {
       )
     } else if (this.state.isSignedIn === true) {
       return (
-        <div>
-          <Helmet>
-            <meta
-              name="Description"
-              content="let's you make your learning path and inspire others to follow them."
-            />
-            <title>FootSteps</title>
-          </Helmet>
-          <div className={styles.content}>
-            <Header show={true} user={this.state.user} />
-            <main>{this.props.children}</main>
+        <UserContext.Provider value={{ user: this.state.user }}>
+          <div>
+            <Helmet>
+              <meta
+                name="Description"
+                content="let's you make your learning path and inspire others to follow them."
+              />
+              <title>FootSteps</title>
+            </Helmet>
+            <div className={styles.content}>
+              <Header show={true} user={this.state.user} />
+              <main>{this.props.children}</main>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </UserContext.Provider>
       )
     }
   }
@@ -124,11 +128,71 @@ export default layout
 export const USER_EMAIL_QUERY_APOLLO = gql`
   query getUser($email: String!) {
     Users(where: { email: { _like: $email } }) {
+      id
       first_name
       last_name
-      email
-      id
+      username
+      skills
       profile_pic
+      following_aggregate {
+        aggregate {
+          count
+        }
+      }
+      following {
+        follower_info {
+          username
+          first_name
+          last_name
+          profile_pic
+          id
+        }
+      }
+      followers_aggregate {
+        aggregate {
+          count
+        }
+      }
+      followers {
+        follow_info {
+          username
+          profile_pic
+          first_name
+          last_name
+          id
+        }
+      }
+      about
+      bio
+      linkedin
+      github
+      facebook
+      twitter
+      learning_paths {
+        id
+        title
+        description
+        icon
+        votes_aggregate {
+          aggregate {
+            count
+          }
+        }
+        footsteps {
+          id
+          title
+          resource_icon
+          resource_url
+          resource_type
+          level
+          description
+        }
+      }
+      learning_paths_aggregate {
+        aggregate {
+          count
+        }
+      }
     }
   }
 `

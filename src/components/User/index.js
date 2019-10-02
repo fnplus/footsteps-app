@@ -4,9 +4,23 @@ import { Row, Col, Icon } from "antd"
 import styles from "../../styles/user.module.css"
 import LearningPaths from "./learningPaths"
 
+import UserContext from "../../context/userContext"
+
 export class user extends Component {
+  static contextType = UserContext
+
+  state = {
+    user: {},
+  }
+
+  componentWillMount() {
+    this.setState({
+      user: this.context.user,
+    })
+  }
+
   render() {
-    const data = this.props.data
+    const data = this.state.user
 
     return (
       <div className={styles.container}>
