@@ -9,18 +9,8 @@ import UserContext from "../../context/userContext"
 export class user extends Component {
   static contextType = UserContext
 
-  state = {
-    user: {},
-  }
-
-  componentWillMount() {
-    this.setState({
-      user: this.context.user,
-    })
-  }
-
   render() {
-    const data = this.state.user
+    const data = this.context.user
 
     return (
       <div className={styles.container}>

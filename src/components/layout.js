@@ -62,6 +62,12 @@ export class layout extends Component {
     })
   }
 
+  update_user = new_user => {
+    this.setState({
+      user: new_user,
+    })
+  }
+
   componentWillUnmount() {
     this.unregisterAuthObserver()
   }
@@ -102,7 +108,9 @@ export class layout extends Component {
       )
     } else if (this.state.isSignedIn === true) {
       return (
-        <UserContext.Provider value={{ user: this.state.user }}>
+        <UserContext.Provider
+          value={{ user: this.state.user, update_user: this.update_user }}
+        >
           <div>
             <Helmet>
               <meta
