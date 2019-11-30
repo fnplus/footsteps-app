@@ -7,15 +7,27 @@
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1. **Install the Gatsby CLI.**
+
+   ```shell
+   npm install -g gatsby-cli
+
+   ```
+
+2.  **Fork & Clone the repo**
+    
+    ```sh
+    git clone https://github.com/[yourname]/footsteps-app
+    ```
+
+3.  **Create a Gatsby site.**
 
     Use the Gatsby CLI to create a new site, specifying the starter.
 
     ```sh
-    # create a new Gatsby site using the hello-world starter
     gatsby new footsteps-app https://github.com/fnplus/footsteps-app
     ```
-1.  **Deploy Hasura graphql**
+4.  **Deploy Hasura graphql**
 
     [Deploy Hasura to Heroku](https://docs.hasura.io/1.0/graphql/manual/getting-started/heroku-simple.html)
     
@@ -27,7 +39,7 @@
     
     [Apply migrations to your instance](https://docs.hasura.io/1.0/graphql/manual/migrations/existing-database.html#step-6-apply-the-migrations-on-another-instance-of-graphql-engine)
 
-1.  **Start developing.**
+5.  **Start developing.**
     create .env.development file and add your variables listed in .env.example
     Navigate into your new site’s directory and start it up.
 
@@ -36,7 +48,7 @@
     gatsby develop
     ```
 
-1.  **Open the source code and start editing!**
+6.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
@@ -44,6 +56,22 @@
 
     Open the `footsteps-app` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 💫 Deploy
+## 🎓 Learning Gatsby
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)]()
+Full documentation for Gatsby lives [on the website](https://gatsbyjs.org/).
+
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+
+- **To dive straight into code samples head [to our documentation](https://gatsbyjs.org/docs/).** In particular, check out the “<i>Guides</i>”, “<i>API Reference</i>”, and “<i>Advanced Tutorials</i>” sections in the sidebar.
+
+We welcome suggestions for improving our docs. See the [“how to contribute”](https://gatsbyjs.org/contributing/how-to-contribute/) documentation for more details.
+
+**Start Learning Gatsby: [Follow the Tutorial](https://gatsbyjs.org/tutorial/) · [Read the Docs](https://gatsbyjs.org/docs/)**
+
+## :memo: License
+
+Licensed under the [GPL v3 License](./LICENSE).
+
+## 💜 Thanks
+
+Thanks to our many contributors and to [Netlify](https://www.netlify.com/) for hosting [footsteps.dev](https://footsteps.dev) and our example sites.
