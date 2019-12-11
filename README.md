@@ -25,7 +25,8 @@
     Use the Gatsby CLI to create a new site, specifying the starter.
 
     ```sh
-    gatsby new footsteps-app https://github.com/fnplus/footsteps-app
+    cd footsteps-app/
+    npm install
     ```
 4.  **Deploy Hasura graphql**
 
@@ -44,7 +45,6 @@
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd footsteps-app/
     gatsby develop
     ```
 
