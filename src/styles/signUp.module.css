@@ -189,6 +189,11 @@ textarea:focus {
   float: right;
 }
 
+.input_label_comment {
+  font-size: 13px;
+  color: #868686;
+}
+
 @media only screen and (max-width: 768px) {
   .step0_img {
     width: 90%;

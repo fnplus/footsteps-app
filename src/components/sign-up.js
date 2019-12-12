@@ -320,6 +320,9 @@ export class signUp extends Component {
               />
 
               <div className={styles.input_label}>Skills</div>
+              <div className={styles.input_label_comment}>
+                *Press enter to add a skill
+              </div>
               <ReactTags
                 tags={this.state.skills_array}
                 placeholder={"Enter your Skills"}
