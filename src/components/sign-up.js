@@ -255,6 +255,9 @@ export class signUp extends Component {
                   onChange={this.handleUsernameChange}
                   placeholder="Username"
                 />
+                <div className={styles.input_label_comment}>
+                  *Only Lowercase Letters, Numbers and Underscore Allowed
+                </div>
                 <div
                   style={
                     this.state.username_error
