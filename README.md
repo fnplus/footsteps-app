@@ -41,6 +41,10 @@
    GATSBY_FIREBASE_AUTH_DOMAIN=fnplus-rle-test.firebaseapp.com
    GATSBY_GOOGLE_TRACKING_ID=UA-154496987-1
    ```
+   
+   For access to the Firebase project, please fill [this](https://airtable.com/shrOevwzFNas0wis3) form.
+   
+   For access to the testing DB, use [this](https://rle-test.herokuapp.com/console/login) link & enter '!footstepstest!' as the password.
 
 5. **Start developing.**
    Navigate into your new site’s directory and start it up.
