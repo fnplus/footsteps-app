@@ -12,44 +12,70 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
-  "dependencies": {
-    "antd": "^3.20.0",
-    "apollo-boost": "^0.4.3",
-    "apollo-link-http": "^1.5.15",
-    "firebase": "^6.3.0",
-    "gatsby": "^2.13.44",
-    "gatsby-plugin-create-client-paths": "^2.1.3",
-    "gatsby-plugin-google-analytics": "^2.1.4",
-    "gatsby-plugin-manifest": "^2.2.4",
-    "gatsby-plugin-netlify": "^2.0.17",
-    "gatsby-plugin-offline": "^2.1.3",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-typography": "^2.2.13",
-    "gatsby-source-graphql": "^2.1.2",
-    "isomorphic-fetch": "^2.2.1",
-    "query-string": "^6.8.1",
-    "react": "^16.8.6",
-    "react-apollo": "^2.5.8",
-    "react-dnd": "^5.0.0",
-    "react-dnd-html5-backend": "^3.0.2",
-    "react-dom": "^16.8.6",
-    "react-firebase-file-uploader": "^2.4.2",
-    "react-firebaseui": "^3.1.2",
-    "react-helmet": "^5.2.1",
-    "react-tag-input": "^6.4.0",
-    "react-typography": "^0.16.19",
-    "typography": "^0.16.19",
-    "typography-theme-grand-view": "^0.16.19",
-    "uuid": "^3.3.2"
-  },
-  "devDependencies": {
-    "prettier": "^1.18.2"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fnplus/project-footsteps-app"
   },
+  "keywords": [],
+  "author": "@fnplusofficial",
   "bugs": {
     "url": "https://github.com/fnplus/project-footsteps-app/issues"
+  },
+  "homepage": "https://github.com/fnplus/project-footsteps-app#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "antd": "^3.26.4",
+    "apollo-boost": "^0.4.7",
+    "apollo-link-http": "^1.5.16",
+    "firebase": "^6.6.2",
+    "gatsby": "^2.18.17",
+    "gatsby-cli": "^2.8.22",
+    "gatsby-plugin-create-client-paths": "^2.1.20",
+    "gatsby-plugin-google-analytics": "^2.1.31",
+    "gatsby-plugin-manifest": "^2.2.34",
+    "gatsby-plugin-netlify": "^2.1.30",
+    "gatsby-plugin-offline": "^2.2.10",
+    "gatsby-plugin-react-helmet": "^3.1.18",
+    "gatsby-plugin-typography": "^2.3.20",
+    "gatsby-source-graphql": "^2.1.29",
+    "isomorphic-fetch": "^2.2.1",
+    "query-string": "^6.9.0",
+    "react": "^16.12.0",
+    "react-apollo": "^2.5.8",
+    "react-dnd": "^5.0.0",
+    "react-dnd-html5-backend": "^3.0.2",
+    "react-dom": "^16.12.0",
+    "react-firebase-file-uploader": "^2.4.3",
+    "react-firebaseui": "^3.1.2",
+    "react-helmet": "^5.2.1",
+    "react-tag-input": "^6.4.2",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19",
+    "typography-theme-grand-view": "^0.16.19",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@upstatement/eslint-config": "^0.4.2",
+    "@upstatement/prettier-config": "^0.3.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^1.11.1"
   }
 }

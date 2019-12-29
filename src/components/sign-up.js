@@ -191,7 +191,7 @@ export class signUp extends Component {
             </Col>
             <Col xs={24} lg={12} className={styles.step0_content}>
               <h1>Hey {firebase.auth().currentUser.displayName}!</h1>
-              <h2>Welcome to Fnplus Community!</h2>
+              <h2>Welcome to FnPlus (FunctionPlus) Club!</h2>
               <h3>
                 We are glad to have you on board. Let us get to know you better
                 to enhance your experience with us.
@@ -217,9 +217,9 @@ export class signUp extends Component {
               <h3>Your Socials</h3>
             </Col>
             <Col xs={24} lg={14}>
-              <h1 className={styles.step_heading}>What do we call you?</h1>
+              <h1 className={styles.step_heading}>Let's get started!</h1>
               <div className={styles.step1_form}>
-                <div className={styles.input_label}>Email</div>
+                <div className={styles.input_label}>What's your email?</div>
                 <input
                   className={styles.input}
                   name="email"
@@ -229,7 +229,7 @@ export class signUp extends Component {
                   disabled
                 />
 
-                <div className={styles.input_label}>First Name</div>
+                <div className={styles.input_label}>What's your first name?</div>
                 <input
                   className={styles.input}
                   name="first_name"
@@ -238,7 +238,7 @@ export class signUp extends Component {
                   placeholder="First Name"
                 />
 
-                <div className={styles.input_label}>Last Name</div>
+                <div className={styles.input_label}>And, your last name?</div>
                 <input
                   className={styles.input}
                   name="last_name"
@@ -247,7 +247,7 @@ export class signUp extends Component {
                   placeholder="Last Name"
                 />
 
-                <div className={styles.input_label}>Username</div>
+                <div className={styles.input_label}>Enter an unique username!</div>
                 <input
                   className={styles.input}
                   name="username"
@@ -256,7 +256,7 @@ export class signUp extends Component {
                   placeholder="Username"
                 />
                 <div className={styles.input_label_comment}>
-                  *Only Lowercase Letters, Numbers and Underscore Allowed
+                  *Only lowercase letters, numbers and underscore allowed
                 </div>
                 <div
                   style={
@@ -310,7 +310,7 @@ export class signUp extends Component {
                 name="bio"
                 value={this.state.bio}
                 onChange={this.handleInputChange}
-                placeholder="Web Developer"
+                placeholder="Developer, Data Scientist, Teacher"
               />
 
               <div className={styles.input_label}>About</div>
@@ -319,7 +319,7 @@ export class signUp extends Component {
                 name="about"
                 value={this.state.about}
                 onChange={this.handleInputChange}
-                placeholder="Tell us about yourself and what you are passionate about"
+                placeholder="A short bio of less than 120 characters"
               />
 
               <div className={styles.input_label}>Skills</div>
@@ -419,8 +419,8 @@ export class signUp extends Component {
                 onChange={this.handleInputChange}
                 placeholder="Twitter Profile URL"
               />
-
-              <div className={styles.stepBtn} onClick={this.nextStep}>
+              {/* Skipped step-4 to reduce time in on-boarding the user - Abhi*/}
+              <div className={styles.stepBtn} onClick={this.signup}>
                 Finish{" "}
                 <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
               </div>

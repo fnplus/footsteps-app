@@ -115,7 +115,7 @@ export class layout extends Component {
             <Helmet>
               <meta
                 name="Description"
-                content="let's you make your learning path and inspire others to follow them."
+                content="Every expert was a beginner once. They tried and tested things and didn't give up. You can learn a lot from their learnings. Join footsteps to learn from experts and not make the same mistakes as they did."
               />
               <title>FootSteps</title>
             </Helmet>

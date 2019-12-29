@@ -32,38 +32,6 @@ export class login extends Component {
           </Col>
           <Col xs={24} lg={10}>
             <div className={styles.container}>
-              <Form className="login-form">
-                <Form.Item>
-                  <Input
-                    prefix={
-                      <Icon
-                        type="uswidther"
-                        style={{ color: "rgba(0,0,0,.25)" }}
-                      />
-                    }
-                    placeholder="Email ID"
-                  />
-                </Form.Item>
-                <Form.Item>
-                  <Input
-                    prefix={
-                      <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                    }
-                    type="password"
-                    placeholder="Password"
-                  />
-                </Form.Item>
-                <Form.Item>
-                  <Button
-                    type="primary"
-                    style={{ float: "right" }}
-                    htmlType="submit"
-                    className="login-form-button"
-                  >
-                    Log in
-                  </Button>
-                </Form.Item>
-              </Form>
               <StyledFirebaseAuth
                 uiConfig={uiConfig}
                 firebaseAuth={firebase.auth()}

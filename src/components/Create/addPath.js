@@ -122,7 +122,7 @@ export class addPath extends Component {
       this.state.tags === ""
     ) {
       this.setState({
-        err_msg: "Please fill the Path Details",
+        err_msg: "Please fill the path details",
       })
       return false
     } else if (this.state.footsteps.length < 1) {

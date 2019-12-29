@@ -13,8 +13,7 @@ export class about extends Component {
             <Col xs={24} md={12}>
               <h1>About Footsteps</h1>
               <p>
-                let's you make your learning path and inspire others to follow
-                them
+                Footsteps allows you make save your learning journeys and inspire others to follow them
               </p>
             </Col>
             <Col xs={24} md={12}>

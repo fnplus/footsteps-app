@@ -8,9 +8,9 @@ export default () => (
   <div className={styles.container}>
     <Row>
       <Col sm={24} lg={14}>
-        <h1 className={styles.heading}>Footsteps</h1>
+        <h1 className={styles.heading}>Hi there!</h1>
         <p className={styles.subHeading}>
-          What are You Willing to Learn Today?
+          What do you want to learn today?
         </p>
         <img
           src={require("../images/road-sign.svg")}
