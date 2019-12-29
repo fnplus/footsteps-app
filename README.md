@@ -30,7 +30,7 @@
 
 4. **Add Credentials to .env**
 
-   Create `.env.development` file and add your variables listed in `.env.example`
+   Create `.env.development` file and add your variables listed below.
 
    Use the below credentials for testing purposes
 
