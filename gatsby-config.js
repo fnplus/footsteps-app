@@ -43,3 +43,15 @@ module.exports = {
     `gatsby-plugin-offline`,
   ],
 }
+
+module.exports = {
+  siteMetadata: {
+    title: "Footsteps",
+    titleTemplate: "%s · Your Personal Learning Path",
+    description:
+      "Every expert was a beginner once. They tried and tested things and didn't give up. You can learn a lot from their learnings. Join footsteps to learn from experts and not make the same mistakes as they did.",
+    url: "https://www.fnplus.tech", // No trailing slash allowed!
+    image: "/images/img_share.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@fnplusofficial",
+  },
+}

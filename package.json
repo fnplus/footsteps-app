@@ -1,5 +1,5 @@
 {
-  "name": "project-footsteps",
+  "name": "footsteps-app",
   "private": true,
   "description": "Learning Resource Aggregator",
   "version": "0.1.0",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fnplus/project-footsteps-app"
+    "url": "https://github.com/fnplus/footsteps-app"
   },
   "keywords": [],
   "author": "@fnplusofficial",
   "bugs": {
-    "url": "https://github.com/fnplus/project-footsteps-app/issues"
+    "url": "https://github.com/fnplus/footsteps-app/issues"
   },
-  "homepage": "https://github.com/fnplus/project-footsteps-app#readme",
+  "homepage": "https://github.com/fnplus/footsteps-app#readme",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged && lint-staged"
