@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Row, Col, Form, Icon, Input, Button } from "antd"
+import { Row, Col } from "antd"
 import firebase from "firebase/app"
 import "firebase/auth"
 
@@ -10,6 +10,7 @@ import styles from "../styles/login.module.css"
 const uiConfig = {
   signInFlow: "popup",
   signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.GithubAuthProvider.PROVIDER_ID,
   ],

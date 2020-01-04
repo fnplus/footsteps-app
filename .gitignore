@@ -68,9 +68,9 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-#Environment Variables
+# Environment Variables
 .env.development
 .env.production
 
-#VS Code
+# VS Code
 .vs/

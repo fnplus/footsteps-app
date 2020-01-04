@@ -8,7 +8,7 @@ export class footer extends Component {
     return (
       <footer className={styles.container}>
         <Row>
-          <Col xs={24} lg={12}>
+          <Col xs={24} lg={8}>
             Made with{" "}
             <span role="img" aria-label="heart">
               ❤️
@@ -23,7 +23,25 @@ export class footer extends Component {
               Fnplus
             </a>
           </Col>
-          <Col xs={24} lg={12} className={styles.footer_right}>
+          <Col xs={24} lg={8} className={styles.footer_center}>
+            <a
+              className={styles.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://fnplus.tech/privacy-policy"
+            >
+              Privacy Policy
+            </a>{" "}
+            <a
+              className={styles.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://fnplus.tech/terms-of-use"
+            >
+              Terms of Use
+            </a>
+          </Col>
+          <Col xs={24} lg={8} className={styles.footer_right}>
             Check out this project on{" "}
             <a
               className={styles.link}

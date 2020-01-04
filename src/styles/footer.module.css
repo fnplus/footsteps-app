@@ -4,7 +4,7 @@ footer {
 }
 
 .container {
-  margin: 0 120px;
+  margin: 0 90px;
 }
 
 .link {
@@ -13,11 +13,15 @@ footer {
 }
 
 .link:hover {
-  color: black;
+  color: #029843;
+}
+
+.footer_center {
+  text-align: center;
 }
 
 .footer_right {
-  text-align: right;
+  text-align: end;
 }
 
 @media only screen and (max-width: 768px) {
@@ -30,8 +34,12 @@ footer {
     height: 52px;
   }
 
+  .footer_center {
+    text-align: center;
+  }
+
   .footer_right {
     text-align: center;
-    margin: 5px 0;
+    margin: 10px 0;
   }
 }
