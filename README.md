@@ -1,9 +1,22 @@
-# Footsteps
+# 👣 Footsteps - Learning Resources Aggregator
+A search 🔎engine for crowdsourced 🧑‍🤝‍🧑knowledge discovery.👨‍💻👩‍💻Learn by following the footsteps (resources) of experts. Follow the learning paths made by experts and also make your own, giving others the right advice/resources to learn.
+
+<p align="center">
+   <a href="https://github.com/fnplus/footsteps-app/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/fnplus/footsteps-app"></a>
+   <a href="https://github.com/fnplus/footsteps-app/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/fnplus/footsteps-app"></a>
+   <a href="https://github.com/fnplus/footsteps-app/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/fnplus/footsteps-app"></a>
+</p>
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffnplus%2Fproject-footsteps-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffnplus%2Fproject-footsteps-app?ref=badge_shield)
+[![GitHub license](https://img.shields.io/github/license/fnplus/footsteps-app)](https://github.com/fnplus/footsteps-app/blob/master/LICENSE.txt)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/66839011f8424527bdf4a39b60ea6b4b)](https://www.codacy.com/manual/fnplus/footsteps-app?utm_source=github.com&utm_medium=referral&utm_content=fnplus/footsteps-app&utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/fnplus/footsteps-app/badge)](https://www.codefactor.io/repository/github/fnplus/footsteps-app)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8e60385a-c75c-4b48-9d01-975f43285914/deploy-status)](https://app.netlify.com/sites/sharp-swanson-a61558/deploys)
+
+## 🤷 About
+Finding great resources to learn is hard... Google Search doesn't help since it's the website with the best SEO that wins! Even if I find the resources, where do I keep a sorted list of them? Managing them gets harder every day. 
+
+With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-extension) we're trying to curate the best resources from the internet and make it easy for individuals to find quality resources to learn, keep a track of their learning. Every resource is called a 'footstep' (added in a chronological manner) and a collection of footsteps makes up a learning path.
 
 ## 🚀 Quick start
 
@@ -82,6 +95,6 @@ We welcome suggestions for improving our docs. See the [“how to contribute”]
 
 Licensed under the [GPL v3 License](./LICENSE).
 
-## 💜 Thanks
+## :heart: Thanks
 
-Thanks to our many contributors and to [Netlify](https://www.netlify.com/) for hosting [footsteps.dev](https://footsteps.dev) and our example sites.
+Thanks to our many contributors and to [Netlify](https://www.netlify.com/) & [Heroku](https://www.heroku.com) for hosting [footsteps.dev](https://footsteps.dev).
