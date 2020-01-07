@@ -28,7 +28,7 @@ export class login extends Component {
             <img
               className={styles.image}
               src={require("../images/signin.png")}
-              alt=""
+              alt="Website is under construction"
             />
           </Col>
           <Col xs={24} lg={10}>

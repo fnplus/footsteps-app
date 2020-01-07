@@ -2,6 +2,8 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import Facebook from "./Facebook"
+import Twitter from "./Twitter"
 
 const SEO = ({ title, description, image, pathname, article }) => (
   <StaticQuery
@@ -15,6 +17,11 @@ const SEO = ({ title, description, image, pathname, article }) => (
           siteUrl,
           defaultImage,
           twitterUsername,
+          siteLanguage,
+          ogLanguage,
+          author,
+          twitter,
+          facebook,
         },
       },
     }) => {
@@ -23,6 +30,8 @@ const SEO = ({ title, description, image, pathname, article }) => (
         description: description || defaultDescription,
         image: `${siteUrl}${image || defaultImage}`,
         url: `${siteUrl}${pathname || "/"}`,
+        siteLanguage: siteLanguage,
+        author: author,
       }
 
       return (
@@ -31,9 +40,6 @@ const SEO = ({ title, description, image, pathname, article }) => (
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
             {seo.url && <meta property="og:url" content={seo.url} />}
-            {(article ? true : null) && (
-              <meta property="og:type" content="article" />
-            )}
             {seo.title && <meta property="og:title" content={seo.title} />}
             {seo.description && (
               <meta property="og:description" content={seo.description} />
@@ -49,6 +55,21 @@ const SEO = ({ title, description, image, pathname, article }) => (
             )}
             {seo.image && <meta name="twitter:image" content={seo.image} />}
           </Helmet>
+          <Facebook
+            desc={seo.description}
+            image={seo.image}
+            title={seo.title}
+            type={article ? "article" : "website"}
+            url={seo.url}
+            locale={ogLanguage}
+            name={facebook}
+          />
+          <Twitter
+            title={seo.title}
+            image={seo.image}
+            desc={seo.description}
+            username={twitter}
+          />
         </>
       )
     }}
@@ -62,15 +83,13 @@ SEO.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   pathname: PropTypes.string,
-  article: PropTypes.bool,
 }
 
 SEO.defaultProps = {
-  title: null,
-  description: null,
-  image: null,
+  title: `Footsteps | Learn Anything`,
+  description: `Every expert was a beginner once. They tried and tested things and didn't give up. You can learn a lot from their learnings. Join footsteps to learn from the learning journey of experts.`,
+  image: `/images/img_share.png`,
   pathname: null,
-  article: false,
 }
 
 const query = graphql`
@@ -83,6 +102,11 @@ const query = graphql`
         siteUrl: url
         defaultImage: image
         twitterUsername
+        siteLanguage
+        ogLanguage
+        author
+        twitter
+        facebook
       }
     }
   }

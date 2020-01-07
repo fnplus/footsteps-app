@@ -13,11 +13,17 @@ export class about extends Component {
             <Col xs={24} md={12}>
               <h1>About Footsteps</h1>
               <p>
-                Footsteps allows you make save your learning journeys and inspire others to follow them
+                Every expert was a beginner once. They tried and tested things
+                and didn't give up. You can learn a lot from their learnings.
+                Join footsteps to learn from experts and not make the same
+                mistakes as they did.
               </p>
             </Col>
             <Col xs={24} md={12}>
-              <img src={require("../images/version-control.svg")} alt="" />
+              <img
+                src={require("../images/version-control.svg")}
+                alt="Customised learning paths"
+              />
             </Col>
           </Row>
         </div>

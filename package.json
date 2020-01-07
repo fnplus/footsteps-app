@@ -1,9 +1,9 @@
 {
   "name": "footsteps-app",
   "private": true,
-  "description": "Learning Resource Aggregator",
-  "version": "0.1.0",
-  "license": "MIT",
+  "description": "Crowdsourced Learning Paths Aggregator",
+  "version": "0.1.1",
+  "license": "GPL v3",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

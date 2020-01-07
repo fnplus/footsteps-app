@@ -5,15 +5,24 @@
  */
 module.exports = {
   /* Your site config here */
+  pathPrefix: "/",
   siteMetadata: {
-    title: "Footsteps",
-    titleTemplate: "%s · Your Personal Learning Path",
-    description:
-      "Every expert was a beginner once. They tried and tested things and didn't give up. You can learn a lot from their learnings. Join footsteps to learn from experts and not make the same mistakes as they did.",
-    url: "https://www.footsteps.dev", // No trailing slash allowed!
-    siteUrl: "https://www.footsteps.dev",
-    image: "/images/img_share.png", // Path to your image you placed in the 'static' folder
-    twitterUsername: "@fnplusofficial",
+    title: `Footsteps | Crowdsourced Learning Paths Aggregator`,
+    titleAlt: `Footsteps App`,
+    siteLanguage: `en`,
+    ogLanguage: `en_US`,
+    titleTemplate: `%s · A search 🔎engine for crowdsourced 🧑‍🤝‍🧑knowledge discovery`,
+    description: `Every expert was a beginner once. They tried and tested things and didn't give up. You can learn a lot from their learnings. Join footsteps to learn from the learning journey of experts.`,
+    shortName: `Footsteps`,
+    url: `https://www.footsteps.dev`, // No trailing slash allowed!
+    siteUrl: `https://www.footsteps.dev`,
+    logo: `/images/img_share.png`,
+    image: `/images/img_share.png`, // Path to your image you placed in the 'static' folder
+    favicon: `/favicon.ico`,
+    author: `@fnplusofficial`,
+    twitter: `@fnplusofficial`,
+    facebook: `fnplusofficial`,
+    twitterUsername: `@fnplusofficial`,
   },
   plugins: [
     `gatsby-plugin-netlify`,

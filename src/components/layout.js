@@ -16,6 +16,8 @@ import Login from "./login"
 import Loader from "./loader"
 import SignUp from "./sign-up"
 
+import SEO from "././SEO"
+
 import { client } from "../apollo/client"
 
 import UserContext from "../context/userContext"
@@ -51,7 +53,7 @@ export class layout extends Component {
                 userId: response.data.Users[0].id,
                 user: response.data.Users[0],
               })
-              if (typeof window !== undefined) {
+              if (typeof window !== "undefined") {
                 localStorage.setItem("userId", response.data.Users[0].id)
               }
             }
@@ -62,9 +64,9 @@ export class layout extends Component {
     })
   }
 
-  update_user = new_user => {
+  updateUser = newUser => {
     this.setState({
-      user: new_user,
+      user: newUser,
     })
   }
 
@@ -74,7 +76,7 @@ export class layout extends Component {
 
   updateUserId = (userId, isSignedIn) => {
     navigate("/")
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       window.location.reload()
       localStorage.setItem("userId", userId)
     }
@@ -95,6 +97,28 @@ export class layout extends Component {
     } else if (this.state.isSignedIn === false) {
       return (
         <div>
+          <Helmet>
+            <meta name="description" content={SEO.description} />
+            <meta name="image" content={SEO.image} />
+            {SEO.url && <meta property="og:url" content={SEO.url} />}
+            {SEO.title && <meta property="og:title" content={SEO.title} />}
+            {SEO.description && (
+              <meta property="og:description" content={SEO.description} />
+            )}
+            {SEO.image && <meta property="og:image" content={SEO.image} />}
+            <meta name="twitter:card" content="summary_large_image" />
+            {SEO.twitterUsername && (
+              <meta name="twitter:creator" content={SEO.twitterUsername} />
+            )}
+            {SEO.title && <meta name="twitter:title" content={SEO.title} />}
+            {SEO.description && (
+              <meta name="twitter:description" content={SEO.description} />
+            )}
+            {SEO.image && <meta name="twitter:image" content={SEO.image} />}
+            <meta charSet="utf-8" />
+            <title>Footsteps | Crowdsourced Learning Paths Aggregator</title>
+            <link rel="canonical" href="http://www.fnplus.tech" />
+          </Helmet>
           <div className={styles.content}>
             <Header show={false} user={this.state.user} />
             {!this.state.signUp ? (
@@ -113,14 +137,29 @@ export class layout extends Component {
         >
           <div>
             <Helmet>
-              <meta
-                name="Description"
-                content="Every expert was a beginner once. They tried and tested things and didn't give up. You can learn a lot from their learnings. Join footsteps to learn from experts and not make the same mistakes as they did."
-              />
-              <title>FootSteps</title>
+              <meta name="description" content={SEO.description} />
+              <meta name="image" content={SEO.image} />
+              {SEO.url && <meta property="og:url" content={SEO.url} />}
+              {SEO.title && <meta property="og:title" content={SEO.title} />}
+              {SEO.description && (
+                <meta property="og:description" content={SEO.description} />
+              )}
+              {SEO.image && <meta property="og:image" content={SEO.image} />}
+              <meta name="twitter:card" content="summary_large_image" />
+              {SEO.twitterUsername && (
+                <meta name="twitter:creator" content={SEO.twitterUsername} />
+              )}
+              {SEO.title && <meta name="twitter:title" content={SEO.title} />}
+              {SEO.description && (
+                <meta name="twitter:description" content={SEO.description} />
+              )}
+              {SEO.image && <meta name="twitter:image" content={SEO.image} />}
             </Helmet>
+            <meta charSet="utf-8" />
+            <title>Footsteps | Crowdsourced Learning Paths Aggregator</title>
+            <link rel="canonical" href="http://www.fnplus.tech" />
             <div className={styles.content}>
-              <Header show={true} user={this.state.user} />
+              <Header show user={this.state.user} />
               <main>{this.props.children}</main>
             </div>
             <Footer />
