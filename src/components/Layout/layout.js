@@ -97,27 +97,21 @@ export class layout extends Component {
     } else if (this.state.isSignedIn === false) {
       return (
         <div>
+          <SEO />
           <Helmet>
-            <meta name="description" content={SEO.description} />
-            <meta name="image" content={SEO.image} />
-            {SEO.url && <meta property="og:url" content={SEO.url} />}
-            {SEO.title && <meta property="og:title" content={SEO.title} />}
-            {SEO.description && (
-              <meta property="og:description" content={SEO.description} />
-            )}
-            {SEO.image && <meta property="og:image" content={SEO.image} />}
-            <meta name="twitter:card" content="summary_large_image" />
-            {SEO.twitterUsername && (
-              <meta name="twitter:creator" content={SEO.twitterUsername} />
-            )}
-            {SEO.title && <meta name="twitter:title" content={SEO.title} />}
-            {SEO.description && (
-              <meta name="twitter:description" content={SEO.description} />
-            )}
-            {SEO.image && <meta name="twitter:image" content={SEO.image} />}
-            <meta charSet="utf-8" />
-            <title>Footsteps | Crowdsourced Learning Paths Aggregator</title>
-            <link rel="canonical" href="http://www.fnplus.tech" />
+            <html lang="en-us" />
+            <meta charset="utf-8" />
+            <link hrefLang="en-us" />
+            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <link rel="canonical" href="http://www.footsteps.dev" />
+            <meta
+              name="keywords"
+              content="crowdsourced, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
+            />
           </Helmet>
           <div className={styles.content}>
             <Header show={false} user={this.state.user} />
@@ -136,28 +130,22 @@ export class layout extends Component {
           value={{ user: this.state.user, update_user: this.update_user }}
         >
           <div>
+            <SEO />
             <Helmet>
-              <meta name="description" content={SEO.description} />
-              <meta name="image" content={SEO.image} />
-              {SEO.url && <meta property="og:url" content={SEO.url} />}
-              {SEO.title && <meta property="og:title" content={SEO.title} />}
-              {SEO.description && (
-                <meta property="og:description" content={SEO.description} />
-              )}
-              {SEO.image && <meta property="og:image" content={SEO.image} />}
-              <meta name="twitter:card" content="summary_large_image" />
-              {SEO.twitterUsername && (
-                <meta name="twitter:creator" content={SEO.twitterUsername} />
-              )}
-              {SEO.title && <meta name="twitter:title" content={SEO.title} />}
-              {SEO.description && (
-                <meta name="twitter:description" content={SEO.description} />
-              )}
-              {SEO.image && <meta name="twitter:image" content={SEO.image} />}
+              <html lang="en-us" />
+              <meta charset="utf-8" />
+              <link hrefLang="en-us" />
+              <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+              />
+              <link rel="canonical" href="http://www.footsteps.dev" />
+              <meta
+                name="keywords"
+                content="crowdsourced, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
+              />
             </Helmet>
-            <meta charSet="utf-8" />
-            <title>Footsteps | Crowdsourced Learning Paths Aggregator</title>
-            <link rel="canonical" href="http://www.fnplus.tech" />
             <div className={styles.content}>
               <Header show user={this.state.user} />
               <main>{this.props.children}</main>

@@ -86,8 +86,8 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-  title: `Footsteps | Learn Anything`,
-  description: `Every expert was a beginner once. They tried and tested things and didn't give up. You can learn a lot from their learnings. Join footsteps to learn from the learning journey of experts.`,
+  title: `Footsteps | Crowdsourced 🧑‍🤝‍🧑learning paths`,
+  description: `Every expert was a beginner once. They tried and learnt things their own way. Join footsteps to learn from the journey of experts.`,
   image: `/images/img_share.png`,
   pathname: null,
 }
