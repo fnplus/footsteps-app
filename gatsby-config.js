@@ -7,12 +7,12 @@ module.exports = {
   /* Your site config here */
   pathPrefix: "/",
   siteMetadata: {
-    title: `Footsteps | Crowdsourced Learning Paths Aggregator`,
+    title: `Footsteps`,
     titleAlt: `Footsteps App`,
     siteLanguage: `en`,
     ogLanguage: `en_US`,
-    titleTemplate: `%s · A search 🔎engine for crowdsourced 🧑‍🤝‍🧑knowledge discovery`,
-    description: `Every expert was a beginner once. They tried and tested things and didn't give up. You can learn a lot from their learnings. Join footsteps to learn from the learning journey of experts.`,
+    titleTemplate: `%s | Crowdsourced 🧑‍🤝‍🧑learning paths`,
+    description: `Every expert was a beginner once. They tried and learnt things their own way. Join footsteps to learn from the journey of experts.`,
     shortName: `Footsteps`,
     url: `https://www.footsteps.dev`, // No trailing slash allowed!
     siteUrl: `https://www.footsteps.dev`,
