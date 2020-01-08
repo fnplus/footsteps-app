@@ -1,3 +1,8 @@
+.heading {
+  text-align: center;
+  margin: 20;
+}
+
 .container {
   width: 300px;
   display: block;
@@ -16,5 +21,10 @@
 @media only screen and (max-width: 768px) {
   .image {
     width: 90%;
+  }
+
+  .heading {
+    text-align: center;
+    margin: 10;
   }
 }

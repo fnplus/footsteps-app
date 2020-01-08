@@ -9,11 +9,7 @@ body,
   margin: 0;
 }
 
-h1 {
-  text-align: center;
-}
-
-,
+h1,
 h2,
 h3 {
   margin-top: 0;
@@ -66,16 +62,6 @@ ul {
 .heading {
   margin: 20;
   padding: 5;
-}
-
-@media only screen and (max-width: 768px) {
-  h1 {
-    text-align: center;
-  }
-
-  .heading {
-    margin: 10;
-  }
 }
 
 /* ! Skills Tags */

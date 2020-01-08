@@ -24,9 +24,10 @@ export class login extends Component {
     return (
       <div>
         <Row>
-          <h1 className={styles.heading}>
-            Welcome to Footsteps, search crowdsourced 🧑‍🤝‍🧑learning paths
-          </h1>
+          <h1 className={styles.heading}>Welcome to Footsteps</h1>
+          <h2 className={styles.heading}>
+            Search 🔎 community-made 🧑‍🤝‍🧑learning paths here!
+          </h2>
         </Row>
         <Row>
           <Col xs={24} lg={14}>
