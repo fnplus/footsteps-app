@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Row, Col } from "antd"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 import styles from "../styles/about.module.css"
 
 export class about extends Component {

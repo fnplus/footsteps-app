@@ -4,10 +4,10 @@ import gql from "graphql-tag"
 import { Icon } from "antd"
 import { navigate } from "gatsby"
 
-import Header from "./sideDrawer"
-import Footer from "./footer"
+import Header from "./Layout/sideDrawer"
+import Footer from "./Layout/footer"
 import User from "./User"
-import Loader from "./loader"
+import Loader from "./Layout/loader"
 
 import styles from "../styles/layout.module.css"
 

@@ -4,7 +4,7 @@ import { navigate } from "gatsby"
 import firebase from "firebase/app"
 import "firebase/auth"
 
-import styles from "../styles/header.module.css"
+import styles from "../../styles/header.module.css"
 
 import NavMenu from "./menu"
 export class header extends Component {
@@ -35,7 +35,7 @@ export class header extends Component {
         <Row>
           <Col xs={6} md={2} className={styles.logo}>
             <img
-              src={require("../images/brand-logo.png")}
+              src={require("../../images/brand-logo.png")}
               alt=""
               onClick={() => navigate("/")}
             />
@@ -49,7 +49,7 @@ export class header extends Component {
                 </div>
 
                 <div className={styles.mobile_toggle} onClick={this.showDrawer}>
-                  <img src={require("../images/menu.png")} alt="Menu" />
+                  <img src={require("../../images/menu.png")} alt="Menu" />
                 </div>
 
                 <Drawer

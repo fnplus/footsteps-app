@@ -3,7 +3,7 @@ import gql from "graphql-tag"
 
 import { client } from "../../apollo/client"
 
-import Loader from "../loader"
+import Loader from "../Layout/loader"
 import Settings from "./settings"
 
 export class index extends Component {

@@ -3,9 +3,9 @@ import queryString from "query-string"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout/layout"
 import SearchResult from "../components/Search/searchResult"
-import Loader from "../components/loader"
+import Loader from "../components/Layout/loader"
 import styles from "../styles/search.module.css"
 
 export class search extends Component {

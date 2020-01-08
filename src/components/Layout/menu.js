@@ -4,7 +4,7 @@ import { Link, navigate } from "gatsby"
 import firebase from "firebase/app"
 import "firebase/auth"
 
-import styles from "../styles/menu.module.css"
+import styles from "../../styles/menu.module.css"
 
 class NavMenu extends Component {
   state = {

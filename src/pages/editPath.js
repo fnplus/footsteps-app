@@ -1,10 +1,16 @@
-import React from "react"
+import React, { Component } from "react"
 import { Router } from "@reach/router"
 
 import EditPath from "../components/EditPath"
 
-export default () => (
-  <Router>
-    <EditPath path="/editPath/:pathId" />
-  </Router>
-)
+export class editPath extends Component {
+  render() {
+    return (
+      <Router>
+        <EditPath path="/editPath/:pathId" />
+      </Router>
+    )
+  }
+}
+
+export default editPath

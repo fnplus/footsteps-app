@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 
-import Layout from "../components/layout"
-import Landing from "../components/landing"
+import Layout from "../components/Layout/layout"
+import Landing from "../components/Landing"
 
 export class index extends Component {
   render() {

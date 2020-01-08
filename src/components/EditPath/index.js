@@ -3,8 +3,8 @@ import gql from "graphql-tag"
 import { Query } from "react-apollo"
 import { navigate } from "gatsby"
 
-import Layout from "../layout"
-import Loader from "../loader"
+import Layout from "../Layout/layout"
+import Loader from "../Layout/loader"
 import EditPath from "./editPath"
 
 export class index extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Row, Col } from "antd"
 
-import styles from "../styles/footer.module.css"
+import styles from "../../styles/footer.module.css"
 
 export class footer extends Component {
   render() {

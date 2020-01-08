@@ -5,22 +5,22 @@ import { navigate } from "gatsby"
 
 import firebase from "firebase/app"
 import "firebase/auth"
-import firebaseConfig from "../firebase/config"
+import firebaseConfig from "../../firebase/config"
 
-import styles from "../styles/layout.module.css"
+import styles from "../../styles/layout.module.css"
 import "antd/dist/antd.css"
 
 import Header from "./sideDrawer"
 import Footer from "./footer"
-import Login from "./login"
+import Login from "../login"
 import Loader from "./loader"
-import SignUp from "./sign-up"
+import SignUp from "../sign-up"
 
-import SEO from "././SEO"
+import SEO from "../SEO"
 
-import { client } from "../apollo/client"
+import { client } from "../../apollo/client"
 
-import UserContext from "../context/userContext"
+import UserContext from "../../context/userContext"
 
 export class layout extends Component {
   state = {
