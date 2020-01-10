@@ -22,7 +22,7 @@ With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-ext
 
 Here are few examples of why we came up with footsteps:
 
-1. [**Reddit thread - "About IBMs Data Science Certification"**](https://www.reddit.com/r/datascience/comments/eleuz9/about_ibms_data_science_certification/)
+[**Reddit thread - "About IBMs Data Science Certification"**](https://www.reddit.com/r/datascience/comments/eleuz9/about_ibms_data_science_certification/)
 
 
 ## 🤩 Proposed/Upcoming features
