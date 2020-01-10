@@ -22,12 +22,12 @@ With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-ext
 
 | **SL No.** | **Feature**                                                                                        | **Status** |
 |------------|----------------------------------------------------------------------------------------------------|------------|
-| 01         | Ability to make the path private/public.                                                           |            |
-| 02         | The ability to "fork" a learning path & suggest changes.                                           |            |
-| 03         | A collaborative filtering recommendation system for recommending the right resources to a learner. |            |
-| 04         | Ability to save your progress in a learning path.                                                  |            |
-| 05         | Ability to upvote a learning path.                                                                 |            |
-| 06         | Ability to follow path.                                                                            |            |
+|     01     | Ability to make the path private/public.                                                           |            |
+|     02     | The ability to "fork" a learning path & suggest changes.                                           |            |
+|     03     | A collaborative filtering recommendation system for recommending the right resources to a learner. |            |
+|     04     | Ability to save your progress in a learning path.                                                  |            |
+|     05     | Ability to upvote a learning path.                                                                 |            |
+|     06     | Ability to follow path.                                                                            |            |
 
 ## 🚀 Quick start
 
