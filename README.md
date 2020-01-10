@@ -1,5 +1,5 @@
 # 👣 Footsteps - Learning Resources Aggregator
-A search 🔎engine for crowdsourced 🧑‍🤝‍🧑knowledge discovery.👨‍💻👩‍💻Learn by following the footsteps (resources) of experts. Follow the learning paths made by experts and also make your own, giving others the right advice/resources to learn.
+A search 🔎engine for community-made 🧑‍🤝‍🧑learning resources for the 21st-century learner.👨‍💻👩‍💻Learn by following the footsteps (resources) of experts or make your own, giving others the right advice/resources to learn.
 
 <p align="center">
    <a href="https://github.com/fnplus/footsteps-app/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/fnplus/footsteps-app"></a>
