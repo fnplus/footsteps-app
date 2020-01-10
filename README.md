@@ -18,6 +18,24 @@ Finding great resources to learn is hard... Google Search doesn't help since it'
 
 With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-extension) we're trying to curate the best resources from the internet and make it easy for individuals to find quality resources to learn, keep a track of their learning. Every resource is called a 'footstep' (added in a chronological manner) and a collection of footsteps makes up a learning path.
 
+## 🧐 The Need
+
+Here are few examples of why we came up with footsteps:
+
+[**Reddit thread - "About IBMs Data Science Certification"**](https://www.reddit.com/r/datascience/comments/eleuz9/about_ibms_data_science_certification/)
+
+
+## 🤩 Proposed/Upcoming features
+
+| **SL No.** | **Feature**                                                                                        | **Status** |
+|------------|----------------------------------------------------------------------------------------------------|------------|
+|     01     | Ability to make the path private/public.                                                           |            |
+|     02     | The ability to "fork" a learning path & suggest changes.                                           |            |
+|     03     | A collaborative filtering recommendation system for recommending the right resources to a learner. |            |
+|     04     | Ability to save your progress in a learning path.                                                  |            |
+|     05     | Ability to upvote a learning path.                                                                 |            |
+|     06     | Ability to follow path.                                                                            |            |
+
 ## 🚀 Quick start
 
 1. **Install the Gatsby CLI.**
