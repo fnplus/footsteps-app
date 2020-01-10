@@ -14,16 +14,15 @@ A search 🔎engine for community-made 🧑‍🤝‍🧑learning resources for 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8e60385a-c75c-4b48-9d01-975f43285914/deploy-status)](https://app.netlify.com/sites/sharp-swanson-a61558/deploys)
 
 ## 🤷 About
-Finding great resources to learn is hard... Google Search doesn't help since it's the website with the best SEO that wins! Even if I find the resources, where do I keep a sorted list of them? Managing them gets harder every day. 
+We envisioned the project to solve the problems faced by 21st-century learners. A modern learner finds a flood of resources from Google Search but doesn't always find the right resources since it's the website with the best SEO (search engine optimisation) that wins. There are so many free resources available on the internet made by experts in their field and yet we pay for outdated courses promoted by big companies and universities.
 
-With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-extension) we're trying to curate the best resources from the internet and make it easy for individuals to find quality resources to learn, keep a track of their learning. Every resource is called a 'footstep' (added in a chronological manner) and a collection of footsteps makes up a learning path.
+With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-extension), we take a mentor/subject knowledge expert first approach to solve the problem. The domain experts save their learning journey with our app and browser extension & make it available for everyone else to follow. Every resource is called a 'footstep' (added in a chronological manner) and a collection of footsteps makes up a learning path. The learner can "fork" the learning path made by the expert and keep a track of his progress. The app suggests resources & keeps an updated list with users upvotes & collaborative filtering.
 
-## 🧐 The Need
+## 🧐 The Need (as seen on the web)
 
 Here are few examples of why we came up with footsteps:
 
 [**Reddit thread - "About IBMs Data Science Certification"**](https://www.reddit.com/r/datascience/comments/eleuz9/about_ibms_data_science_certification/)
-
 
 ## 🤩 Proposed/Upcoming features
 
