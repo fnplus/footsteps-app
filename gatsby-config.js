@@ -11,12 +11,11 @@ module.exports = {
     titleAlt: `Footsteps App`,
     siteLanguage: `en`,
     ogLanguage: `en_US`,
-    titleTemplate: `%s | Crowdsourced 🧑‍🤝‍🧑learning paths`,
+    titleTemplate: `%s | Community-made 🧑‍🤝‍🧑learning paths`,
     description: `Every expert was a beginner once. They tried and learnt things their own way. Join footsteps to learn from the journey of experts.`,
     shortName: `Footsteps`,
     url: `https://www.footsteps.dev`, // No trailing slash allowed!
     siteUrl: `https://www.footsteps.dev`,
-    logo: `/images/img_share.png`,
     image: `/images/img_share.png`, // Path to your image you placed in the 'static' folder
     favicon: `/favicon.ico`,
     author: `@fnplusofficial`,
@@ -48,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Footsteps: Your Personal Learning Path`,
+        name: `Footsteps: Community-made 🧑‍🤝‍🧑learning paths`,
         short_name: `Footsteps`,
         start_url: `/`,
         icon: `src/images/icon.png`,
