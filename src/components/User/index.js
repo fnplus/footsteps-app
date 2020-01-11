@@ -107,7 +107,7 @@ export class user extends Component {
               <Col span={8}>
                 <div className={styles.count}>
                   {data.learning_paths_aggregate.aggregate.count}
-                  <span className={styles.text}>Footsteps</span>
+                  <span className={styles.text}>Learning Paths</span>
                 </div>
               </Col>
               <Col span={8}>
@@ -155,7 +155,7 @@ export class user extends Component {
                   <div className={styles.count}>
                     {data.learning_paths_aggregate.aggregate.count}
                   </div>
-                  <div className={styles.text}>Footsteps</div>
+                  <div className={styles.text}>Learning Paths</div>
                 </Col>
               </Row>
             </div>

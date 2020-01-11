@@ -143,7 +143,7 @@ export class layout extends Component {
               <link rel="canonical" href="http://www.footsteps.dev" />
               <meta
                 name="keywords"
-                content="crowdsourced, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
+                content="crowdsourced, community-made, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
               />
             </Helmet>
             <div className={styles.content}>

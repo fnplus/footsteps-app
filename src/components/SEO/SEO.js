@@ -86,10 +86,10 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-  title: `Footsteps | Crowdsourced 🧑‍🤝‍🧑learning paths`,
+  title: `Footsteps`,
   description: `Every expert was a beginner once. They tried and learnt things their own way. Join footsteps to learn from the journey of experts.`,
   image: `/images/img_share.png`,
-  pathname: null,
+  pathname: "/images/img_share.png",
 }
 
 const query = graphql`
