@@ -37,6 +37,8 @@ Here are few examples of why we came up with footsteps:
 
 ## 🚀 Quick start
 
+### **Here is our quickstart guide. See our [Wiki](https://github.com/fnplus/footsteps-app/wiki/Contributing-to-Footsteps-App) for detailed instructions!**
+
 1. **Install the Gatsby CLI.**
 
    ```shell
@@ -94,7 +96,7 @@ Here are few examples of why we came up with footsteps:
 
    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-   Open the `footsteps-app` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+   Open the `footsteps-app` directory in your code editor of choice and edit files under `src`. Save your changes and the browser will update in real time!
 
 ## 🎓 Learning Gatsby
 
