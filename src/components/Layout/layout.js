@@ -150,7 +150,6 @@ export class layout extends Component {
               <Header show user={this.state.user} />
               <main>{this.props.children}</main>
             </div>
-            <Footer />
           </div>
         </UserContext.Provider>
       )

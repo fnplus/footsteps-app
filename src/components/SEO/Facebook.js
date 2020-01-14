@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Helmet from "react-helmet"
 
-const Facebook = ({ url, name, type, title, desc, image, locale }) => (
+const Facebook = ({ url, name, type, title, desc, image, locale, appId }) => (
   <Helmet>
     {name && <meta property="og:site_name" content={name} />}
     <meta property="og:locale" content={locale} />
@@ -12,6 +12,7 @@ const Facebook = ({ url, name, type, title, desc, image, locale }) => (
     <meta property="og:description" content={desc} />
     <meta property="og:image" content={image} />
     <meta property="og:image:alt" content={desc} />
+    <meta property="fb:app_id" content={appId} />
   </Helmet>
 )
 
@@ -25,9 +26,12 @@ Facebook.propTypes = {
   desc: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string,
+  appId: PropTypes.string,
 }
 
 Facebook.defaultProps = {
-  type: "website",
-  name: "fnplusofficial",
+  type: `website`,
+  name: `fnplusofficial`,
+  image: `/images/img_share.png`,
+  appId: `218750542018813`,
 }
