@@ -1,4 +1,5 @@
 # 👣 Footsteps - Learning Resources Aggregator
+
 A search 🔎engine for community-made 🧑‍🤝‍🧑learning resources for the 21st-century learner.👨‍💻👩‍💻Learn by following the footsteps (resources) of experts or make your own, giving others the right advice/resources to learn.
 
 <p align="center">
@@ -14,6 +15,7 @@ A search 🔎engine for community-made 🧑‍🤝‍🧑learning resources for 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8e60385a-c75c-4b48-9d01-975f43285914/deploy-status)](https://app.netlify.com/sites/footsteps-app/deploys)
 
 ## 🤷 About
+
 We envisioned the project to solve the problems faced by 21st-century learners. A modern learner finds a flood of resources from Google Search but doesn't always find the right resources since it's the website with the best SEO (search engine optimisation) that wins. There are so many free resources available on the internet made by experts in their field and yet we pay for outdated courses promoted by big companies and universities.
 
 With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-extension), we take a mentor/subject knowledge expert first approach to solve the problem. The domain experts save their learning journey with our app and browser extension & make it available for everyone else to follow. Every resource is called a 'footstep' (added in a chronological manner) and a collection of footsteps makes up a learning path. The learner can "fork" the learning path made by the expert and keep a track of his progress. The app suggests resources & keeps an updated list with users upvotes & collaborative filtering.
@@ -27,13 +29,13 @@ Here are few examples of why we came up with footsteps:
 ## 🤩 Proposed/Upcoming features
 
 | **SL No.** | **Feature**                                                                                        | **Status** |
-|------------|----------------------------------------------------------------------------------------------------|------------|
-|     01     | Ability to make the path private/public.                                                           |            |
-|     02     | The ability to "fork" a learning path & suggest changes.                                           |            |
-|     03     | A collaborative filtering recommendation system for recommending the right resources to a learner. |            |
-|     04     | Ability to save your progress in a learning path.                                                  |            |
-|     05     | Ability to upvote a learning path.                                                                 |            |
-|     06     | Ability to follow path.                                                                            |            |
+| ---------- | -------------------------------------------------------------------------------------------------- | ---------- |
+| 01         | Ability to make the path private/public.                                                           |            |
+| 02         | The ability to "fork" a learning path & suggest changes.                                           |            |
+| 03         | A collaborative filtering recommendation system for recommending the right resources to a learner. |            |
+| 04         | Ability to save your progress in a learning path.                                                  |            |
+| 05         | Ability to upvote a learning path.                                                                 |            |
+| 06         | Ability to follow path.                                                                            |            |
 
 ## 🚀 Quick start
 
@@ -78,9 +80,9 @@ Here are few examples of why we came up with footsteps:
    GATSBY_FIREBASE_APP_ID=1:1042822146411:web:d09d2baa58dd82ff49842e
    GATSBY_GOOGLE_TRACKING_ID=UA-154496987-1
    ```
-   
+
    For access to the Firebase project, please fill [this](https://airtable.com/shrOevwzFNas0wis3) form.
-   
+
    For access to the testing DB, use [this](https://rle-test.herokuapp.com/console/login) link & enter '!footstepstest!' as the password.
 
 5. **Start developing.**

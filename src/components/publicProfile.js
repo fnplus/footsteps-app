@@ -1,17 +1,23 @@
 import React, { Component } from "react"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
-import { Icon } from "antd"
 import { navigate } from "gatsby"
+
+import { Row, Col, Icon } from "antd"
 
 import Header from "./Layout/sideDrawer"
 import Footer from "./Layout/footer"
-import User from "./User"
 import Loader from "./Layout/loader"
 
+import userStyles from "../styles/user.module.css"
 import styles from "../styles/layout.module.css"
 
 export class publicProfile extends Component {
+  state = {
+    userName: "",
+    user: {},
+  }
+
   render() {
     return (
       <Query
@@ -43,9 +49,261 @@ export class publicProfile extends Component {
             <div>
               {data.User.length !== 0 ? (
                 <div>
-                  <div className={styles.content}>
+                  <div className={userStyles.content}>
                     <Header show={false} />
-                    <User data={data.User[0]} />
+                    <div className={userStyles.container}>
+                      <div
+                        className={
+                          userStyles.profileContainer +
+                          " " +
+                          userStyles.desktopProfile
+                        }
+                      >
+                        <div className={userStyles.profileInfo}>
+                          <h1>
+                            {data.first_name} {data.last_name}
+                          </h1>
+                          <h2>{data.username}</h2>
+                          <h3>{data.bio}</h3>
+                        </div>
+                        <div className={userStyles.profileImgContainer}>
+                          <img
+                            className={userStyles.profileImg}
+                            src={data.profile_pic}
+                            alt=""
+                          />
+                          <div className={userStyles.social}>
+                            <Row className={userStyles.social_row}>
+                              {data.github !== "" &&
+                              data.github !== null &&
+                              data.github !== "https://github.com/" ? (
+                                <Col span={6}>
+                                  <Icon
+                                    onClick={() => window.open(data.github)}
+                                    className={userStyles.icon}
+                                    type="github"
+                                    theme="filled"
+                                  />
+                                </Col>
+                              ) : (
+                                ""
+                              )}
+                              {data.linkedin !== "" &&
+                              data.linkedin !== null &&
+                              data.linkedin !== "https://linkedin.com/" ? (
+                                <Col span={6}>
+                                  <Icon
+                                    onClick={() => window.open(data.linkedin)}
+                                    className={userStyles.icon}
+                                    type="linkedin"
+                                    theme="filled"
+                                  />
+                                </Col>
+                              ) : (
+                                ""
+                              )}
+                              {data.twitter !== "" &&
+                              data.twitter !== null &&
+                              data.twitter !== "https://twitter.com/" ? (
+                                <Col span={6}>
+                                  <Icon
+                                    onClick={() => window.open(data.twitter)}
+                                    className={userStyles.icon}
+                                    type="twitter"
+                                  />
+                                </Col>
+                              ) : (
+                                ""
+                              )}
+                              {data.facebook !== "" &&
+                              data.facebook !== null &&
+                              data.facebook !== "https://facebook.com/" ? (
+                                <Col span={6}>
+                                  <Icon
+                                    onClick={() => window.open(data.facebook)}
+                                    className={userStyles.icon}
+                                    type="facebook"
+                                    theme="filled"
+                                  />
+                                </Col>
+                              ) : (
+                                ""
+                              )}
+                            </Row>
+                          </div>
+                        </div>
+                        <div className={userStyles.profileDetail}>
+                          <div className={userStyles.profileAbout}>
+                            <h1>About</h1>
+                            <p className={userStyles.bioContent}>
+                              {data.about}
+                            </p>
+                            {data.skills !== null ? (
+                              <div className={userStyles.skills}>
+                                <h1>Skills</h1>
+                                {data.skills.split(",").map((skill, i) => {
+                                  return (
+                                    <div key={i} className={userStyles.skill}>
+                                      {skill}
+                                    </div>
+                                  )
+                                })}
+                              </div>
+                            ) : (
+                              <div></div>
+                            )}
+                          </div>
+                          <Row className={userStyles.userInfo}>
+                            <Col span={8}>
+                              <div className={userStyles.count}>
+                                {data.learning_paths_aggregate.aggregate.count}
+                                <span className={userStyles.text}>
+                                  Learning Paths
+                                </span>
+                              </div>
+                            </Col>
+                            <Col span={8}>
+                              <div className={userStyles.count}>
+                                {data.followers_aggregate.aggregate.count}
+                                <span className={userStyles.text}>
+                                  Followers
+                                </span>
+                              </div>
+                            </Col>
+                            <Col span={8}>
+                              <div className={userStyles.count}>
+                                {data.following_aggregate.aggregate.count}
+                                <span className={userStyles.text}>
+                                  Following
+                                </span>
+                              </div>
+                            </Col>
+                          </Row>
+                        </div>
+                      </div>
+
+                      <div className={userStyles.mobileProfile}>
+                        <div className={userStyles.profileContainer}>
+                          <img
+                            className={userStyles.avatar}
+                            src={data.profile_pic}
+                            alt=""
+                          />
+                          <div className={userStyles.userDetails}>
+                            <h2>
+                              {data.first_name} {data.last_name}
+                            </h2>
+                            <h4>{data.username}</h4>
+                            <h4>{data.bio}</h4>
+                          </div>
+
+                          <div className={userStyles.userInfo}>
+                            <Row>
+                              <Col span={8}>
+                                <div className={userStyles.count}>
+                                  {data.followers_aggregate.aggregate.count}
+                                </div>
+                                <div className={userStyles.text}>Followers</div>
+                              </Col>
+                              <Col span={8}>
+                                <div className={userStyles.count}>
+                                  {data.following_aggregate.aggregate.count}
+                                </div>
+                                <div className={userStyles.text}>Following</div>
+                              </Col>
+                              <Col span={8}>
+                                <div className={userStyles.count}>
+                                  {
+                                    data.learning_paths_aggregate.aggregate
+                                      .count
+                                  }
+                                </div>
+                                <div className={userStyles.text}>
+                                  Learning Paths
+                                </div>
+                              </Col>
+                            </Row>
+                          </div>
+
+                          <div className={userStyles.bio}>{data.about}</div>
+
+                          {data.skills !== null ? (
+                            <div className={userStyles.skills}>
+                              <h2>Skills</h2>
+                              {data.skills.split(",").map((skill, i) => {
+                                return (
+                                  <div key={i} className={userStyles.skill}>
+                                    {skill}
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          ) : (
+                            <div></div>
+                          )}
+
+                          <div className={userStyles.social}>
+                            <Row className={userStyles.social_row}>
+                              {data.github !== "" &&
+                              data.github !== null &&
+                              data.github !== "https://github.com/" ? (
+                                <Col span={6}>
+                                  <Icon
+                                    onClick={() => window.open(data.github)}
+                                    className={userStyles.icon}
+                                    type="github"
+                                    theme="filled"
+                                  />
+                                </Col>
+                              ) : (
+                                ""
+                              )}
+                              {data.linkedin !== "" &&
+                              data.linkedin !== null &&
+                              data.linkedin !== "https://linkedin.com/" ? (
+                                <Col span={6}>
+                                  <Icon
+                                    onClick={() => window.open(data.linkedin)}
+                                    className={userStyles.icon}
+                                    type="linkedin"
+                                    theme="filled"
+                                  />
+                                </Col>
+                              ) : (
+                                ""
+                              )}
+                              {data.twitter !== "" &&
+                              data.twitter !== null &&
+                              data.twitter !== "https://twitter.com/" ? (
+                                <Col span={6}>
+                                  <Icon
+                                    onClick={() => window.open(data.twitter)}
+                                    className={userStyles.icon}
+                                    type="twitter"
+                                  />
+                                </Col>
+                              ) : (
+                                ""
+                              )}
+                              {data.facebook !== "" &&
+                              data.facebook !== null &&
+                              data.facebook !== "https://facebook.com/" ? (
+                                <Col span={6}>
+                                  <Icon
+                                    onClick={() => window.open(data.facebook)}
+                                    className={userStyles.icon}
+                                    type="facebook"
+                                    theme="filled"
+                                  />
+                                </Col>
+                              ) : (
+                                ""
+                              )}
+                            </Row>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <Footer />
                 </div>

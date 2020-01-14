@@ -60,7 +60,7 @@ const SEO = ({ title, description, image, pathname, article }) => (
             image={seo.image}
             title={seo.title}
             type={article ? "article" : "website"}
-            url={seo.url}
+            url={seo.image}
             locale={ogLanguage}
             name={facebook}
           />
@@ -87,9 +87,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   title: `Footsteps`,
-  description: `Every expert was a beginner once. They tried and learnt things their own way. Join footsteps to learn from the journey of experts.`,
-  image: `/images/img_share.png`,
-  pathname: "/images/img_share.png",
+  ogLanguage: `en_US`,
 }
 
 const query = graphql`

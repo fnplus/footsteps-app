@@ -14,15 +14,16 @@ export class index extends Component {
             <p className={styles.subHeading}>
               What do you want to learn today?
             </p>
+            <Searchbar />
+            <br /> <br />
             <img
               src={require("../../images/road-sign.svg")}
-              alt=""
+              alt="Road Sign"
               className={styles.mobileImage}
             />
-            <Searchbar />
           </Col>
           <Col sm={24} lg={10} className={styles.imageContainer}>
-            <img src={require("../../images/road-sign.svg")} alt="" />
+            <img src={require("../../images/road-sign.svg")} alt="Road Sign" />
           </Col>
         </Row>
       </div>

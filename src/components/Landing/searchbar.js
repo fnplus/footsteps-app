@@ -45,7 +45,7 @@ export class searchbar extends Component {
           <input
             type="search"
             name="q"
-            placeholder="Search high-quality resources"
+            placeholder="Search learning paths"
             label="Search"
             onChange={this.updateQuery}
             onKeyDown={this.pressEnter}
