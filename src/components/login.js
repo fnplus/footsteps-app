@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { Row, Col } from "antd"
-import firebase from "firebase/app"
-import "firebase/auth"
+import firebase, { auth } from "../firebase/firebase"
 
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
@@ -39,10 +38,7 @@ export class login extends Component {
           </Col>
           <Col xs={24} lg={10}>
             <div className={styles.container}>
-              <StyledFirebaseAuth
-                uiConfig={uiConfig}
-                firebaseAuth={firebase.auth()}
-              />
+              <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
             </div>
           </Col>
         </Row>

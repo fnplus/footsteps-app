@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import { Row, Col, Select, Icon } from "antd"
 import FileUploader from "react-firebase-file-uploader"
-import firebase from "firebase/app"
-import "firebase/storage"
+import { storage } from "../../firebase/firebase"
 
 import styles from "../../styles/add.module.css"
 
@@ -82,8 +81,7 @@ export class addFootstep extends Component {
 
   handleUploadSuccess = filename => {
     this.setState({ icon: filename, progress: 100, isUploading: false })
-    firebase
-      .storage()
+    storage
       .ref("Footsteps")
       .child(filename)
       .getDownloadURL()
@@ -173,7 +171,7 @@ export class addFootstep extends Component {
                     accept="image/*"
                     name="icon"
                     randomizeFilename
-                    storageRef={firebase.storage().ref("Footsteps")}
+                    storageRef={storage.ref("Footsteps")}
                     onUploadStart={this.handleUploadStart}
                     onUploadError={this.handleUploadError}
                     onUploadSuccess={this.handleUploadSuccess}

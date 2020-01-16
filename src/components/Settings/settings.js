@@ -5,8 +5,7 @@ import { WithContext as ReactTags } from "react-tag-input"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
 
-import firebase from "firebase/app"
-import "firebase/storage"
+import { storage } from "../../firebase/firebase"
 
 import styles from "./styles.module.css"
 
@@ -15,7 +14,7 @@ import { client } from "../../apollo/client"
 export class settings extends Component {
   state = {
     id: "",
-    //personal
+    // personal
     first_name: "",
     last_name: "",
     email: "",
@@ -128,8 +127,7 @@ export class settings extends Component {
 
   handleUploadSuccess = filename => {
     this.setState({ pic: filename, progress: 100, isUploading: false })
-    firebase
-      .storage()
+    storage
       .ref("Profile_pic")
       .child(filename)
       .getDownloadURL()
@@ -315,7 +313,7 @@ export class settings extends Component {
                   accept="image/*"
                   name="profile_pic"
                   randomizeFilename
-                  storageRef={firebase.storage().ref("Profile_pic")}
+                  storageRef={storage.ref("Profile_pic")}
                   onUploadStart={this.handleUploadStart}
                   onUploadError={this.handleUploadError}
                   onUploadSuccess={this.handleUploadSuccess}

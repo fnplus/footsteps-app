@@ -5,8 +5,7 @@ import uuid from "uuid"
 import { navigate } from "gatsby"
 import { WithContext as ReactTags } from "react-tag-input"
 import FileUploader from "react-firebase-file-uploader"
-import firebase from "firebase/app"
-import "firebase/storage"
+import { storage } from "../../firebase/firebase"
 
 import styles from "../../styles/add.module.css"
 
@@ -31,7 +30,7 @@ export class addPath extends Component {
   }
 
   componentDidMount() {
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       this.setState({
         user_id: localStorage.getItem("userId"),
         id: uuid.v4(),
@@ -230,8 +229,7 @@ export class addPath extends Component {
 
   handleUploadSuccess = filename => {
     this.setState({ icon: filename, progress: 100, isUploading: false })
-    firebase
-      .storage()
+    storage
       .ref("Path")
       .child(filename)
       .getDownloadURL()
@@ -312,7 +310,7 @@ export class addPath extends Component {
                       accept="image/*"
                       name="icon"
                       randomizeFilename
-                      storageRef={firebase.storage().ref("Path")}
+                      storageRef={storage.ref("Path")}
                       onUploadStart={this.handleUploadStart}
                       onUploadError={this.handleUploadError}
                       onUploadSuccess={this.handleUploadSuccess}
