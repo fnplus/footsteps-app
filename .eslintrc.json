@@ -1,6 +1,7 @@
 {
   "extends": "gatsby-standard",
   "rules": {
-    "camelcase": "off"
+    "camelcase": "off",
+    "handle-callback-err": "warn"
   }
 }

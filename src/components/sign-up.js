@@ -4,8 +4,7 @@ import uuid from "uuid"
 import { Row, Col, Icon } from "antd"
 import { WithContext as ReactTags } from "react-tag-input"
 
-import firebase from "firebase/app"
-import "firebase/auth"
+import { auth } from "../firebase/firebase"
 
 import { client } from "../apollo/client"
 
@@ -33,9 +32,9 @@ export class signUp extends Component {
 
   componentDidMount() {
     this.setState({
-      first_name: firebase.auth().currentUser.displayName.split(" ")[0],
-      last_name: firebase.auth().currentUser.displayName.split(" ")[1],
-      email: firebase.auth().currentUser.email,
+      first_name: auth.currentUser.displayName.split(" ")[0],
+      last_name: auth.currentUser.displayName.split(" ")[1],
+      email: auth.currentUser.email,
     })
 
     client
@@ -61,12 +60,12 @@ export class signUp extends Component {
       .mutate({
         mutation: CREATE_USER_MUTATION_APOLLO,
         variables: {
-          email: firebase.auth().currentUser.email,
+          email: auth.currentUser.email,
           id: uuid.v4(),
           first_name: data.first_name,
           last_name: data.last_name,
           username: data.username,
-          profile_pic: firebase.auth().currentUser.photoURL,
+          profile_pic: auth.currentUser.photoURL,
           about: data.about,
           bio: data.bio,
           skills: data.skills,
@@ -81,7 +80,7 @@ export class signUp extends Component {
       })
       .catch(error => {
         this.props.updateUserId("", false)
-        firebase.auth().signOut()
+        auth.signOut()
       })
   }
 
@@ -190,7 +189,7 @@ export class signUp extends Component {
               />
             </Col>
             <Col xs={24} lg={12} className={styles.step0_content}>
-              <h1>Hey {firebase.auth().currentUser.displayName}!</h1>
+              <h1>Hey {auth.currentUser.displayName}!</h1>
               <h2>Welcome to FnPlus (FunctionPlus) Club!</h2>
               <h3>
                 We are glad to have you on board. Let us get to know you better

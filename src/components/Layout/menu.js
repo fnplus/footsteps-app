@@ -7,7 +7,7 @@ import UserContext from "../../context/userContext"
 import { auth } from "../../firebase/firebase"
 
 function NavMenu() {
-  const [expand, setExpand] = useState
+  const [expand, setExpand] = useState(false)
   const { user } = useContext(UserContext)
 
   function toggleExpandMenu() {
