@@ -31,10 +31,12 @@ export class signUp extends Component {
   }
 
   componentDidMount() {
+    const { email, displayName } = auth.currentUser
+    const [first_name, last_name] = displayName.split(" ")
     this.setState({
-      first_name: auth.currentUser.displayName.split(" ")[0],
-      last_name: auth.currentUser.displayName.split(" ")[1],
-      email: auth.currentUser.email,
+      first_name,
+      last_name,
+      email,
     })
 
     client
@@ -79,6 +81,7 @@ export class signUp extends Component {
         this.props.updateUserId(res.data.insert_Users.returning[0].id, true)
       })
       .catch(error => {
+        console.log(error)
         this.props.updateUserId("", false)
         auth.signOut()
       })
