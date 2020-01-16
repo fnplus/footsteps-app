@@ -31,12 +31,10 @@ export class signUp extends Component {
   }
 
   componentDidMount() {
-    const { email, displayName } = auth.currentUser
-    const [first_name, last_name] = displayName.split(" ")
     this.setState({
-      first_name,
-      last_name,
-      email,
+      first_name: auth.currentUser.displayName.split(" ")[0],
+      last_name: auth.currentUser.displayName.split(" ")[1],
+      email: auth.currentUser.email,
     })
 
     client
