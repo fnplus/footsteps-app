@@ -79,7 +79,7 @@ export class signUp extends Component {
       .then(res => {
         this.props.updateUserId(res.data.insert_Users.returning[0].id, true)
       })
-      .catch(err => {
+      .catch(error => {
         this.props.updateUserId("", false)
         firebase.auth().signOut()
       })
@@ -229,7 +229,9 @@ export class signUp extends Component {
                   disabled
                 />
 
-                <div className={styles.input_label}>What's your first name?</div>
+                <div className={styles.input_label}>
+                  What's your first name?
+                </div>
                 <input
                   className={styles.input}
                   name="first_name"
@@ -247,7 +249,9 @@ export class signUp extends Component {
                   placeholder="Last Name"
                 />
 
-                <div className={styles.input_label}>Enter an unique username!</div>
+                <div className={styles.input_label}>
+                  Enter an unique username!
+                </div>
                 <input
                   className={styles.input}
                   name="username"
@@ -419,7 +423,7 @@ export class signUp extends Component {
                 onChange={this.handleInputChange}
                 placeholder="Twitter Profile URL"
               />
-              {/* Skipped step-4 to reduce time in on-boarding the user - Abhi*/}
+              {/* Skipped step-4 to reduce time in on-boarding the user - Abhi */}
               <div className={styles.stepBtn} onClick={this.signup}>
                 Finish{" "}
                 <Icon style={{ marginLeft: "10px" }} type="arrow-right" />

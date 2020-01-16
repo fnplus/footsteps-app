@@ -3,9 +3,7 @@ import { Helmet } from "react-helmet"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
 
-import firebase from "firebase/app"
-import "firebase/auth"
-import firebaseConfig from "../../firebase/config"
+import { auth } from "../../firebase/firebase"
 
 import styles from "../../styles/layout.module.css"
 import "antd/dist/antd.css"
@@ -31,17 +29,13 @@ export class layout extends Component {
   }
 
   componentDidMount() {
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig)
-    }
-
-    this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
+    this.unregisterAuthObserver = auth.onAuthStateChanged(user => {
       if (user) {
         client
           .query({
             query: USER_EMAIL_QUERY_APOLLO,
             variables: {
-              email: firebase.auth().currentUser.email,
+              email: auth.currentUser.email,
             },
           })
           .then(response => {
@@ -88,7 +82,7 @@ export class layout extends Component {
       return (
         <div>
           <div className={styles.content}>
-            <Header show={false} user={this.state.user} />
+            <Header show={false} />
             <Loader />
           </div>
           <Footer />
@@ -147,7 +141,7 @@ export class layout extends Component {
               />
             </Helmet>
             <div className={styles.content}>
-              <Header show user={this.state.user} />
+              <Header show />
               <main>{this.props.children}</main>
             </div>
           </div>

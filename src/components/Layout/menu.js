@@ -1,101 +1,87 @@
-import React, { Component } from "react"
+import React, { useState, useContext } from "react"
 import { Row, Col, Icon } from "antd"
 import { Link, navigate } from "gatsby"
-import firebase from "firebase/app"
-import "firebase/auth"
 
 import styles from "../../styles/menu.module.css"
+import UserContext from "../../context/userContext"
+import { auth } from "../../firebase/firebase"
 
-class NavMenu extends Component {
-  state = {
-    expand: false,
+function NavMenu() {
+  const [expand, setExpand] = useState
+  const { user } = useContext(UserContext)
+
+  function toggleExpandMenu() {
+    setExpand(expand => !expand)
   }
 
-  expandMenu = () => {
-    this.setState({
-      expand: !this.state.expand,
-    })
-  }
-
-  profileClick = () => {
+  function profileClick() {
+    toggleExpandMenu()
     navigate("/profile/")
-    this.setState({
-      expand: !this.state.expand,
-    })
   }
 
-  logoutClick = () => {
-    firebase.auth().signOut()
-    this.setState({
-      expand: !this.state.expand,
-    })
+  function logoutClick() {
+    auth.signOut()
+    toggleExpandMenu()
     navigate("/")
   }
 
-  render() {
-    return (
-      <Row>
-        <ul>
-          <li className={styles.menuProfile}>
-            <img
-              className={styles.menuProfileImg}
-              src={this.props.user.profile_pic}
-              alt=""
-              onClick={this.expandMenu}
-            />
-          </li>
+  return (
+    <Row>
+      <ul>
+        <li className={styles.menuProfile}>
+          <img
+            className={styles.menuProfileImg}
+            src={user.profile_pic}
+            alt=""
+            onClick={toggleExpandMenu}
+          />
+        </li>
 
-          <li className={styles.menuItems}>
-            <Link to="/add/">Create Path</Link>
-          </li>
-          <li className={styles.menuItems}>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
+        <li className={styles.menuItems}>
+          <Link to="/add/">Create Path</Link>
+        </li>
+        <li className={styles.menuItems}>
+          <Link to="/">Home</Link>
+        </li>
+      </ul>
 
-        <div
-          className={
-            this.state.expand
-              ? styles.dropDown + " " + styles.dropDownShow
-              : styles.dropDown
-          }
-        >
-          <Row className={styles.dropDownInfo}>
-            <Col span={6}>
-              <img src={this.props.user.profile_pic} alt="" />
-            </Col>
-            <Col span={18}>
-              <h3>
-                {this.props.user.first_name} {this.props.user.last_name}
-              </h3>
-              <h5>{this.props.user.email}</h5>
-              <Row>
-                <Col span={10}>
-                  <div
-                    className={styles.profileBtn}
-                    onClick={this.profileClick}
-                  >
-                    My Profile
-                  </div>
-                </Col>
-                <Col span={14}>
-                  <div
-                    className={styles.settingsBtn}
-                    onClick={() => navigate("/settings/")}
-                  >
-                    <Icon type="setting" theme="filled"></Icon>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-          <div className={styles.logoutBtn} onClick={this.logoutClick}>
-            Logout
-          </div>
+      <div
+        className={
+          expand ? styles.dropDown + " " + styles.dropDownShow : styles.dropDown
+        }
+      >
+        <Row className={styles.dropDownInfo}>
+          <Col span={6}>
+            <img src={user.profile_pic} alt="" />
+          </Col>
+          <Col span={18}>
+            <h3>
+              {user.first_name} {user.last_name}
+            </h3>
+            <h5>{user.email}</h5>
+            <Row>
+              <Col span={10}>
+                <div className={styles.profileBtn} onClick={profileClick}>
+                  My Profile
+                </div>
+              </Col>
+              <Col span={14}>
+                <div
+                  className={styles.settingsBtn}
+                  onClick={() => navigate("/settings/")}
+                >
+                  <Icon type="setting" theme="filled"></Icon>
+                </div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+        <div className={styles.logoutBtn} onClick={logoutClick}>
+          Logout
         </div>
-      </Row>
-    )
-  }
+      </div>
+    </Row>
+  )
 }
 
 export default NavMenu
