@@ -14,7 +14,7 @@ export class index extends Component {
   }
 
   componentDidMount() {
-    if (typeof window !== undefined) {
+    if (typeof window !== "undefined") {
       this.setState(
         {
           user_id: localStorage.getItem("userId"),
