@@ -1,55 +1,39 @@
-import React, { Component } from "react"
+import React, { useState, useEffect } from "react"
 import gql from "graphql-tag"
-
 import { client } from "../../apollo/client"
-
 import Loader from "../Layout/loader"
 import Settings from "./settings"
 
-export class index extends Component {
-  state = {
+export default function() {
+  const [state, setState] = useState({
     user_id: "",
     loading: true,
     data: {},
-  }
+  })
 
-  componentDidMount() {
+  useEffect(() => {
     if (typeof window !== "undefined") {
-      this.setState(
-        {
-          user_id: localStorage.getItem("userId"),
-        },
-        () => {
-          client
-            .query({
-              query: GET_USER_DETAILS_QUERY_APOLLO,
-              variables: {
-                id: this.state.user_id,
-              },
-            })
-            .then(res => {
-              const data = res.data.Users[0]
-              this.setState({
-                loading: false,
-                data,
-              })
-            })
-        }
-      )
+      const user_id = localStorage.getItem("userId")
+      client
+        .query({
+          query: GET_USER_DETAILS_QUERY_APOLLO,
+          variables: {
+            id: user_id,
+          },
+        })
+        .then(res => {
+          const data = res.data.Users[0]
+          setState({
+            user_id,
+            loading: false,
+            data,
+          })
+        })
     }
-  }
+  }, [])
 
-  render() {
-    return (
-      <>
-        {this.state.loading ? <Loader /> : null}
-        {!this.state.loading ? <Settings data={this.state.data} /> : null}
-      </>
-    )
-  }
+  return <>{state.loading ? <Loader /> : <Settings data={state.data} />}</>
 }
-
-export default index
 
 export const GET_USER_DETAILS_QUERY_APOLLO = gql`
   query get_user_details($id: uuid!) {
