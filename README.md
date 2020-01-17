@@ -33,9 +33,10 @@ Here are few examples of why we came up with footsteps:
 | 01         | Ability to make the path private/public.                                                           |            |
 | 02         | The ability to "fork" a learning path & suggest changes.                                           |            |
 | 03         | A collaborative filtering recommendation system for recommending the right resources to a learner. |            |
-| 04         | Ability to save your progress in a learning path.                                                  |            |
+| 04         | Ability to save your progress (with a progress bar) in a learning path.                            |            |
 | 05         | Ability to upvote a learning path.                                                                 |            |
-| 06         | Ability to follow path.                                                                            |            |
+| 06         | Ability to follow a user.                                                                          |            |
+| 07         | A modified home page UI with a search bar, active learning paths & new leaning paths by 'followed' users|        |
 
 ## 🚀 Quick start
 
