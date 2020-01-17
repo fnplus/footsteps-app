@@ -147,7 +147,7 @@ export class layout extends Component {
               />
             </Helmet>
             <div className={styles.content}>
-              <Header show user={this.state.user} />
+              <Header show />
               <main>{this.props.children}</main>
             </div>
           </div>
