@@ -3,8 +3,10 @@ import { Router } from "@reach/router"
 
 import PublicProfile from "../components/publicProfile"
 
-export default () => (
+const User = () => (
   <Router>
     <PublicProfile path="/user/:username" />
   </Router>
 )
+
+export default User

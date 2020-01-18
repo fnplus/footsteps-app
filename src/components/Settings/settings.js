@@ -12,10 +12,10 @@ import styles from "./styles.module.css"
 
 import { client } from "../../apollo/client"
 
-export class settings extends Component {
+export default class Settings extends Component {
   state = {
     id: "",
-    //personal
+    // personal
     first_name: "",
     last_name: "",
     email: "",
@@ -39,79 +39,65 @@ export class settings extends Component {
   }
 
   componentDidMount() {
-    let data = this.props.data
+    let {
+      first_name,
+      last_name,
+      about,
+      bio,
+      username,
+      email,
+      skills,
+      profile_pic,
+      id,
+      facebook,
+      twitter,
+      github,
+      linkedin,
+    } = this.props.data
 
-    let skills_array = []
+    let skills_array = skills.split(",").map(skill => ({
+      id: skill,
+      text: skill,
+    }))
 
-    data.skills.split(",").map(skill => {
-      let skill_obj = {
-        id: skill,
-        text: skill,
-      }
+    if (!facebook) {
+      facebook = "https://facebook.com/"
+    }
 
-      skills_array.push(skill_obj)
+    if (!github) {
+      github = "https://github.com/"
+    }
 
-      return 0
-    })
+    if (!twitter) {
+      twitter = "https://twitter.com/"
+    }
+
+    if (!linkedin) {
+      linkedin = "https://linkedin.com/in/"
+    }
 
     this.setState({
-      first_name: data.first_name,
-      last_name: data.last_name,
-      about: data.about,
-      bio: data.bio,
-      username: data.username,
-      email: data.email,
-      skills: data.skills,
-      profile_pic: data.profile_pic,
+      first_name,
+      last_name,
+      about,
+      bio,
+      username,
+      email,
+      skills,
+      profile_pic,
       skills_array,
-      id: data.id,
+      id: id,
+      facebook,
+      twitter,
+      github,
+      linkedin,
     })
-
-    if (data.facebook === null || data.facebook === "") {
-      this.setState({
-        facebook: "https://facebook.com/",
-      })
-    } else {
-      this.setState({
-        facebook: data.facebook,
-      })
-    }
-
-    if (data.github === null || data.github === "") {
-      this.setState({
-        github: "https://github.com/",
-      })
-    } else {
-      this.setState({
-        github: data.github,
-      })
-    }
-
-    if (data.twitter === null || data.twitter === "") {
-      this.setState({
-        twitter: "https://twitter.com/",
-      })
-    } else {
-      this.setState({
-        twitter: data.twitter,
-      })
-    }
-
-    if (data.linkedin === null || data.linkedin === "") {
-      this.setState({
-        linkedin: "https://linkedin.com/in/",
-      })
-    } else {
-      this.setState({
-        linkedin: data.linkedin,
-      })
-    }
   }
 
   handleInputChange = e => {
-    const target = e.target
+    const { name, value } = e.target
     this.setState({
-      [target.name]: target.value,
+      [name]: value,
     })
   }
 
@@ -138,71 +124,43 @@ export class settings extends Component {
 
   // Tag Handling Functions
 
-  handleTagDelete = i => {
-    const { skills_array } = this.state
-    this.setState(
-      {
-        skills_array: skills_array.filter((_tag, index) => index !== i),
-      },
-      () => {
-        let skills = ""
-
-        this.state.skills_array.map((skill, i) => {
-          if (i !== this.state.skills_array.length - 1) {
-            skills += skill.text + ","
-            return 0
-          } else {
-            skills += skill.text
-            return 0
-          }
-        })
-
-        this.setState({
-          skills,
-        })
+  getSkillsFromSkillsArray = skills_array => {
+    let skills = ""
+    skills_array.forEach((skill, i) => {
+      if (i !== this.state.skills_array.length - 1) {
+        skills += skill.text + ","
+      } else {
+        skills += skill.text
       }
-    )
+    })
+    return skills
   }
 
+  // Avoid unnecessary setState calls to avoid unnecessary rerenders
+  handleTagDelete = i => {
+    let { skills_array } = this.state
+    skills_array = skills_array.filter((_tag, index) => index !== i)
+    const skills = this.getSkillsFromSkillsArray(skills_array)
+    this.setState({
+      skills_array,
+      skills,
+    })
+  }
+
+  // Avoid unnecessary rerenders
   handleTagAddition = skill => {
-    if (this.state.skills_array.length < 10) {
-      this.setState(
-        state => ({ skills_array: [...state.skills_array, skill] }),
-        () => {
-          let skills = ""
+    let { skills_array } = this.state
 
-          this.state.skills_array.map((skill, i) => {
-            if (i !== this.state.skills_array.length - 1) {
-              skills += skill.text + ","
-              return 0
-            } else {
-              skills += skill.text
-              return 0
-            }
-          })
-
-          this.setState({
-            skills,
-          })
-        }
-      )
+    if (skills_array.length < 10) {
+      skills_array.push(skill)
+      const skills = this.getSkillsFromSkillsArray(skills_array)
+      this.setState({ skills_array, skills })
     }
   }
 
   validate_details = () => {
-    let state = this.state
-
-    if (
-      state.first_name !== "" &&
-      state.last_name !== "" &&
-      state.about !== "" &&
-      state.bio !== "" &&
-      state.profile_pic !== ""
-    ) {
-      return true
-    } else {
-      return false
-    }
+    let { first_name, last_name, about, bio, profile_pic } = this.state
+    return first_name && last_name && about && bio && profile_pic
   }
 
   update_user = () => {
@@ -430,8 +388,6 @@ export class settings extends Component {
     )
   }
 }
-
-export default settings
 
 export const UPDATE_USER_INFO_MUTATION_APOLLO = gql`
   mutation update_user_info(
