@@ -8,11 +8,13 @@ A search 🔎engine of community-made 🧑‍🤝‍🧑learning resources for t
    <a href="https://github.com/fnplus/footsteps-app/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/fnplus/footsteps-app"></a>
 </p>
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffnplus%2Fproject-footsteps-app.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffnplus%2Fproject-footsteps-app?ref=badge_shield)
-[![GitHub license](https://img.shields.io/github/license/fnplus/footsteps-app)](https://github.com/fnplus/footsteps-app/blob/master/LICENSE.txt)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/66839011f8424527bdf4a39b60ea6b4b)](https://www.codacy.com/manual/fnplus/footsteps-app?utm_source=github.com&utm_medium=referral&utm_content=fnplus/footsteps-app&utm_campaign=Badge_Grade)
-[![CodeFactor](https://www.codefactor.io/repository/github/fnplus/footsteps-app/badge)](https://www.codefactor.io/repository/github/fnplus/footsteps-app)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8e60385a-c75c-4b48-9d01-975f43285914/deploy-status)](https://app.netlify.com/sites/footsteps-app/deploys)
+<p align="center">
+   <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Ffnplus%2Fproject-footsteps-app?ref=badge_shield"><img alt="FOSSA Status" src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffnplus%2Fproject-footsteps-app.svg?type=shield"></a>
+   <a href="https://img.shields.io/github/license/fnplus/footsteps-app"><img alt="FOSSA Status" src="https://github.com/fnplus/footsteps-app/blob/master/LICENSE.txt"></a>
+   <a href="https://api.codacy.com/project/badge/Grade/66839011f8424527bdf4a39b60ea6b4b"><img alt="FOSSA Status" src="https://www.codacy.com/manual/fnplus/footsteps-app?utm_source=github.com&utm_medium=referral&utm_content=fnplus/footsteps-app&utm_campaign=Badge_Grade"></a>
+   <a href="https://www.codefactor.io/repository/github/fnplus/footsteps-app/badge"><img alt="FOSSA Status" src="https://www.codefactor.io/repository/github/fnplus/footsteps-app"></a>
+   <a href="https://app.netlify.com/sites/footsteps-app/deploys"><img alt="FOSSA Status" src="https://api.netlify.com/api/v1/badges/8e60385a-c75c-4b48-9d01-975f43285914/deploy-status"></a>
+</p>
 
 ## 🤷 About
 
