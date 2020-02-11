@@ -7,9 +7,9 @@ import { WithContext as ReactTags } from "react-tag-input"
 import firebase from "firebase/app"
 import "firebase/auth"
 
-import { client } from "../apollo/client"
+import { client } from "../../apollo/client"
 
-import styles from "../styles/signUp.module.css"
+import styles from "../../styles/signUp.module.css"
 
 export class signUp extends Component {
   state = {
@@ -185,16 +185,15 @@ export class signUp extends Component {
             <Col xs={24} lg={12}>
               <img
                 className={styles.step0_img}
-                src={require("../images/signup.png")}
+                src={require("../../images/signUp.png")}
                 alt=""
               />
             </Col>
             <Col xs={24} lg={12} className={styles.step0_content}>
               <h1>Hey {firebase.auth().currentUser.displayName}!</h1>
-              <h2>Welcome to FnPlus (FunctionPlus) Club!</h2>
+              <h2>Welcome to Footsteps!</h2>
               <h3>
-                We are glad to have you on board. Let us get to know you better
-                to enhance your experience with us.
+                We are glad to have you on board. Let us get to know you better!
               </h3>
               <div onClick={this.nextStep}>
                 Get started{" "}
@@ -229,7 +228,9 @@ export class signUp extends Component {
                   disabled
                 />
 
-                <div className={styles.input_label}>What's your first name?</div>
+                <div className={styles.input_label}>
+                  What's your first name?
+                </div>
                 <input
                   className={styles.input}
                   name="first_name"
@@ -247,7 +248,9 @@ export class signUp extends Component {
                   placeholder="Last Name"
                 />
 
-                <div className={styles.input_label}>Enter an unique username!</div>
+                <div className={styles.input_label}>
+                  Enter an unique username!
+                </div>
                 <input
                   className={styles.input}
                   name="username"

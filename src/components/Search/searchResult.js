@@ -86,13 +86,13 @@ export class SearchResult extends Component {
                 <div className={styles.filterArrowContainer}>
                   <img
                     className={styles.filterArrow}
-                    src={require("../../images/results/up-arrow.png")}
+                    src={require("../../images/results/upArrow.png")}
                     alt=""
                     onClick={() => this.sortPathsAscending}
                   />{" "}
                   <img
                     className={styles.filterArrow}
-                    src={require("../../images/results/down-arrow.png")}
+                    src={require("../../images/results/downArrow.png")}
                     alt=""
                     onClick={() => this.sortPathsDescending}
                   />{" "}

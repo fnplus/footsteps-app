@@ -212,24 +212,18 @@ export class editFootstep extends Component {
                   }}
                   onChange={this.handleTypeChange}
                 >
-                  <Option value="Website">Website</Option>
-                  <Option value="Documentation">Documentation</Option>
-                  <Option value="Video">Video</Option>
-                  <Option value="Article">Article</Option>
-                  <Option value="Course">Course</Option>
-                  <Option value="MOOC">MOOC</Option>
+                  <Option value="Audio">Audio</Option>
+                  <Option value="Blog">Blog</Option>
                   <Option value="Book">Book</Option>
                   <Option value="Cheat Sheet">Cheat Sheet</Option>
+                  <Option value="Competition">Competition</Option>
+                  <Option value="Course">Course</Option>
+                  <Option value="Documentation">Documentation</Option>
+                  <Option value="Video">Video</Option>
                   <Option value="Tool">Tool</Option>
                   <Option value="Research Paper">Research Paper</Option>
-                  <Option value="Blog">Blog</Option>
-                  <Option value="Quiz">Quiz</Option>
                   <Option value="Resource List">Resource List</Option>
                   <Option value="Study Plan">Study Plan</Option>
-                  <Option value="Audio">Audio</Option>
-                  <Option value="Lecture">Lecture</Option>
-                  <Option value="Question">Question</Option>
-                  <Option value="Competition">Competition</Option>
                 </Select>
               </Col>
               <Col span={12}>

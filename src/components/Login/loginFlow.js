@@ -5,7 +5,7 @@ import "firebase/auth"
 
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
-import styles from "../styles/login.module.css"
+import styles from "../../styles/login.module.css"
 
 const uiConfig = {
   signInFlow: "popup",
@@ -33,7 +33,7 @@ export class login extends Component {
           <Col xs={24} lg={14}>
             <img
               className={styles.image}
-              src={require("../images/signin.png")}
+              src={require("../../images/signIn.png")}
               alt="Website is under construction"
             />
           </Col>

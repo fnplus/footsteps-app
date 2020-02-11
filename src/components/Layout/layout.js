@@ -12,9 +12,9 @@ import "antd/dist/antd.css"
 
 import Header from "./sideDrawer"
 import Footer from "./footer"
-import Login from "../login"
+import Login from "../Login/loginFlow"
 import Loader from "./loader"
-import SignUp from "../sign-up"
+import SignUp from "../Login/signUpFlow"
 
 import SEO from "../SEO"
 
