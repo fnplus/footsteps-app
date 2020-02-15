@@ -21,7 +21,7 @@ export class about extends Component {
             </Col>
             <Col xs={24} md={12}>
               <img
-                src={require("../images/version-control.svg")}
+                src={require("../images/versionControl.svg")}
                 alt="Customised learning paths"
               />
             </Col>

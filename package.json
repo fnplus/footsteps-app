@@ -17,7 +17,12 @@
     "type": "git",
     "url": "https://github.com/fnplus/footsteps-app"
   },
-  "keywords": [],
+  "keywords": [
+    "gatsby",
+    "react",
+    "graphql",
+    "hasura"
+  ],
   "author": "@fnplusofficial",
   "bugs": {
     "url": "https://github.com/fnplus/footsteps-app/issues"

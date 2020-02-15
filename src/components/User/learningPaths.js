@@ -30,10 +30,7 @@ export class learningPaths extends Component {
 
         {data.length === 0 ? (
           <div className={styles.learningPathEmpty}>
-            <img
-              src={require("../../images/path_empty.png")}
-              alt="Path Empty"
-            />
+            <img src={require("../../images/pathEmpty.png")} alt="Path Empty" />
             <h1>
               No Learning Paths found. <br /> Create one now!
             </h1>

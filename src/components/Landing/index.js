@@ -3,7 +3,6 @@ import { Row, Col } from "antd"
 
 import Searchbar from "./searchbar"
 import styles from "../../styles/landing.module.css"
-
 export class index extends Component {
   render() {
     return (
@@ -17,13 +16,13 @@ export class index extends Component {
             <Searchbar />
             <br /> <br />
             <img
-              src={require("../../images/road-sign.svg")}
+              src={require("../../images/roadSign.svg")}
               alt="Road Sign"
               className={styles.mobileImage}
             />
           </Col>
           <Col sm={24} lg={10} className={styles.imageContainer}>
-            <img src={require("../../images/road-sign.svg")} alt="Road Sign" />
+            <img src={require("../../images/roadSign.svg")} alt="Road Sign" />
           </Col>
         </Row>
       </div>

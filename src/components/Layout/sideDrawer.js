@@ -28,7 +28,7 @@ export function header({ show = false }) {
       <Row>
         <Col xs={6} md={2} className={styles.logo}>
           <img
-            src={require("../../images/brand-logo.png")}
+            src={require("../../images/brandLogo.png")}
             alt=""
             onClick={() => navigate("/")}
           />
