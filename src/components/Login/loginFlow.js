@@ -18,7 +18,6 @@ const uiConfig = {
     signInSuccessWithAuthResult: () => true,
   },
 }
-
 export class login extends Component {
   render() {
     return (
