@@ -55,7 +55,7 @@ Open Terminal/Command Line and write the command
 ```bash
 git clone <link you copied> e.g
 ```
-```
+```bash
 $ git clone https://github.com/YOUR-USERNAME/ProjectName
 ```
 Press Enter. Your local clone will be created.
@@ -106,10 +106,19 @@ To create a pull request that is ready for review, click Create Pull Request. Fo
 ![congrats-image](./images/congrats.gif)
 
 
+
+
+
 ### 👍 Hurrah! You are all set to contribute to the Open Source Community.
 
 
+
+
+
 ![open_source-image](./images/open_source.png)
+
+
+
 
 
 
