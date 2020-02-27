@@ -1,8 +1,11 @@
+# ⭐️ Contribution Guidelines
 
-# Contribution Guidelines
+
 
 
 ![pull_request-image](./images/welcome.png)
+
+
 
 
 ### Contributing to fnplus Open Source Projects
@@ -98,6 +101,15 @@ To create a pull request that is ready for review, click Create Pull Request. Fo
 ![git_cheet_sheet-image](./images/git_cheat_sheet.jpg)
 
 
-Congratulations! You are all set to contribute to the Open Source Community.
+
+## 👍🏻 Congratulations! 
+
+![git_cheet_sheet-image](./images/congrats.gif)
+
+
+#### You are all set to contribute to the Open Source Community.
+
 
 ![open_source-image](./images/open_source.png)
+
+
