@@ -34,7 +34,7 @@ For any technical issues while setting up visit this page by Github —
 
 Click on the FORK icon on top right of your screen .
 
-![fork-image](images/fork.png)
+![fork-image](./images/fork.png)
 
 
 ## 2. Clone the Project
@@ -88,12 +88,12 @@ $ git push -u origin <name_of_your_new_branch>
 
 To create a pull request that is ready for review, click Create Pull Request. For more information about creating pull requests, see “About pull requests.”
 
-![pull_request-image](/images/pull.png)
+![pull_request-image](./images/pull_request.png)
 
 
 ## Git Cheat Sheet 
 
-![git_cheet_sheet-image](/images/git_cheat_sheet.jpg)
+![git_cheet_sheet-image](./images/git_cheat_sheet.jpg)
 
 
 Congratulations! You are all set to contribute to the Open Source Community.
