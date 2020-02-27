@@ -1,9 +1,9 @@
-# ⭐️ Contribution Guidelines
-
-
-
 
 ![pull_request-image](./images/welcome.png)
+
+
+
+# ⭐️ Contribution Guidelines
 
 
 
@@ -11,9 +11,10 @@
 ### Contributing to 👣 fnplus Open Source Projects
 fnplus welcomes contributions to open source projects on Github. When contributing, please follow the [Code of Conduct](/CODE_OF_CONDUCT.md).
 
+
+
 ## Issues
 Feel free to submit issues and enhancement requests.
-
 
 
 ## Contributing
@@ -54,7 +55,7 @@ Open Terminal/Command Line and write the command
 ```bash
 git clone <link you copied> e.g
 ```
-```bash
+```
 $ git clone https://github.com/YOUR-USERNAME/ProjectName
 ```
 Press Enter. Your local clone will be created.
@@ -93,24 +94,23 @@ $ git push -u origin <name_of_your_new_branch>
 
 To create a pull request that is ready for review, click Create Pull Request. For more information about creating pull requests, see “About pull requests.”
 
-![pull_request-image](./images/pull_request.png)
-
-
-## Git Cheat Sheet 
-
-![git_cheet_sheet-image](./images/git_cheat_sheet.jpg)
+### ![pull_request-image](./images/pull_request.png)
 
 
 
+### ![git_cheet_sheet-image](./images/git_cheat_sheet.jpg)
 
-![git_cheet_sheet-image](./images/congrats.gif)
 
 
-### 👍You are all set to contribute to the Open Source Community.
+
+![congrats-image](./images/congrats.gif)
+
+
+### 👍 Hurrah! You are all set to contribute to the Open Source Community.
 
 
 ![open_source-image](./images/open_source.png)
 
 
 
-## Enjoy!
+## ⚡️⚡️⚡️⚡️ Enjoy Contributing!  
