@@ -34,13 +34,13 @@ For any technical issues while setting up visit this page by Github —
 
 Click on the FORK icon on top right of your screen .
 
-[fork-image](/images/fork.png)
+[fork-image](images/fork.png)
 
 
 ## 2. Clone the Project
 After the step 1, you have to click on the Green Colored “Clone or download” button and copy the web-URL .
 
-[clone_url-image](/images/clone.png)
+[clone_url-image](./images/clone.png)
 
 
 ## 3. Open GitBash Software
