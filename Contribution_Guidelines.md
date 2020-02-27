@@ -2,6 +2,8 @@
 # Contribution Guidelines
 
 
+![pull_request-image](./images/welcome.png)
+
 
 ### Contributing to fnplus Open Source Projects
 fnplus welcomes contributions to open source projects on Github. When contributing, please follow the [Code of Conduct](/CODE_OF_CONDUCT.md).
@@ -97,3 +99,5 @@ To create a pull request that is ready for review, click Create Pull Request. Fo
 
 
 Congratulations! You are all set to contribute to the Open Source Community.
+
+![open_source-image](./images/open_source.png)
