@@ -103,12 +103,6 @@ To create a pull request that is ready for review, click Create Pull Request. Fo
 
 
 
-![congrats-image](./images/congrats.gif)
-
-
-
-
-
 ### 👍 Hurrah! You are all set to contribute to the Open Source Community.
 
 
