@@ -108,7 +108,6 @@ To create a pull request that is ready for review, click Create Pull Request. Fo
 
 
 
-
 ![open_source-image](./images/open_source.png)
 
 
