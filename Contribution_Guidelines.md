@@ -8,6 +8,7 @@ Feel free to submit issues and enhancement requests.
 ### Setting Up GitHub And Git For The First Time
 #### Get a github account.
 #### Download and install git.
+#### Check by typing git version in the terminal.
 #### Set up git with your user name and email.
 ## Open a terminal/shell and type
 ```bash
@@ -15,10 +16,8 @@ $ git config --global user.name "Your name here"
 $ git config --global user.email "your_email@example.com"
 ```
 (Don’t type the $; that just indicates that you’re doing this at the command line.)
-
 For any technical issues while setting up visit this page by Github —  
 [Getting Started With Github](https://help.github.com/en/github/getting-started-with-github)
-
 ## 1. Fork the project
 Click on the FORK icon on top right of your screen .
 ![fork-image](./images/fork.png)
