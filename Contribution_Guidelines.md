@@ -1,6 +1,6 @@
-# ⭐️ Contribution Guidelines
+#Contribution Guidelines
 ![image](./images/welcome.png)
-### Contributing to 👣 fnplus Open Source Projects
+## Contributing to 👣 fnplus Open Source Projects
 fnplus welcomes contributions to open source projects on Github. When contributing, please follow the [Code of Conduct](/CODE_OF_CONDUCT.md).
 ## Issues
 Feel free to submit issues and enhancement requests. All requests would be entertained with respect to CODE OF CONDUCT. We welcome your ideas and creativity.
@@ -13,6 +13,8 @@ Feel free to submit issues and enhancement requests. All requests would be enter
 ## Open a terminal/shell and type
 ```bash
 $ git config --global user.name "Your name here"
+```
+```bash
 $ git config --global user.email "your_email@example.com"
 ```
 (Don’t type the $; that just indicates that you’re doing this at the command line.)
