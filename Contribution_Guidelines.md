@@ -3,7 +3,7 @@
 ### Contributing to 👣 fnplus Open Source Projects
 fnplus welcomes contributions to open source projects on Github. When contributing, please follow the [Code of Conduct](/CODE_OF_CONDUCT.md).
 ## Issues
-Feel free to submit issues and enhancement requests.
+Feel free to submit issues and enhancement requests. All requests would be entertained with respect to CODE OF CONDUCT. We welcome your ideas and creativity.
 ## Contributing
 ### Setting Up GitHub And Git For The First Time
 #### Get a github account.
