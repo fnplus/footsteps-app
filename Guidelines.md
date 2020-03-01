@@ -1,7 +1,7 @@
 # Guidelines
 ![image](./images/welcome.png)
-## Contributing to 👣 fnplus Open Source Projects
-fnplus welcomes contributions to open source projects on Github. When contributing, please follow the [Code of Conduct](/CODE_OF_CONDUCT.md).
+## Contributing to 👣 Fnplus Open Source Projects
+Fnplus welcomes contributions to open source projects on Github. When contributing, please follow the [Code of Conduct](/CODE_OF_CONDUCT.md).
 ## Issues
 Feel free to submit issues and enhancement requests. All requests would be entertained with respect to CODE OF CONDUCT. We welcome your ideas and creativity.
 ## Contributing
@@ -40,23 +40,17 @@ If your upstream is not set correctly, the lint checks will run on merge commits
 
 ## 4. Update your local repository and create your separate Branch
 To create a separate branch write this command on Github —
+
 ```bash
-$ git branch <name_of_your_new_branch>
+$ git fetch upstream
+$ git checkout develop
+$ git merge upstream/develop
+$ git checkout -b your-branch-name 
 ```
- ```bash
-  git fetch upstream
-  ```
-  ```bash
-  git checkout develop
-  ```
-  ```bash
-  git merge upstream/develop
-  ```
-  ```bash
-  git checkout -b your-branch-name 
-  ```
-This will update your local repo and also create a new branch with name as your-branch-name. 
+
+This will update your local repo with latest changes and also create a new branch with name as your-branch-name. 
 If you find any difficulty, please check [Fork a repo-Github Help](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+
 ### Tip: Always work on a new branch and don’t mess up the master branch
 ## 5. Open the project
 Now, Open the project in your local device. It will be in the directory where you cloned the project.
