@@ -190,7 +190,7 @@ export class addPath extends Component {
           variables: {
             author: this.state.user_id,
             icon: this.state.icon_url,
-            title: this.state.title,
+            title: this.state.title.toLowerCase(),
             description: this.state.description,
             tags: this.state.tags,
           },
@@ -352,8 +352,8 @@ export class addPath extends Component {
               </div>
             </div>
           ) : (
-            ""
-          )}
+              ""
+            )}
         </div>
 
         <div className={styles.error_message}>{this.state.err_msg}</div>

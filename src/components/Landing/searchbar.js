@@ -22,6 +22,9 @@ export class searchbar extends Component {
   }
 
   performSearch() {
+    let currentQuery = this.state.query;
+    const query = currentQuery.toLowerCase();
+    this.setState({ query });
     if (this.state.query.length === 0) {
       this.setState({
         error: true,
