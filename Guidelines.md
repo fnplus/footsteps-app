@@ -35,12 +35,29 @@ git clone <link you copied> e.g
 $ git clone https://github.com/YOUR-USERNAME/ProjectName
 ```
 Press Enter. Your local clone will be created.
-## 4. Create your separate Branch
+Then, go to footsteps-app (cd footsteps-app) and do ``` git remote add upstream https://github.com/fnplus/footsteps-app.git ``` (use git@github.com:fnplus/footsteps-app.git if using SSH) to add a remote called upstream and link it to Footsteps's main repository (this will be used to merge with the latest version on develop and also to prevent running lint checks on merge commits when you later update your local branch with upstream/master).
+If your upstream is not set correctly, the lint checks will run on merge commits as well. The way to fix this will be to update the upstream URL by running the following command: ```git remote set-url upstream https://github.com/fnplus/footsteps-app.git ``` (use git@github.com:fnplus/footsteps-app.git if using SSH)
+
+## 4. Update your local repository and create your separate Branch
 To create a separate branch write this command on Github —
 ```bash
 $ git branch <name_of_your_new_branch>
 ```
-Tip: Always work on a new branch and don’t mess up the master branch.
+ ```bash
+  git fetch upstream
+  ```
+  ```bash
+  git checkout develop
+  ```
+  ```bash
+  git merge upstream/develop
+  ```
+  ```bash
+  git checkout -b your-branch-name 
+  ```
+This will update your local repo and also create a new branch with name as your-branch-name. 
+If you find any difficulty, please check [Fork a repo-Github Help](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+### Tip: Always work on a new branch and don’t mess up the master branch.
 ## 5. Open the project
 Now, Open the project in your local device. It will be in the directory where you cloned the project.
 After opening the project, make some meaningful changes to the project(Add features, Modify existing code, Add files/Readme.md) .
