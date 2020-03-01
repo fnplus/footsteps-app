@@ -57,7 +57,7 @@ $ git branch <name_of_your_new_branch>
   ```
 This will update your local repo and also create a new branch with name as your-branch-name. 
 If you find any difficulty, please check [Fork a repo-Github Help](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
-### Tip: Always work on a new branch and don’t mess up the master branch.
+### Tip: Always work on a new branch and don’t mess up the master branch
 ## 5. Open the project
 Now, Open the project in your local device. It will be in the directory where you cloned the project.
 After opening the project, make some meaningful changes to the project(Add features, Modify existing code, Add files/Readme.md) .
