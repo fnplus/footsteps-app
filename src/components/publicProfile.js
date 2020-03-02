@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
-// import ResultPathCard from "./Search/resultPathCard"
 import PublicPathCard from './Search/publicPathCard'
 import { Row, Col, Icon } from "antd"
 
@@ -29,7 +28,6 @@ export class publicProfile extends Component {
         onCompleted={(data) => {
 
           this.setState({ data: data.User[0] });
-          console.log(data);
         }}
       >
         {({ d, loading, error }) => {
