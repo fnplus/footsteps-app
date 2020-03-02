@@ -15,7 +15,8 @@ const uiConfig = {
     firebase.auth.GithubAuthProvider.PROVIDER_ID,
   ],
   callbacks: {
-    signInSuccessWithAuthResult: () => true,
+    // Ignore signInSuccessUrl
+    signInSuccessWithAuthResult: () => false,
   },
 }
 export class login extends Component {
