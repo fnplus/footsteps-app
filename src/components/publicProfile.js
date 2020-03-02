@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
-
+// import ResultPathCard from "./Search/resultPathCard"
+import PublicPathCard from './Search/publicPathCard'
 import { Row, Col, Icon } from "antd"
 
 import Header from "./Layout/sideDrawer"
@@ -11,6 +12,7 @@ import Loader from "./Layout/loader"
 
 import userStyles from "../styles/user.module.css"
 import styles from "../styles/layout.module.css"
+import pathStyles from "../styles/result.module.css"
 
 export class publicProfile extends Component {
   state = {
@@ -27,6 +29,7 @@ export class publicProfile extends Component {
         onCompleted={(data) => {
 
           this.setState({ data: data.User[0] });
+          console.log(data);
         }}
       >
         {({ d, loading, error }) => {
@@ -189,6 +192,16 @@ export class publicProfile extends Component {
                             </Col>
                           </Row>
                         </div>
+
+                        <div className={userStyles.profilePath} >
+                          {
+                            data.learning_paths.map((data, index) => {
+                              return <PublicPathCard key={index} data={data} ></PublicPathCard>
+                            })
+                          }
+
+                        </div>
+
                       </div>
 
                       <div className={userStyles.mobileProfile}>
@@ -232,6 +245,7 @@ export class publicProfile extends Component {
                                 </div>
                               </Col>
                             </Row>
+
                           </div>
 
                           <div className={userStyles.bio}>{data.about}</div>
@@ -309,11 +323,27 @@ export class publicProfile extends Component {
                                   ""
                                 )}
                             </Row>
+
                           </div>
+
                         </div>
+                        <Row>
+                          <div className={pathStyles.resultPath}>
+
+
+                            {
+                              data.learning_paths.map((data, index) => {
+                                return <PublicPathCard key={index} data={data} ></PublicPathCard>
+                              })
+                            }
+
+                          </div>
+                        </Row>
                       </div>
                     </div>
+
                   </div>
+
                   <Footer />
                 </div>
               ) : (
@@ -344,6 +374,7 @@ export class publicProfile extends Component {
                         </div>
                       </div>
                     </div>
+
                     <Footer />
                   </div>
                 )}
