@@ -33,7 +33,6 @@ export class publicProfile extends Component {
         {({ d, loading, error }) => {
 
           const { data } = this.state;
-          console.log(data);
           if (loading)
             return (
               <div>

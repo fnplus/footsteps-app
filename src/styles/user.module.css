@@ -95,7 +95,6 @@
   position: relative;
   top: -290px;
   border-radius: 50px;
-  /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); */
 }
 .profileImgContainer {
   position: relative;
@@ -231,11 +230,8 @@
   .mobileProfileLearningPath h1{
     font-weight: 600;
     text-align: center;
-    /* margin-top: 20px; */
     padding: 10px;
     width: 100%;
-     /* position: relative;  */
-     /* top: -290px; */
     } 
   .avatar {
     border-radius: 20px;
