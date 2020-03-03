@@ -29,6 +29,7 @@ export class search extends Component {
             <Query
               query={SEARCH_QUERY_APOLLO}
               variables={{ query: "%" + this.state.query + "%" }}
+
             >
               {({ data, loading, error }) => {
                 if (loading) return <Loader />
@@ -70,6 +71,7 @@ export const SEARCH_QUERY_APOLLO = gql`
       title
       author
       description
+      isPrivate
       footsteps {
         id
         description

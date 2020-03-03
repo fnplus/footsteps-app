@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
-import { Row, Col, Icon, Popconfirm } from "antd"
+import { Row, Col, Icon, Popconfirm, Switch } from "antd"
 import uuid from "uuid"
 import { navigate } from "gatsby"
 import { WithContext as ReactTags } from "react-tag-input"
@@ -29,6 +29,7 @@ export class EditPath extends Component {
     isUploading: false,
     progress: 0,
     path_id: 0,
+    isPrivate: false
   }
 
   componentDidMount() {
@@ -40,7 +41,8 @@ export class EditPath extends Component {
     }
 
     const data = this.props.data
-
+    console.log(data);
+    console.log(data.isPrivate)
     let new_tags_array = []
 
     data.tags.split(",").map(tag => {
@@ -61,6 +63,7 @@ export class EditPath extends Component {
       tags: data.tags,
       tags_array: new_tags_array,
       path_id: data.id,
+      isPrivate: data.isPrivate
     })
   }
 
@@ -103,6 +106,10 @@ export class EditPath extends Component {
     })
   }
 
+  //Handle Private Paths of User
+  handlePrivatePath = (val) => {
+    this.setState({ isPrivate: val });
+  }
   // Footstep validation functions
 
   noContent = () => {
@@ -237,6 +244,7 @@ export class EditPath extends Component {
             title: this.state.title,
             description: this.state.description,
             tags: this.state.tags,
+            isPrivate: this.state.isPrivate
           },
         })
         .then(res => {
@@ -330,7 +338,14 @@ export class EditPath extends Component {
             <Icon type="close-circle" /> Delete Path
           </div>
         </Popconfirm>
+        <div className={addStyles.checkbox_input}>
 
+
+          <label >
+            Private{"  "}
+            <Switch style={this.state.isPrivate ? { backgroundColor: "green" } : {}} checked={this.state.isPrivate} onChange={this.handlePrivatePath} />
+          </label>
+        </div>
         <Row>
           <Col xs={24} lg={12}>
             <div className={addStyles.input_label}>Title</div>
@@ -441,8 +456,8 @@ export class EditPath extends Component {
               </div>
             </div>
           ) : (
-            ""
-          )}
+              ""
+            )}
         </div>
 
         <div className={addStyles.error_message}>{this.state.err_msg}</div>
@@ -466,6 +481,7 @@ export const UPDATE_PATH_MUTATION_APOLLO = gql`
     $icon: String!
     $tags: String!
     $title: String!
+    $isPrivate: Boolean!
   ) {
     update_Learning_Paths(
       where: { id: { _eq: $id } }
@@ -474,6 +490,7 @@ export const UPDATE_PATH_MUTATION_APOLLO = gql`
         icon: $icon
         tags: $tags
         title: $title
+        isPrivate: $isPrivate
       }
     ) {
       affected_rows

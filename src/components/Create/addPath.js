@@ -197,7 +197,7 @@ export class addPath extends Component {
             title: this.state.title,
             description: this.state.description,
             tags: this.state.tags,
-            // isPrivate: this.state.isPrivate
+            isPrivate: this.state.isPrivate
           },
         })
         .then(res => {
@@ -247,6 +247,14 @@ export class addPath extends Component {
     return (
       <div className={styles.container}>
         <h1 className={styles.heading}>Create a new Path</h1>
+        <div className={styles.checkbox_input}>
+
+
+          <label >
+            Private{"  "}
+            <Switch style={this.state.isPrivate ? { backgroundColor: "green" } : {}} checked={this.state.isPrivate} onChange={this.handlePrivatePath} />
+          </label>
+        </div>
         <Row>
           <Col xs={24} lg={12}>
             <div className={styles.input_label}>Title</div>
@@ -327,14 +335,7 @@ export class addPath extends Component {
                 </Col>
               </Row>
 
-              <div className={styles.checkbox_input}>
 
-
-                <label >
-                  Private{"  "}
-                  <Switch defaultChecked onChange={this.handlePrivatePath} />
-                </label>
-              </div>
 
             </div>
           </Col>
@@ -392,6 +393,7 @@ export const CREATE_PATH_MUTATION_APOLLO = gql`
     $title: String!
     $description: String!
     $tags: String!
+    $isPrivate: Boolean!
     
   ) {
     insert_Learning_Paths(
@@ -401,6 +403,7 @@ export const CREATE_PATH_MUTATION_APOLLO = gql`
         icon: $icon
         title: $title
         tags: $tags
+        isPrivate: $isPrivate
        
       }
     ) {
