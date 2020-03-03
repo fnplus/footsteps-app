@@ -29,9 +29,8 @@ textarea:focus {
   outline: none;
 }
 
-.checkbox_input{
+.checkbox_input {
   padding: 10px;
-  padding-left: 0px;
   font-size: 30px;
   font-weight: 600;
   margin-top: 15px;

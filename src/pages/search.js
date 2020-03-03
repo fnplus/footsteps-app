@@ -29,7 +29,6 @@ export class search extends Component {
             <Query
               query={SEARCH_QUERY_APOLLO}
               variables={{ query: "%" + this.state.query + "%" }}
-
             >
               {({ data, loading, error }) => {
                 if (loading) return <Loader />

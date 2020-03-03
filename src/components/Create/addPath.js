@@ -28,7 +28,7 @@ export class addPath extends Component {
     tags_array: [],
     isUploading: false,
     progress: 0,
-    isPrivate: false
+    isPrivate: false,
   }
 
   componentDidMount() {
@@ -149,10 +149,11 @@ export class addPath extends Component {
     }
   }
 
-  //Handle Private Paths of User
-  handlePrivatePath = (val) => {
-    this.setState({ isPrivate: val });
+  // Handle Private Paths of User
+  handlePrivatePath = val => {
+    this.setState({ isPrivate: val })
   }
+
   // Tag Handling Functions
   handleTagDelete = i => {
     const { tags_array } = this.state
@@ -197,7 +198,7 @@ export class addPath extends Component {
             title: this.state.title,
             description: this.state.description,
             tags: this.state.tags,
-            isPrivate: this.state.isPrivate
+            isPrivate: this.state.isPrivate,
           },
         })
         .then(res => {
@@ -248,11 +249,13 @@ export class addPath extends Component {
       <div className={styles.container}>
         <h1 className={styles.heading}>Create a new Path</h1>
         <div className={styles.checkbox_input}>
-
-
-          <label >
+          <label>
             Private{"  "}
-            <Switch style={this.state.isPrivate ? { backgroundColor: "green" } : {}} checked={this.state.isPrivate} onChange={this.handlePrivatePath} />
+            <Switch
+              style={this.state.isPrivate ? { backgroundColor: "green" } : {}}
+              checked={this.state.isPrivate}
+              onChange={this.handlePrivatePath}
+            />
           </label>
         </div>
         <Row>
@@ -334,9 +337,6 @@ export class addPath extends Component {
                   </label>
                 </Col>
               </Row>
-
-
-
             </div>
           </Col>
         </Row>
@@ -368,8 +368,8 @@ export class addPath extends Component {
               </div>
             </div>
           ) : (
-              ""
-            )}
+            ""
+          )}
         </div>
 
         <div className={styles.error_message}>{this.state.err_msg}</div>
@@ -394,7 +394,6 @@ export const CREATE_PATH_MUTATION_APOLLO = gql`
     $description: String!
     $tags: String!
     $isPrivate: Boolean!
-    
   ) {
     insert_Learning_Paths(
       objects: {
@@ -404,7 +403,6 @@ export const CREATE_PATH_MUTATION_APOLLO = gql`
         title: $title
         tags: $tags
         isPrivate: $isPrivate
-       
       }
     ) {
       affected_rows

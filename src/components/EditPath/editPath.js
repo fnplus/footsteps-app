@@ -29,7 +29,7 @@ export class EditPath extends Component {
     isUploading: false,
     progress: 0,
     path_id: 0,
-    isPrivate: false
+    isPrivate: false,
   }
 
   componentDidMount() {
@@ -41,8 +41,6 @@ export class EditPath extends Component {
     }
 
     const data = this.props.data
-    console.log(data);
-    console.log(data.isPrivate)
     let new_tags_array = []
 
     data.tags.split(",").map(tag => {
@@ -63,7 +61,7 @@ export class EditPath extends Component {
       tags: data.tags,
       tags_array: new_tags_array,
       path_id: data.id,
-      isPrivate: data.isPrivate
+      isPrivate: data.isPrivate,
     })
   }
 
@@ -106,10 +104,11 @@ export class EditPath extends Component {
     })
   }
 
-  //Handle Private Paths of User
-  handlePrivatePath = (val) => {
-    this.setState({ isPrivate: val });
+  // Handle Private Paths of User
+  handlePrivatePath = val => {
+    this.setState({ isPrivate: val })
   }
+
   // Footstep validation functions
 
   noContent = () => {
@@ -244,7 +243,7 @@ export class EditPath extends Component {
             title: this.state.title,
             description: this.state.description,
             tags: this.state.tags,
-            isPrivate: this.state.isPrivate
+            isPrivate: this.state.isPrivate,
           },
         })
         .then(res => {
@@ -339,11 +338,13 @@ export class EditPath extends Component {
           </div>
         </Popconfirm>
         <div className={addStyles.checkbox_input}>
-
-
-          <label >
+          <label>
             Private{"  "}
-            <Switch style={this.state.isPrivate ? { backgroundColor: "green" } : {}} checked={this.state.isPrivate} onChange={this.handlePrivatePath} />
+            <Switch
+              style={this.state.isPrivate ? { backgroundColor: "green" } : {}}
+              checked={this.state.isPrivate}
+              onChange={this.handlePrivatePath}
+            />
           </label>
         </div>
         <Row>
@@ -456,8 +457,8 @@ export class EditPath extends Component {
               </div>
             </div>
           ) : (
-              ""
-            )}
+            ""
+          )}
         </div>
 
         <div className={addStyles.error_message}>{this.state.err_msg}</div>
