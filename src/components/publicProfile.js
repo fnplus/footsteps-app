@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
-import PublicPathCard from './Search/publicPathCard'
+import LearningPathCard from './User/learningPathCard';
 import { Row, Col, Icon } from "antd"
 
 import Header from "./Layout/sideDrawer"
@@ -33,7 +33,7 @@ export class publicProfile extends Component {
         {({ d, loading, error }) => {
 
           const { data } = this.state;
-
+          console.log(data);
           if (loading)
             return (
               <div>
@@ -190,11 +190,13 @@ export class publicProfile extends Component {
                             </Col>
                           </Row>
                         </div>
-
+                        <div className={userStyles.profileLearningPath} >
+                          <h1>Learning Paths ({data.learning_paths.length})</h1>
+                        </div>
                         <div className={userStyles.profilePath} >
                           {
                             data.learning_paths.map((data, index) => {
-                              return <PublicPathCard key={index} data={data} ></PublicPathCard>
+                              return <LearningPathCard key={index} path={data} show_edit={false} ></LearningPathCard>
                             })
                           }
 
@@ -326,12 +328,15 @@ export class publicProfile extends Component {
 
                         </div>
                         <Row>
+                          <div className={userStyles.mobileProfileLearningPath}>
+                            <h1>Learning Paths ({data.learning_paths.length})</h1>
+                          </div>
                           <div className={pathStyles.resultPath}>
 
 
                             {
                               data.learning_paths.map((data, index) => {
-                                return <PublicPathCard key={index} data={data} ></PublicPathCard>
+                                return <LearningPathCard key={index} path={data} show_edit={false} ></LearningPathCard>
                               })
                             }
 
