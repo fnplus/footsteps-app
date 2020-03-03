@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
-import { Row, Col } from "antd"
+import { Row, Col, Switch } from "antd"
 import uuid from "uuid"
 import { navigate } from "gatsby"
 import { WithContext as ReactTags } from "react-tag-input"
@@ -28,6 +28,7 @@ export class addPath extends Component {
     tags_array: [],
     isUploading: false,
     progress: 0,
+    isPrivate: false
   }
 
   componentDidMount() {
@@ -148,8 +149,11 @@ export class addPath extends Component {
     }
   }
 
+  //Handle Private Paths of User
+  handlePrivatePath = (val) => {
+    this.setState({ isPrivate: val });
+  }
   // Tag Handling Functions
-
   handleTagDelete = i => {
     const { tags_array } = this.state
     this.setState({
@@ -193,6 +197,7 @@ export class addPath extends Component {
             title: this.state.title,
             description: this.state.description,
             tags: this.state.tags,
+            // isPrivate: this.state.isPrivate
           },
         })
         .then(res => {
@@ -321,6 +326,16 @@ export class addPath extends Component {
                   </label>
                 </Col>
               </Row>
+
+              <div className={styles.checkbox_input}>
+
+
+                <label >
+                  Private{"  "}
+                  <Switch defaultChecked onChange={this.handlePrivatePath} />
+                </label>
+              </div>
+
             </div>
           </Col>
         </Row>
@@ -352,8 +367,8 @@ export class addPath extends Component {
               </div>
             </div>
           ) : (
-            ""
-          )}
+              ""
+            )}
         </div>
 
         <div className={styles.error_message}>{this.state.err_msg}</div>
@@ -377,6 +392,7 @@ export const CREATE_PATH_MUTATION_APOLLO = gql`
     $title: String!
     $description: String!
     $tags: String!
+    
   ) {
     insert_Learning_Paths(
       objects: {
@@ -385,6 +401,7 @@ export const CREATE_PATH_MUTATION_APOLLO = gql`
         icon: $icon
         title: $title
         tags: $tags
+       
       }
     ) {
       affected_rows

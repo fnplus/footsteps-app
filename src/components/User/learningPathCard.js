@@ -31,8 +31,8 @@ export class learningPathCard extends Component {
             <Icon type="edit" />
           </div>
         ) : (
-          ""
-        )}
+            ""
+          )}
 
         <div className={styles.learningPathCard} onClick={() => this.expand()}>
           <Row>

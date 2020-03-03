@@ -25,6 +25,15 @@ textarea:focus {
   outline: none;
 }
 
+.checkbox_input{
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 15px;
+  font-family: "Montserrat", sans-serif;
+  color: #029843;
+}
+
 .input_label {
   font-weight: 600;
   margin-top: 35px;
