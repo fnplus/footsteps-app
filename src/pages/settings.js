@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 
-import Layout from "../components/Layout/layout"
-import Settings from "../components/Settings"
+import Layout from "../Statefull/Layout/layout"
+import Settings from "../Settings"
 
 export class settings extends Component {
   render() {

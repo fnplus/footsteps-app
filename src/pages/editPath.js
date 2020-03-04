@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Router } from "@reach/router"
 
-import EditPath from "../components/EditPath"
+import EditPath from "../Statefull/EditPath/editPath"
 
 export class editPath extends Component {
   render() {

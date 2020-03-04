@@ -3,10 +3,10 @@ import queryString from "query-string"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 
-import Layout from "../components/Layout/layout"
-import SearchResult from "../components/Search/searchResult"
-import Loader from "../components/Layout/loader"
-import styles from "../styles/search.module.css"
+import Layout from "../Statefull/Layout/layout"
+import SearchResult from "../Statefull/Search/searchResult"
+import Loader from "../Stateless/Layout/loader"
+import Searchstyles from "../styles/search.module.css"
 
 export class search extends Component {
   state = {
@@ -21,11 +21,11 @@ export class search extends Component {
   render() {
     return (
       <Layout>
-        <div className={styles.container}>
-          <h1 className={styles.heading}>
+        <div className={Searchstyles.container}>
+          <h1 className={Searchstyles.heading}>
             Search results for "{this.state.query}"
           </h1>
-          <div className={styles.resultContainer}>
+          <div className={Searchstyles.resultContainer}>
             <Query
               query={SEARCH_QUERY_APOLLO}
               variables={{ query: "%" + this.state.query + "%" }}
