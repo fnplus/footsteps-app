@@ -28,9 +28,10 @@ emptyContent = footsteps => {
   return valid
 }
 
-validatePathDetails = footsteps => {
+let err_msg
+
+export function validatePathDetails(footsteps) {
   let footstep = footsteps
-  let err_msg
   if (
     footstep.title === "" ||
     footstep.description === "" ||
@@ -54,4 +55,5 @@ validatePathDetails = footsteps => {
   }
 }
 
-export { validatePathDetails, err_msg }
+export { err_msg }
+export default validatePathDetails

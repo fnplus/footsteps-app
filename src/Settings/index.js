@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import gql from "graphql-tag"
-import { client } from "../../apollo/client"
-import Loader from "../Layout/loader"
+import { client } from "../apollo/client"
+import Loader from "../Stateless/Layout/loader"
 import Settings from "./settings"
 
 export default function() {

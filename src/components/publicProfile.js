@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Query } from "react-apollo"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
-import LearningPathCard from "./User/learningPathCard"
+import LearningPathCard from "../Statefull/User/learningPathCard"
 import { Row, Col, Icon } from "antd"
 
 import Header from "../Stateless/Layout/sideDrawer"
