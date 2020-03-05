@@ -7,6 +7,7 @@ import { WithContext as ReactTags } from "react-tag-input"
 import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
 import "firebase/storage"
+import { validatePathDetails, err_msg } from "../../helper/Validation"
 
 import addStyles from "../../styles/add.module.css"
 
@@ -79,76 +80,6 @@ export class addPath extends Component {
     })
   }
 
-  // Footstep validation functions
-
-  noContent = () => {
-    let valid = false
-
-    let { footsteps } = this.state
-
-    for (var i = 0; i < footsteps.length; i++) {
-      if (Object.keys(footsteps[i]).length <= 1) {
-        valid = true
-      }
-    }
-
-    return valid
-  }
-
-  emptyContent = () => {
-    let valid = false
-
-    let { footsteps } = this.state
-
-    for (var i = 0; i < footsteps.length; i++) {
-      let footstep = footsteps[i]
-
-      for (var key in footstep) {
-        if (key !== "description") {
-          if (footstep[key] === "") {
-            valid = true
-          }
-        }
-      }
-    }
-
-    return valid
-  }
-
-  validatePathDetails = () => {
-    if (
-      this.state.title === "" ||
-      this.state.description === "" ||
-      this.state.icon_url === "" ||
-      this.state.tags === ""
-    ) {
-      this.setState({
-        err_msg: "Please fill the path details",
-      })
-      return false
-    } else if (this.state.footsteps.length < 1) {
-      this.setState({
-        err_msg: "Please add a few footsteps. Footsteps can not be empty.",
-      })
-      return false
-    } else if (this.noContent()) {
-      this.setState({
-        err_msg: "Please fill the footstep content",
-      })
-      return false
-    } else if (this.emptyContent()) {
-      this.setState({
-        err_msg: "Please fill all the footstep fields",
-      })
-      return false
-    } else {
-      this.setState({
-        err_msg: "",
-      })
-      return true
-    }
-  }
-
   // Handle Private Paths of User
   handlePrivatePath = val => {
     this.setState({ isPrivate: val })
@@ -188,7 +119,8 @@ export class addPath extends Component {
   }
 
   submitPath = () => {
-    if (this.validatePathDetails()) {
+    this.setState({ err_msg })
+    if (validatePathDetails(this.state)) {
       client
         .mutate({
           mutation: CREATE_PATH_MUTATION_APOLLO,
