@@ -55,7 +55,7 @@ textarea:focus {
 .add_image_btn:hover {
   cursor: pointer;
   transform: scale(1.1);
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .add_image_btn {
@@ -85,14 +85,14 @@ textarea:focus {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: white;
-  margin: 20px 50px 50px 50px;
+  margin: 20px 50px 50px;
   transition: transform 0.2s;
 }
 
 .update_btn:hover {
   cursor: pointer;
   transform: scale(1.1);
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .error {
