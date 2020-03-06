@@ -95,7 +95,7 @@ export class signUp extends Component {
 
   urlValidator = e => {
     let check = e.target.value.match(
-      /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
     )
     if (check == null) {
       alert("The url is not valid")
