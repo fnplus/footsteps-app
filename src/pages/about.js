@@ -1,14 +1,14 @@
 import React, { Component } from "react"
 import { Row, Col } from "antd"
 
-import Layout from "../components/Layout/layout"
-import styles from "../styles/about.module.css"
+import Layout from "../Statefull/Layout/layout"
+import Aboutstyles from "../styles/about.module.css"
 
 export class about extends Component {
   render() {
     return (
       <Layout>
-        <div className={styles.container}>
+        <div className={Aboutstyles.container}>
           <Row>
             <Col xs={24} md={12}>
               <h1>About Footsteps</h1>
