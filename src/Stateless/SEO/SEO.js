@@ -1,10 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
-import {
-  StaticQuery,
-  graphql,
-} from "../../Stateless/Layout/node_modules/gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import Facebook from "./Facebook"
 import Twitter from "./Twitter"
 

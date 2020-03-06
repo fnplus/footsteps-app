@@ -54,4 +54,4 @@ validatePathDetails = footsteps => {
   }
 }
 
-export { validatePathDetails, err_msg }
+// export { validatePathDetails, err_msg }

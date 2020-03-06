@@ -1,11 +1,11 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
 import uuid from "uuid"
-import { Row, Col, Icon } from "../../Stateless/Layout/node_modules/antd"
+import { Row, Col, Icon } from "antd"
 import { WithContext as ReactTags } from "react-tag-input"
 
-import firebase from "../../Stateless/Layout/node_modules/firebase/app"
-import "../../Stateless/Layout/node_modules/firebase/auth"
+import firebase from "firebase/app"
+import "firebase/auth"
 
 import { client } from "../../apollo/client"
 

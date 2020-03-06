@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import { Row, Col } from "../../Stateless/Layout/node_modules/antd"
-import firebase from "../../Stateless/Layout/node_modules/firebase/app"
-import "../../Stateless/Layout/node_modules/firebase/auth"
+import { Row, Col } from "antd"
+import firebase from "firebase/app"
+import "firebase/auth"
 
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
