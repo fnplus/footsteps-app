@@ -204,6 +204,29 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+  .checkoutSteps {
+    margin: 5vh 0vw 0 0vw;
+  }
+  .checkoutSteps .ant-steps-dot .ant-steps-item {
+    width: 33vw;
+    margin-left: 1vw;
+  }
+  .checkoutSteps .ant-steps-dot .ant-steps-item-icon {
+    margin: 0 0 0 14vw;
+  }
+  .checkoutSteps .ant-steps-dot .ant-steps-item-tail {
+    margin: 0 0vw 0 15vw;
+  }
+  .checkoutSteps .ant-steps-dot .ant-steps-item-content {
+    margin-left: 0vw;
+    width: 30vw;
+  }
+  .checkoutSteps .ant-steps-dot .ant-steps-item-content .ant-steps-item-title {
+    font-size: 14px;
+    margin-left: 0vw;
+  }
+
   .mobileProfile {
     display: block;
   }
