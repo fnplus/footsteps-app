@@ -58,7 +58,7 @@ export class publicProfile extends Component {
                 <div>
                   <SEO
                     title={`Walk in the footsteps of ${data.first_name}`}
-                    description={`${data.first_name} has made learning paths using FootstepsApp. Follow ${data.first_name} and learn the way he recommends it`}
+                    description={`${data.first_name} has made learning paths using FootstepsApp. Discover ${data.first_name}'s recommended way to learn.`}
                   />
                   <div className={userStyles.content}>
                     <Header show={false} />
