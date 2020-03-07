@@ -1,5 +1,5 @@
 import React from 'react'
-import { Steps, Progress, Row, Col } from 'antd';
+import { Steps, Progress } from 'antd';
 const { Step } = Steps;
 
 const UserProgress = ({ data, type }) => {
