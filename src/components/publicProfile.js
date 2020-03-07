@@ -8,6 +8,7 @@ import { Row, Col, Icon } from "antd"
 import Header from "./Layout/sideDrawer"
 import Footer from "./Layout/footer"
 import Loader from "./Layout/loader"
+import SEO from "./SEO/SEO"
 
 import userStyles from "../styles/user.module.css"
 import styles from "../styles/layout.module.css"
@@ -27,6 +28,7 @@ export class publicProfile extends Component {
         variables={{ username: this.props.username }}
         onCompleted={data => {
           this.setState({ data: data.User[0] })
+          console.log(this.state.data)
         }}
       >
         {({ d, loading, error }) => {
@@ -55,6 +57,10 @@ export class publicProfile extends Component {
             <div>
               {data ? (
                 <div>
+                  <SEO
+                    title={`Walk in the footsteps of ${data.first_name}`}
+                    description={`${data.first_name} has made learning paths using FootstepsApp. Follow ${data.first_name} and learn the way he recommends it`}
+                  />
                   <div className={userStyles.content}>
                     <Header show={false} />
                     <div className={userStyles.container}>
