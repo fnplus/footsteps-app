@@ -93,6 +93,20 @@ export class signUp extends Component {
     })
   }
 
+  urlValidator = e => {
+    let check = e.target.value.match(
+      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+    )
+    if (check == null) {
+      alert("The url is not valid")
+    } else {
+      const target = e.target
+      this.setState({
+        [target.name]: target.value,
+      })
+    }
+  }
+
   handleUsernameChange = e => {
     let enteredUsername = e.target.value
 
@@ -393,7 +407,7 @@ export class signUp extends Component {
                 className={styles.input}
                 name="github"
                 value={this.state.github}
-                onChange={this.handleInputChange}
+                onChange={this.urlValidator}
                 placeholder="Github URL"
               />
 
@@ -402,7 +416,7 @@ export class signUp extends Component {
                 className={styles.input}
                 name="linkedin"
                 value={this.state.linkedin}
-                onChange={this.handleInputChange}
+                onChange={this.urlValidator}
                 placeholder="Linkedin Profile URL"
               />
 
@@ -411,7 +425,7 @@ export class signUp extends Component {
                 className={styles.input}
                 name="facebook"
                 value={this.state.facebook}
-                onChange={this.handleInputChange}
+                onChange={this.urlValidator}
                 placeholder="Facebook Profile URL"
               />
 
@@ -420,7 +434,7 @@ export class signUp extends Component {
                 className={styles.input}
                 name="twitter"
                 value={this.state.twitter}
-                onChange={this.handleInputChange}
+                onChange={this.urlValidator}
                 placeholder="Twitter Profile URL"
               />
               {/* Skipped step-4 to reduce time in on-boarding the user - Abhi */}
