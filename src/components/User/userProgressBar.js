@@ -1,8 +1,8 @@
 import React from 'react'
-import { Steps, Progress } from 'antd';
+import { Steps, Progress, Row, Col } from 'antd';
 const { Step } = Steps;
 
-const UserProgress = ({ data }) => {
+const UserProgress = ({ data, type }) => {
     console.log(data);
     const { about, skills, linkedin, github, facebook } = data;
 
@@ -19,35 +19,50 @@ const UserProgress = ({ data }) => {
         else
             break;
     }
-    // progress.map(ele => {
-    //     if (ele !== "" && ele !== "https://github.com/" && ele !== "https://linkedin.com/in/" && ele !== "https://facebook.com/")
-    //         progressVal++;
-    //     else
-    //         return;
-    // }
-
-
     return (
-        <div>
-
+        <div style={type === "mobile" ? { marginTop: "10px" } : {}}>
             <h3>Profile Strength</h3>
-            <Progress
-                strokeColor={{
-                    '0%': '#108ee9',
-                    '100%': '#87d068',
-                }}
-                percent={progressVal * 20}
-            />
-            <Steps
-                current={progressVal}>
+            {
+                (type === "mobile") ?
+                    (<>
+                        <Steps
+                            direction="vertical"
+                            current={progressVal}>
 
-                <Step title="About" />
-                <Step title="Skills" />
-                <Step title="Github" />
-                <Step title="LinkedIn" />
-                <Step title="Facebook" />
+                            <Step title="About" />
+                            <Step title="Skills" />
+                            <Step title="Github" />
+                            <Step title="LinkedIn" />
+                            <Step title="Facebook" />
+                        </Steps>
+                    </>) :
+                    (
+                        <>
+                            <Steps
+                                current={progressVal}
+                                style={{ width: "80%" }}
+                            >
 
-            </Steps>
+                                <Step title="About" />
+                                <Step title="Skills" />
+                                <Step title="Github" />
+                                <Step title="LinkedIn" />
+                                <Step title="Facebook" />
+
+                            </Steps>
+                            <Progress
+                                strokeColor={{
+                                    '0%': '#108ee9',
+                                    '100%': '#87d068',
+                                }}
+                                style={{
+                                    width: "80%"
+                                }}
+                                percent={progressVal * 20}
+                            />
+                        </>
+                    )
+            }
         </div>
     );
 }

@@ -105,7 +105,7 @@ export class user extends Component {
                 )}
             </div>
             <Row className={styles.userInfo}>
-              <UserProgress data={data}></UserProgress>
+              <UserProgress data={data} type="desktop"></UserProgress>
 
             </Row>
             <Row className={styles.userInfo}>
@@ -164,7 +164,7 @@ export class user extends Component {
                 </Col>
               </Row>
               <Row >
-                <UserProgress data={data}></UserProgress>
+                <UserProgress data={data} type="mobile"></UserProgress>
 
               </Row>
             </div>
