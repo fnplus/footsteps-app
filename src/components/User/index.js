@@ -5,7 +5,7 @@ import styles from "../../styles/user.module.css"
 import LearningPaths from "./learningPaths"
 
 import UserContext from "../../context/userContext"
-import UserProgress from "./userProgressBar"
+import UserProgress from './userProgressBar';
 
 export class user extends Component {
   static contextType = UserContext

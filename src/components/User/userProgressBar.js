@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Steps, Progress } from 'antd';
 const { Step } = Steps;
 
@@ -7,18 +7,26 @@ const UserProgress = ({ data }) => {
     const { about, skills, linkedin, github, facebook } = data;
 
     const progress = [
-        about, skills, linkedin, github, facebook
+        about, skills, github, linkedin, facebook
     ]
 
     let progressVal = 0;
-    progress.map(ele => {
+    for (let i = 0; i < 5; i++) {
+        const ele = progress[i];
+        console.log(ele);
         if (ele !== "" && ele !== "https://github.com/" && ele !== "https://linkedin.com/in/" && ele !== "https://facebook.com/")
             progressVal++;
         else
-            return;
+            break;
     }
+    // progress.map(ele => {
+    //     if (ele !== "" && ele !== "https://github.com/" && ele !== "https://linkedin.com/in/" && ele !== "https://facebook.com/")
+    //         progressVal++;
+    //     else
+    //         return;
+    // }
 
-    )
+
     return (
         <div>
 
