@@ -35,7 +35,9 @@ export class resultPathCard extends Component {
                 <div className={styles.pathInfo}>
                   <p>
                     <span>By:</span>{" "}
-                    {data.user.first_name + " " + data.user.last_name}
+                    <a href={"user/" + data.user.username}>
+                      {data.user.first_name + " " + data.user.last_name}
+                    </a>
                   </p>
 
                   <p>
