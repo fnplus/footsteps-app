@@ -28,7 +28,6 @@ export class publicProfile extends Component {
         variables={{ username: this.props.username }}
         onCompleted={data => {
           this.setState({ data: data.User[0] })
-          console.log(this.state.data)
         }}
       >
         {({ d, loading, error }) => {
