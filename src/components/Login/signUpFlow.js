@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
 import uuid from "uuid"
-import { Row, Col, Icon } from "antd"
+import { ArrowRightOutlined } from "@ant-design/icons"
+import { Row, Col } from "antd"
 import { WithContext as ReactTags } from "react-tag-input"
 
 import firebase from "firebase/app"
@@ -212,7 +213,9 @@ export class signUp extends Component {
               </h3>
               <div onClick={this.nextStep}>
                 Get started{" "}
-                <Icon style={{ marginLeft: "10px" }} type="arrow-right"></Icon>
+                <ArrowRightOutlined
+                  style={{ marginLeft: "10px" }}
+                ></ArrowRightOutlined>
               </div>
             </Col>
           </Row>
@@ -288,7 +291,7 @@ export class signUp extends Component {
                 </div>
               </div>
               <div className={styles.stepBtn} onClick={this.nextStep}>
-                Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+                Next <ArrowRightOutlined style={{ marginLeft: "10px" }} />
               </div>
               <div
                 style={
@@ -356,7 +359,7 @@ export class signUp extends Component {
               />
 
               <div className={styles.stepBtn} onClick={this.nextStep}>
-                Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+                Next <ArrowRightOutlined style={{ marginLeft: "10px" }} />
               </div>
               <div
                 style={
@@ -439,8 +442,7 @@ export class signUp extends Component {
               />
               {/* Skipped step-4 to reduce time in on-boarding the user - Abhi */}
               <div className={styles.stepBtn} onClick={this.signup}>
-                Finish{" "}
-                <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+                Finish <ArrowRightOutlined style={{ marginLeft: "10px" }} />
               </div>
             </Col>
           </Row>

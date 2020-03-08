@@ -3,7 +3,16 @@ import { Query } from "react-apollo"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
 import LearningPathCard from "./User/learningPathCard"
-import { Row, Col, Icon } from "antd"
+
+import {
+  FacebookFilled,
+  GithubFilled,
+  HomeOutlined,
+  LinkedinFilled,
+  TwitterOutlined,
+} from "@ant-design/icons"
+
+import { Row, Col } from "antd"
 
 import Header from "./Layout/sideDrawer"
 import Footer from "./Layout/footer"
@@ -84,11 +93,9 @@ export class publicProfile extends Component {
                               data.github !== null &&
                               data.github !== "https://github.com/" ? (
                                 <Col span={6}>
-                                  <Icon
+                                  <GithubFilled
                                     onClick={() => window.open(data.github)}
                                     className={userStyles.icon}
-                                    type="github"
-                                    theme="filled"
                                   />
                                 </Col>
                               ) : (
@@ -98,11 +105,9 @@ export class publicProfile extends Component {
                               data.linkedin !== null &&
                               data.linkedin !== "https://linkedin.com/" ? (
                                 <Col span={6}>
-                                  <Icon
+                                  <LinkedinFilled
                                     onClick={() => window.open(data.linkedin)}
                                     className={userStyles.icon}
-                                    type="linkedin"
-                                    theme="filled"
                                   />
                                 </Col>
                               ) : (
@@ -112,10 +117,9 @@ export class publicProfile extends Component {
                               data.twitter !== null &&
                               data.twitter !== "https://twitter.com/" ? (
                                 <Col span={6}>
-                                  <Icon
+                                  <TwitterOutlined
                                     onClick={() => window.open(data.twitter)}
                                     className={userStyles.icon}
-                                    type="twitter"
                                   />
                                 </Col>
                               ) : (
@@ -125,11 +129,9 @@ export class publicProfile extends Component {
                               data.facebook !== null &&
                               data.facebook !== "https://facebook.com/" ? (
                                 <Col span={6}>
-                                  <Icon
+                                  <FacebookFilled
                                     onClick={() => window.open(data.facebook)}
                                     className={userStyles.icon}
-                                    type="facebook"
-                                    theme="filled"
                                   />
                                 </Col>
                               ) : (
@@ -268,11 +270,9 @@ export class publicProfile extends Component {
                               data.github !== null &&
                               data.github !== "https://github.com/" ? (
                                 <Col span={6}>
-                                  <Icon
+                                  <GithubFilled
                                     onClick={() => window.open(data.github)}
                                     className={userStyles.icon}
-                                    type="github"
-                                    theme="filled"
                                   />
                                 </Col>
                               ) : (
@@ -282,11 +282,9 @@ export class publicProfile extends Component {
                               data.linkedin !== null &&
                               data.linkedin !== "https://linkedin.com/" ? (
                                 <Col span={6}>
-                                  <Icon
+                                  <LinkedinFilled
                                     onClick={() => window.open(data.linkedin)}
                                     className={userStyles.icon}
-                                    type="linkedin"
-                                    theme="filled"
                                   />
                                 </Col>
                               ) : (
@@ -296,10 +294,9 @@ export class publicProfile extends Component {
                               data.twitter !== null &&
                               data.twitter !== "https://twitter.com/" ? (
                                 <Col span={6}>
-                                  <Icon
+                                  <TwitterOutlined
                                     onClick={() => window.open(data.twitter)}
                                     className={userStyles.icon}
-                                    type="twitter"
                                   />
                                 </Col>
                               ) : (
@@ -309,11 +306,9 @@ export class publicProfile extends Component {
                               data.facebook !== null &&
                               data.facebook !== "https://facebook.com/" ? (
                                 <Col span={6}>
-                                  <Icon
+                                  <FacebookFilled
                                     onClick={() => window.open(data.facebook)}
                                     className={userStyles.icon}
-                                    type="facebook"
-                                    theme="filled"
                                   />
                                 </Col>
                               ) : (
@@ -368,8 +363,8 @@ export class publicProfile extends Component {
                           className={styles.public_not_found_go_home}
                           onClick={() => navigate("/")}
                         >
-                          <Icon type="home" style={{ marginRight: "10px" }} />{" "}
-                          Go Home
+                          <HomeOutlined style={{ marginRight: "10px" }} /> Go
+                          Home
                         </div>
                       </div>
                     </div>

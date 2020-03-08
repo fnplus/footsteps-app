@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
-import { Row, Col, Icon, Popconfirm, Switch } from "antd"
+import { CloseCircleOutlined } from "@ant-design/icons"
+import { Row, Col, Popconfirm, Switch } from "antd"
 import uuid from "uuid"
 import { navigate } from "gatsby"
 import { WithContext as ReactTags } from "react-tag-input"
@@ -334,7 +335,7 @@ export class EditPath extends Component {
           onConfirm={this.deletePath}
         >
           <div className={addStyles.deletePath}>
-            <Icon type="close-circle" /> Delete Path
+            <CloseCircleOutlined /> Delete Path
           </div>
         </Popconfirm>
         <div className={addStyles.checkbox_input}>
