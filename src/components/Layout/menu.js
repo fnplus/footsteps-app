@@ -28,7 +28,7 @@ function NavMenu() {
   }
 
   return (
-    <Row>
+    <Row align="end">
       <ul>
         <li className={styles.menuProfile}>
           <img

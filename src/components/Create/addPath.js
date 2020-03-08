@@ -1,8 +1,9 @@
 import React, { Component } from "react"
-import gql from "graphql-tag"
-import { Row, Col, Switch } from "antd"
-import uuid from "uuid"
 import { navigate } from "gatsby"
+import gql from "graphql-tag"
+
+import { v4 as uuidv4 } from "uuid"
+import { Row, Col, Switch } from "antd"
 import { WithContext as ReactTags } from "react-tag-input"
 import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
@@ -35,7 +36,7 @@ export class addPath extends Component {
     if (typeof window !== "undefined") {
       this.setState({
         user_id: localStorage.getItem("userId"),
-        id: uuid.v4(),
+        id: uuidv4(),
       })
     }
   }
@@ -49,7 +50,7 @@ export class addPath extends Component {
 
   addNewFootstep = () => {
     this.setState(state => {
-      let new_footstep = { id: uuid.v4() }
+      let new_footstep = { id: uuidv4() }
 
       return { footsteps: [...state.footsteps, new_footstep] }
     })

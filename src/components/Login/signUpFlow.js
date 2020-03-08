@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
-import uuid from "uuid"
+import { v4 as uuidv4 } from "uuid"
 import { ArrowRightOutlined } from "@ant-design/icons"
 import { Row, Col } from "antd"
 import { WithContext as ReactTags } from "react-tag-input"
@@ -63,7 +63,7 @@ export class signUp extends Component {
         mutation: CREATE_USER_MUTATION_APOLLO,
         variables: {
           email: firebase.auth().currentUser.email,
-          id: uuid.v4(),
+          id: uuidv4(),
           first_name: data.first_name,
           last_name: data.last_name,
           username: data.username,
@@ -209,7 +209,8 @@ export class signUp extends Component {
               <h1>Hey {firebase.auth().currentUser.displayName}!</h1>
               <h2>Welcome to Footsteps!</h2>
               <h3>
-                We are glad to have you on board. Let us get to know you better!
+                We are glad to have you on board. Help us get to know you
+                better!
               </h3>
               <div onClick={this.nextStep}>
                 Get started{" "}
