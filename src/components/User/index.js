@@ -1,5 +1,11 @@
 import React, { Component } from "react"
-import { Row, Col, Icon } from "antd"
+import {
+  FacebookFilled,
+  GithubFilled,
+  LinkedinFilled,
+  TwitterOutlined,
+} from "@ant-design/icons"
+import { Row, Col } from "antd"
 
 import styles from "../../styles/user.module.css"
 import LearningPaths from "./learningPaths"
@@ -30,11 +36,9 @@ export class user extends Component {
                 data.github !== null &&
                 data.github !== "https://github.com/" ? (
                   <Col span={6}>
-                    <Icon
+                    <GithubFilled
                       onClick={() => window.open(data.github)}
                       className={styles.icon}
-                      type="github"
-                      theme="filled"
                     />
                   </Col>
                 ) : (
@@ -44,11 +48,9 @@ export class user extends Component {
                 data.linkedin !== null &&
                 data.linkedin !== "https://linkedin.com/" ? (
                   <Col span={6}>
-                    <Icon
+                    <LinkedinFilled
                       onClick={() => window.open(data.linkedin)}
                       className={styles.icon}
-                      type="linkedin"
-                      theme="filled"
                     />
                   </Col>
                 ) : (
@@ -58,10 +60,9 @@ export class user extends Component {
                 data.twitter !== null &&
                 data.twitter !== "https://twitter.com/" ? (
                   <Col span={6}>
-                    <Icon
+                    <TwitterOutlined
                       onClick={() => window.open(data.twitter)}
                       className={styles.icon}
-                      type="twitter"
                     />
                   </Col>
                 ) : (
@@ -71,11 +72,9 @@ export class user extends Component {
                 data.facebook !== null &&
                 data.facebook !== "https://facebook.com/" ? (
                   <Col span={6}>
-                    <Icon
+                    <FacebookFilled
                       onClick={() => window.open(data.facebook)}
                       className={styles.icon}
-                      type="facebook"
-                      theme="filled"
                     />
                   </Col>
                 ) : (
@@ -183,11 +182,9 @@ export class user extends Component {
                 data.github !== null &&
                 data.github !== "https://github.com/" ? (
                   <Col span={6}>
-                    <Icon
+                    <GithubFilled
                       onClick={() => window.open(data.github)}
                       className={styles.icon}
-                      type="github"
-                      theme="filled"
                     />
                   </Col>
                 ) : (
@@ -197,11 +194,9 @@ export class user extends Component {
                 data.linkedin !== null &&
                 data.linkedin !== "https://linkedin.com/" ? (
                   <Col span={6}>
-                    <Icon
+                    <LinkedinFilled
                       onClick={() => window.open(data.linkedin)}
                       className={styles.icon}
-                      type="linkedin"
-                      theme="filled"
                     />
                   </Col>
                 ) : (
@@ -211,10 +206,9 @@ export class user extends Component {
                 data.twitter !== null &&
                 data.twitter !== "https://twitter.com/" ? (
                   <Col span={6}>
-                    <Icon
+                    <TwitterOutlined
                       onClick={() => window.open(data.twitter)}
                       className={styles.icon}
-                      type="twitter"
                     />
                   </Col>
                 ) : (
@@ -224,11 +218,9 @@ export class user extends Component {
                 data.facebook !== null &&
                 data.facebook !== "https://facebook.com/" ? (
                   <Col span={6}>
-                    <Icon
+                    <FacebookFilled
                       onClick={() => window.open(data.facebook)}
                       className={styles.icon}
-                      type="facebook"
-                      theme="filled"
                     />
                   </Col>
                 ) : (

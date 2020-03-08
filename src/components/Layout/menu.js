@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react"
-import { Row, Col, Icon } from "antd"
+import { SettingFilled } from "@ant-design/icons"
+import { Row, Col } from "antd"
 import { Link, navigate } from "gatsby"
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -27,7 +28,7 @@ function NavMenu() {
   }
 
   return (
-    <Row>
+    <Row align="end">
       <ul>
         <li className={styles.menuProfile}>
           <img
@@ -71,7 +72,7 @@ function NavMenu() {
                   className={styles.settingsBtn}
                   onClick={() => navigate("/settings/")}
                 >
-                  <Icon type="setting" theme="filled"></Icon>
+                  <SettingFilled></SettingFilled>
                 </div>
               </Col>
             </Row>

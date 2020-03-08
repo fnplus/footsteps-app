@@ -1,6 +1,5 @@
 .heading {
-  text-align: center;
-  margin: 20;
+  text-align: inherit;
 }
 
 .container {

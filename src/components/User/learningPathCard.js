@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { Row, Col, Icon, Progress } from "antd"
+import { DownOutlined, EditOutlined } from "@ant-design/icons"
+import { Row, Col, Progress } from "antd"
 import { navigate } from "gatsby"
 
 import FootstepCard from "./footstepsCard"
@@ -28,7 +29,7 @@ export class learningPathCard extends Component {
             className={styles.editBtn}
             onClick={() => navigate(`/editPath/${path.id}`)}
           >
-            <Icon type="edit" />
+            <EditOutlined />
           </div>
         ) : (
           ""
@@ -53,7 +54,7 @@ export class learningPathCard extends Component {
                   : styles.pathExpand
               }
             >
-              <Icon type="down" />
+              <DownOutlined />
             </Col>
           </Row>
         </div>

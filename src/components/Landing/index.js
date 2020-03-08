@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { Row, Col } from "antd"
-
 import Searchbar from "./searchbar"
 import styles from "../../styles/landing.module.css"
+
 export class index extends Component {
   render() {
     return (

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { Row, Col, Icon } from "antd"
+import { CameraFilled } from "@ant-design/icons"
+import { Row, Col } from "antd"
 import FileUploader from "react-firebase-file-uploader"
 import { WithContext as ReactTags } from "react-tag-input"
 import gql from "graphql-tag"
@@ -281,7 +282,7 @@ export default class Settings extends Component {
                 alt=""
               />
               <label className={styles.add_image_btn}>
-                <Icon type="camera" theme="filled"></Icon>
+                <CameraFilled></CameraFilled>
                 <FileUploader
                   hidden
                   accept="image/*"
