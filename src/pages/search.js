@@ -65,6 +65,7 @@ export const SEARCH_QUERY_APOLLO = gql`
     Learning_Paths(
       where: {
         _or: [{ title: { _ilike: $query } }, { tags: { _ilike: $query } }]
+        isPrivate: { _eq: false }
       }
     ) {
       title

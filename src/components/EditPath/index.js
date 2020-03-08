@@ -70,6 +70,7 @@ export const GET_PATH_INFO_QUERY_APOLLO = gql`
     Learning_Paths(where: { id: { _eq: $id } }) {
       author
       description
+      isPrivate
       footsteps {
         description
         id

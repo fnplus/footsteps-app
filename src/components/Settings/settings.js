@@ -101,6 +101,20 @@ export default class Settings extends Component {
     })
   }
 
+  urlValidator = e => {
+    let check = e.target.value.match(
+      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+    )
+    if (check == null) {
+      alert("The url is not valid")
+    } else {
+      const { name, value } = e.target
+      this.setState({
+        [name]: value,
+      })
+    }
+  }
+
   // Image Upload Functions
 
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 })
@@ -333,7 +347,7 @@ export default class Settings extends Component {
               className={styles.input}
               placeholder="Github"
               value={this.state.github}
-              onChange={this.handleInputChange}
+              onChange={this.urlValidator}
               name="github"
             />
           </Col>
@@ -345,7 +359,7 @@ export default class Settings extends Component {
               className={styles.input}
               placeholder="Facebook"
               value={this.state.facebook}
-              onChange={this.handleInputChange}
+              onChange={this.urlValidator}
               name="facebook"
             />
           </Col>
@@ -357,7 +371,7 @@ export default class Settings extends Component {
               className={styles.input}
               placeholder="Linkedin"
               value={this.state.linkedin}
-              onChange={this.handleInputChange}
+              onChange={this.urlValidator}
               name="linkedin"
             />
           </Col>
@@ -369,7 +383,7 @@ export default class Settings extends Component {
               className={styles.input}
               placeholder="Twitter"
               value={this.state.twitter}
-              onChange={this.handleInputChange}
+              onChange={this.urlValidator}
               name="twitter"
             />
           </Col>

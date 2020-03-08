@@ -1,3 +1,7 @@
+#switch .ant-switch-checked {
+  background-color: #029843;
+}
+
 .container {
   margin: 0 100px;
 }
@@ -23,6 +27,15 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
+}
+
+.checkbox_input {
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 15px;
+  font-family: "Montserrat", sans-serif;
+  color: #029843;
 }
 
 .input_label {
