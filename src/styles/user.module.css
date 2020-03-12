@@ -204,6 +204,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+  
+
   .mobileProfile {
     display: block;
   }
