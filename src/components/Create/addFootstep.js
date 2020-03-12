@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { Row, Col, Select, Icon } from "antd"
+import { CloudUploadOutlined } from "@ant-design/icons"
+import { Row, Col, Select } from "antd"
 import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
 import "firebase/storage"
@@ -167,7 +168,9 @@ export class addFootstep extends Component {
 
               <Col span={4}>
                 <label className={styles.add_image_btn}>
-                  <Icon type="cloud-upload" style={{ fontSize: "25px" }}></Icon>
+                  <CloudUploadOutlined
+                    style={{ fontSize: "25px" }}
+                  ></CloudUploadOutlined>
                   <FileUploader
                     hidden
                     accept="image/*"

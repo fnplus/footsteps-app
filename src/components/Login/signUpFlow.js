@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import gql from "graphql-tag"
-import uuid from "uuid"
-import { Row, Col, Icon } from "antd"
+import { v4 as uuidv4 } from "uuid"
+import { ArrowRightOutlined } from "@ant-design/icons"
+import { Row, Col } from "antd"
 import { WithContext as ReactTags } from "react-tag-input"
 
 import firebase from "firebase/app"
@@ -62,7 +63,7 @@ export class signUp extends Component {
         mutation: CREATE_USER_MUTATION_APOLLO,
         variables: {
           email: firebase.auth().currentUser.email,
-          id: uuid.v4(),
+          id: uuidv4(),
           first_name: data.first_name,
           last_name: data.last_name,
           username: data.username,
@@ -91,6 +92,20 @@ export class signUp extends Component {
     this.setState({
       [target.name]: target.value,
     })
+  }
+
+  urlValidator = e => {
+    let check = e.target.value.match(
+      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+    )
+    if (check == null) {
+      alert("The url is not valid")
+    } else {
+      const target = e.target
+      this.setState({
+        [target.name]: target.value,
+      })
+    }
   }
 
   handleUsernameChange = e => {
@@ -194,11 +209,14 @@ export class signUp extends Component {
               <h1>Hey {firebase.auth().currentUser.displayName}!</h1>
               <h2>Welcome to Footsteps!</h2>
               <h3>
-                We are glad to have you on board. Let us get to know you better!
+                We are glad to have you on board. Help us get to know you
+                better!
               </h3>
               <div onClick={this.nextStep}>
                 Get started{" "}
-                <Icon style={{ marginLeft: "10px" }} type="arrow-right"></Icon>
+                <ArrowRightOutlined
+                  style={{ marginLeft: "10px" }}
+                ></ArrowRightOutlined>
               </div>
             </Col>
           </Row>
@@ -274,7 +292,7 @@ export class signUp extends Component {
                 </div>
               </div>
               <div className={styles.stepBtn} onClick={this.nextStep}>
-                Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+                Next <ArrowRightOutlined style={{ marginLeft: "10px" }} />
               </div>
               <div
                 style={
@@ -342,7 +360,7 @@ export class signUp extends Component {
               />
 
               <div className={styles.stepBtn} onClick={this.nextStep}>
-                Next <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+                Next <ArrowRightOutlined style={{ marginLeft: "10px" }} />
               </div>
               <div
                 style={
@@ -393,7 +411,7 @@ export class signUp extends Component {
                 className={styles.input}
                 name="github"
                 value={this.state.github}
-                onChange={this.handleInputChange}
+                onChange={this.urlValidator}
                 placeholder="Github URL"
               />
 
@@ -402,7 +420,7 @@ export class signUp extends Component {
                 className={styles.input}
                 name="linkedin"
                 value={this.state.linkedin}
-                onChange={this.handleInputChange}
+                onChange={this.urlValidator}
                 placeholder="Linkedin Profile URL"
               />
 
@@ -411,7 +429,7 @@ export class signUp extends Component {
                 className={styles.input}
                 name="facebook"
                 value={this.state.facebook}
-                onChange={this.handleInputChange}
+                onChange={this.urlValidator}
                 placeholder="Facebook Profile URL"
               />
 
@@ -420,13 +438,12 @@ export class signUp extends Component {
                 className={styles.input}
                 name="twitter"
                 value={this.state.twitter}
-                onChange={this.handleInputChange}
+                onChange={this.urlValidator}
                 placeholder="Twitter Profile URL"
               />
               {/* Skipped step-4 to reduce time in on-boarding the user - Abhi */}
               <div className={styles.stepBtn} onClick={this.signup}>
-                Finish{" "}
-                <Icon style={{ marginLeft: "10px" }} type="arrow-right" />
+                Finish <ArrowRightOutlined style={{ marginLeft: "10px" }} />
               </div>
             </Col>
           </Row>
