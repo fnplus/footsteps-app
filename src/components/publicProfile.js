@@ -17,6 +17,7 @@ import { Row, Col } from "antd"
 import Header from "./Layout/sideDrawer"
 import Footer from "./Layout/footer"
 import Loader from "./Layout/loader"
+import SEO from "./SEO/SEO"
 
 import userStyles from "../styles/user.module.css"
 import styles from "../styles/layout.module.css"
@@ -64,6 +65,10 @@ export class publicProfile extends Component {
             <div>
               {data ? (
                 <div>
+                  <SEO
+                    title={`Walk in the footsteps of ${data.first_name}`}
+                    description={`${data.first_name} has made learning paths using FootstepsApp. Discover ${data.first_name}'s recommended way to learn.`}
+                  />
                   <div className={userStyles.content}>
                     <Header show={false} />
                     <div className={userStyles.container}>
