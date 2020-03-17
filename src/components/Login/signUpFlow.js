@@ -2,8 +2,7 @@ import React, { Component } from "react"
 import gql from "graphql-tag"
 import uuid from "uuid"
 import { Row, Col, Icon } from "antd"
-import { WithContext as ReactTags } from "react-tag-input"
-
+import ReactTags from "react-tag-autocomplete"
 import firebase from "firebase/app"
 import "firebase/auth"
 
@@ -95,7 +94,7 @@ export class signUp extends Component {
 
   urlValidator = e => {
     let check = e.target.value.match(
-      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+      /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/
     )
     if (check == null) {
       alert("The url is not valid")

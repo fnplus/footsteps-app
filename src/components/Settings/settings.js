@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Row, Col, Icon } from "antd"
 import FileUploader from "react-firebase-file-uploader"
-import { WithContext as ReactTags } from "react-tag-input"
+import ReactTags from "react-tag-autocomplete"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
 
@@ -103,7 +103,7 @@ export default class Settings extends Component {
 
   urlValidator = e => {
     let check = e.target.value.match(
-      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+      /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/
     )
     if (check == null) {
       alert("The url is not valid")
