@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { Row, Col, Icon } from "antd"
+import { RightOutlined } from "@ant-design/icons"
+import { Row, Col } from "antd"
 
 import styles from "../../styles/footsteps.module.css"
 
@@ -241,7 +242,7 @@ export class footstepsCard extends Component {
             <h4 className={styles.linkTitle}>{this.state.resourceLink}</h4>
           </Col>
           <Col span={8} className={styles.linkArrow}>
-            <Icon type="right" />
+            <RightOutlined />
           </Col>
         </Row>
         <div style={{ display: "inlineBlock" }}>

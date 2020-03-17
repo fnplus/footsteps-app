@@ -1,10 +1,17 @@
 import React, { Component } from "react"
-import { Row, Col, Icon } from "antd"
+import {
+  FacebookFilled,
+  GithubFilled,
+  LinkedinFilled,
+  TwitterOutlined,
+} from "@ant-design/icons"
+import { Row, Col } from "antd"
 
 import styles from "../../styles/user.module.css"
 import LearningPaths from "./learningPaths"
 
 import UserContext from "../../context/userContext"
+import UserProgress from './userProgressBar';
 
 export class user extends Component {
   static contextType = UserContext
@@ -27,60 +34,53 @@ export class user extends Component {
             <div className={styles.social}>
               <Row className={styles.social_row}>
                 {data.github !== "" &&
-                data.github !== null &&
-                data.github !== "https://github.com/" ? (
-                  <Col span={6}>
-                    <Icon
-                      onClick={() => window.open(data.github)}
-                      className={styles.icon}
-                      type="github"
-                      theme="filled"
-                    />
-                  </Col>
-                ) : (
-                  ""
-                )}
+                  data.github !== null &&
+                  data.github !== "https://github.com/" ? (
+                    <Col span={6}>
+                      <GithubFilled
+                        onClick={() => window.open(data.github)}
+                        className={styles.icon}
+                      />
+                    </Col>
+                  ) : (
+                    ""
+                  )}
                 {data.linkedin !== "" &&
-                data.linkedin !== null &&
-                data.linkedin !== "https://linkedin.com/" ? (
-                  <Col span={6}>
-                    <Icon
-                      onClick={() => window.open(data.linkedin)}
-                      className={styles.icon}
-                      type="linkedin"
-                      theme="filled"
-                    />
-                  </Col>
-                ) : (
-                  ""
-                )}
+                  data.linkedin !== null &&
+                  data.linkedin !== "https://linkedin.com/" ? (
+                    <Col span={6}>
+                      <LinkedinFilled
+                        onClick={() => window.open(data.linkedin)}
+                        className={styles.icon}
+                      />
+                    </Col>
+                  ) : (
+                    ""
+                  )}
                 {data.twitter !== "" &&
-                data.twitter !== null &&
-                data.twitter !== "https://twitter.com/" ? (
-                  <Col span={6}>
-                    <Icon
-                      onClick={() => window.open(data.twitter)}
-                      className={styles.icon}
-                      type="twitter"
-                    />
-                  </Col>
-                ) : (
-                  ""
-                )}
+                  data.twitter !== null &&
+                  data.twitter !== "https://twitter.com/" ? (
+                    <Col span={6}>
+                      <TwitterOutlined
+                        onClick={() => window.open(data.twitter)}
+                        className={styles.icon}
+                      />
+                    </Col>
+                  ) : (
+                    ""
+                  )}
                 {data.facebook !== "" &&
-                data.facebook !== null &&
-                data.facebook !== "https://facebook.com/" ? (
-                  <Col span={6}>
-                    <Icon
-                      onClick={() => window.open(data.facebook)}
-                      className={styles.icon}
-                      type="facebook"
-                      theme="filled"
-                    />
-                  </Col>
-                ) : (
-                  ""
-                )}
+                  data.facebook !== null &&
+                  data.facebook !== "https://facebook.com/" ? (
+                    <Col span={6}>
+                      <FacebookFilled
+                        onClick={() => window.open(data.facebook)}
+                        className={styles.icon}
+                      />
+                    </Col>
+                  ) : (
+                    ""
+                  )}
               </Row>
             </div>
           </div>
@@ -100,9 +100,13 @@ export class user extends Component {
                   })}
                 </div>
               ) : (
-                <div></div>
-              )}
+                  <div></div>
+                )}
             </div>
+            <Row className={styles.userInfo}>
+              <UserProgress data={data} type="desktop"></UserProgress>
+
+            </Row>
             <Row className={styles.userInfo}>
               <Col span={8}>
                 <div className={styles.count}>
@@ -158,6 +162,10 @@ export class user extends Component {
                   <div className={styles.text}>Learning Paths</div>
                 </Col>
               </Row>
+              <Row >
+                <UserProgress data={data} type="mobile"></UserProgress>
+
+              </Row>
             </div>
 
             <div className={styles.bio}>{data.about}</div>
@@ -174,66 +182,59 @@ export class user extends Component {
                 })}
               </div>
             ) : (
-              <div></div>
-            )}
+                <div></div>
+              )}
 
             <div className={styles.social}>
               <Row className={styles.social_row}>
                 {data.github !== "" &&
-                data.github !== null &&
-                data.github !== "https://github.com/" ? (
-                  <Col span={6}>
-                    <Icon
-                      onClick={() => window.open(data.github)}
-                      className={styles.icon}
-                      type="github"
-                      theme="filled"
-                    />
-                  </Col>
-                ) : (
-                  ""
-                )}
+                  data.github !== null &&
+                  data.github !== "https://github.com/" ? (
+                    <Col span={6}>
+                      <GithubFilled
+                        onClick={() => window.open(data.github)}
+                        className={styles.icon}
+                      />
+                    </Col>
+                  ) : (
+                    ""
+                  )}
                 {data.linkedin !== "" &&
-                data.linkedin !== null &&
-                data.linkedin !== "https://linkedin.com/" ? (
-                  <Col span={6}>
-                    <Icon
-                      onClick={() => window.open(data.linkedin)}
-                      className={styles.icon}
-                      type="linkedin"
-                      theme="filled"
-                    />
-                  </Col>
-                ) : (
-                  ""
-                )}
+                  data.linkedin !== null &&
+                  data.linkedin !== "https://linkedin.com/" ? (
+                    <Col span={6}>
+                      <LinkedinFilled
+                        onClick={() => window.open(data.linkedin)}
+                        className={styles.icon}
+                      />
+                    </Col>
+                  ) : (
+                    ""
+                  )}
                 {data.twitter !== "" &&
-                data.twitter !== null &&
-                data.twitter !== "https://twitter.com/" ? (
-                  <Col span={6}>
-                    <Icon
-                      onClick={() => window.open(data.twitter)}
-                      className={styles.icon}
-                      type="twitter"
-                    />
-                  </Col>
-                ) : (
-                  ""
-                )}
+                  data.twitter !== null &&
+                  data.twitter !== "https://twitter.com/" ? (
+                    <Col span={6}>
+                      <TwitterOutlined
+                        onClick={() => window.open(data.twitter)}
+                        className={styles.icon}
+                      />
+                    </Col>
+                  ) : (
+                    ""
+                  )}
                 {data.facebook !== "" &&
-                data.facebook !== null &&
-                data.facebook !== "https://facebook.com/" ? (
-                  <Col span={6}>
-                    <Icon
-                      onClick={() => window.open(data.facebook)}
-                      className={styles.icon}
-                      type="facebook"
-                      theme="filled"
-                    />
-                  </Col>
-                ) : (
-                  ""
-                )}
+                  data.facebook !== null &&
+                  data.facebook !== "https://facebook.com/" ? (
+                    <Col span={6}>
+                      <FacebookFilled
+                        onClick={() => window.open(data.facebook)}
+                        className={styles.icon}
+                      />
+                    </Col>
+                  ) : (
+                    ""
+                  )}
               </Row>
             </div>
           </div>

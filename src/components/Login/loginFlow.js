@@ -15,18 +15,19 @@ const uiConfig = {
     firebase.auth.GithubAuthProvider.PROVIDER_ID,
   ],
   callbacks: {
-    signInSuccessWithAuthResult: () => true,
+    // Ignore signInSuccessUrl
+    signInSuccessWithAuthResult: () => false,
   },
 }
 export class login extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <h1 className={styles.heading}>Welcome to Footsteps</h1>
-          <h2 className={styles.heading}>
-            Search 🔎 community-made 🧑‍🤝‍🧑learning paths here!
-          </h2>
+        <Row align="center">
+          <h1>Welcome to Footsteps</h1>
+        </Row>
+        <Row align="center">
+          <h2>Search 🔎 community-made 🧑‍🤝‍🧑learning paths here!</h2>
         </Row>
         <Row>
           <Col xs={24} lg={14}>

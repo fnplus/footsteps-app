@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { Row, Col, Icon } from "antd"
+import { DownOutlined } from "@ant-design/icons"
+import { Row, Col } from "antd"
 
 import FootstepCard from "../User/footstepsCard"
 import styles from "../../styles/result.module.css"
@@ -35,7 +36,9 @@ export class resultPathCard extends Component {
                 <div className={styles.pathInfo}>
                   <p>
                     <span>By:</span>{" "}
-                    {data.user.first_name + " " + data.user.last_name}
+                    <a href={"user/" + data.user.username}>
+                      {data.user.first_name + " " + data.user.last_name}
+                    </a>
                   </p>
 
                   <p>
@@ -52,7 +55,7 @@ export class resultPathCard extends Component {
                     : styles.pathExpand
                 }
               >
-                <Icon type="down" />
+                <DownOutlined />
               </Col>
             </Row>
           </Col>
@@ -76,7 +79,7 @@ export class resultPathCard extends Component {
                   : styles.pathExpand
               }
             >
-              <Icon type="down" onClick={() => this.expand()} />
+              <DownOutlined onClick={() => this.expand()} />
             </Col>
           </Row>
           <Row>
