@@ -18,8 +18,7 @@ const NotFound = () => (
         to="/"
         style={{ backgroundColor: "#212529", position: "relative", top: 220 }}
       >
-        {" "}
-        Go back{" "}
+        Go back to track
       </Link>
     </h1>
   </div>
