@@ -34,8 +34,12 @@ export class signUp extends Component {
 
   componentDidMount() {
     this.setState({
-      first_name: firebase.auth().currentUser.displayName.split(" ")[0],
-      last_name: firebase.auth().currentUser.displayName.split(" ")[1],
+      first_name: firebase.auth().currentUser.displayName.split(" ")[0]
+        ? firebase.auth().currentUser.displayName.split(" ")[0]
+        : "",
+      last_name: firebase.auth().currentUser.displayName.split(" ")[1]
+        ? firebase.auth().currentUser.displayName.split(" ")[1]
+        : "",
       email: firebase.auth().currentUser.email,
     })
 
