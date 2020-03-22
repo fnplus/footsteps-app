@@ -118,8 +118,8 @@ export class layout extends Component {
             {!this.state.signUp ? (
               <Login />
             ) : (
-              <SignUp updateUserId={this.updateUserId} />
-            )}
+                <SignUp updateUserId={this.updateUserId} />
+              )}
           </div>
           <Footer />
         </div>

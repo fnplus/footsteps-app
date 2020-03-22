@@ -19,52 +19,55 @@ const UserProgress = ({ data, type }) => {
         else
             break;
     }
-    return (
-        <div style={type === "mobile" ? { marginTop: "10px" } : {}}>
-            <h3>Profile Strength</h3>
-            {
-                (type === "mobile") ?
-                    (<>
-                        <Steps
-                            direction="vertical"
-                            current={progressVal}>
-
-                            <Step title="About" />
-                            <Step title="Skills" />
-                            <Step title="Github" />
-                            <Step title="LinkedIn" />
-                            <Step title="Facebook" />
-                        </Steps>
-                    </>) :
-                    (
-                        <>
+    if (progressVal === 5)
+        return (<></>)
+    else
+        return (
+            <div style={type === "mobile" ? { marginTop: "10px" } : {}}>
+                <h3>Profile Strength</h3>
+                {
+                    (type === "mobile") ?
+                        (<>
                             <Steps
-                                current={progressVal}
-                                style={{ width: "80%" }}
-                            >
+                                direction="vertical"
+                                current={progressVal}>
 
                                 <Step title="About" />
                                 <Step title="Skills" />
                                 <Step title="Github" />
                                 <Step title="LinkedIn" />
                                 <Step title="Facebook" />
-
                             </Steps>
-                            <Progress
-                                strokeColor={{
-                                    '0%': '#108ee9',
-                                    '100%': '#87d068',
-                                }}
-                                style={{
-                                    width: "80%"
-                                }}
-                                percent={progressVal * 20}
-                            />
-                        </>
-                    )
-            }
-        </div>
-    );
+                        </>) :
+                        (
+                            <>
+                                <Steps
+                                    current={progressVal}
+                                    style={{ width: "100%" }}
+                                >
+
+                                    <Step title="About" />
+                                    <Step title="Skills" />
+                                    <Step title="Github" />
+                                    <Step title="LinkedIn" />
+                                    <Step title="Facebook" />
+
+                                </Steps>
+                                <Progress
+                                    strokeColor={{
+                                        '0%': '#108ee9',
+                                        '100%': '#87d068',
+                                    }}
+                                    style={{
+                                        width: "100%"
+                                    }}
+                                    percent={progressVal * 20}
+                                />
+                            </>
+                        )
+                }
+            </div>
+        );
 }
 
 export default UserProgress;
