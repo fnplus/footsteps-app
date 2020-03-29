@@ -322,24 +322,20 @@ export class publicProfile extends Component {
                             </Row>
                           </div>
                         </div>
-                        <Row>
-                          <div className={userStyles.mobileProfileLearningPath}>
-                            <h1>
-                              Learning Paths ({data.learning_paths.length})
-                            </h1>
-                          </div>
-                          <div className={pathStyles.resultPath}>
-                            {data.learning_paths.map((data, index) => {
-                              return (
-                                <LearningPathCard
-                                  key={index}
-                                  path={data}
-                                  show_edit={false}
-                                ></LearningPathCard>
-                              )
-                            })}
-                          </div>
-                        </Row>
+                        <div className={userStyles.mobileProfileLearningPath}>
+                          <h1>Learning Paths ({data.learning_paths.length})</h1>
+                        </div>
+                        <div className={pathStyles.resultPath}>
+                          {data.learning_paths.map((data, index) => {
+                            return (
+                              <LearningPathCard
+                                key={index}
+                                path={data}
+                                show_edit={false}
+                              ></LearningPathCard>
+                            )
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>
