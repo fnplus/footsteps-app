@@ -40,7 +40,7 @@
     ]
   },
   "dependencies": {
-    "@ant-design/icons": "^4.0.2",
+    "@ant-design/icons": "^4.0.4",
     "antd": "^4.0.2",
     "apollo-boost": "^0.4.7",
     "apollo-link-http": "^1.5.16",
