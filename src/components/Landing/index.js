@@ -7,8 +7,11 @@ export class index extends Component {
   render() {
     return (
       <div>
+
+
+
+        {/* First page */}
         <div className={styles.container}>
-          {/* First page */}
           <Row>
             <Col sm={24} lg={14}>
               <p className={styles.subHeading}>
@@ -18,12 +21,11 @@ export class index extends Component {
                 Are you scratching your head, wondering how some else did it?
                 <br />
                 <h3 className={styles.subHeading2}>
-                  <b>Well, fret no gitmore. </b>
+                  <b>Well, fret no more. </b>
                 </h3>
               </p>
               <br />
               <br />
-
               <h1 className={styles.heading}>Welcome to Footsteps</h1>
               <h3 className={styles.subHeading2}>
                 A search 🔎engine for the 21st-century learner.
@@ -39,11 +41,15 @@ export class index extends Component {
             <Col sm={24} lg={10} className={styles.imageContainer}>
               <img src={require("../../images/roadSign.svg")} alt="Road Sign" />
             </Col>
-          </Row>
-
+          </Row>        
         </div>
-                        
-               {/*  About footsteps */}
+
+
+
+
+
+
+         {/*  About footsteps */}
         <div className={styles.AboutUs}>
           <Row>
             <Col sm={24} lg={9} className={styles.AboutUsVideo}>
@@ -71,9 +77,11 @@ export class index extends Component {
           </Row>
         </div>
 
+
+
+
         {/* How footsteps work */}
-        <div className={styles.working}>
-          
+        <div className={styles.working}>        
           <Row>
             <Col sm={24} lg={17}>
               <h1>How footsteps work?</h1>
@@ -129,6 +137,42 @@ export class index extends Component {
         </div>
 
 
+
+
+
+        {/* FAQ Section */}
+        <div className={styles.FAQ}>
+          <Row>
+            <Col sm={24} lg={9} className={styles.FAQimg}>
+              <img src={require("../../images/FAQ.png")} width={600} />
+            </Col>
+            <Col sm={24} lg={15} className={styles.AboutDesc}>
+              <h1>
+                <b>FAQ</b> <br />
+              </h1>
+              <b>
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium,{" "}
+              </b>
+              <br />
+              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut totam rem aperiam, eaque ipsa quae ab illo inventore
+              <br />
+              <br />
+              <b>
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium,{" "}
+              </b>
+              <br />
+              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+              aut totam rem aperiam, eaque ipsa quae ab illo inventore
+              <br />
+              <br />
+            </Col>
+          </Row>
+        </div>
       </div>
     )
   }
