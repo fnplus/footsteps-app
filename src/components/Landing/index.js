@@ -71,6 +71,64 @@ export class index extends Component {
           </Row>
         </div>
 
+        {/* How footsteps work */}
+        <div className={styles.working}>
+          
+          <Row>
+            <Col sm={24} lg={17}>
+              <h1>How footsteps work?</h1>
+              <p>
+                With the Footsteps app, we take a mentor/subject knowledge
+                expert first approach to solve the problem. The domain experts
+                save their learning journey with our app and browser extension &
+                make it available for everyone else to follow. Every resource is
+                called a 'footstep' (added in a chronological manner) and a
+                collection of footsteps makes up a learning path. The learner
+                can "fork" the learning path made by the expert and keep a track
+                of his progress. The app suggests resources & keeps an updated
+                list with users upvotes & collaborative filtering.
+              </p>
+            </Col>
+            <Col sm={24} lg={7}>
+              <img src={require("../../images/figuringOut.png")} />
+            </Col>
+            <div className={styles.Cards}>
+              <br />
+              <br />
+              <Row gutter={16}>
+                <Col span={8}>
+                  <Card
+                    title="1. Decide the topic you wish to learn"
+                    bordered={false}
+                  >
+                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo consequat.
+                  </Card>
+                </Col>
+                <Col span={8}>
+                  <Card title="2. Lorem ipsum dolor sit amet" bordered={false}>
+                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo consequat.
+                  </Card>
+                </Col>
+                <Col span={8}>
+                  <Card title="3. Lorem ipsum dolor sit amet" bordered={false}>
+                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo consequat.
+                  </Card>
+                </Col>
+              </Row>
+            </div>
+          </Row>
+        </div>
+
+
       </div>
     )
   }
