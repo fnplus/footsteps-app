@@ -115,9 +115,6 @@ We welcome suggestions for improving our docs. See the [“how to contribute”]
 
 **Start Learning Gatsby: [Follow the Tutorial](https://gatsbyjs.org/tutorial/) · [Read the Docs](https://gatsbyjs.org/docs/)**
 
-## 👨 Project Admin
-
-- Abhishek Uniyal <p>[<img src="https://img.icons8.com/windows/32/000000/github-2.png" display = "inline-block">](https://github.com/xlogix) [<img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png"/>](https://www.linkedin.com/in/abhishek-uniyal)</p>
 
 ## 👨 Project Admin
 
