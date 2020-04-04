@@ -119,12 +119,17 @@ We welcome suggestions for improving our docs. See the [“how to contribute”]
 
 - Abhishek Uniyal <p>[<img src="https://img.icons8.com/windows/32/000000/github-2.png" display = "inline-block">](https://github.com/xlogix) [<img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png"/>](https://www.linkedin.com/in/abhishek-uniyal)</p>
 
-## 👬  Mentors
+## 👨 Project Admin
 
-- Dev Daksan  <p>[<img src="https://img.icons8.com/windows/32/000000/github-2.png" display = "inline-block">](https://github.com/R3l3ntl3ss) [<img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png"/>](https://in.linkedin.com/in/dev-daksan)</p>
-- Praveen Kumar    <p>[<img src="https://img.icons8.com/windows/32/000000/github-2.png" display = "inline-block">](https://github.com/praveenscience) [<img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png"/>](https://uk.linkedin.com/in/praveentech)</p> 
-- Sudipto Ghosh   <p>[<img src="https://img.icons8.com/windows/32/000000/github-2.png" display = "inline-block">](https://github.com/pydevsg) [<img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png"/>](https://www.linkedin.com/in/sudipto-ghosh-48a71a161/)</p>
-- Tarun Nagpal    <p>[<img src="https://img.icons8.com/windows/32/000000/github-2.png" display = "inline-block">](https://github.com/tarun-nagpal-github) [<img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png"/>](https://www.linkedin.com/in/tarunnagpal1/)</p>
+- Abhishek Uniyal <p>[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/xlogix) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://www.linkedin.com/in/abhishek-uniyal)</p>
+
+## 👬  Mentors
+| Name | Point of Contact |
+| ------- | ------- |
+| Dev Daksan     |      <p float = "center">[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/R3l3ntl3ss) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://in.linkedin.com/in/dev-daksan)</p> |
+| Praveen Kumar  |      <p float = "center">[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/praveenscience) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://uk.linkedin.com/in/praveentech)</p> |
+| Sudipto Ghosh  |   <p float = "center">[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/pydevsg) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://www.linkedin.com/in/sudipto-ghosh-48a71a161/)</p> |
+| Tarun Nagpal   |   <p float = "center">[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/tarun-nagpal-github) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://www.linkedin.com/in/tarunnagpal1/)</p>   |
 
 Feel free to ask your queries!! 🙌
 
