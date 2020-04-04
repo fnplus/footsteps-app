@@ -1,10 +1,7 @@
 .container {
   width: 85%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 12px;
-  margin-bottom: 13%;
+  margin: 1% auto 10% auto;
 }
 
 .imageContainer img {
@@ -65,7 +62,7 @@
 }
 
 .AboutUs {
-  width: 100% !important;
+  width: 100%;
   height: 100%;
   background-color: #222222;
   color: #adb5bd;
@@ -108,7 +105,6 @@
   padding: 5%;
   background-color: #222222;
   color: #adb5bd;
-  padding: 4%;
   font-size: 18px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
 }
@@ -123,7 +119,7 @@
 .FAQimg {
   background-color: #c92a2a;
   height: 450px;
-  margin: 0 !important ;
+  margin: 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
 }
 @media only screen and (max-width: 768px) {
@@ -160,6 +156,11 @@
     margin-top: 25px;
   }
   .AboutUsVideo {
-    width: 80% !important;
+    width: 80%;
+  }
+  .FAQ,
+  .working,
+  .AboutUs {
+    font-size: 15px;
   }
 }
