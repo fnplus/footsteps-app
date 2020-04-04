@@ -42,6 +42,35 @@ export class index extends Component {
           </Row>
 
         </div>
+                        
+               {/*  About footsteps */}
+        <div className={styles.AboutUs}>
+          <Row>
+            <Col sm={24} lg={9} className={styles.AboutUsVideo}>
+              <iframe
+                width="100%"
+                height="100%"
+                src="http://learn.shayhowe.com/assets/misc/courses/html-css/adding-media/earth.mp4"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
+            </Col>
+            <Col sm={24} lg={15} className={styles.AboutDesc}>
+              <h1>
+                <b> About us</b> <br />
+              </h1>
+              In today's era, a new knowledge is a few mouse clicks away. As the
+              internet is flooded with a plethora of resources, it raises a new
+              problem for a modern-day learner. It becomes difficult for him/her
+              to choose the right resources suited for his/her needs. Footsteps
+              is here to tackle this issue
+              <br />
+              <br /> Footsteps is a search engine of community-made 🧑‍🤝‍🧑learning
+              resources for the 21st-century learner. Now, you can learn by
+              following the footsteps (journey) of experts
+            </Col>
+          </Row>
+        </div>
+
       </div>
     )
   }
