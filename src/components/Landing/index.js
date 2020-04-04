@@ -7,9 +7,6 @@ export class index extends Component {
   render() {
     return (
       <div>
-
-
-
         {/* First page */}
         <div className={styles.container}>
           <Row>
@@ -20,15 +17,16 @@ export class index extends Component {
                 <br />
                 Are you scratching your head, wondering how some else did it?
                 <br />
+                <br />
                 <h3 className={styles.subHeading2}>
-                  <b>Well, fret no more. </b>
+                  <b>Well, fret no more!</b>
                 </h3>
               </p>
               <br />
               <br />
               <h1 className={styles.heading}>Welcome to Footsteps</h1>
               <h3 className={styles.subHeading2}>
-                A search 🔎engine for the 21st-century learner.
+                <br />A search 🔎engine for the 21st-century learner.
               </h3>
               <Searchbar />
 
@@ -41,26 +39,21 @@ export class index extends Component {
             <Col sm={24} lg={10} className={styles.imageContainer}>
               <img src={require("../../images/roadSign.svg")} alt="Road Sign" />
             </Col>
-          </Row>        
+          </Row>
         </div>
 
-
-
-
-
-
-         {/*  About footsteps */}
+        {/*  About footsteps */}
         <div className={styles.AboutUs}>
           <Row>
-            <Col sm={24} lg={9} className={styles.AboutUsVideo}>
+            <Col sm={24} lg={10} className={styles.AboutUsVideo}>
               <iframe
-                width="100%"
-                height="100%"
+                width="130%"
+                height="130%"
                 src="http://learn.shayhowe.com/assets/misc/courses/html-css/adding-media/earth.mp4"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               ></iframe>
             </Col>
-            <Col sm={24} lg={15} className={styles.AboutDesc}>
+            <Col sm={24} lg={14} className={styles.AboutDesc}>
               <h1>
                 <b> About us</b> <br />
               </h1>
@@ -77,11 +70,8 @@ export class index extends Component {
           </Row>
         </div>
 
-
-
-
         {/* How footsteps work */}
-        <div className={styles.working}>        
+        <div className={styles.working}>
           <Row>
             <Col sm={24} lg={17}>
               <h1>How footsteps work?</h1>
@@ -136,15 +126,11 @@ export class index extends Component {
           </Row>
         </div>
 
-
-
-
-
         {/* FAQ Section */}
         <div className={styles.FAQ}>
           <Row>
             <Col sm={24} lg={9} className={styles.FAQimg}>
-              <img src={require("../../images/FAQ.png")} width={600} />
+              <img src={require("../../images/FAQ.png")} width={900} />
             </Col>
             <Col sm={24} lg={15} className={styles.AboutDesc}>
               <h1>

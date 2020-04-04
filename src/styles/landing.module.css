@@ -3,7 +3,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
+  margin-top: 12px;
+  margin-bottom: 13%;
 }
 
 .imageContainer img {
@@ -14,19 +15,27 @@
 }
 
 .heading {
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   margin-bottom: 10px;
-  font-weight: 700;
+  font-weight: 600;
+  color: #c92a2a;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.2);
 }
 
 .subHeading {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 80px;
+  font-size: 19px;
+  text-align: left;
+  margin-bottom: 10px;
+  padding: 5%;
+  color: #868e96;
   font-family: "Montserrat", serif;
 }
 
+.subHeading2 {
+  font-size: 20px;
+  text-align: center;
+}
 .mobileImage {
   display: none;
 }
@@ -55,6 +64,68 @@
   color: white;
 }
 
+.AboutUs {
+  width: 100% !important;
+  height: 100%;
+  background-color: #222222;
+  color: #adb5bd;
+  padding: 4%;
+  font-size: 18px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+}
+.AboutUsVideo {
+  padding: 10%;
+
+  padding-top: 1%;
+}
+.AboutUs h1 {
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px #000000;
+  font-weight: 600;
+}
+.AboutDesc {
+  padding: 4%;
+}
+
+.working {
+  padding: 7%;
+  margin-top: 2%;
+  font-size: 19px;
+}
+.working h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #c92a2a;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.2);
+}
+.Cards {
+  font-size: 20px;
+  background-color: #dee2e6;
+}
+
+.FAQ {
+  padding: 5%;
+  background-color: #222222;
+  color: #adb5bd;
+  padding: 4%;
+  font-size: 18px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+}
+
+.FAQ h1 {
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px #000000;
+  font-weight: 600;
+}
+
+.FAQimg {
+  background-color: #c92a2a;
+  height: 450px;
+  margin: 0 !important ;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+}
 @media only screen and (max-width: 768px) {
   .imageContainer {
     display: none;
@@ -87,5 +158,8 @@
     height: auto;
     padding: 5px 10px;
     margin-top: 25px;
+  }
+  .AboutUsVideo {
+    width: 80% !important;
   }
 }
