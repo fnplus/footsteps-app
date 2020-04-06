@@ -106,7 +106,7 @@ export class login extends Component {
               <br />
               <br />
               <Row gutter={16}>
-                <Col span={8}>
+                <Col lg={8}>
                   <Card
                     title="1. Decide the topic you wish to learn"
                     bordered={false}
@@ -117,7 +117,7 @@ export class login extends Component {
                     ea commodo consequat.
                   </Card>
                 </Col>
-                <Col span={8}>
+                <Col lg={8}>
                   <Card title="2. Lorem ipsum dolor sit amet" bordered={false}>
                     onsectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -125,7 +125,7 @@ export class login extends Component {
                     ea commodo consequat.
                   </Card>
                 </Col>
-                <Col span={8}>
+                <Col lg={8}>
                   <Card title="3. Lorem ipsum dolor sit amet" bordered={false}>
                     onsectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna aliqua. Ut enim ad minim veniam,
