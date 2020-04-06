@@ -85,52 +85,51 @@ export class login extends Component {
         {/* How footsteps work */}
         <div className={styles.working}>
           <Row>
-            <Col sm={24} lg={17}>
+            <Col sm={24} lg={16}>
               <h1>How footsteps work?</h1>
               <p>
-                With the Footsteps app, we take a mentor/subject knowledge
-                expert first approach to solve the problem. The domain experts
-                save their learning journey with our app and browser extension &
-                make it available for everyone else to follow. Every resource is
-                called a 'footstep' (added in a chronological manner) and a
-                collection of footsteps makes up a learning path. The learner
-                can "fork" the learning path made by the expert and keep a track
-                of his progress. The app suggests resources & keeps an updated
-                list with users upvotes & collaborative filtering.
+                The internet is filled with a huge amount of resources and hence
+                it becomes difficult for a person to find the right resource
+                suited for his/her requirement. With footsteps, you can see the
+                exact path followed by an expert to reach his/her current
+                position. You can see the resources and materials that they had
+                referred in a chronological order.
+                <br />
+                <br />
+                Furthermore, footsteps can also be used as a personal progress
+                tracker for an individual. It would help him/her keep track of
+                the skills that he/she has acquired over time
               </p>
             </Col>
-            <Col sm={24} lg={7}>
+            <Col sm={24} lg={8}>
               <img src={require("../../images/figuringOut.png")} />
             </Col>
             <div className={styles.Cards}>
               <br />
               <br />
               <Row gutter={16}>
-                <Col span={8}>
-                  <Card
-                    title="1. Decide the topic you wish to learn"
-                    bordered={false}
-                  >
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat.
+                <Col span={8} className={styles.cardDesc}>
+                  <Card title=" - ONE - " bordered={false}>
+                    With the Footsteps app, we take a mentor/subject knowledge
+                    expert first approach to solve the problem. The domain
+                    experts save their learning journey with our app & make it
+                    available for everyone else to follow
                   </Card>
                 </Col>
                 <Col span={8}>
-                  <Card title="2. Lorem ipsum dolor sit amet" bordered={false}>
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat.
+                  <Card title=" - TWO -" bordered={false}>
+                    Every resource is called a 'footstep' and a collection of
+                    footsteps makes up a learning path. The learners can search
+                    for their topic of interest in the search bar and most
+                    recommended path to learn that topic shows up in the result
                   </Card>
                 </Col>
                 <Col span={8}>
-                  <Card title="3. Lorem ipsum dolor sit amet" bordered={false}>
-                    onsectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat.
+                  <Card title="- THREE  -" bordered={false}>
+                    The learner can "fork" the learning path made by the expert
+                    and keep a track of his progress. The app suggests resources
+                    and keeps an updated list with users upvotes & collaborative
+                    filtering.
                   </Card>
                 </Col>
               </Row>
@@ -148,24 +147,39 @@ export class login extends Component {
               <h1>
                 <b>FAQ</b> <br />
               </h1>
+              <b>Is footsteps a free/paid app ?</b>
+              <br />
+              Footsteps is completely free
+              <br />
+              <br />
+              <b>I am a beginner. Can I use footsteps ?</b>
+              <br />
+              Yes. Footsteps is benefital to people in all level (Beginners,
+              Intermediate and Advanced). It is also helpful for people who are
+              thinking of switching to a different tech stack
+              <br />
+              <br />
+              <b>Is footsteps avaliable offline ?</b>
+              <br />
+              As off now footsteps is not avaiable offline
+              <br />
+              <br />
+              <b>Other than footsteps web, what are the other options ?</b>
+              <br />
+              In addition to the website, footsteps also provides an option for
+              a from extension and a flutter app
+              <br />
+              <br />
               <b>
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium,{" "}
+                I liked the site and would love to contribute to it. How can I
+                get started ?
               </b>
               <br />
-              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut totam rem aperiam, eaque ipsa quae ab illo inventore
-              <br />
-              <br />
-              <b>
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium,{" "}
-              </b>
-              <br />
-              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut totam rem aperiam, eaque ipsa quae ab illo inventore
+              Footsteps has a vibrant community of developers. To get started
+              visit{" "}
+              <a href="https://github.com/fnplus/footsteps-app">
+                footsteps github
+              </a>
               <br />
               <br />
             </Col>
