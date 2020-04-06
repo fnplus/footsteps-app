@@ -1,6 +1,6 @@
 .login h1 {
   font-size: 40px;
-  color: #c92a2a;
+  color: #099268;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -64,7 +64,7 @@
 .working h1 {
   font-size: 40px;
   font-weight: 600;
-  color: #c92a2a;
+  color: #099268;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.2);
 }
 .Cards {
@@ -89,7 +89,7 @@
 }
 
 .FAQimg {
-  background-color: #c92a2a;
+  background-color: #099268;
   height: 450px;
   margin: 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
