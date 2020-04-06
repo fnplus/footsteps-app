@@ -101,10 +101,21 @@
     width: 90%;
   }
 
-  .heading {
+  .login h1 {
     text-align: center;
     margin: 5%;
   }
+
+  .login h2 {
+    text-align: center;
+    margin: 15px;
+  }
+
+  .image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .AboutUsVideo {
     width: 80%;
   }
