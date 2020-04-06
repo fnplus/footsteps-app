@@ -1,22 +1,101 @@
-.heading {
-  text-align: inherit;
+.login h1 {
+  font-size: 40px;
+  color: #c92a2a;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 }
 
+.login h3 {
+  text-align: center;
+  color: #495057;
+  padding: 7%;
+}
+
+.login p {
+  text-align: center;
+  color: #868e96;
+}
 .container {
   width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .image {
   width: 60%;
+  height: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
+/* About us section */
+.AboutUs {
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+  color: #adb5bd;
+  padding: 4%;
+  font-size: 18px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+}
+.AboutUsVideo {
+  padding: 10%;
+
+  padding-top: 1%;
+}
+.AboutUs h1 {
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px #000000;
+  font-weight: 600;
+}
+.AboutDesc {
+  padding: 4%;
+}
+
+/* Working of footsteps section */
+.working {
+  padding: 7%;
+  margin-top: 2%;
+  font-size: 19px;
+}
+.working h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #c92a2a;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.2);
+}
+.Cards {
+  font-size: 20px;
+  background-color: #dee2e6;
+}
+
+/* FAQ section */
+.FAQ {
+  padding: 5%;
+  background-color: #222222;
+  color: #adb5bd;
+  font-size: 18px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+}
+
+.FAQ h1 {
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px #000000;
+  font-weight: 600;
+}
+
+.FAQimg {
+  background-color: #c92a2a;
+  height: 450px;
+  margin: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
+}
+
+/* Media queries */
 @media only screen and (max-width: 768px) {
   .image {
     width: 90%;
@@ -25,5 +104,13 @@
   .heading {
     text-align: center;
     margin: 5%;
+  }
+  .AboutUsVideo {
+    width: 80%;
+  }
+  .FAQ,
+  .working,
+  .AboutUs {
+    font-size: 18px;
   }
 }
