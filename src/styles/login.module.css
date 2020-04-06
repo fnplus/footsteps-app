@@ -99,6 +99,8 @@
 @media only screen and (max-width: 768px) {
   .image {
     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .login h1 {
@@ -109,11 +111,6 @@
   .login h2 {
     text-align: center;
     margin: 15px;
-  }
-
-  .image {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .AboutUsVideo {
