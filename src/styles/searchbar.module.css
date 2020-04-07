@@ -14,14 +14,13 @@ input[type="search"]:focus {
   border: none;
   color: black;
   margin: 5px;
-  padding: 0 5px;
-  border: 2px solid #000;
-  background-color: black;
+  padding: 0 4px;
+  background-color: #029843;
   color: white;
   border-radius: 25px;
-  width: 140px;
+  width: 150px;
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
 }
 

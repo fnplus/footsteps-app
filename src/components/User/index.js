@@ -11,7 +11,7 @@ import styles from "../../styles/user.module.css"
 import LearningPaths from "./learningPaths"
 
 import UserContext from "../../context/userContext"
-import UserProgress from './userProgressBar';
+import UserProgress from "./userProgressBar"
 
 export class user extends Component {
   static contextType = UserContext
@@ -34,53 +34,53 @@ export class user extends Component {
             <div className={styles.social}>
               <Row className={styles.social_row}>
                 {data.github !== "" &&
-                  data.github !== null &&
-                  data.github !== "https://github.com/" ? (
-                    <Col span={6}>
-                      <GithubFilled
-                        onClick={() => window.open(data.github)}
-                        className={styles.icon}
-                      />
-                    </Col>
-                  ) : (
-                    ""
-                  )}
+                data.github !== null &&
+                data.github !== "https://github.com/" ? (
+                  <Col span={6}>
+                    <GithubFilled
+                      onClick={() => window.open(data.github)}
+                      className={styles.icon}
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
                 {data.linkedin !== "" &&
-                  data.linkedin !== null &&
-                  data.linkedin !== "https://linkedin.com/" ? (
-                    <Col span={6}>
-                      <LinkedinFilled
-                        onClick={() => window.open(data.linkedin)}
-                        className={styles.icon}
-                      />
-                    </Col>
-                  ) : (
-                    ""
-                  )}
+                data.linkedin !== null &&
+                data.linkedin !== "https://linkedin.com/" ? (
+                  <Col span={6}>
+                    <LinkedinFilled
+                      onClick={() => window.open(data.linkedin)}
+                      className={styles.icon}
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
                 {data.twitter !== "" &&
-                  data.twitter !== null &&
-                  data.twitter !== "https://twitter.com/" ? (
-                    <Col span={6}>
-                      <TwitterOutlined
-                        onClick={() => window.open(data.twitter)}
-                        className={styles.icon}
-                      />
-                    </Col>
-                  ) : (
-                    ""
-                  )}
+                data.twitter !== null &&
+                data.twitter !== "https://twitter.com/" ? (
+                  <Col span={6}>
+                    <TwitterOutlined
+                      onClick={() => window.open(data.twitter)}
+                      className={styles.icon}
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
                 {data.facebook !== "" &&
-                  data.facebook !== null &&
-                  data.facebook !== "https://facebook.com/" ? (
-                    <Col span={6}>
-                      <FacebookFilled
-                        onClick={() => window.open(data.facebook)}
-                        className={styles.icon}
-                      />
-                    </Col>
-                  ) : (
-                    ""
-                  )}
+                data.facebook !== null &&
+                data.facebook !== "https://facebook.com/" ? (
+                  <Col span={6}>
+                    <FacebookFilled
+                      onClick={() => window.open(data.facebook)}
+                      className={styles.icon}
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
               </Row>
             </div>
           </div>
@@ -100,12 +100,11 @@ export class user extends Component {
                   })}
                 </div>
               ) : (
-                  <div></div>
-                )}
+                <div></div>
+              )}
             </div>
             <Row className={styles.userInfo}>
               <UserProgress data={data} type="desktop"></UserProgress>
-
             </Row>
             <Row className={styles.userInfo}>
               <Col span={8}>
@@ -162,9 +161,8 @@ export class user extends Component {
                   <div className={styles.text}>Learning Paths</div>
                 </Col>
               </Row>
-              <Row >
+              <Row>
                 <UserProgress data={data} type="mobile"></UserProgress>
-
               </Row>
             </div>
 
@@ -182,59 +180,59 @@ export class user extends Component {
                 })}
               </div>
             ) : (
-                <div></div>
-              )}
+              <div></div>
+            )}
 
             <div className={styles.social}>
               <Row className={styles.social_row}>
                 {data.github !== "" &&
-                  data.github !== null &&
-                  data.github !== "https://github.com/" ? (
-                    <Col span={6}>
-                      <GithubFilled
-                        onClick={() => window.open(data.github)}
-                        className={styles.icon}
-                      />
-                    </Col>
-                  ) : (
-                    ""
-                  )}
+                data.github !== null &&
+                data.github !== "https://github.com/" ? (
+                  <Col span={6}>
+                    <GithubFilled
+                      onClick={() => window.open(data.github)}
+                      className={styles.icon}
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
                 {data.linkedin !== "" &&
-                  data.linkedin !== null &&
-                  data.linkedin !== "https://linkedin.com/" ? (
-                    <Col span={6}>
-                      <LinkedinFilled
-                        onClick={() => window.open(data.linkedin)}
-                        className={styles.icon}
-                      />
-                    </Col>
-                  ) : (
-                    ""
-                  )}
+                data.linkedin !== null &&
+                data.linkedin !== "https://linkedin.com/" ? (
+                  <Col span={6}>
+                    <LinkedinFilled
+                      onClick={() => window.open(data.linkedin)}
+                      className={styles.icon}
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
                 {data.twitter !== "" &&
-                  data.twitter !== null &&
-                  data.twitter !== "https://twitter.com/" ? (
-                    <Col span={6}>
-                      <TwitterOutlined
-                        onClick={() => window.open(data.twitter)}
-                        className={styles.icon}
-                      />
-                    </Col>
-                  ) : (
-                    ""
-                  )}
+                data.twitter !== null &&
+                data.twitter !== "https://twitter.com/" ? (
+                  <Col span={6}>
+                    <TwitterOutlined
+                      onClick={() => window.open(data.twitter)}
+                      className={styles.icon}
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
                 {data.facebook !== "" &&
-                  data.facebook !== null &&
-                  data.facebook !== "https://facebook.com/" ? (
-                    <Col span={6}>
-                      <FacebookFilled
-                        onClick={() => window.open(data.facebook)}
-                        className={styles.icon}
-                      />
-                    </Col>
-                  ) : (
-                    ""
-                  )}
+                data.facebook !== null &&
+                data.facebook !== "https://facebook.com/" ? (
+                  <Col span={6}>
+                    <FacebookFilled
+                      onClick={() => window.open(data.facebook)}
+                      className={styles.icon}
+                    />
+                  </Col>
+                ) : (
+                  ""
+                )}
               </Row>
             </div>
           </div>
