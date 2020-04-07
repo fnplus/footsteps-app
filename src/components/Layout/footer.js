@@ -18,7 +18,7 @@ export class footer extends Component {
               className={styles.link}
               target="_blank"
               rel="noopener noreferrer"
-              href="https://fnplus.tech"
+              href="https://github.com/fnplus"
             >
               Fnplus
             </a>
