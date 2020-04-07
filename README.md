@@ -115,6 +115,22 @@ We welcome suggestions for improving our docs. See the [“how to contribute”]
 
 **Start Learning Gatsby: [Follow the Tutorial](https://gatsbyjs.org/tutorial/) · [Read the Docs](https://gatsbyjs.org/docs/)**
 
+
+## 👨 Project Admin
+
+- Abhishek Uniyal <p>[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/xlogix) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://www.linkedin.com/in/abhishek-uniyal)</p>
+
+## 👬  Mentors
+| Name | Point of Contact |
+| ------- | ------- |
+| Dev Daksan     |      <p float = "center">[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/R3l3ntl3ss) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://in.linkedin.com/in/dev-daksan)</p> |
+| Praveen Kumar  |      <p float = "center">[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/praveenscience) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://uk.linkedin.com/in/praveentech)</p> |
+| Sudipto Ghosh  |   <p float = "center">[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/pydevsg) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://www.linkedin.com/in/sudipto-ghosh-48a71a161/)</p> |
+| Tarun Nagpal   |   <p float = "center">[<img src="https://img.icons8.com/color/32/000000/github-2.png" display = "inline-block">](https://github.com/tarun-nagpal-github) [<img src="https://img.icons8.com/doodle/32/000000/linkedin-circled.png" display = "inline-block">](https://www.linkedin.com/in/tarunnagpal1/)</p>   |
+
+Feel free to ask your queries!! 🙌
+
+
 ## :memo: License
 
 Licensed under the [GPL v3 License](./LICENSE).
