@@ -17,10 +17,11 @@
   font-size: 50px;
   text-align: center;
   margin-bottom: 10px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .subHeading {
+  color: #029843;
   font-size: 20px;
   text-align: center;
   margin-bottom: 80px;
