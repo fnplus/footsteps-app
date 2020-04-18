@@ -4,7 +4,7 @@ import gql from "graphql-tag"
 
 import { v4 as uuidv4 } from "uuid"
 import { Row, Col, Switch } from "antd"
-import { WithContext as ReactTags } from "react-tag-input"
+import { WithContext as ReactTags } from "react-tag-autocomplete"
 import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
 import "firebase/storage"
@@ -26,7 +26,11 @@ export class addPath extends Component {
     err_msg: "",
     user_id: "",
     tags: "",
-    tags_array: [],
+    tags_array: [
+      { id: 1, name: "HTML" },
+      { id: 2, name: "CSS" },
+      { id: 3, name: "Javascript" },
+    ],
     isUploading: false,
     progress: 0,
     isPrivate: false,
@@ -41,7 +45,7 @@ export class addPath extends Component {
     }
   }
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     const target = e.target
     this.setState({
       [target.name]: target.value,
@@ -49,18 +53,18 @@ export class addPath extends Component {
   }
 
   addNewFootstep = () => {
-    this.setState(state => {
+    this.setState((state) => {
       let new_footstep = { id: uuidv4() }
 
       return { footsteps: [...state.footsteps, new_footstep] }
     })
   }
 
-  updateFootstepContent = newFootstep => {
+  updateFootstepContent = (newFootstep) => {
     let { footsteps } = this.state
 
     let footstepToReplaceIndex = footsteps.findIndex(
-      footstep => footstep.id === newFootstep.id
+      (footstep) => footstep.id === newFootstep.id
     )
 
     footsteps[footstepToReplaceIndex] = newFootstep
@@ -70,9 +74,9 @@ export class addPath extends Component {
     })
   }
 
-  removeNewFootstep = id => {
+  removeNewFootstep = (id) => {
     let removed_footstep = this.state.footsteps.filter(
-      footstep => footstep.id !== id
+      (footstep) => footstep.id !== id
     )
 
     this.setState({
@@ -151,22 +155,22 @@ export class addPath extends Component {
   }
 
   // Handle Private Paths of User
-  handlePrivatePath = val => {
+  handlePrivatePath = (val) => {
     this.setState({ isPrivate: val })
   }
 
   // Tag Handling Functions
-  handleTagDelete = i => {
+  handleTagDelete = (i) => {
     const { tags_array } = this.state
     this.setState({
       tags_array: tags_array.filter((_tag, index) => index !== i),
     })
   }
 
-  handleTagAddition = tag => {
+  handleTagAddition = (tag) => {
     if (this.state.tags_array.length < 10) {
       this.setState(
-        state => ({ tags_array: [...state.tags_array, tag] }),
+        (state) => ({ tags_array: [...state.tags_array, tag] }),
         () => {
           let tags = ""
 
@@ -202,12 +206,12 @@ export class addPath extends Component {
             isPrivate: this.state.isPrivate,
           },
         })
-        .then(res => {
+        .then((res) => {
           let path_id = res.data.insert_Learning_Paths.returning[0].id
 
           let { footsteps } = this.state
 
-          footsteps.forEach(footstep => {
+          footsteps.forEach((footstep) => {
             delete footstep.id
             footstep.learning_path = path_id
           })
@@ -228,21 +232,21 @@ export class addPath extends Component {
   // Image Upload Functions
 
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 })
-  handleProgress = progress => this.setState({ progress })
+  handleProgress = (progress) => this.setState({ progress })
 
-  handleUploadError = error => {
+  handleUploadError = (error) => {
     this.setState({ isUploading: false })
     console.error(error)
   }
 
-  handleUploadSuccess = filename => {
+  handleUploadSuccess = (filename) => {
     this.setState({ icon: filename, progress: 100, isUploading: false })
     firebase
       .storage()
       .ref("Path")
       .child(filename)
       .getDownloadURL()
-      .then(url => this.setState({ icon_url: url }))
+      .then((url) => this.setState({ icon_url: url }))
   }
 
   render() {

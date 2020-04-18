@@ -3,7 +3,7 @@ import gql from "graphql-tag"
 import { v4 as uuidv4 } from "uuid"
 import { ArrowRightOutlined } from "@ant-design/icons"
 import { Row, Col } from "antd"
-import { WithContext as ReactTags } from "react-tag-input"
+import { WithContext as ReactTags } from "react-tag-autocomplete"
 
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -22,7 +22,11 @@ export class signUp extends Component {
     about: "",
     bio: "",
     skills: "",
-    skills_array: [],
+    skills_array: [
+      { id: 1, name: "HTML" },
+      { id: 2, name: "CSS" },
+      { id: 3, name: "Javascript" },
+    ],
     github: "https://github.com/",
     linkedin: "https://linkedin.com/in/",
     facebook: "https://facebook.com/",
@@ -47,9 +51,9 @@ export class signUp extends Component {
       .query({
         query: GET_ALL_USERNAMES_QUERY_APOLLO,
       })
-      .then(res => {
+      .then((res) => {
         let registered_usernames = []
-        res.data.Users.map(user => {
+        res.data.Users.map((user) => {
           registered_usernames.push(user.username)
           return 0
         })
@@ -81,24 +85,24 @@ export class signUp extends Component {
           twitter: data.twitter,
         },
       })
-      .then(res => {
+      .then((res) => {
         this.props.updateUserId(res.data.insert_Users.returning[0].id, true)
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("Got an error", err)
         this.props.updateUserId("", false)
         firebase.auth().signOut()
       })
   }
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     const target = e.target
     this.setState({
       [target.name]: target.value,
     })
   }
 
-  urlValidator = e => {
+  urlValidator = (e) => {
     let check = e.target.value.match(
       /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
     )
@@ -112,7 +116,7 @@ export class signUp extends Component {
     }
   }
 
-  handleUsernameChange = e => {
+  handleUsernameChange = (e) => {
     let enteredUsername = e.target.value
 
     if (enteredUsername.match("^[a-z0-9_]*$") && enteredUsername.length <= 15) {
@@ -184,16 +188,16 @@ export class signUp extends Component {
     }
   }
 
-  handleTagDelete = i => {
+  handleTagDelete = (i) => {
     const { skills_array } = this.state
     this.setState({
       skills_array: skills_array.filter((tag, index) => index !== i),
     })
   }
 
-  handleTagAddition = tag => {
+  handleTagAddition = (tag) => {
     if (this.state.skills_array.length < 10) {
-      this.setState(state => ({ skills_array: [...state.skills_array, tag] }))
+      this.setState((state) => ({ skills_array: [...state.skills_array, tag] }))
     }
   }
 
