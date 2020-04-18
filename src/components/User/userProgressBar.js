@@ -4,6 +4,7 @@ const { Step } = Steps
 
 const UserProgress = ({ data, type }) => {
   console.log(data)
+  console.log("https://footsteps.dev/user/", data.username)
   const { about, skills, linkedin, github, facebook } = data
 
   const progress = [about, skills, github, linkedin, facebook]
@@ -27,6 +28,7 @@ const UserProgress = ({ data, type }) => {
   else
     return (
       <div style={type === "mobile" ? { marginTop: "10px" } : {}}>
+        <p>https://footsteps.dev/user/{data.username}</p>
         <h3>Profile Strength</h3>
         {type === "mobile" ? (
           <>
