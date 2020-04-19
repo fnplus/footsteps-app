@@ -5,7 +5,7 @@ import { navigate } from "gatsby"
 import { CloseCircleOutlined } from "@ant-design/icons"
 import { Row, Col, Popconfirm, Switch } from "antd"
 import { v4 as uuidv4 } from "uuid"
-import { WithContext as ReactTags } from "react-tag-autocomplete"
+import ReactTags from "react-tag-autocomplete"
 import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
 import "firebase/storage"
@@ -27,10 +27,13 @@ export class EditPath extends Component {
     err_msg: "",
     user_id: "",
     tags: "",
-    tags_array: [
+    tags_array: [],
+    suggestions: [
       { id: 1, name: "HTML" },
       { id: 2, name: "CSS" },
-      { id: 3, name: "Javascript" },
+      { id: 3, name: "Bootstrap" },
+      { id: 4, name: "ReactJS" },
+      { id: 5, name: "Javascript" },
     ],
     isUploading: false,
     progress: 0,
@@ -377,6 +380,7 @@ export class EditPath extends Component {
             <div className={addStyles.input_label}>Tags</div>
             <ReactTags
               tags={this.state.tags_array}
+              suggestions={this.state.suggestions}
               placeholder={"Enter relevant tags"}
               delimiters={[188, 13]}
               handleDelete={this.handleTagDelete}
