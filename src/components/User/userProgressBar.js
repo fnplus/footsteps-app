@@ -28,7 +28,6 @@ const UserProgress = ({ data, type }) => {
   else
     return (
       <div style={type === "mobile" ? { marginTop: "10px" } : {}}>
-        <p>https://footsteps.dev/user/{data.username}</p>
         <h3>Profile Strength</h3>
         {type === "mobile" ? (
           <>

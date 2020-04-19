@@ -27,6 +27,10 @@ export class user extends Component {
               {data.first_name} {data.last_name}
             </h1>
             <h2>{data.username}</h2>
+            <h3>
+              Public Profile Link :
+              <a>https://footsteps.dev/user/{data.username}</a>
+            </h3>
             <h3>{data.bio}</h3>
           </div>
           <div className={styles.profileImgContainer}>
