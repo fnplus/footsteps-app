@@ -12,7 +12,7 @@ export class learningPaths extends Component {
   componentDidMount() {
     if (typeof window !== "undefined") {
       if (localStorage.getItem("userId") === this.props.user_id) {
-        this.setState(oldState => ({
+        this.setState((oldState) => ({
           show_edit: !oldState.show_edit,
         }))
       }

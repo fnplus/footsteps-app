@@ -3,7 +3,7 @@ import gql from "graphql-tag"
 import { v4 as uuidv4 } from "uuid"
 import { ArrowRightOutlined } from "@ant-design/icons"
 import { Row, Col } from "antd"
-import { WithContext as ReactTags } from "react-tag-autocomplete"
+import ReactTags from "react-tag-autocomplete"
 
 import firebase from "firebase/app"
 import "firebase/auth"
@@ -22,10 +22,13 @@ export class signUp extends Component {
     about: "",
     bio: "",
     skills: "",
-    skills_array: [
+    skills_array: [],
+    suggestions: [
       { id: 1, name: "HTML" },
       { id: 2, name: "CSS" },
-      { id: 3, name: "Javascript" },
+      { id: 3, name: "Bootstrap" },
+      { id: 4, name: "ReactJS" },
+      { id: 5, name: "Javascript" },
     ],
     github: "https://github.com/",
     linkedin: "https://linkedin.com/in/",
@@ -358,6 +361,7 @@ export class signUp extends Component {
               </div>
               <ReactTags
                 tags={this.state.skills_array}
+                suggestions={this.state.suggestions}
                 placeholder={"Enter your Skills"}
                 delimiters={[188, 13]}
                 handleDelete={this.handleTagDelete}

@@ -13,7 +13,7 @@ function NavMenu() {
   const { user } = useContext(UserContext)
 
   const expandMenu = () => {
-    setExpand(expand => !expand)
+    setExpand((expand) => !expand)
   }
 
   const profileClick = () => {

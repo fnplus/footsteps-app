@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { CameraFilled } from "@ant-design/icons"
 import { Row, Col } from "antd"
 import FileUploader from "react-firebase-file-uploader"
-import { WithContext as ReactTags } from "react-tag-autocomplete"
+import ReactTags from "react-tag-autocomplete"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
 
@@ -26,10 +26,13 @@ export default class Settings extends Component {
     about: "",
     bio: "",
     skills: "",
-    skills_array: [
+    skills_array: [],
+    suggestions: [
       { id: 1, name: "HTML" },
       { id: 2, name: "CSS" },
-      { id: 3, name: "Javascript" },
+      { id: 3, name: "Bootstrap" },
+      { id: 4, name: "ReactJS" },
+      { id: 5, name: "Javascript" },
     ],
     // social
     facebook: "",
@@ -332,6 +335,7 @@ export default class Settings extends Component {
             <div className={styles.input_label}>Skills</div>
             <ReactTags
               tags={this.state.skills_array}
+              suggestions={this.state.suggestions}
               placeholder={"Enter your skills"}
               delimiters={[188, 13]}
               handleDelete={this.handleTagDelete}

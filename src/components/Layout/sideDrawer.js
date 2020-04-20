@@ -11,7 +11,7 @@ export function header({ show = false }) {
   const [visible, setVisible] = useState(false)
 
   const showDrawer = () => {
-    setVisible(visible => !visible)
+    setVisible((visible) => !visible)
   }
 
   const onClose = () => {
