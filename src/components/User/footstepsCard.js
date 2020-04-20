@@ -1,6 +1,8 @@
 import React, { Component } from "react"
-import { RightOutlined } from "@ant-design/icons"
-import { Row, Col } from "antd"
+import { RightOutlined , CheckOutlined } from "@ant-design/icons"
+import { Row, Col , Button, Tooltip } from "antd"
+
+
 
 import styles from "../../styles/footsteps.module.css"
 
@@ -245,6 +247,21 @@ export class footstepsCard extends Component {
             <RightOutlined />
           </Col>
         </Row>
+        <Row>
+          <Col span={24}>
+            <Tooltip title="Mark as done!">
+              <Button
+                type="default"
+                size="large"
+                className={styles.doneButton}
+                shape="circle"
+              >
+                <CheckOutlined style={{ fontSize: "20px", color: "#029843" }} />
+              </Button>
+            </Tooltip>
+          </Col>
+        </Row>
+
         <div style={{ display: "inlineBlock" }}>
           <div className={styles.timelineDot}></div>
           <div

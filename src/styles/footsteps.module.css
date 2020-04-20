@@ -62,8 +62,14 @@
 }
 
 .typeContainer {
-  height: 30px;
+  height: 23px;
   padding: 0 30px;
+}
+
+.doneButton {
+  display: block;
+  float: right;
+  background-color: white;
 }
 
 .typeImage {
