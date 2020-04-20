@@ -4,7 +4,6 @@ const { Step } = Steps
 
 const UserProgress = ({ data, type }) => {
   console.log(data)
-  console.log("https://footsteps.dev/user/", data.username)
   const { about, skills, linkedin, github, facebook } = data
 
   const progress = [about, skills, github, linkedin, facebook]

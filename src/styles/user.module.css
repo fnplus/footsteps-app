@@ -135,6 +135,21 @@
   min-height: 180px;
 }
 
+.profileAlign {
+  display: inline-block;
+}
+
+.profileLink {
+  display: inline-block;
+  margin-left: 100px;
+  padding: 20px;
+  background-color: #e7e7e7;
+  color: black;
+  float: right;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
 .skills {
   margin-top: 10px;
 }
@@ -204,9 +219,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-
-  
-
   .mobileProfile {
     display: block;
   }
