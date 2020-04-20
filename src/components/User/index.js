@@ -18,6 +18,7 @@ export class user extends Component {
 
   render() {
     const data = this.context.user
+    var profileLink = "https://footsteps.dev/user/" + data.username
 
     return (
       <div className={styles.container}>
@@ -86,7 +87,10 @@ export class user extends Component {
           </div>
           <div className={styles.profileDetail}>
             <div className={styles.profileAbout}>
-              <h1>About</h1>
+              <h1 className={styles.profileAlign}>About</h1>
+              <a href={profileLink} className={styles.profileLink}>
+                Profile Link
+              </a>
               <p className={styles.bioContent}>{data.about}</p>
               {data.skills !== null ? (
                 <div className={styles.skills}>
