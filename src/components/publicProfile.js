@@ -35,7 +35,7 @@ export class publicProfile extends Component {
       <Query
         query={USERS_QUERY_APOLLO}
         variables={{ username: this.props.username }}
-        onCompleted={data => {
+        onCompleted={(data) => {
           this.setState({ data: data.User[0] })
         }}
       >

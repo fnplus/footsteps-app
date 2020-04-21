@@ -37,7 +37,7 @@ export class addFootstep extends Component {
     this.props.update(newFootstepContent)
   }
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     const target = e.target
     this.setState(
       {
@@ -49,7 +49,7 @@ export class addFootstep extends Component {
     )
   }
 
-  handleTypeChange = value => {
+  handleTypeChange = (value) => {
     this.setState(
       {
         type: value,
@@ -60,7 +60,7 @@ export class addFootstep extends Component {
     )
   }
 
-  handleLevelChange = value => {
+  handleLevelChange = (value) => {
     this.setState(
       {
         level: value,
@@ -74,21 +74,21 @@ export class addFootstep extends Component {
   // Image Upload Functions
 
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 })
-  handleProgress = progress => this.setState({ progress })
+  handleProgress = (progress) => this.setState({ progress })
 
-  handleUploadError = error => {
+  handleUploadError = (error) => {
     this.setState({ isUploading: false })
     console.error(error)
   }
 
-  handleUploadSuccess = filename => {
+  handleUploadSuccess = (filename) => {
     this.setState({ icon: filename, progress: 100, isUploading: false })
     firebase
       .storage()
       .ref("Footsteps")
       .child(filename)
       .getDownloadURL()
-      .then(url =>
+      .then((url) =>
         this.setState({ icon_url: url }, () => {
           this.updateFootstepArray()
         })

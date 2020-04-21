@@ -48,24 +48,24 @@ export class SearchResult extends Component {
     })
   }
 
-  onSelectChange = value => {
+  onSelectChange = (value) => {
     if (value === "a") {
       this.setState({
         currFootsteps: this.props.footsteps,
       })
     } else if (value === "0") {
       let tempArray = this.props.footsteps.filter(
-        footstep => footstep.level === 0
+        (footstep) => footstep.level === 0
       )
       this.setState({ currFootsteps: tempArray })
     } else if (value === "1") {
       let tempArray = this.props.footsteps.filter(
-        footstep => footstep.level === 1
+        (footstep) => footstep.level === 1
       )
       this.setState({ currFootsteps: tempArray })
     } else if (value === "2") {
       let tempArray = this.props.footsteps.filter(
-        footstep => footstep.level === 2
+        (footstep) => footstep.level === 2
       )
       this.setState({ currFootsteps: tempArray })
     }

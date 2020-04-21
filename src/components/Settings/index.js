@@ -4,7 +4,7 @@ import { client } from "../../apollo/client"
 import Loader from "../Layout/loader"
 import Settings from "./settings"
 
-export default function() {
+export default function () {
   const [state, setState] = useState({
     user_id: "",
     loading: true,
@@ -21,7 +21,7 @@ export default function() {
             id: user_id,
           },
         })
-        .then(res => {
+        .then((res) => {
           const data = res.data.Users[0]
           setState({
             user_id,

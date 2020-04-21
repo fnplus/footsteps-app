@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { CameraFilled } from "@ant-design/icons"
 import { Row, Col } from "antd"
 import FileUploader from "react-firebase-file-uploader"
-import { WithContext as ReactTags } from "react-tag-input"
+import ReactTags from "react-tag-autocomplete"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
 
@@ -27,6 +27,13 @@ export default class Settings extends Component {
     bio: "",
     skills: "",
     skills_array: [],
+    suggestions: [
+      { id: 1, name: "HTML" },
+      { id: 2, name: "CSS" },
+      { id: 3, name: "Bootstrap" },
+      { id: 4, name: "ReactJS" },
+      { id: 5, name: "Javascript" },
+    ],
     // social
     facebook: "",
     github: "",
@@ -56,7 +63,7 @@ export default class Settings extends Component {
       linkedin,
     } = this.props.data
 
-    let skills_array = skills.split(",").map(skill => ({
+    let skills_array = skills.split(",").map((skill) => ({
       id: skill,
       text: skill,
     }))
@@ -95,14 +102,14 @@ export default class Settings extends Component {
     })
   }
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     const { name, value } = e.target
     this.setState({
       [name]: value,
     })
   }
 
-  urlValidator = e => {
+  urlValidator = (e) => {
     let check = e.target.value.match(
       /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
     )
@@ -120,26 +127,26 @@ export default class Settings extends Component {
 
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 })
 
-  handleProgress = progress => this.setState({ progress })
+  handleProgress = (progress) => this.setState({ progress })
 
-  handleUploadError = error => {
+  handleUploadError = (error) => {
     this.setState({ isUploading: false })
     console.error(error)
   }
 
-  handleUploadSuccess = filename => {
+  handleUploadSuccess = (filename) => {
     this.setState({ pic: filename, progress: 100, isUploading: false })
     firebase
       .storage()
       .ref("Profile_pic")
       .child(filename)
       .getDownloadURL()
-      .then(url => this.setState({ profile_pic: url }))
+      .then((url) => this.setState({ profile_pic: url }))
   }
 
   // Tag Handling Functions
 
-  getSkillsFromSkillsArray = skills_array => {
+  getSkillsFromSkillsArray = (skills_array) => {
     let skills = ""
     skills_array.forEach((skill, i) => {
       if (i !== this.state.skills_array.length - 1) {
@@ -152,7 +159,7 @@ export default class Settings extends Component {
   }
 
   // Avoid unnecessary setState calls to avoid unnecessary rerenders
-  handleTagDelete = i => {
+  handleTagDelete = (i) => {
     let { skills_array } = this.state
     skills_array = skills_array.filter((_tag, index) => index !== i)
     const skills = this.getSkillsFromSkillsArray(skills_array)
@@ -163,7 +170,7 @@ export default class Settings extends Component {
   }
 
   // Avoid unnecessary rerenders
-  handleTagAddition = skill => {
+  handleTagAddition = (skill) => {
     let { skills_array } = this.state
 
     if (skills_array.length < 10) {
@@ -215,7 +222,7 @@ export default class Settings extends Component {
             profile_pic,
           },
         })
-        .then(res => {
+        .then((res) => {
           alert("Successfully Updated Profile")
           navigate("/")
         })
@@ -328,6 +335,7 @@ export default class Settings extends Component {
             <div className={styles.input_label}>Skills</div>
             <ReactTags
               tags={this.state.skills_array}
+              suggestions={this.state.suggestions}
               placeholder={"Enter your skills"}
               delimiters={[188, 13]}
               handleDelete={this.handleTagDelete}

@@ -8,14 +8,14 @@ export class searchbar extends Component {
     error: false,
   }
 
-  updateQuery = e => {
+  updateQuery = (e) => {
     this.setState({
       query: e.target.value,
       error: false,
     })
   }
 
-  pressEnter = e => {
+  pressEnter = (e) => {
     if (e.key === "Enter") {
       this.performSearch()
     }

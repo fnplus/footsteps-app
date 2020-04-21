@@ -35,7 +35,7 @@ export class layout extends Component {
       firebase.initializeApp(firebaseConfig)
     }
 
-    this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
+    this.unregisterAuthObserver = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         client
           .query({
@@ -44,7 +44,7 @@ export class layout extends Component {
               email: firebase.auth().currentUser.email,
             },
           })
-          .then(response => {
+          .then((response) => {
             if (response.data.Users.length === 0) {
               this.setState({ isSignedIn: false, signUp: true })
             } else {
@@ -64,7 +64,7 @@ export class layout extends Component {
     })
   }
 
-  updateUser = newUser => {
+  updateUser = (newUser) => {
     this.setState({
       user: newUser,
     })
