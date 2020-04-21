@@ -1,6 +1,10 @@
 import React, { Component } from "react"
-import  {RightOutlined , CheckOutlined}  from "@ant-design/icons"
-import  {Row, Col , Button, Tooltip}  from "antd"
+import  CheckOutlined  from "@ant-design/icons"
+import  RightOutlined  from "@ant-design/icons"
+import  Row  from "antd"
+import  Col  from "antd"
+import  Button  from "antd"
+import  Tooltip from "antd"
 
 
 
