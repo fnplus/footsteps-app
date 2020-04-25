@@ -1,12 +1,6 @@
 import React, { Component } from "react"
-import  CheckOutlined  from "@ant-design/icons"
-import  RightOutlined  from "@ant-design/icons"
-import  Row  from "antd"
-import  Col  from "antd"
-import  Button  from "antd"
-import  Tooltip from "antd"
-
-
+import CheckOutlined, RightOutlined from "@ant-design/icons"
+import { Row, Col, Button, Tooltip } from "antd"
 
 import styles from "../../styles/footsteps.module.css"
 
@@ -143,8 +137,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.state.video ? (
               <img
@@ -153,8 +147,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.state.blog ? (
               <img
@@ -163,8 +157,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.state.course ? (
               <img
@@ -173,8 +167,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.state.plan ? (
               <img
@@ -183,8 +177,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.state.quiz ? (
               <img
@@ -193,8 +187,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.state.audio ? (
               <img
@@ -203,8 +197,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.state.page ? (
               <img
@@ -213,8 +207,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
 
             {this.state.book ? (
               <img
@@ -223,8 +217,8 @@ export class footstepsCard extends Component {
                 alt=""
               />
             ) : (
-              ""
-            )}
+                ""
+              )}
           </Col>
           <Col className={styles.typeTitle} span={20}>
             {this.state.resourceTitle}
