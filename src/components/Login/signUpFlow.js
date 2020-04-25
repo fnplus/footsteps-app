@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react"
 import gql from "graphql-tag"
 import { v4 as uuidv4 } from "uuid"
@@ -98,11 +99,30 @@ export class signUp extends Component {
       })
   }
 
+  emailValidator = (e) => {
+    let check = e.target.value.match(
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    )
+    if (check == null) {
+      alert("The Email ID entered is not valid")
+    } else {
+      const target = e.target
+      this.setState({
+        [target.name]: target.value,
+      })
+    }
+  }
+
   handleInputChange = (e) => {
-    const target = e.target
-    this.setState({
-      [target.name]: target.value,
-    })
+    let check = e.target.value.match(/^[a-zA-Z][a-zA-Z\\s]+$/)
+    if (check == null) {
+      alert("The text entered is not valid")
+    } else {
+      const target = e.target
+      this.setState({
+        [target.name]: target.value,
+      })
+    }
   }
 
   urlValidator = (e) => {
@@ -253,7 +273,7 @@ export class signUp extends Component {
                   className={styles.input}
                   name="email"
                   value={this.state.email}
-                  onChange={this.handleInputChange}
+                  onChange={this.emailValidator}
                   placeholder="Email ID"
                   disabled
                 />
