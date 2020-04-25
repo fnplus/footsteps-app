@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import CheckOutlined, RightOutlined from "@ant-design/icons"
+import { CheckOutlined, RightOutlined } from "@ant-design/icons"
 import { Row, Col, Button, Tooltip } from "antd"
 
 import styles from "../../styles/footsteps.module.css"
