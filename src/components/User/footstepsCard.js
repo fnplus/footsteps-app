@@ -1,8 +1,6 @@
 import React, { Component } from "react"
-import { RightOutlined , CheckOutlined } from "@ant-design/icons"
-import { Row, Col , Button, Tooltip } from "antd"
-
-
+import { RightOutlined, CheckCircleFilled } from "@ant-design/icons"
+import { Row, Col, Button, Tooltip } from "antd"
 
 import styles from "../../styles/footsteps.module.css"
 
@@ -126,7 +124,26 @@ export class footstepsCard extends Component {
         <img className={styles.icon} src={data.resource_icon} alt="" />
 
         <div className={styles.detailsContainer}>
-          <div className={styles.title}>{data.title}</div>
+          <Row>
+            <Col span={20}>
+              <div className={styles.title}>{data.title}</div>
+            </Col>
+            <Col span={4}>
+              <Tooltip title="Mark as Done!">
+                <Button
+                  className={styles.doneButton}
+                  type="ghost"
+                  size="large"
+                  shape="circle"
+                  icon={
+                    <CheckCircleFilled
+                      style={{ fontSize: "30px", color: "#33c572" }}
+                    />
+                  }
+                ></Button>
+              </Tooltip>
+            </Col>
+          </Row>
           <div className={styles.description}>{data.description}</div>
         </div>
 
@@ -245,20 +262,6 @@ export class footstepsCard extends Component {
           </Col>
           <Col span={8} className={styles.linkArrow}>
             <RightOutlined />
-          </Col>
-        </Row>
-        <Row>
-          <Col span={24}>
-            <Tooltip title="Mark as done!">
-              <Button
-                type="default"
-                size="large"
-                className={styles.doneButton}
-                shape="circle"
-              >
-                <CheckOutlined style={{ fontSize: "20px", color: "#029843" }} />
-              </Button>
-            </Tooltip>
           </Col>
         </Row>
 
