@@ -45,7 +45,7 @@
     "antd": "^4.1.1",
     "apollo-boost": "^0.4.7",
     "apollo-link-http": "^1.5.16",
-    "firebase": "^7.14.1",
+    "firebase": "^7.14.2",
     "gatsby": "^2.21.5",
     "gatsby-cli": "^2.12.5",
     "gatsby-plugin-create-client-paths": "^2.3.0",
