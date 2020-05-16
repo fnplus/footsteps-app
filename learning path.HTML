@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html> 
+      
+<head> 
+    <title> 
+        Create an HTML button that 
+        acts like a link 
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/Version5.13.0/css/all.css" >
+    </title> 
+      
+    <!-- Style to create button -->
+    <style> 
+	
+
+	h1{
+	text-decoration: blue; 
+	text-align: center;
+	text-shadow: 3px;
+	background-color: grey;
+    }
+	
+	.searchbtn{
+	align: center;
+	border-width: 5px;
+	}
+	
+	 .placeholder{
+	  align: center;
+	  
+	  }
+	
+        .Learning1 { 
+        background-color: white; 
+        border: 2px solid black; 
+        color: blue; 
+        padding: 5px 10px; 
+        button-align-right: 10px;
+        button-align-bottom: 10px;		
+        display: inline-block; 
+        font-size: 20px; 
+        margin: 10px 30px; 
+        cursor: pointer; 
+        }
+		
+		.Learning2 { 
+        background-color: white; 
+        border: 2px solid black; 
+        color: blue; 
+        padding: 5px 10px; 
+        text-align: center; 
+        display: inline-block; 
+        font-size: 20px; 
+        margin: 10px 30px; 
+        cursor: pointer; 
+        } 
+    </style> 
+</head> 
+  
+<body> 
+    <h1>Choose Learning Path</h1> 
+     <div class="wrapper"> 
+	<input type="text"   class="input" placeholder="you can search here any Stack, want ?"  size="30px">
+     <div class="searchbtn">
+     <i class ="fas fa-search"></i>
+
+      </div>
+      </div>	
+	  
+    <!-- Create a form then add button 
+        inside the form -->
+    <form> 
+        <button class = "Learning1" type="submit"> 
+            Technical Stack
+        </button> 
+		
+		  <button class = "Learning2" type="submit"> 
+           Non-Technical Stack
+        </button>
+         </form> 
+       </body> 
+  
