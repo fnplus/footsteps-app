@@ -60,7 +60,7 @@ export class login extends Component {
             <Col sm={24} lg={10} className={styles.AboutUsVideo}>
               <img
                 className={styles.image}
-                src={require("../../images/signIn.png")}
+                src={require("../../images/aboutUs.png")}
               />
             </Col>
             <Col sm={24} lg={14} className={styles.AboutDesc}>
