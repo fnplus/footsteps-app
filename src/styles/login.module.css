@@ -105,6 +105,10 @@
     margin-left: auto;
     margin-right: auto;
   }
+  
+  .imageAbt {
+    width: 80%;
+  }
 
   .login h1 {
     text-align: center;
@@ -123,5 +127,13 @@
   .working,
   .AboutUs {
     font-size: 18px;
+  }
+}
+
+@media (min-width:769px) and (max-width:990px) {
+  .imageAbt {
+    width:70%;
+    display:block;
+    margin:auto;
   }
 }
