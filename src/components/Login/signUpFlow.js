@@ -100,6 +100,7 @@ export class signUp extends Component {
   }
 
   emailValidator = (e) => {
+    console.log("inside thr func")
     let check = e.target.value.match(
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     )
@@ -107,6 +108,7 @@ export class signUp extends Component {
       alert("The Email ID entered is not valid")
     } else {
       const target = e.target
+      console.log("inside else")
       this.setState({
         [target.name]: target.value,
       })
@@ -127,10 +129,10 @@ export class signUp extends Component {
 
   urlValidator = (e) => {
     let check = e.target.value.match(
-      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+      /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
     )
     if (check == null) {
-      alert("The url is not valid")
+      alert("The URL is not valid")
     } else {
       const target = e.target
       this.setState({

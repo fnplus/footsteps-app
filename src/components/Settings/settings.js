@@ -111,10 +111,10 @@ export default class Settings extends Component {
 
   urlValidator = (e) => {
     let check = e.target.value.match(
-      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+      /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
     )
     if (check == null) {
-      alert("The url is not valid")
+      alert("The URL is not valid")
     } else {
       const { name, value } = e.target
       this.setState({
