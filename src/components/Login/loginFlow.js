@@ -58,12 +58,10 @@ export class login extends Component {
         <div className={styles.AboutUs}>
           <Row>
             <Col sm={24} lg={10} className={styles.AboutUsVideo}>
-              <iframe
-                width="130%"
-                height="130%"
-                src="http://learn.shayhowe.com/assets/misc/courses/html-css/adding-media/earth.mp4"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              ></iframe>
+              <img
+                className={styles.imageAbt}
+                src={require("../../images/aboutUs.png")}
+              />
             </Col>
             <Col sm={24} lg={14} className={styles.AboutDesc}>
               <h1>
