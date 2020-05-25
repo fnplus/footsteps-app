@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react"
 import gql from "graphql-tag"
 import { v4 as uuidv4 } from "uuid"
@@ -37,6 +38,17 @@ export class signUp extends Component {
     registered_usernames: [],
     username_error: false,
     step_error: false,
+    validation: {
+      email: true,
+      first_name: true,
+      last_name: true,
+      bio: true,
+      about: true,
+      githuburl: true,
+      facebookurl: true,
+      linkedinurl: true,
+      twitterurl: true,
+    },
   }
 
   componentDidMount() {
@@ -98,25 +110,60 @@ export class signUp extends Component {
       })
   }
 
-  handleInputChange = (e) => {
-    const target = e.target
+  emailValidator = (e) => {
+    let { validation } = this.state
+    validation[e.target.name] = true
+    let check = e.target.value.match(
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    )
+    if (check == null) {
+      validation[e.target.name] = false
+    } else {
+      const target = e.target
+      console.log("inside else")
+      this.setState({
+        [target.name]: target.value,
+      })
+    }
     this.setState({
-      [target.name]: target.value,
+      validation,
     })
   }
 
-  urlValidator = (e) => {
-    let check = e.target.value.match(
-      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
-    )
+  handleInputChange = (e) => {
+    let { validation } = this.state
+    validation[e.target.name] = true
+    let check = e.target.value.match(/^[a-zA-Z][a-zA-Z\\s]+$/)
     if (check == null) {
-      alert("The url is not valid")
+      validation[e.target.name] = false
     } else {
       const target = e.target
       this.setState({
         [target.name]: target.value,
       })
     }
+    this.setState({
+      validation,
+    })
+  }
+
+  urlValidator = (e) => {
+    let { validation } = this.state
+    validation[e.target.name + "url"] = true
+    let check = e.target.value.match(
+      /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
+    )
+    if (check == null) {
+      validation[e.target.name + "url"] = false
+    } else {
+      const target = e.target
+      this.setState({
+        [target.name]: target.value,
+      })
+    }
+    this.setState({
+      validation,
+    })
   }
 
   handleUsernameChange = (e) => {
@@ -250,10 +297,14 @@ export class signUp extends Component {
               <div className={styles.step1_form}>
                 <div className={styles.input_label}>What's your email?</div>
                 <input
-                  className={styles.input}
+                  className={
+                    this.state.validation.email === true
+                      ? styles.input
+                      : styles.errorshake
+                  }
                   name="email"
                   value={this.state.email}
-                  onChange={this.handleInputChange}
+                  onChange={this.emailValidator}
                   placeholder="Email ID"
                   disabled
                 />
@@ -262,7 +313,11 @@ export class signUp extends Component {
                   What's your first name?
                 </div>
                 <input
-                  className={styles.input}
+                  className={
+                    this.state.validation.first_name === true
+                      ? styles.input
+                      : styles.errorshake
+                  }
                   name="first_name"
                   value={this.state.first_name}
                   onChange={this.handleInputChange}
@@ -271,7 +326,11 @@ export class signUp extends Component {
 
                 <div className={styles.input_label}>And, your last name?</div>
                 <input
-                  className={styles.input}
+                  className={
+                    this.state.validation.last_name === true
+                      ? styles.input
+                      : styles.errorshake
+                  }
                   name="last_name"
                   value={this.state.last_name}
                   onChange={this.handleInputChange}
@@ -339,7 +398,11 @@ export class signUp extends Component {
 
               <div className={styles.input_label}>Title</div>
               <input
-                className={styles.input}
+                className={
+                  this.state.validation.bio === true
+                    ? styles.input
+                    : styles.errorshake
+                }
                 name="bio"
                 value={this.state.bio}
                 onChange={this.handleInputChange}
@@ -348,7 +411,11 @@ export class signUp extends Component {
 
               <div className={styles.input_label}>About</div>
               <textarea
-                className={styles.input}
+                className={
+                  this.state.validation.about === true
+                    ? styles.input
+                    : styles.errorshake
+                }
                 name="about"
                 value={this.state.about}
                 onChange={this.handleInputChange}
@@ -420,7 +487,11 @@ export class signUp extends Component {
 
               <div className={styles.input_label}>Github</div>
               <input
-                className={styles.input}
+                className={
+                  this.state.validation.githuburl === true
+                    ? styles.input
+                    : styles.errorshake
+                }
                 name="github"
                 value={this.state.github}
                 onChange={this.urlValidator}
@@ -429,7 +500,11 @@ export class signUp extends Component {
 
               <div className={styles.input_label}>Linkedin</div>
               <input
-                className={styles.input}
+                className={
+                  this.state.validation.linkedinurl === true
+                    ? styles.input
+                    : styles.errorshake
+                }
                 name="linkedin"
                 value={this.state.linkedin}
                 onChange={this.urlValidator}
@@ -438,7 +513,11 @@ export class signUp extends Component {
 
               <div className={styles.input_label}>Facebook</div>
               <input
-                className={styles.input}
+                className={
+                  this.state.validation.facebookurl === true
+                    ? styles.input
+                    : styles.errorshake
+                }
                 name="facebook"
                 value={this.state.facebook}
                 onChange={this.urlValidator}
@@ -447,7 +526,11 @@ export class signUp extends Component {
 
               <div className={styles.input_label}>Twitter</div>
               <input
-                className={styles.input}
+                className={
+                  this.state.validation.twitterurl === true
+                    ? styles.input
+                    : styles.errorshake
+                }
                 name="twitter"
                 value={this.state.twitter}
                 onChange={this.urlValidator}

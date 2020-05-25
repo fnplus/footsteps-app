@@ -44,6 +44,12 @@ export default class Settings extends Component {
     progress: 0,
     pic: "",
     error: false,
+    validation: {
+      githuburl: true,
+      facebookurl: true,
+      linkedinurl: true,
+      twitterurl: true,
+    },
   }
 
   componentDidMount() {
@@ -110,17 +116,23 @@ export default class Settings extends Component {
   }
 
   urlValidator = (e) => {
+    let { validation } = this.state
+    validation[e.target.name + "url"] = true
     let check = e.target.value.match(
-      /^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
+      /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
     )
     if (check == null) {
-      alert("The url is not valid")
+      console.log("check", e.target.className)
+      validation[e.target.name + "url"] = false
     } else {
       const { name, value } = e.target
       this.setState({
         [name]: value,
       })
     }
+    this.setState({
+      validation,
+    })
   }
 
   // Image Upload Functions
@@ -234,6 +246,7 @@ export default class Settings extends Component {
   }
 
   render() {
+    console.log("state", this.state)
     return (
       <div className={styles.container}>
         <h1 className={styles.heading}>Settings</h1>
@@ -353,7 +366,11 @@ export default class Settings extends Component {
             <div className={styles.input_label}>Github</div>
             <input
               type="text"
-              className={styles.input}
+              className={
+                this.state.validation.githuburl === true
+                  ? styles.input
+                  : styles.errorshake
+              }
               placeholder="Github"
               value={this.state.github}
               onChange={this.urlValidator}
@@ -363,9 +380,14 @@ export default class Settings extends Component {
 
           <Col xs={24} lg={12}>
             <div className={styles.input_label}>Facebook</div>
+            {console.log("this.state.validation", this.state.validation)}
             <input
               type="text"
-              className={styles.input}
+              className={
+                this.state.validation.facebookurl === true
+                  ? styles.input
+                  : styles.errorshake
+              }
               placeholder="Facebook"
               value={this.state.facebook}
               onChange={this.urlValidator}
@@ -377,7 +399,11 @@ export default class Settings extends Component {
             <div className={styles.input_label}>Linkedin</div>
             <input
               type="text"
-              className={styles.input}
+              className={
+                this.state.validation.linkedinurl === true
+                  ? styles.input
+                  : styles.errorshake
+              }
               placeholder="Linkedin"
               value={this.state.linkedin}
               onChange={this.urlValidator}
@@ -389,7 +415,11 @@ export default class Settings extends Component {
             <div className={styles.input_label}>Twitter</div>
             <input
               type="text"
-              className={styles.input}
+              className={
+                this.state.validation.twitterurl === true
+                  ? styles.input
+                  : styles.errorshake
+              }
               placeholder="Twitter"
               value={this.state.twitter}
               onChange={this.urlValidator}
