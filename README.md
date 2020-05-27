@@ -130,6 +130,10 @@ We welcome suggestions for improving our docs. See the [“how to contribute”]
 
 Feel free to ask your queries!! 🙌
 
+## :trophy: Competition
+This project is being selected for [GirlScript Summer of Code 2020](https://www.gssoc.tech/) for Mentorship.
+
+![GSSoC Logo](https://github.com/pydevsg/footsteps-app/blob/sgdev/images/gssoc_logo.jpeg)
 
 ## :memo: License
 
