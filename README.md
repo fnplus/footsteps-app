@@ -1,6 +1,6 @@
 # 👣 Footsteps - Learning Resources Aggregator
 
-A search 🔎engine of community-made 🧑‍🤝‍🧑learning resources for the 21st-century learner.👨‍💻👩‍💻Learn by following the footsteps (resources) of experts or make your own, giving others the right advice/resources to learn.
+A Search 🔎Engine of Community-made 🧑‍🤝‍🧑learning resources for the 21st century learner.👨‍💻👩‍💻Learn by following the footsteps (resources) of experts or make your own, giving others the right advice/resources to learn.
 
 <p align="center">
    <a href="https://github.com/fnplus/footsteps-app/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/fnplus/footsteps-app"></a>
@@ -18,7 +18,7 @@ A search 🔎engine of community-made 🧑‍🤝‍🧑learning resources for t
 
 ## 🤷 About
 
-We envisioned the project to solve the problems faced by 21st-century learners. A modern learner finds a flood of resources from Google Search but doesn't always find the right resources since it's the website with the best SEO (search engine optimisation) that wins. There are so many free resources available on the internet made by experts in their field and yet we pay for outdated courses promoted by big companies and universities.
+We envisioned the project to solve the problems faced by 21st-century learners. A modern learner finds a flood of resources from Google Search but doesn't always find the right resources since it's the website with the best SEO (search engine optimisation) that wins. There are so many free resources available on the internet made by experts in their field and yet we are forced to pay for the outdated courses promoted by big companies and universities.
 
 With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-extension), we take a mentor/subject knowledge expert first approach to solve the problem. The domain experts save their learning journey with our app and browser extension & make it available for everyone else to follow. Every resource is called a 'footstep' (added in a chronological manner) and a collection of footsteps makes up a learning path. The learner can "fork" the learning path made by the expert and keep a track of his progress. The app suggests resources & keeps an updated list with users upvotes & collaborative filtering.
 
@@ -30,15 +30,15 @@ Here are few examples of why we came up with footsteps:
 
 ## 🤩 Proposed/Upcoming features
 
-| **SL No.** | **Feature**                                                                                        | **Status** |
-| ---------- | -------------------------------------------------------------------------------------------------- | ---------- |
-| 01         | Ability to make the path private/public.                                                           |            |
-| 02         | The ability to "fork" a learning path & suggest changes.                                           |            |
-| 03         | A collaborative filtering recommendation system for recommending the right resources to a learner. |            |
-| 04         | Ability to save your progress (with a progress bar) in a learning path.                            |            |
-| 05         | Ability to upvote a learning path.                                                                 |            |
-| 06         | Ability to follow a user.                                                                          |            |
-| 07         | A modified home page UI with a search bar, active learning paths & new leaning paths by 'followed' users|        |
+| **SL No.** | **Feature**                                                                                             | **Status** |
+| ---------- | --------------------------------------------------------------------------------------------------      | ---------- |
+| 01         | Ability to make the path private/public.                                                                |            |
+| 02         | The ability to "fork" a learning path & suggest changes.                                                |            |
+| 03         | A collaborative filtering recommendation system for recommending the right resources to a learner.      |            |
+| 04         | Ability to save your progress (with a progress bar) in a learning path.                                 |            |
+| 05         | Ability to upvote a learning path.                                                                      |            |
+| 06         | Ability to follow a user.                                                                               |            |
+| 07         | A modified home page UI with a search bar, active learning paths & new leaning paths by 'followed' users|            |
 
 ## 🚀 Quick start
 
