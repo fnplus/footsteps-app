@@ -131,7 +131,12 @@ We welcome suggestions for improving our docs. See the [“how to contribute”]
 Feel free to ask your queries!! 🙌
 
 ## :trophy: Competition
-This project is being selected for [GirlScript Summer of Code 2020](https://www.gssoc.tech/) for Mentorship.
+
+ - This project was selected in [HakinCodes Contributor's Hack, 2020](https://hakincodes.tech/).
+
+![HakinCodes Logo](https://avatars3.githubusercontent.com/u/60339205?s=200&v=4)
+ 
+ - This project was selected in [GirlScript Summer of Code 2020](https://www.gssoc.tech/).
 
 ![GSSoC Logo](https://github.com/pydevsg/footsteps-app/blob/sgdev/images/gssoc_logo.jpeg)
 
