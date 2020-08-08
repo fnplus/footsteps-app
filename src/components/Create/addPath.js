@@ -4,7 +4,7 @@ import gql from "graphql-tag"
 
 import { v4 as uuidv4 } from "uuid"
 import { Row, Col, Switch } from "antd"
-import ReactTags from "react-tag-autocomplete"
+import ReactTags from "react-tag-input"
 import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
 import "firebase/storage"

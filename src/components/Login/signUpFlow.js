@@ -1,17 +1,24 @@
 /* eslint-disable */
+
 import React, { Component } from "react"
+import { WithContext as ReactTags } from "react-tag-input"
 import gql from "graphql-tag"
 import { v4 as uuidv4 } from "uuid"
 import { ArrowRightOutlined } from "@ant-design/icons"
 import { Row, Col } from "antd"
-import ReactTags from "react-tag-autocomplete"
-
 import firebase from "firebase/app"
 import "firebase/auth"
 
+import suggestions from "./skills"
 import { client } from "../../apollo/client"
-
 import styles from "../../styles/signUp.module.css"
+
+const KeyCodes = {
+  comma: 188,
+  enter: 13,
+}
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter]
 
 export class signUp extends Component {
   state = {
@@ -24,13 +31,6 @@ export class signUp extends Component {
     bio: "",
     skills: "",
     skills_array: [],
-    suggestions: [
-      { id: 1, name: "HTML" },
-      { id: 2, name: "CSS" },
-      { id: 3, name: "Bootstrap" },
-      { id: 4, name: "ReactJS" },
-      { id: 5, name: "Javascript" },
-    ],
     github: "https://github.com/",
     linkedin: "https://linkedin.com/in/",
     facebook: "https://facebook.com/",
@@ -49,6 +49,7 @@ export class signUp extends Component {
       linkedinurl: true,
       twitterurl: true,
     },
+    suggestions,
   }
 
   componentDidMount() {
@@ -131,19 +132,9 @@ export class signUp extends Component {
   }
 
   handleInputChange = (e) => {
-    let { validation } = this.state
-    validation[e.target.name] = true
-    let check = e.target.value.match(/^[a-zA-Z][a-zA-Z\\s]+$/)
-    if (check == null) {
-      validation[e.target.name] = false
-    } else {
-      const target = e.target
-      this.setState({
-        [target.name]: target.value,
-      })
-    }
+    const target = e.target
     this.setState({
-      validation,
+      [target.name]: target.value,
     })
   }
 
@@ -428,7 +419,7 @@ export class signUp extends Component {
               </div>
               <ReactTags
                 tags={this.state.skills_array}
-                suggestions={this.state.suggestions}
+                // suggestions={this.state.suggestions}
                 placeholder={"Enter your Skills"}
                 delimiters={[188, 13]}
                 handleDelete={this.handleTagDelete}

@@ -117,7 +117,6 @@ textarea:focus {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 25px;
-  float: right;
   margin-top: 30px;
   margin-right: 20px;
   transition: transform 0.2s;
@@ -199,71 +198,56 @@ textarea:focus {
     width: 90%;
     margin-top: 40px;
   }
-
   .step0_container {
     margin: 0px 0px;
   }
-
   .step0_content {
     padding: 20px;
     margin-bottom: 50px;
   }
-
   .step0_content h1 {
     font-size: 40px;
   }
-
   .step0_content h2 {
     font-size: 32px;
   }
-
   .step0_content h3 {
     margin-top: 40px;
   }
-
   .step1_container {
     margin: 0 20px;
     margin-bottom: 50px;
   }
-
   .step2_container {
     margin: 0 20px;
     margin-bottom: 50px;
   }
-
   .step3_container {
     margin: 0 20px;
     margin-bottom: 50px;
   }
-
   .preview_container {
     margin: 0 20px;
     margin-bottom: 50px;
   }
-
   .input {
     width: 90%;
   }
-
   .steps_content h2 {
     margin-bottom: 30px;
   }
-
   .steps_content {
     margin-bottom: 70px;
   }
-
   .preview_heading {
     font-size: 45px;
     margin-top: 60px;
   }
-
   .preview_btn {
     display: block;
     text-align: center;
     margin: 0 40px;
   }
-
   .yes_btn {
     float: none;
     margin-top: 40px;

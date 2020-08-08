@@ -1,8 +1,10 @@
+/* eslint-disable */
+
 import React, { Component } from "react"
 import { CameraFilled } from "@ant-design/icons"
 import { Row, Col } from "antd"
 import FileUploader from "react-firebase-file-uploader"
-import ReactTags from "react-tag-autocomplete"
+import ReactTags from "react-tag-input"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
 
