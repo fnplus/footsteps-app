@@ -4,14 +4,14 @@ import React, { Component } from "react"
 import { CameraFilled } from "@ant-design/icons"
 import { Row, Col } from "antd"
 import FileUploader from "react-firebase-file-uploader"
-import ReactTags from "react-tag-input"
+import { WithContext as ReactTags } from "react-tag-input"
 import gql from "graphql-tag"
 import { navigate } from "gatsby"
 
 import firebase from "firebase/app"
 import "firebase/storage"
 
-import styles from "./styles.module.css"
+import styles from "../../styles/settings.module.css"
 
 import { client } from "../../apollo/client"
 
@@ -29,13 +29,6 @@ export default class Settings extends Component {
     bio: "",
     skills: "",
     skills_array: [],
-    suggestions: [
-      { id: 1, name: "HTML" },
-      { id: 2, name: "CSS" },
-      { id: 3, name: "Bootstrap" },
-      { id: 4, name: "ReactJS" },
-      { id: 5, name: "Javascript" },
-    ],
     // social
     facebook: "",
     github: "",
@@ -248,7 +241,6 @@ export default class Settings extends Component {
   }
 
   render() {
-    console.log("state", this.state)
     return (
       <div className={styles.container}>
         <h1 className={styles.heading}>Settings</h1>
@@ -322,8 +314,11 @@ export default class Settings extends Component {
         </Row>
 
         <Row>
-          <h2 className={styles.sub_heading}>About</h2>
+          {" "}
+          <h2 className={styles.sub_heading}>About</h2>{" "}
+        </Row>
 
+        <Row>
           <Col xs={24} lg={13}>
             <div className={styles.input_label}>Bio</div>
             <input
@@ -350,7 +345,6 @@ export default class Settings extends Component {
             <div className={styles.input_label}>Skills</div>
             <ReactTags
               tags={this.state.skills_array}
-              suggestions={this.state.suggestions}
               placeholder={"Enter your skills"}
               delimiters={[188, 13]}
               handleDelete={this.handleTagDelete}
@@ -363,7 +357,11 @@ export default class Settings extends Component {
         </Row>
 
         <Row>
-          <h2 className={styles.sub_heading}>Socials</h2>
+          {" "}
+          <h2 className={styles.sub_heading}>Socials</h2>{" "}
+        </Row>
+
+        <Row>
           <Col xs={24} lg={12}>
             <div className={styles.input_label}>Github</div>
             <input
@@ -382,7 +380,6 @@ export default class Settings extends Component {
 
           <Col xs={24} lg={12}>
             <div className={styles.input_label}>Facebook</div>
-            {console.log("this.state.validation", this.state.validation)}
             <input
               type="text"
               className={

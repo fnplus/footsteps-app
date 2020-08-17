@@ -88,7 +88,12 @@ export class user extends Component {
           <div className={styles.profileDetail}>
             <div className={styles.profileAbout}>
               <h1 className={styles.profileAlign}>About</h1>
-              <a href={profileLink} className={styles.profileLink}>
+              <a
+                href={profileLink}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.profileLink}
+              >
                 Profile Link
               </a>
               <p className={styles.bioContent}>{data.about}</p>

@@ -3,7 +3,6 @@ import { Steps, Progress } from "antd"
 const { Step } = Steps
 
 const UserProgress = ({ data, type }) => {
-  console.log(data)
   const { about, skills, linkedin, github, facebook } = data
 
   const progress = [about, skills, github, linkedin, facebook]
@@ -11,7 +10,6 @@ const UserProgress = ({ data, type }) => {
   let progressVal = 0
   for (let i = 0; i < 5; i++) {
     const ele = progress[i]
-    console.log(ele)
     if (
       ele !== "" &&
       ele !== "https://github.com/" &&
@@ -21,8 +19,7 @@ const UserProgress = ({ data, type }) => {
       progressVal++
     else break
   }
-  console.log(data)
-  console.log(progressVal)
+
   if (progressVal === 5) return <></>
   else
     return (

@@ -23,6 +23,7 @@ export default function () {
         })
         .then((res) => {
           const data = res.data.Users[0]
+          console.log("received data:", data)
           setState({
             user_id,
             loading: false,

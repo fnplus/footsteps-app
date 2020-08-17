@@ -121,7 +121,6 @@ export class signUp extends Component {
       validation[e.target.name] = false
     } else {
       const target = e.target
-      console.log("inside else")
       this.setState({
         [target.name]: target.value,
       })

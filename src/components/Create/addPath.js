@@ -4,7 +4,7 @@ import gql from "graphql-tag"
 
 import { v4 as uuidv4 } from "uuid"
 import { Row, Col, Switch } from "antd"
-import ReactTags from "react-tag-input"
+import { WithContext as ReactTags } from "react-tag-input"
 import FileUploader from "react-firebase-file-uploader"
 import firebase from "firebase/app"
 import "firebase/storage"
@@ -27,13 +27,6 @@ export class addPath extends Component {
     user_id: "",
     tags: "",
     tags_array: [],
-    suggestions: [
-      { id: 1, name: "HTML" },
-      { id: 2, name: "CSS" },
-      { id: 3, name: "Bootstrap" },
-      { id: 4, name: "ReactJS" },
-      { id: 5, name: "Javascript" },
-    ],
     isUploading: false,
     progress: 0,
     isPrivate: false,
@@ -290,7 +283,6 @@ export class addPath extends Component {
             <div className={styles.input_label}>Tags</div>
             <ReactTags
               tags={this.state.tags_array}
-              suggestions={this.state.suggestions}
               placeholder={"Enter relevant tags"}
               delimiters={[188, 13]}
               handleDelete={this.handleTagDelete}

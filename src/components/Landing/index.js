@@ -22,14 +22,12 @@ export class index extends Component {
                   <b>Well, fret no more!</b>
                 </h3>
               </p>
-              <br />
-              <br />
               <h1 className={styles.heading}>Welcome to Footsteps</h1>
-              <h3 className={styles.subHeading2}>
-                <br />A search 🔎engine for the 21st-century learner.
-              </h3>
+              <br />
+              <br />
               <Searchbar />
-
+              <br />
+              <br />
               <img
                 src={require("../../images/roadSign.svg")}
                 alt="Road Sign"
