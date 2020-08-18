@@ -69,7 +69,7 @@
     "react-helmet": "^6.1.0",
     "react-tag-input": "^6.4.3",
     "react-typography": "^0.16.19",
-    "snyk": "^1.377.0",
+    "snyk": "^1.377.1",
     "typography": "^0.16.19",
     "typography-theme-grand-view": "^0.16.19",
     "uuid": "^8.3.0"
