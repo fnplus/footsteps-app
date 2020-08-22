@@ -13,8 +13,6 @@ const Twitter = ({ type, username, title, desc, image }) => (
   </Helmet>
 )
 
-export default Twitter
-
 Twitter.propTypes = {
   type: PropTypes.string,
   username: PropTypes.string,
@@ -27,3 +25,5 @@ Twitter.defaultProps = {
   type: "summary_large_image",
   username: "@fnplusofficial",
 }
+
+export default Twitter

@@ -112,6 +112,21 @@ export class layout extends Component {
               name="keywords"
               content="crowdsourced, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
             />
+            <script type="application/ld+json">
+              {`
+                {
+                  "@context": "https://schema.org",
+                  "@type": "Organization",
+                  "url": "https://www.footsteps.dev",
+                  "name": "Footsteps App",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "hellofnplus@gmail.com",
+                    "contactType": "Customer Support"
+                  }
+                }
+              `}
+            </script>
           </Helmet>
           <div className={styles.content}>
             <Header show={false} user={this.state.user} />
@@ -145,6 +160,21 @@ export class layout extends Component {
                 name="keywords"
                 content="crowdsourced, community-made, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
               />
+              <script type="application/ld+json">
+                {`
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    "url": "https://www.footsteps.dev",
+                    "name": "Footsteps App",
+                    "contactPoint": {
+                      "@type": "ContactPoint",
+                      "email": "hellofnplus@gmail.com",
+                      "contactType": "Customer Support"
+                    }
+                  }
+                `}
+              </script>
             </Helmet>
             <div className={styles.content}>
               <Header show />

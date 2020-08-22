@@ -16,8 +16,6 @@ const Facebook = ({ url, name, type, title, desc, image, locale, appId }) => (
   </Helmet>
 )
 
-export default Facebook
-
 Facebook.propTypes = {
   url: PropTypes.string.isRequired,
   locale: PropTypes.string.isRequired,
@@ -35,3 +33,5 @@ Facebook.defaultProps = {
   image: `/images/img_share.png`,
   appId: `218750542018813`,
 }
+
+export default Facebook

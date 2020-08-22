@@ -76,8 +76,6 @@ const SEO = ({ title, description, image, pathname, article }) => (
   />
 )
 
-export default SEO
-
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
@@ -86,9 +84,11 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-  title: `Footsteps`,
+  title: `Footsteps App`,
   ogLanguage: `en_US`,
 }
+
+export default SEO
 
 const query = graphql`
   query SEO {
