@@ -93,8 +93,9 @@
 
 .FAQimg {
   background-color: #099268;
-  height: 450px;
-  margin-top: 10%;
+  height: 25vw;
+  display: block;
+  margin: auto;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
 }
 
@@ -127,6 +128,9 @@
   .working,
   .AboutUs {
     font-size: 18px;
+  }
+  .FAQimg {
+    height: 55vw;
   }
 }
 
