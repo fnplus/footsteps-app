@@ -134,10 +134,14 @@
   }
 }
 
-@media (min-width:769px) and (max-width:990px) {
+@media (min-width:769px) and (max-width:991px) {
   .imageAbt {
     width:70%;
     display:block;
     margin:auto;
+  }
+  .FAQimg {
+    height: 45vw;
+    max-width:70vw;
   }
 }
