@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Row, Col, Card } from "antd"
 import firebase from "firebase/app"
 import "firebase/auth"
+import Image from "../image"
 import styles from "../../styles/login.module.css"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 
@@ -31,10 +32,7 @@ export class login extends Component {
         </Row>
         <Row>
           <Col xs={24} lg={14}>
-            <img
-              className={styles.image}
-              src={require("../../images/LoginPageImg.png")}
-            />
+            <Image className={styles.image} src="LoginPageImg.png" />
           </Col>
           <Col xs={24} lg={10}>
             <br />
@@ -58,10 +56,7 @@ export class login extends Component {
         <div className={styles.AboutUs}>
           <Row>
             <Col sm={24} lg={10} className={styles.AboutUsVideo}>
-              <img
-                className={styles.imageAbt}
-                src={require("../../images/aboutUs.png")}
-              />
+              <Image className={styles.imageAbt} src="aboutUs.png" />
             </Col>
             <Col sm={24} lg={14} className={styles.AboutDesc}>
               <h1>
@@ -100,7 +95,7 @@ export class login extends Component {
               </p>
             </Col>
             <Col sm={24} lg={8}>
-              <img src={require("../../images/figuringOut.png")} />
+              <Image src="figuringOut.png" />
             </Col>
             <div className={styles.Cards}>
               <br />
@@ -139,7 +134,7 @@ export class login extends Component {
         <div className={styles.FAQ}>
           <Row>
             <Col sm={24} lg={9} className={styles.FAQimg}>
-              <img src={require("../../images/FAQ.png")} width={900} />
+              <Image src="FAQ.png" />
             </Col>
             <Col sm={24} lg={15} className={styles.AboutDesc}>
               <h1>
