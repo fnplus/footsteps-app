@@ -84,36 +84,22 @@ export class layout extends Component {
   }
 
   render() {
-    if (this.state.isSignedIn === null) {
-      return (
-        <div>
-          <div className={styles.content}>
-            <Header show={false} user={this.state.user} />
-            <Loader />
-          </div>
-          <Footer />
-        </div>
-      )
-    } else if (this.state.isSignedIn === false) {
-      return (
-        <div>
-          <SEO />
-          <Helmet>
-            <html lang="en-us" />
-            <meta charset="utf-8" />
-            <link hrefLang="en-us" />
-            <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
-            <link rel="canonical" href="http://www.footsteps.dev" />
-            <meta
-              name="keywords"
-              content="crowdsourced, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
-            />
-            <script type="application/ld+json">
-              {`
+    return (
+      <>
+        <SEO />
+        <Helmet>
+          <html lang="en-us" />
+          <meta charset="utf-8" />
+          <link hrefLang="en-us" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="canonical" href="http://www.footsteps.dev" />
+          <meta
+            name="keywords"
+            content="crowdsourced, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
+          />
+          <script type="application/ld+json">
+            {`
                 {
                   "@context": "https://schema.org",
                   "@type": "Organization",
@@ -126,64 +112,40 @@ export class layout extends Component {
                   }
                 }
               `}
-            </script>
-          </Helmet>
-          <div className={styles.content}>
-            <Header show={false} user={this.state.user} />
-            {!this.state.signUp ? (
-              <Login />
-            ) : (
-              <SignUp updateUserId={this.updateUserId} />
-            )}
-          </div>
-          <Footer />
-        </div>
-      )
-    } else if (this.state.isSignedIn === true) {
-      return (
-        <UserContext.Provider
-          value={{ user: this.state.user, update_user: this.update_user }}
-        >
-          <div>
-            <SEO />
-            <Helmet>
-              <html lang="en-us" />
-              <meta charset="utf-8" />
-              <link hrefLang="en-us" />
-              <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <link rel="canonical" href="http://www.footsteps.dev" />
-              <meta
-                name="keywords"
-                content="crowdsourced, community-made, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"
-              />
-              <script type="application/ld+json">
-                {`
-                  {
-                    "@context": "https://schema.org",
-                    "@type": "Organization",
-                    "url": "https://www.footsteps.dev",
-                    "name": "Footsteps App",
-                    "contactPoint": {
-                      "@type": "ContactPoint",
-                      "email": "hellofnplus@gmail.com",
-                      "contactType": "Customer Support"
-                    }
-                  }
-                `}
-              </script>
-            </Helmet>
+          </script>
+        </Helmet>
+
+        <div>
+          {this.state.isSignedIn === null ? (
             <div className={styles.content}>
-              <Header show />
-              <main>{this.props.children}</main>
+              <Header show={false} user={this.state.user} />
+              <Loader />
             </div>
-          </div>
-        </UserContext.Provider>
-      )
-    }
+          ) : this.state.isSignedIn === false ? (
+            <>
+              <div className={styles.content}>
+                <Header show={false} user={this.state.user} />
+                {!this.state.signUp ? (
+                  <Login />
+                ) : (
+                  <SignUp updateUserId={this.updateUserId} />
+                )}
+              </div>
+              <Footer />
+            </>
+          ) : (
+            <UserContext.Provider
+              value={{ user: this.state.user, update_user: this.update_user }}
+            >
+              <div className={styles.content}>
+                <Header show />
+                <main>{this.props.children}</main>
+              </div>
+            </UserContext.Provider>
+          )}
+        </div>
+      </>
+    )
   }
 }
 
