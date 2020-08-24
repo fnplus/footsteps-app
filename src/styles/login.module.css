@@ -44,16 +44,19 @@
   font-size: 18px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
 }
+
 .AboutUsVideo {
   padding: 5%;
   padding-top: 0%;
 }
+
 .AboutUs h1 {
   color: white;
   font-size: 40px;
   text-shadow: 2px 2px 4px #000000;
   font-weight: 600;
 }
+
 .AboutDesc {
   padding: 4%;
 }
@@ -64,12 +67,14 @@
   margin-top: 2%;
   font-size: 19px;
 }
+
 .working h1 {
   font-size: 40px;
   font-weight: 600;
   color: #099268;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
 }
+
 .Cards {
   background-color: #dee2e6;
   padding: 1%;
@@ -93,8 +98,9 @@
 
 .FAQimg {
   background-color: #099268;
-  height: 450px;
-  margin-top: 10%;
+  height: 25vw;
+  display: block;
+  margin: auto;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
 }
 
@@ -123,17 +129,27 @@
   .AboutUsVideo {
     width: 80%;
   }
+  
   .FAQ,
   .working,
   .AboutUs {
     font-size: 18px;
   }
+  
+  .FAQimg {
+    height: 55vw;
+  }
 }
 
-@media (min-width:769px) and (max-width:990px) {
+@media (min-width:769px) and (max-width:991px) {
   .imageAbt {
     width:70%;
     display:block;
     margin:auto;
+  }
+  
+  .FAQimg {
+    height: 45vw;
+    max-width: 70vw;
   }
 }
