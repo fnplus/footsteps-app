@@ -93,7 +93,7 @@ export class layout extends Component {
           <link hrefLang="en-us" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="canonical" href="http://www.footsteps.dev" />
+          <link rel="canonical" href="https://www.footsteps.dev" />
           <meta
             name="keywords"
             content="crowdsourced, learning paths, experts, best learning resources, find mentors, learn online, learn for free, footsteps, learning journey, fnplus, fnplus club, fnplus tech community"

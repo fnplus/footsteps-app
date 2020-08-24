@@ -86,6 +86,7 @@ SEO.propTypes = {
 SEO.defaultProps = {
   title: `Footsteps App`,
   ogLanguage: `en_US`,
+  image: `/images/img_share.png`,
 }
 
 export default SEO
