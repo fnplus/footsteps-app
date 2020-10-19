@@ -1,6 +1,6 @@
 # 👣 Footsteps - Learning Resources Aggregator
 
-A Search 🔎Engine of Community-made 🧑‍🤝‍🧑learning resources for the 21st century learner.👨‍💻👩‍💻Learn by following the footsteps (resources) of experts or make your own, giving others the right advice/resources to learn.
+A Search 🔎Engine of Community-made 🧑‍🤝‍🧑learning resources for the 21st-century learner.👨‍💻👩‍💻Learn by following the footsteps (resources) of experts or make your own, giving others the right advice/resources to learn.
 
 <p align="center">
    <a href="https://github.com/fnplus/footsteps-app/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/fnplus/footsteps-app"></a>
@@ -18,13 +18,13 @@ A Search 🔎Engine of Community-made 🧑‍🤝‍🧑learning resources for t
 
 ## 🤷 About
 
-We envisioned the project to solve the problems faced by 21st-century learners. A modern learner finds a flood of resources from Google Search but doesn't always find the right resources since it's the website with the best SEO (search engine optimisation) that wins. There are so many free resources available on the internet made by experts in their field and yet we are forced to pay for the outdated courses promoted by big companies and universities.
+We envisioned the project to solve the problems faced by a 21st-century learner. A learner in the internet age finds herself/himself in a flood of resources from search engines. Although s/he finds links to learn, they're not always from the best teachers/best-rated ones since it's the website with the best SEO (search engine optimization) that shows the topmost results. On top of that, there are so many free resources available on the internet made by experts in their field and yet we are forced to pay for the outdated courses promoted by big companies and universities.
 
-With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-extension), we take a mentor/subject knowledge expert first approach to solve the problem. The domain experts save their learning journey with our app and browser extension & make it available for everyone else to follow. Every resource is called a 'footstep' (added in a chronological manner) and a collection of footsteps makes up a learning path. The learner can "fork" the learning path made by the expert and keep a track of his progress. The app suggests resources & keeps an updated list with users upvotes & collaborative filtering.
+With Footsteps app & [browser extension](https://github.com/fnplus/footsteps-extension), we take a subject knowledge expert (mentor) first approach to solve the problem of finding the best resources to learn. It works by having the domain experts save their learning journey with our web app and browser extension & making it available for everyone else to follow. Every resource is called a 'footstep' (added chronologically) and a collection of footsteps makes up a learning path. The learner can "save" the learning paths to his learning journey and keep a track of his progress. The app also suggests other recommended paths rated well by other learners in the Footsteps Community.
 
 ## 🧐 The Need (as seen on the web)
 
-Here are few examples of why we came up with footsteps:
+Here are a few examples of why we came up with footsteps:
 
 [**Reddit thread - "About IBMs Data Science Certification"**](https://www.reddit.com/r/datascience/comments/eleuz9/about_ibms_data_science_certification/)
 
@@ -40,9 +40,9 @@ Here are few examples of why we came up with footsteps:
 | 06         | Ability to follow a user.                                                                               |            |
 | 07         | A modified home page UI with a search bar, active learning paths & new leaning paths by 'followed' users|            |
 
-## 🚀 Quick start
+## 🚀 Quickstart
 
-### **Here is our quickstart guide. See our [Wiki](https://github.com/fnplus/footsteps-app/wiki/Contributing-to-Footsteps-App) for detailed instructions!**
+### **Here is our quick start guide. See our [Wiki](https://github.com/fnplus/footsteps-app/wiki/Contributing-to-Footsteps-App) for detailed instructions!**
 
 1. **Install the Gatsby CLI.**
 
